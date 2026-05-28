@@ -147,13 +147,15 @@ component is locally coherent. We formalise this \emph{locally
 coherent, globally incoherent} failure via the \emph{compositional
 residual} $\eps^\star$, the $L_2$ distance from the composed
 quote to the joint coherent polytope, computable at runtime from
-system output alone. A product-structure dichotomy characterises
-when local coherence suffices, and a Rayleigh-quotient prediction
+system output and the declared cross-component coupling
+constraints. A product-structure dichotomy characterises when
+local coherence suffices, and a Rayleigh-quotient prediction
 matches the observed residual within $3$--$7\%$ on three of four
 relation classes. A hierarchical Boyle--Dykstra projection
 repairs the composition deterministically; an anytime-valid
 e-process gives sequential coherence monitoring. Across $1{,}876$
-ensemble cliques on four frontier LLMs, $\eps^\star\!>\!0$ on
+ensemble cliques on a four-LLM mid-tier panel (frontier-panel
+rerun in \S\ref{subsec:frontier}), $\eps^\star\!>\!0$ on
 $33$--$94\%$ of cliques, translating to $+0.115$ nats per bet of
 regret on $1{,}770$ resolved markets. Three intuitive LLM-side
 mitigations (retrieval, partition-aware prompting,
@@ -397,7 +399,7 @@ $\hpK$ if and only if $\Mjoint = \Mprod$. When
 $\Mjoint = \Mprod$, projection decomposes blockwise:
 \begin{equation}
 \Pijoint(\Aagg(\hpK^{(1)},\dots,\hpK^{(k)}))
-= \bigl(\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)}\bigr),
+= \Aagg\bigl(\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)}\bigr),
 \label{eq:commute}
 \end{equation}
 so $\eps^\star \equiv 0$. When $\Mjoint \subsetneq \Mprod$, there
@@ -713,7 +715,8 @@ following temporal guarantee lets an operator certify
 \emph{persistent} incoherence across the stream without fixing
 a stopping horizon in advance.
 
-Under the null $H_0$ that all component forecasters are coherent,
+Under the null $H_0$ that the composed population quote is
+jointly coherent ($p_F^\star\!\in\!\Mjoint$ at each step),
 the e-process
 \(
 E_t(\lambda) := \prod_{s=1}^{t}
@@ -810,10 +813,11 @@ bands are $95\%$ bootstrap CIs ($B{=}1000$).}
 \section{Results}
 \label{sec:results}
 
-The random-assignment experiment ($N\!=\!536$/relation $\times\,4$
-seeds for Paleka, $268\!=\!67\!\times\!4$ for Polymarket; total
-$1{,}876$) and structured-routing variant ($N\!=\!469$, one
-deterministic seed) bracket cross-model mixing.
+The random-assignment experiment ($N\!=\!134$ cliques
+$\times\,4$ seeds $=\!536$ per relation for Paleka, plus
+$N\!=\!67\!\times\!4\!=\!268$ for Polymarket; total $1{,}876$)
+and structured-routing variant ($N\!=\!469$, one deterministic
+seed) bracket cross-model mixing.
 
 \subsection{Compositional residual and controls}
 \label{subsec:compres_results}
@@ -822,7 +826,13 @@ deterministic seed) bracket cross-model mixing.
 The compositional residual is strictly positive on $94\%$ (partition),
 $66\%$ (negation), $43\%$ (disjunction), $33\%$ (conjunction) of
 cliques (\Cref{fig:compositional}a). Mean $\eps^\star$ ranges $0.058$
-(and) to $0.118$ (partition); \emph{none} is visible per-component,
+(and) to $0.118$ (partition) on the full $N\!=\!1{,}876$ ensemble;
+the per-component-JCD pre-aggregation residuals in
+App.~\ref{app:projection_ablation} (operator B of Table~\ref{tab:proj_ablation})
+read $0.054$ / $0.098$ on these relations, slightly smaller because
+the local JCD step absorbs same-coordinate within-specialist
+disagreement before the joint projection sees it.
+\emph{None} is visible per-component,
 where each $\Pi_a\!\in\!\Mloc$ has zero residual. Hierarchical JCD
 reduces exposure to $1.7\!\times\!10^{-14}$ (\textsc{OSQP} solver
 floor), matching the no-composition reference (a single LLM on every
@@ -848,10 +858,10 @@ alone, before any routing.
 \toprule
 Relation & $\kappa_R$ & Pred./Obs. & Match \\
 \midrule
-\textsc{Negation}    & $1$            & $1.054$ & $95\%$ \\
-\textsc{Partition}   & $1$            & $1.069$ & $94\%$ \\
-\textsc{Disjunction} & $\tfrac{1}{2}$ & $1.026$ & $97\%$ \\
-\textsc{Conjunction} & $\tfrac{1}{2}$ & $0.830$ & $83\%$ \\
+\textsc{Negation}    & $1$            & $1.054$ & $94.6\%$ \\
+\textsc{Partition}   & $1$            & $1.069$ & $93.1\%$ \\
+\textsc{Disjunction} & $\tfrac{1}{2}$ & $1.026$ & $97.4\%$ \\
+\textsc{Conjunction} & $\tfrac{1}{2}$ & $0.830$ & $83.0\%$ \\
 \bottomrule
 \end{tabular}
 \caption{Theory vs.\ observed expected squared residual.
@@ -914,10 +924,13 @@ on shared coordinates is a weaker but still useful proxy
 \input{figures/disagreement_spearman_table}
 \caption{\textbf{Spearman rank correlation between
 disagreement-based predictors and $\eps^\star$}, restricted to
-cliques with $\eps^\star\!>\!0$. \emph{bound} is the
-Prop.~\ref{prop:disagree} closed-form upper bound;
-\emph{pair} is the mean pairwise inter-LLM disagreement on the
-clique.}
+cliques with $\eps^\star\!>\!10^{-9}$ (the FAGEN companion
+threshold; $n_{\eps>0}$ counts here are therefore smaller than
+the $33$--$94\%$ positive-rate figures in
+\S\ref{subsec:compres_results}, which use any $\eps^\star\!>\!0$).
+\emph{bound} is the Prop.~\ref{prop:disagree} closed-form upper
+bound; \emph{pair} is the mean pairwise inter-LLM disagreement
+on the clique.}
 \label{tab:spearman}
 \end{table}
 
@@ -958,8 +971,12 @@ compare all three to the geometric repair.
 \Cref{tab:mitigations} reports mean $\eps^\star$, the fraction of
 partitions retaining $\eps^\star\!>\!0.05$, and the fraction
 regressing relative to naive composition. Retrieval grounding
-\emph{regresses} on $20/30$ partitions (mean $\eps^\star$ rises
-from $0.214$ to $0.283$). Partition-aware prompting helps on
+\emph{regresses} on $20/30$ partitions: mean $\eps^\star$ rises
+from $0.260$ to $0.283$ on the matched $30$-partition baseline.
+(Table~\ref{tab:mitigations}'s ``Naive'' row reports $0.214$, the
+$100$-partition mean used for the LLM-aggregator comparison; the
+two subsets are flagged in the caption.) Partition-aware prompting
+helps on
 average ($0.066$) but $53\%$ of partitions still exceed the $0.05$
 band and $5/30$ regress. LLM-as-aggregator reduces mean
 $\eps^\star$ to $0.028$ but $15\%$ of partitions still exceed
@@ -1039,10 +1056,16 @@ test rejects at $p\!=\!2.6\!\times\!10^{-10}$.}
 Disclosing the coupling constraint (and peer quotes) reduces
 $\eps^\star$ as the theory predicts: paired mean $\eps^\star$
 falls from $0.519$ \textsc{Blind} to $0.298$ \textsc{Informed}
-on $16/20$ partitions, with $1$ unchanged and $3$ worsened
-(non-payoff partitions where \textsc{Blind} specialists were
-already roughly normalised; per-partition detail in
-App.~\ref{app:coupling}). The intervention is partial, not a
+on $16/20$ partitions, with $1$ unchanged and $3$ worsened.
+(The \textsc{Blind} mean of $0.519$ is higher than the
+random-assignment mean of $0.231$ on these same $20$ partitions
+in \S\ref{subsec:planner_disc} because the planner concentrates
+routing on high-confidence specialists per outcome, and the
+4-round paired sampling here uses the planner-chosen assignment
+in every round rather than random reshuffles across seeds.)
+The three worsening partitions are non-payoff multi-way forecasts
+where \textsc{Blind} specialists were already roughly normalised;
+per-partition detail in App.~\ref{app:coupling}. The intervention is partial, not a
 fix: $\eps^\star$ remains positive on every \textsc{Informed}
 partition, consistent with the LLM-side mitigations result
 (\S\ref{subsec:mitigations}) that no purely prompt-based
@@ -1134,21 +1157,23 @@ The log-payoff gain depends on how a downstream bettor allocates
 on top of the agent's quote. Brier is allocation-rule independent
 ($-0.018$ across all rules). Under the proportional rule (the
 agent's incoherence is passed through as allocation slack),
-JCD beats naive by $+0.168$ nats/bet
-($95\%$ CI $[+0.083, +0.263]$). Under stricter rules that
-themselves coherentise the quote (truncated Kelly, max-entropy),
-the gain shrinks to $+0.006$ nats: the bettor has already
-absorbed the agent's incoherence into its own strategy
-(Table~\ref{tab:alloc}).
+JCD beats naive by $+0.168$ nats/bet on the $1{,}252$ unique-YES
+subset ($95\%$ CI $[+0.083, +0.263]$); the $+0.115$ figure cited
+in the abstract is the same comparison averaged over the full
+$1{,}770$-bet ensemble (non-unique-YES bets contribute zero
+log-payoff). Under stricter rules that themselves coherentise
+the quote (truncated Kelly, max-entropy), the gain shrinks to
+$+0.006$ nats: the bettor has already absorbed the agent's
+incoherence into its own strategy (Table~\ref{tab:alloc}).
 
 \begin{table}[h]
 \centering
 \small
 \input{figures/allocation_rules_table}
 \caption{\textbf{JCD vs.\ naive log-payoff under three
-allocation rules} ($n\!=\!1{,}252$ bets; paired bootstrap).
-Proportional is the clearest behavioural-harm measure; Kelly
-and max-entropy themselves coherentise.}
+allocation rules} ($n\!=\!1{,}252$ unique-YES bets; paired
+bootstrap). Proportional is the clearest behavioural-harm
+measure; Kelly and max-entropy themselves coherentise.}
 \label{tab:alloc}
 \end{table}
 
