@@ -1,0 +1,30 @@
+{
+  "relations": [
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition"
+  ],
+  "meta": {
+    "spec": "anthropic/claude-haiku-4-5-20251001",
+    "source": "polymarket",
+    "checker": "NegChecker",
+    "K": 32,
+    "temperature": 0.7,
+    "seed": 20260425,
+    "n_eval": 14,
+    "platt_a": 0.9377520306186077,
+    "platt_b": -0.5838042895678274,
+    "estimated_cost_usd": 1.211136
+  }
+}

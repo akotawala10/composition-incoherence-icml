@@ -1,0 +1,43 @@
+{
+  "relations": [
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and"
+  ],
+  "meta": {
+    "spec": "azure/mini",
+    "source": "paleka",
+    "checker": "AndChecker",
+    "K": 32,
+    "temperature": 0.7,
+    "seed": 20260425,
+    "n_eval": 27,
+    "platt_a": 0.5373937731820347,
+    "platt_b": -1.0772064949758402,
+    "estimated_cost_usd": 0.21458039999999998
+  }
+}

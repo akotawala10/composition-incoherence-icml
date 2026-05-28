@@ -1,0 +1,1939 @@
+{
+  "meta": {
+    "K": 8,
+    "N_SEEDS": 4,
+    "N_TOP": 20,
+    "temperature": 0.7,
+    "planner_harness_source": "/Users/ananykotawala/Research/FAGEN/FMAI_Version/out/e1_planner_harness.json",
+    "n_calls_total": 4352,
+    "azure_llama_substitution": {
+      "model": "llama-4-maverick-17b-128e-fp8 (Azure AI Foundry)",
+      "replaces": "llama-3.3-70b-versatile (Groq)",
+      "reason": "Groq per-day token-per-minute hard limit reached during BLIND run",
+      "n_partitions_affected": 9,
+      "calls_added": 576
+    }
+  },
+  "bets": [
+    {
+      "rank": 0,
+      "orig_idx": 17,
+      "label": "Top MMLU score, year-end 2026",
+      "outcomes": [
+        "by 31 December 2026, the highest publicly reported MMLU score is held by an Anthropic Claude model",
+        "by 31 December 2026, the highest publicly reported MMLU score is held by an OpenAI GPT model",
+        "by 31 December 2026, the highest publicly reported MMLU score is held by a Google or DeepMind Gemini model",
+        "by 31 December 2026, the highest publicly reported MMLU score is held by a Meta Llama model or any other organisation"
+      ],
+      "m": 4,
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "resolution_date": "2026-12-31",
+      "baseline_eps_star": 0.27937500000000015,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.918,
+            0.5912499999999999,
+            0.45,
+            1.0
+          ],
+          "informed_quote": [
+            0.6932499999999999,
+            0.0425,
+            0.129062500000125,
+            1.0
+          ],
+          "blind_eps_star": 0.9807030747547056,
+          "informed_eps_star": 0.5086857184512675,
+          "blind_sum": 2.95925,
+          "informed_sum": 1.864812500000125,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.887,
+            0.6,
+            0.39625,
+            1.0
+          ],
+          "informed_quote": [
+            0.75,
+            0.042499999999999996,
+            0.0645,
+            1.0
+          ],
+          "blind_eps_star": 0.9455529577095793,
+          "informed_eps_star": 0.5359258344211445,
+          "blind_sum": 2.8832500000000003,
+          "informed_sum": 1.857,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.94,
+            0.5875,
+            0.40375,
+            1.0
+          ],
+          "informed_quote": [
+            0.6910000000000001,
+            0.017125,
+            0.0647375,
+            1.0
+          ],
+          "blind_eps_star": 0.9699310005527885,
+          "informed_eps_star": 0.49317817219667176,
+          "blind_sum": 2.93125,
+          "informed_sum": 1.7728625,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            1.0,
+            0.48375,
+            0.35875,
+            1.0
+          ],
+          "informed_quote": [
+            0.6775,
+            0.03225,
+            0.0370501,
+            1.0
+          ],
+          "blind_eps_star": 0.9288248623933363,
+          "informed_eps_star": 0.48157647098878287,
+          "blind_sum": 2.8425000000000002,
+          "informed_sum": 1.7468001,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "orig_idx": 19,
+      "label": "Largest US tech IPO of 2026 by company type",
+      "outcomes": [
+        "the largest US tech IPO of 2026 (by initial market capitalisation) is an AI infrastructure or AI model company",
+        "the largest US tech IPO of 2026 is a SaaS / enterprise software company",
+        "the largest US tech IPO of 2026 is a consumer-internet or fintech company",
+        "the largest US tech IPO of 2026 is in some other technology subsector"
+      ],
+      "m": 4,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "resolution_date": "2026-12-31",
+      "baseline_eps_star": 0.22624999999999995,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.6699999999999999,
+            1.0,
+            0.49250000000000005,
+            1.0
+          ],
+          "informed_quote": [
+            0.058750000000000004,
+            0.95875,
+            0.19000001253749998,
+            1.0
+          ],
+          "blind_eps_star": 1.0826770447983707,
+          "informed_eps_star": 0.7065071468246094,
+          "blind_sum": 3.1625,
+          "informed_sum": 2.2075000125375,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.6449999999999999,
+            1.0,
+            0.52625,
+            1.0
+          ],
+          "informed_quote": [
+            0.08499999999999999,
+            1.0,
+            0.3025,
+            1.0
+          ],
+          "blind_eps_star": 1.08579344068443,
+          "informed_eps_star": 0.7737772612321971,
+          "blind_sum": 3.17125,
+          "informed_sum": 2.3875,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.64,
+            1.0,
+            0.58875,
+            1.0
+          ],
+          "informed_quote": [
+            0.08625,
+            0.91,
+            0.22749999999999998,
+            1.0
+          ],
+          "blind_eps_star": 1.1143750000000001,
+          "informed_eps_star": 0.6879282756944943,
+          "blind_sum": 3.2287500000000002,
+          "informed_sum": 2.22375,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.645,
+            1.0,
+            0.525,
+            1.0
+          ],
+          "informed_quote": [
+            0.0625,
+            1.0,
+            0.14587499999999998,
+            1.0
+          ],
+          "blind_eps_star": 1.0851881557284586,
+          "informed_eps_star": 0.7246970164316947,
+          "blind_sum": 3.17,
+          "informed_sum": 2.208375,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "orig_idx": 1,
+      "label": "2026 US House majority",
+      "outcomes": [
+        "the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+        "the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+        "no party holds an outright majority in the US House of Representatives following the 2026 midterm elections"
+      ],
+      "m": 3,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "resolution_date": "2027-01-03",
+      "baseline_eps_star": 0.21578466310962263,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.52625,
+            0.23,
+            1.0
+          ],
+          "informed_quote": [
+            0.18,
+            0.027499999999999997,
+            0.6445000000000001
+          ],
+          "blind_eps_star": 0.4374580337015198,
+          "informed_eps_star": 0.08544783984006463,
+          "blind_sum": 1.75625,
+          "informed_sum": 0.8520000000000001,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.54,
+            0.2025,
+            1.0
+          ],
+          "informed_quote": [
+            0.128125,
+            0.095625,
+            0.5975
+          ],
+          "blind_eps_star": 0.4322108860267173,
+          "informed_eps_star": 0.10320136061764562,
+          "blind_sum": 1.7425000000000002,
+          "informed_sum": 0.82125,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.48624999999999996,
+            0.1925,
+            1.0
+          ],
+          "informed_quote": [
+            0.053500000000000006,
+            0.0385,
+            0.486
+          ],
+          "blind_eps_star": 0.394050480585927,
+          "informed_eps_star": 0.24364181359802217,
+          "blind_sum": 1.67875,
+          "informed_sum": 0.578,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.5,
+            0.2225,
+            1.0
+          ],
+          "informed_quote": [
+            0.10525,
+            0.095,
+            0.5625
+          ],
+          "blind_eps_star": 0.4177394522905396,
+          "informed_eps_star": 0.13697635136523878,
+          "blind_sum": 1.7225000000000001,
+          "informed_sum": 0.76275,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "orig_idx": 2,
+      "label": "2026 US Senate majority",
+      "outcomes": [
+        "the Republican Party holds an outright majority in the US Senate following the 2026 midterm elections",
+        "the Democratic Party holds an outright majority in the US Senate following the 2026 midterm elections",
+        "no party holds an outright majority in the US Senate following the 2026 midterm elections"
+      ],
+      "m": 3,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "resolution_date": "2027-01-03",
+      "baseline_eps_star": 0.20207259421636897,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.54125,
+            0.2375,
+            1.0
+          ],
+          "informed_quote": [
+            0.0085,
+            0.012375,
+            0.8278749999999999
+          ],
+          "blind_eps_star": 0.4504242791524453,
+          "informed_eps_star": 0.08732422821493094,
+          "blind_sum": 1.77875,
+          "informed_sum": 0.8487499999999999,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.48500000000000004,
+            0.22125,
+            1.0
+          ],
+          "informed_quote": [
+            0.000875,
+            0.0012625000000000002,
+            0.678125
+          ],
+          "blind_eps_star": 0.4081226071905354,
+          "informed_eps_star": 0.18460053169501797,
+          "blind_sum": 1.70625,
+          "informed_sum": 0.6802625,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.5725,
+            0.20750000000000002,
+            1.0
+          ],
+          "informed_quote": [
+            0.0,
+            0.000125,
+            0.7865
+          ],
+          "blind_eps_star": 0.4549004011868972,
+          "informed_eps_star": 0.1231921136883364,
+          "blind_sum": 1.78,
+          "informed_sum": 0.786625,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.52125,
+            0.245,
+            1.0
+          ],
+          "informed_quote": [
+            0.005625,
+            0.000125,
+            0.7605
+          ],
+          "blind_eps_star": 0.44257855941064295,
+          "informed_eps_star": 0.13495562542307502,
+          "blind_sum": 1.7662499999999999,
+          "informed_sum": 0.76625,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "orig_idx": 8,
+      "label": "2026 US CPI year-over-year, December print",
+      "outcomes": [
+        "US CPI year-over-year for December 2026 is below 2.0%",
+        "US CPI year-over-year for December 2026 is between 2.0% and 3.0%",
+        "US CPI year-over-year for December 2026 is between 3.0% and 4.0%",
+        "US CPI year-over-year for December 2026 is above 4.0%"
+      ],
+      "m": 4,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "Claude-Haiku"
+      ],
+      "resolution_date": "2027-01-15",
+      "baseline_eps_star": 0.17874999999999996,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.275,
+            0.47250000000000003,
+            0.0375,
+            0.1885714285714286
+          ],
+          "informed_quote": [
+            0.301,
+            0.499,
+            0.15125,
+            0.04
+          ],
+          "blind_eps_star": 0.01321428571428565,
+          "informed_eps_star": 0.004374999999999962,
+          "blind_sum": 0.9735714285714286,
+          "informed_sum": 0.9912500000000001,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.2675,
+            0.51625,
+            0.045,
+            0.184375
+          ],
+          "informed_quote": [
+            0.255,
+            0.503,
+            0.03125,
+            0.04
+          ],
+          "blind_eps_star": 0.006562499999999943,
+          "informed_eps_star": 0.08537499999999998,
+          "blind_sum": 1.013125,
+          "informed_sum": 0.82925,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.29625,
+            0.50125,
+            0.03,
+            0.17
+          ],
+          "informed_quote": [
+            0.299,
+            0.504,
+            0.03,
+            0.16
+          ],
+          "blind_eps_star": 0.0012499999999999734,
+          "informed_eps_star": 0.003500000000000003,
+          "blind_sum": 0.9975,
+          "informed_sum": 0.993,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.29875,
+            0.45875,
+            0.038,
+            0.06857142857142857
+          ],
+          "informed_quote": [
+            0.434,
+            0.594,
+            0.03,
+            0.04
+          ],
+          "blind_eps_star": 0.06796428571428564,
+          "informed_eps_star": 0.04900000000000007,
+          "blind_sum": 0.8640714285714287,
+          "informed_sum": 1.098,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "orig_idx": 13,
+      "label": "2026 Booker Prize winner nationality",
+      "outcomes": [
+        "the 2026 Booker Prize for Fiction is won by an author from the United Kingdom",
+        "the 2026 Booker Prize for Fiction is won by an author from the United States",
+        "the 2026 Booker Prize for Fiction is won by an author from a country other than the United Kingdom or the United States"
+      ],
+      "m": 3,
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b"
+      ],
+      "resolution_date": "2026-11-15",
+      "baseline_eps_star": 0.15083275782578975,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            1.0,
+            0.13874999999999998,
+            0.8374999999999999
+          ],
+          "informed_quote": [
+            0.35425,
+            0.0125,
+            1.0
+          ],
+          "blind_eps_star": 0.6082390052438268,
+          "informed_eps_star": 0.2508042688033838,
+          "blind_sum": 1.9762499999999998,
+          "informed_sum": 1.3667500000000001,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            1.0,
+            0.11375,
+            1.0
+          ],
+          "informed_quote": [
+            0.114,
+            0.001875,
+            1.0
+          ],
+          "blind_eps_star": 0.7161976420653728,
+          "informed_eps_star": 0.08063197644235202,
+          "blind_sum": 2.11375,
+          "informed_sum": 1.115875,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            1.0,
+            0.125,
+            1.0
+          ],
+          "informed_quote": [
+            0.34375,
+            0.00375,
+            1.0
+          ],
+          "blind_eps_star": 0.7180703308172536,
+          "informed_eps_star": 0.2430968814073928,
+          "blind_sum": 2.125,
+          "informed_sum": 1.3475,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.9375,
+            0.16,
+            0.925
+          ],
+          "informed_quote": [
+            0.265,
+            0.037375,
+            1.0
+          ],
+          "blind_eps_star": 0.6305181401038356,
+          "informed_eps_star": 0.19107430655375943,
+          "blind_sum": 2.0225,
+          "informed_sum": 1.302375,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "orig_idx": 9,
+      "label": "Top gold-medal nation, 2028 Summer Olympics",
+      "outcomes": [
+        "the United States wins the most gold medals at the 2028 Summer Olympics in Los Angeles",
+        "China wins the most gold medals at the 2028 Summer Olympics in Los Angeles",
+        "a country other than the United States or China wins the most gold medals at the 2028 Summer Olympics"
+      ],
+      "m": 3,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "resolution_date": "2028-08-15",
+      "baseline_eps_star": 0.1363990010960491,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.74625,
+            0.16125,
+            1.0
+          ],
+          "informed_quote": [
+            0.4575,
+            0.00525,
+            0.8095
+          ],
+          "blind_eps_star": 0.5517663398124245,
+          "informed_eps_star": 0.1888704913426128,
+          "blind_sum": 1.9075,
+          "informed_sum": 1.27225,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.79625,
+            0.12125000000000001,
+            1.0
+          ],
+          "informed_quote": [
+            0.7186250000000001,
+            0.0032500000000000003,
+            0.8215
+          ],
+          "blind_eps_star": 0.5759414846579469,
+          "informed_eps_star": 0.3819398778767414,
+          "blind_sum": 1.9175,
+          "informed_sum": 1.5433750000000002,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.7725,
+            0.14,
+            NaN
+          ],
+          "informed_quote": [
+            0.7925,
+            0.14687499999999998,
+            0.772
+          ],
+          "blind_eps_star": null,
+          "informed_eps_star": null,
+          "blind_sum": null,
+          "informed_sum": null,
+          "parse_failed": true
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.8300000000000001,
+            0.17,
+            1.0
+          ],
+          "informed_quote": [
+            0.6875,
+            0.007625,
+            0.8640000000000001
+          ],
+          "blind_eps_star": 0.6110237311267052,
+          "informed_eps_star": 0.3900439278145476,
+          "blind_sum": 2.0,
+          "informed_sum": 1.559125,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "orig_idx": 6,
+      "label": "US unemployment rate, June 2026",
+      "outcomes": [
+        "the US unemployment rate (BLS U-3) for June 2026 is below 4.0%",
+        "the US unemployment rate (BLS U-3) for June 2026 is between 4.0% and 4.5%",
+        "the US unemployment rate (BLS U-3) for June 2026 is between 4.5% and 5.0%",
+        "the US unemployment rate (BLS U-3) for June 2026 is above 5.0%"
+      ],
+      "m": 4,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "Claude-Haiku",
+        "GPT-5.4-mini"
+      ],
+      "resolution_date": "2026-07-05",
+      "baseline_eps_star": 0.12624999999999997,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.32999999999999996,
+            0.04025,
+            0.04375,
+            0.23249999999999998
+          ],
+          "informed_quote": [
+            0.684,
+            0.04,
+            0.045,
+            0.586
+          ],
+          "blind_eps_star": 0.17675000000000002,
+          "informed_eps_star": 0.20018741219167602,
+          "blind_sum": 0.6465,
+          "informed_sum": 1.355,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.3375,
+            0.04,
+            0.044375,
+            0.2325
+          ],
+          "informed_quote": [
+            0.683,
+            0.04,
+            0.045,
+            0.578
+          ],
+          "blind_eps_star": 0.17281249999999992,
+          "informed_eps_star": 0.19412753539876826,
+          "blind_sum": 0.654375,
+          "informed_sum": 1.346,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.37124999999999997,
+            0.04,
+            0.04375,
+            0.26375000000000004
+          ],
+          "informed_quote": [
+            0.652,
+            0.04,
+            0.045,
+            0.545
+          ],
+          "blind_eps_star": 0.140625,
+          "informed_eps_star": 0.15175473633465286,
+          "blind_sum": 0.71875,
+          "informed_sum": 1.282,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.35625,
+            0.04,
+            0.045,
+            0.2575
+          ],
+          "informed_quote": [
+            0.657,
+            0.04,
+            0.045,
+            0.559
+          ],
+          "blind_eps_star": 0.15062499999999993,
+          "informed_eps_star": 0.16417368851311115,
+          "blind_sum": 0.69875,
+          "informed_sum": 1.3010000000000002,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "orig_idx": 5,
+      "label": "2026 H1 SP500 return bucket",
+      "outcomes": [
+        "the SP500 index closes 2026-H1 down more than 5% year-to-date",
+        "the SP500 index closes 2026-H1 between -5% and +5% year-to-date",
+        "the SP500 index closes 2026-H1 up between 5% and 15% year-to-date",
+        "the SP500 index closes 2026-H1 up more than 15% year-to-date"
+      ],
+      "m": 4,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b"
+      ],
+      "resolution_date": "2026-06-30",
+      "baseline_eps_star": 0.11562500000000009,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.34625,
+            0.7625,
+            0.245,
+            0.6812499999999999
+          ],
+          "informed_quote": [
+            0.028125,
+            1.0,
+            0.23837499999999998,
+            1.0
+          ],
+          "blind_eps_star": 0.517743501488269,
+          "informed_eps_star": 0.7467353321291286,
+          "blind_sum": 2.0349999999999997,
+          "informed_sum": 2.2664999999999997,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.33875,
+            0.88125,
+            0.22625,
+            0.575
+          ],
+          "informed_quote": [
+            0.04000000000000001,
+            0.40625,
+            0.175,
+            1.0
+          ],
+          "blind_eps_star": 0.5117265505130645,
+          "informed_eps_star": 0.3387396216122348,
+          "blind_sum": 2.02125,
+          "informed_sum": 1.62125,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.3575,
+            0.88125,
+            0.26,
+            0.575
+          ],
+          "informed_quote": [
+            0.036500000000000005,
+            0.525,
+            0.16162500000000002,
+            1.0
+          ],
+          "blind_eps_star": 0.5369633949348874,
+          "informed_eps_star": 0.406530922101874,
+          "blind_sum": 2.07375,
+          "informed_sum": 1.723125,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.3125,
+            0.7625,
+            0.24375000000000002,
+            0.46875
+          ],
+          "informed_quote": [
+            0.025500000000000002,
+            0.88125,
+            0.15475,
+            1.0
+          ],
+          "blind_eps_star": 0.39375000000000004,
+          "informed_eps_star": 0.6425718588220309,
+          "blind_sum": 1.7875,
+          "informed_sum": 2.0614999999999997,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "orig_idx": 14,
+      "label": "2026 Academy Award Best Picture winner type",
+      "outcomes": [
+        "the 2026 Academy Award for Best Picture (presented in March 2027) goes to a major-studio production",
+        "the 2026 Academy Award for Best Picture (presented in March 2027) goes to a streaming-platform production (e.g. Netflix, Apple TV, Amazon)",
+        "the 2026 Academy Award for Best Picture (presented in March 2027) goes to an independent / arthouse production"
+      ],
+      "m": 3,
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b"
+      ],
+      "resolution_date": "2027-03-08",
+      "baseline_eps_star": 0.10464473629061966,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            1.0,
+            0.30375,
+            1.0
+          ],
+          "informed_quote": [
+            0.478,
+            0.00375,
+            1.0
+          ],
+          "blind_eps_star": 0.7695869427816456,
+          "informed_eps_star": 0.3380178434639213,
+          "blind_sum": 2.30375,
+          "informed_sum": 1.48175,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            1.0,
+            0.31625000000000003,
+            1.0
+          ],
+          "informed_quote": [
+            1.0,
+            0.0162625,
+            1.0
+          ],
+          "blind_eps_star": 0.7746057464930144,
+          "informed_eps_star": 0.7072937642212392,
+          "blind_sum": 2.31625,
+          "informed_sum": 2.0162625,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            1.0,
+            0.38875,
+            1.0
+          ],
+          "informed_quote": [
+            0.38899999999999996,
+            0.00625,
+            1.0
+          ],
+          "blind_eps_star": 0.8069241367687547,
+          "informed_eps_star": 0.27513553478240504,
+          "blind_sum": 2.38875,
+          "informed_sum": 1.3952499999999999,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            NaN,
+            0.4175,
+            1.0
+          ],
+          "informed_quote": [
+            0.6113333333333334,
+            0.18,
+            1.0
+          ],
+          "blind_eps_star": null,
+          "informed_eps_star": 0.4682565773400544,
+          "blind_sum": null,
+          "informed_sum": 1.7913333333333334,
+          "parse_failed": true
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "orig_idx": 10,
+      "label": "2026 FIFA World Cup winner confederation",
+      "outcomes": [
+        "the 2026 FIFA World Cup is won by a UEFA (European) national team",
+        "the 2026 FIFA World Cup is won by a CONMEBOL (South American) national team",
+        "the 2026 FIFA World Cup is won by a national team from any other confederation"
+      ],
+      "m": 3,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "resolution_date": "2026-07-19",
+      "baseline_eps_star": 0.089489291724392,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.46625,
+            0.17875,
+            NaN
+          ],
+          "informed_quote": [
+            0.707375,
+            0.28925,
+            1.0
+          ],
+          "blind_eps_star": null,
+          "informed_eps_star": null,
+          "blind_sum": null,
+          "informed_sum": null,
+          "parse_failed": true
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.505,
+            0.175,
+            1.0
+          ],
+          "informed_quote": [
+            0.0,
+            0.07875000000000001,
+            0.8585714285714285
+          ],
+          "blind_eps_star": 0.39766506006940056,
+          "informed_eps_star": 0.03618749008670693,
+          "blind_sum": 1.68,
+          "informed_sum": 0.9373214285714285,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.5025,
+            0.17875,
+            1.0
+          ],
+          "informed_quote": [
+            0.015125,
+            0.056,
+            0.751
+          ],
+          "blind_eps_star": 0.39774952859808643,
+          "informed_eps_star": 0.10269617913210466,
+          "blind_sum": 1.68125,
+          "informed_sum": 0.822125,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.46749999999999997,
+            0.17625,
+            1.0
+          ],
+          "informed_quote": [
+            0.078,
+            0.176625,
+            0.8477142857142858
+          ],
+          "blind_eps_star": 0.374622726886664,
+          "informed_eps_star": 0.059085614155816896,
+          "blind_sum": 1.6437499999999998,
+          "informed_sum": 1.1023392857142857,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "orig_idx": 4,
+      "label": "Next FOMC decision (June 2026 meeting)",
+      "outcomes": [
+        "the US Federal Reserve cuts the federal funds rate by 25bps or more at the June 2026 FOMC meeting",
+        "the US Federal Reserve holds the federal funds rate unchanged at the June 2026 FOMC meeting",
+        "the US Federal Reserve raises the federal funds rate by 25bps or more at the June 2026 FOMC meeting"
+      ],
+      "m": 3,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "GPT-5.4-mini"
+      ],
+      "resolution_date": "2026-06-18",
+      "baseline_eps_star": 0.08876760388790499,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.43124999999999997,
+            1.0,
+            0.13625
+          ],
+          "informed_quote": [
+            0.001375,
+            0.57325,
+            0.00125
+          ],
+          "blind_eps_star": 0.33399452652700756,
+          "informed_eps_star": 0.24486868292005004,
+          "blind_sum": 1.5675,
+          "informed_sum": 0.575875,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.40875,
+            1.0,
+            0.11625
+          ],
+          "informed_quote": [
+            0.000125,
+            0.630625,
+            0.000375
+          ],
+          "blind_eps_star": 0.31153225154067116,
+          "informed_eps_star": 0.21297008054732317,
+          "blind_sum": 1.525,
+          "informed_sum": 0.631125,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.48375,
+            1.0,
+            0.10125
+          ],
+          "informed_quote": [
+            0.0005,
+            0.5577142857142857,
+            0.00025
+          ],
+          "blind_eps_star": 0.35673322490342846,
+          "informed_eps_star": 0.2549207634996909,
+          "blind_sum": 1.5850000000000002,
+          "informed_sum": 0.5584642857142856,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.4375,
+            1.0,
+            0.08625000000000001
+          ],
+          "informed_quote": [
+            0.000125,
+            0.5785,
+            0.0
+          ],
+          "blind_eps_star": 0.32115757425288916,
+          "informed_eps_star": 0.24328096967977855,
+          "blind_sum": 1.52375,
+          "informed_sum": 0.5786250000000001,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "orig_idx": 18,
+      "label": "Top SWE-Bench Verified score, year-end 2026",
+      "outcomes": [
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by an Anthropic Claude model",
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by an OpenAI GPT model",
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by a Google Gemini model",
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by some other model"
+      ],
+      "m": 4,
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "resolution_date": "2026-12-31",
+      "baseline_eps_star": 0.08125000000000004,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            1.0,
+            0.6174999999999999,
+            0.3725,
+            1.0
+          ],
+          "informed_quote": [
+            0.760625,
+            0.11,
+            0.385125,
+            1.0
+          ],
+          "blind_eps_star": 1.0054145082170503,
+          "informed_eps_star": 0.6705825980692709,
+          "blind_sum": 2.99,
+          "informed_sum": 2.25575,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            1.0,
+            0.5775,
+            0.315,
+            1.0
+          ],
+          "informed_quote": [
+            0.33399999999999996,
+            0.175,
+            0.2137501875,
+            1.0
+          ],
+          "blind_eps_star": 0.963704873565208,
+          "informed_eps_star": 0.3614347649328923,
+          "blind_sum": 2.8925,
+          "informed_sum": 1.7227501875,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            1.0,
+            0.57375,
+            0.32499999999999996,
+            1.0
+          ],
+          "informed_quote": [
+            0.8935,
+            0.06875,
+            0.31950000125,
+            1.0
+          ],
+          "blind_eps_star": 0.9649808396197995,
+          "informed_eps_star": 0.7113212623693671,
+          "blind_sum": 2.8987499999999997,
+          "informed_sum": 2.28175000125,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            1.0,
+            0.58375,
+            0.3125,
+            1.0
+          ],
+          "informed_quote": [
+            0.6359999999999999,
+            0.07875,
+            0.282625,
+            1.0
+          ],
+          "blind_eps_star": 0.9663044400360238,
+          "informed_eps_star": 0.5369603831987979,
+          "blind_sum": 2.89625,
+          "informed_sum": 1.997375,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "orig_idx": 11,
+      "label": "2026 Wimbledon men's singles winner",
+      "outcomes": [
+        "Carlos Alcaraz wins the 2026 Wimbledon men's singles championship",
+        "Jannik Sinner wins the 2026 Wimbledon men's singles championship",
+        "Novak Djokovic wins the 2026 Wimbledon men's singles championship",
+        "the 2026 Wimbledon men's singles championship is won by some other player"
+      ],
+      "m": 4,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "Llama-3.3-70b"
+      ],
+      "resolution_date": "2026-07-13",
+      "baseline_eps_star": 0.07787499999999994,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.26875000000000004,
+            0.225,
+            1.0,
+            1.0
+          ],
+          "informed_quote": [
+            0.005749999999999999,
+            0.00575,
+            0.5431250000000001,
+            1.0
+          ],
+          "blind_eps_star": 0.7892094541374932,
+          "informed_eps_star": 0.3841334505253351,
+          "blind_sum": 2.49375,
+          "informed_sum": 1.5546250000000001,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.22250000000000003,
+            0.21875,
+            1.0,
+            1.0
+          ],
+          "informed_quote": [
+            0.001,
+            0.01125,
+            0.514375,
+            1.0
+          ],
+          "blind_eps_star": 0.7728892627666657,
+          "informed_eps_star": 0.3638933673653588,
+          "blind_sum": 2.44125,
+          "informed_sum": 1.5266250000000001,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.25625,
+            0.21875,
+            1.0,
+            1.0
+          ],
+          "informed_quote": [
+            0.0,
+            0.06,
+            1.0,
+            1.0
+          ],
+          "blind_eps_star": 0.7832723823804846,
+          "informed_eps_star": 0.7096477999684069,
+          "blind_sum": 2.475,
+          "informed_sum": 2.06,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.25125000000000003,
+            0.23625000000000002,
+            1.0,
+            1.0
+          ],
+          "informed_quote": [
+            0.0055,
+            0.0041375000000000006,
+            0.81275,
+            1.0
+          ],
+          "blind_eps_star": 0.7867277960006244,
+          "informed_eps_star": 0.5747422467126024,
+          "blind_sum": 2.4875,
+          "informed_sum": 1.8223875,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "orig_idx": 3,
+      "label": "Next UK general election year",
+      "outcomes": [
+        "the next UK general election occurs in calendar year 2026",
+        "the next UK general election occurs in calendar year 2027",
+        "the next UK general election occurs in calendar year 2028",
+        "the next UK general election occurs in 2029 or later"
+      ],
+      "m": 4,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "resolution_date": "2029-12-31",
+      "baseline_eps_star": 0.06562500000000004,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.185,
+            0.41,
+            0.20500000000000002,
+            1.0
+          ],
+          "informed_quote": [
+            0.000625,
+            0.0,
+            0.000625,
+            0.8981250000000001
+          ],
+          "blind_eps_star": 0.40037482438335203,
+          "informed_eps_star": 0.05031249999999998,
+          "blind_sum": 1.8,
+          "informed_sum": 0.899375,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.1525,
+            0.31375000000000003,
+            0.1925,
+            1.0
+          ],
+          "informed_quote": [
+            0.00125,
+            0.00625,
+            0.0,
+            0.894
+          ],
+          "blind_eps_star": 0.32967550333623524,
+          "informed_eps_star": 0.049250000000000016,
+          "blind_sum": 1.65875,
+          "informed_sum": 0.9015,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.39625,
+            0.395,
+            0.15125,
+            1.0
+          ],
+          "informed_quote": [
+            0.0,
+            0.0,
+            0.0,
+            0.3960000000000001
+          ],
+          "blind_eps_star": 0.4812159078833533,
+          "informed_eps_star": 0.30199999999999994,
+          "blind_sum": 1.9425,
+          "informed_sum": 0.3960000000000001,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.14625,
+            0.39,
+            0.185,
+            1.0
+          ],
+          "informed_quote": [
+            0.000625,
+            0.0,
+            0.0,
+            0.7865
+          ],
+          "blind_eps_star": 0.3628554292001155,
+          "informed_eps_star": 0.1064375,
+          "blind_sum": 1.72125,
+          "informed_sum": 0.787125,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "orig_idx": 7,
+      "label": "2026 H1 BTC return bucket",
+      "outcomes": [
+        "Bitcoin closes 2026-H1 down more than 10% year-to-date",
+        "Bitcoin closes 2026-H1 within +/-10% year-to-date",
+        "Bitcoin closes 2026-H1 up more than 10% year-to-date"
+      ],
+      "m": 3,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "GPT-5.4-mini"
+      ],
+      "resolution_date": "2026-06-30",
+      "baseline_eps_star": 0.05701333908247561,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.4325,
+            0.21250000000000002,
+            0.575
+          ],
+          "informed_quote": [
+            0.212,
+            1.0,
+            0.355
+          ],
+          "blind_eps_star": 0.12701705922171752,
+          "informed_eps_star": 0.3273576026305178,
+          "blind_sum": 1.22,
+          "informed_sum": 1.567,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.42000000000000004,
+            0.6625000000000001,
+            0.57375
+          ],
+          "informed_quote": [
+            0.022250000000000002,
+            1.0,
+            0.018750000000000003
+          ],
+          "blind_eps_star": 0.3788861141556919,
+          "informed_eps_star": 0.02367136103677474,
+          "blind_sum": 1.65625,
+          "informed_sum": 1.0410000000000001,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.41250000000000003,
+            0.4375,
+            0.5774999999999999
+          ],
+          "informed_quote": [
+            0.01525,
+            1.0,
+            0.149
+          ],
+          "blind_eps_star": 0.24681724007856498,
+          "informed_eps_star": 0.10645685745878469,
+          "blind_sum": 1.4275,
+          "informed_sum": 1.16425,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.41375,
+            0.325,
+            0.59125
+          ],
+          "informed_quote": [
+            0.084,
+            1.0,
+            0.261
+          ],
+          "blind_eps_star": 0.19052558883257656,
+          "informed_eps_star": 0.20277203949262834,
+          "blind_sum": 1.33,
+          "informed_sum": 1.3450000000000002,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "orig_idx": 0,
+      "label": "2028 US Presidential winner",
+      "outcomes": [
+        "the Republican Party nominee wins the 2028 US Presidential election",
+        "the Democratic Party nominee wins the 2028 US Presidential election",
+        "an independent or third-party candidate wins the 2028 US Presidential election"
+      ],
+      "m": 3,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "resolution_date": "2028-11-07",
+      "baseline_eps_star": 0.036445235742595145,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.52125,
+            0.54625,
+            0.18939999999999996
+          ],
+          "informed_quote": [
+            0.265,
+            0.29,
+            0.7605
+          ],
+          "blind_eps_star": 0.14832128415481477,
+          "informed_eps_star": 0.182154009929327,
+          "blind_sum": 1.2569,
+          "informed_sum": 1.3155,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.52875,
+            0.5425,
+            0.18966666666666665
+          ],
+          "informed_quote": [
+            0.268,
+            0.281,
+            1.0
+          ],
+          "blind_eps_star": 0.15064030773605985,
+          "informed_eps_star": 0.3169652977851046,
+          "blind_sum": 1.2609166666666667,
+          "informed_sum": 1.549,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.51375,
+            0.52875,
+            0.19
+          ],
+          "informed_quote": [
+            0.281,
+            0.296,
+            0.81775
+          ],
+          "blind_eps_star": 0.13423393758658791,
+          "informed_eps_star": 0.2279090187626049,
+          "blind_sum": 1.2325,
+          "informed_sum": 1.39475,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.515,
+            0.53125,
+            0.18899999999999997
+          ],
+          "informed_quote": [
+            0.28,
+            0.296,
+            0.7575000000000001
+          ],
+          "blind_eps_star": 0.1358216508268596,
+          "informed_eps_star": 0.19254631477474027,
+          "blind_sum": 1.2352500000000002,
+          "informed_sum": 1.3335000000000001,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "orig_idx": 12,
+      "label": "2026 NBA Finals winner conference",
+      "outcomes": [
+        "the 2026 NBA Finals is won by an Eastern Conference team",
+        "the 2026 NBA Finals is won by a Western Conference team"
+      ],
+      "m": 2,
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini"
+      ],
+      "resolution_date": "2026-06-30",
+      "baseline_eps_star": 0.015026019100214128,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            0.5125,
+            0.52
+          ],
+          "informed_quote": [
+            0.48,
+            0.488
+          ],
+          "blind_eps_star": 0.022980970388562776,
+          "informed_eps_star": 0.02262741699796954,
+          "blind_sum": 1.0325,
+          "informed_sum": 0.968,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            0.525,
+            0.53
+          ],
+          "informed_quote": [
+            0.47,
+            0.475
+          ],
+          "blind_eps_star": 0.038890872965260226,
+          "informed_eps_star": 0.03889087296526011,
+          "blind_sum": 1.0550000000000002,
+          "informed_sum": 0.945,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            0.51125,
+            0.52125
+          ],
+          "informed_quote": [
+            0.479,
+            0.489
+          ],
+          "blind_eps_star": 0.022980970388562776,
+          "informed_eps_star": 0.02262741699796954,
+          "blind_sum": 1.0325,
+          "informed_sum": 0.968,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            0.5137499999999999,
+            0.53625
+          ],
+          "informed_quote": [
+            0.464,
+            0.486
+          ],
+          "blind_eps_star": 0.03535533905932725,
+          "informed_eps_star": 0.03535533905932741,
+          "blind_sum": 1.0499999999999998,
+          "informed_sum": 0.95,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "orig_idx": 15,
+      "label": "2026 Grammy Album of the Year genre",
+      "outcomes": [
+        "the 2026 Grammy Award for Album of the Year is won by a primarily pop record",
+        "the 2026 Grammy Award for Album of the Year is won by a primarily hip-hop or R&B record",
+        "the 2026 Grammy Award for Album of the Year is won by a primarily rock or alternative record",
+        "the 2026 Grammy Award for Album of the Year is won by a record in some other genre"
+      ],
+      "m": 4,
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "resolution_date": "2027-02-08",
+      "baseline_eps_star": 0.005312499999999942,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            1.0,
+            0.1775,
+            0.44125,
+            1.0
+          ],
+          "informed_quote": [
+            0.279875,
+            0.0425,
+            0.61725,
+            1.0
+          ],
+          "blind_eps_star": 0.8521782750692486,
+          "informed_eps_star": 0.5202259575175002,
+          "blind_sum": 2.61875,
+          "informed_sum": 1.939625,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            1.0,
+            0.18,
+            0.425,
+            1.0
+          ],
+          "informed_quote": [
+            0.2825,
+            0.02,
+            0.0100125,
+            1.0
+          ],
+          "blind_eps_star": 0.8444080767022542,
+          "informed_eps_star": 0.20100590826204584,
+          "blind_sum": 2.605,
+          "informed_sum": 1.3125125,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            1.0,
+            0.19625,
+            0.41000000000000003,
+            1.0
+          ],
+          "informed_quote": [
+            0.196,
+            0.05625,
+            0.003,
+            1.0
+          ],
+          "blind_eps_star": 0.840603391915593,
+          "informed_eps_star": 0.1496030163465964,
+          "blind_sum": 2.60625,
+          "informed_sum": 1.25525,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            1.0,
+            0.22250000000000003,
+            0.42374999999999996,
+            1.0
+          ],
+          "informed_quote": [
+            0.223,
+            0.06,
+            0.388625,
+            1.0
+          ],
+          "blind_eps_star": 0.8538561427430267,
+          "informed_eps_star": 0.358182979599813,
+          "blind_sum": 2.64625,
+          "informed_sum": 1.6716250000000001,
+          "parse_failed": false
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "orig_idx": 16,
+      "label": "2026 Pulitzer Prize Fiction winner setting",
+      "outcomes": [
+        "the 2026 Pulitzer Prize for Fiction is awarded to a novel set primarily in the United States",
+        "the 2026 Pulitzer Prize for Fiction is awarded to a novel set primarily outside the United States",
+        "the 2026 Pulitzer Prize for Fiction is not awarded in 2026"
+      ],
+      "m": 3,
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b"
+      ],
+      "resolution_date": "2026-05-04",
+      "baseline_eps_star": 0.0014433756729740456,
+      "seeds": [
+        {
+          "seed": 0,
+          "blind_quote": [
+            1.0,
+            0.4825,
+            0.6454500000000001
+          ],
+          "informed_quote": [
+            0.8273333333333334,
+            0.009000000000000001,
+            1.0
+          ],
+          "blind_eps_star": 0.6512222361324385,
+          "informed_eps_star": 0.5850822354355174,
+          "blind_sum": 2.1279500000000002,
+          "informed_sum": 1.8363333333333334,
+          "parse_failed": false
+        },
+        {
+          "seed": 1,
+          "blind_quote": [
+            1.0,
+            0.4075,
+            0.649125
+          ],
+          "informed_quote": [
+            0.407,
+            0.008125,
+            1.0
+          ],
+          "blind_eps_star": 0.6100427281824882,
+          "informed_eps_star": 0.2879071302086838,
+          "blind_sum": 2.056625,
+          "informed_sum": 1.415125,
+          "parse_failed": false
+        },
+        {
+          "seed": 2,
+          "blind_quote": [
+            1.0,
+            0.43,
+            0.8825000000000001
+          ],
+          "informed_quote": [
+            0.5725,
+            0.009250000000000001,
+            1.0
+          ],
+          "blind_eps_star": 0.757827899328073,
+          "informed_eps_star": 0.4049242984805926,
+          "blind_sum": 2.3125,
+          "informed_sum": 1.58175,
+          "parse_failed": false
+        },
+        {
+          "seed": 3,
+          "blind_quote": [
+            1.0,
+            0.41875,
+            0.8833375
+          ],
+          "informed_quote": [
+            1.0,
+            0.009000000000000001,
+            1.0
+          ],
+          "blind_eps_star": 0.7519934387699969,
+          "informed_eps_star": 0.7071640545163477,
+          "blind_sum": 2.3020875,
+          "informed_sum": 2.009,
+          "parse_failed": false
+        }
+      ]
+    }
+  ]
+}

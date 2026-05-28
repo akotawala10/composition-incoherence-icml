@@ -1,0 +1,12 @@
+\begin{tabular}{@{}lrrrl@{}}
+\toprule
+Method & $\overline{\eps^\star}$ & frac.\ $>\!0.05$ & \% reg. & cost \\
+\midrule
+Naive             & $0.214$            & $0.86$ & ---   & 0 \\
+Retrieval         & $0.283$            & $0.87$ & $67$  & 1 search \\
+Partition prompt  & $0.066$            & $0.53$ & $17$  & 0 \\
+LLM-aggregator    & $0.028$            & $0.15$ & $7$   & 1 LLM \\
+\midrule
+Hier.\ JCD        & $\le\!10^{-16}$    & $0$    & $0$   & 1 QP \\
+\bottomrule
+\end{tabular}

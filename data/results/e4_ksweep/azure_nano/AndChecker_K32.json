@@ -1,0 +1,43 @@
+{
+  "relations": [
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and",
+    "and"
+  ],
+  "meta": {
+    "spec": "azure/nano",
+    "source": "paleka",
+    "checker": "AndChecker",
+    "K": 32,
+    "temperature": 0.7,
+    "seed": 20260425,
+    "n_eval": 27,
+    "platt_a": 0.9771112611125536,
+    "platt_b": -0.8898490728828804,
+    "estimated_cost_usd": 0.1050016
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "relations": [
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition"
+  ],
+  "meta": {
+    "spec": "azure/mini",
+    "source": "polymarket",
+    "checker": "NegChecker",
+    "K": 32,
+    "temperature": 0.7,
+    "seed": 20260425,
+    "n_eval": 14,
+    "platt_a": 1.131030634446515,
+    "platt_b": -0.8650828975815442,
+    "estimated_cost_usd": 0.34722509999999995
+  }
+}

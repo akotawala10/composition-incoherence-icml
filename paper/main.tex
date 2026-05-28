@@ -1,0 +1,2200 @@
+%%%%%%%% ICML 2026 SUBMISSION %%%%%%%%%%%%%%%%%
+% Bounding Compositional Incoherence in Foundation Models
+% Workshop: "Combining Theory and Benchmarks" (CTB), ICML 2026
+% Camera-ready. Anany Kotawala (Princeton).
+
+\documentclass{article}
+
+% Recommended, but optional, packages for figures and better typesetting:
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs} % for professional tables
+\usepackage{longtable} % for appendix multi-page tables
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{tikz}
+
+% hyperref makes hyperlinks in the resulting PDF.
+% If your build breaks (sometimes temporarily if a hyperlink spans a page)
+% please comment out the following usepackage line and replace
+% \usepackage{icml2026} with \usepackage[nohyperref]{icml2026} above.
+\usepackage{hyperref}
+
+% Attempt to make hyperref and algorithmic work together better:
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% arXiv preprint: extended version of work appearing at three ICML 2026 workshops.
+\usepackage[accepted]{icml2026}
+
+% Replace the default workshop banner with a 3-workshop disclosure for the
+% arXiv version: each preliminary workshop variant of this paper is cited.
+\makeatletter
+\renewcommand{\ICML@appearing}{Preliminary versions of this work
+appeared at the ICML 2026 Workshop on Combining Theory and Benchmarks
+(CTB), the ICML 2026 Workshop on Statistical Frameworks for
+Uncertainty in Agentic Systems (AgenticUQ), and the ICML 2026
+Workshop on Failure Modes of Agentic AI (FAGEN), Seoul, South Korea.
+Copyright 2026 by the author.}
+\makeatother
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+
+% if you use cleveref..
+\usepackage[capitalize,noabbrev]{cleveref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TIGHTER VERTICAL SPACING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Float spacing (default is ~12-20pt; halve it)
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{6pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{8pt plus 2pt minus 2pt}
+% Caption spacing
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{0pt}
+% Theorem/proof environment spacing — tighten preskip and postskip
+\makeatletter
+\def\thm@space@setup{\thm@preskip=4pt plus 1pt minus 1pt \thm@postskip=4pt plus 1pt minus 1pt}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% cleveref: corollary/proposition/lemma share the theorem counter via
+% \newtheorem{...}[theorem]{...}, but cleveref defaults all such labels to
+% "Theorem". Override explicitly so \Cref{cor:...} renders "Corollary 3.X"
+% rather than "Theorem 3.X".
+\crefname{corollary}{Corollary}{Corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{proposition}{Proposition}{Propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{lemma}{Lemma}{Lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{definition}{Definition}{Definitions}
+\Crefname{definition}{Definition}{Definitions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MACROS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\PC}{\mathcal{P}_C}
+\newcommand{\MC}{\mathcal{M}_C}
+\newcommand{\Mloc}{\mathcal{M}_a}
+\newcommand{\Mprod}{\mathcal{M}^{\boxtimes}}
+\newcommand{\Mjoint}{\mathcal{M}^{\star}}
+\newcommand{\Pijoint}{\Pi^{\star}}
+\newcommand{\Piloc}{\Pi_a}
+\newcommand{\Aagg}{\mathcal{A}}
+\newcommand{\Cset}{\mathcal{C}}
+\newcommand{\hpK}{\hat p}
+\newcommand{\pF}{p_F}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\eps}{\varepsilon}
+
+\icmltitlerunning{Locally Coherent, Globally Incoherent}
+
+\begin{document}
+
+\twocolumn[
+\icmltitle{Locally Coherent, Globally Incoherent:\\
+Bounding Compositional Incoherence in Multi-Component LLM Agents}
+
+\icmlsetsymbol{equal}{*}
+
+\begin{icmlauthorlist}
+\icmlauthor{Anany Kotawala}{princeton}
+\end{icmlauthorlist}
+
+\icmlaffiliation{princeton}{Princeton University, Princeton, NJ, USA}
+
+\icmlcorrespondingauthor{Anany Kotawala}{akotawala@princeton.edu}
+
+\icmlkeywords{foundation models, compositional generalization, formal performance guarantees,
+              decomposable benchmark, instance-wise uncertainty, calibration,
+              hierarchical projection, FTAP, anytime-valid inference,
+              Brier score, multi-component systems}
+
+\vskip 0.3in
+]
+
+% this must go after the closing bracket ] following \twocolumn[ ...
+\printAffiliationsAndNotice{}  % no special notice (required even if empty)
+
+%==============================================================================
+\begin{abstract}
+Multi-component LLM agents assemble probabilistic claims from
+components that each see only part of a joint problem; the
+composition can violate basic probability axioms even when every
+component is locally coherent. We formalise this \emph{locally
+coherent, globally incoherent} failure via the \emph{compositional
+residual} $\eps^\star$, the $L_2$ distance from the composed
+quote to the joint coherent polytope, computable at runtime from
+system output alone. A product-structure dichotomy characterises
+when local coherence suffices, and a Rayleigh-quotient prediction
+matches the observed residual within $3$--$7\%$ on three of four
+relation classes. A hierarchical Boyle--Dykstra projection
+repairs the composition deterministically; an anytime-valid
+e-process gives sequential coherence monitoring. Across $1{,}876$
+ensemble cliques on four frontier LLMs, $\eps^\star\!>\!0$ on
+$33$--$94\%$ of cliques, translating to $+0.115$ nats per bet of
+regret on $1{,}770$ resolved markets. Three intuitive LLM-side
+mitigations (retrieval, partition-aware prompting,
+aggregator-LLM) each fail or regress.
+\end{abstract}
+
+%==============================================================================
+\section{Introduction}
+\label{sec:intro}
+
+Foundation-model evaluation routinely reports per-question
+accuracy, calibration, and proper-scoring statistics; formal,
+instance-wise guarantees on \emph{system-level} performance under
+composition of multiple model calls are comparatively scarce. In
+multi-component agents, planners route retrieval, arithmetic, and
+probability assessment to specialist subagents or tools, and each
+component handles only part of a joint question. Even when every
+component is calibrated and internally coherent on its assigned
+questions, the aggregated belief need not be: a research component
+emitting $P(\text{Republican}){=}0.6$ and a forecasting component
+emitting $P(\text{Democrat}){=}0.6$ produce a $1.2$-mass quote that
+no probability measure can assign, inducing a Dutch-book exposure
+\citep{definetti1937foresight} that arises strictly \emph{between}
+components. Per-component coherence does not, in general, repair
+the composed system; we call this regime \emph{locally coherent,
+globally incoherent}; \Cref{fig:iconic} shows a concrete instance
+from the planner-discretion harness of \S\ref{subsec:planner_disc}.
+
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{\input{figures/iconic_partition_failure}}
+\caption{\textbf{A locally coherent, globally incoherent failure.}
+Four specialists are routed one outcome each of the partition
+``Largest US AI startup IPO 2026'' (infrastructure, model labs,
+applications, other; from \S\ref{subsec:planner_disc}). Each
+specialist sees only its assigned sector as a single Bernoulli
+question, quotes a locally well-calibrated probability, and the
+agent assembles the four quotes. No specialist saw that the
+sectors tile the field; the assembled mass is $2.50$ and
+$\eps^\star\!=\!0.749$ certifies the failure.}
+\label{fig:iconic}
+\end{figure}
+
+Per-component calibration, self-consistency
+\citep{wang2023selfconsistency}, and conformal prediction
+\citep{angelopoulos2021gentle} act on individual model outputs and
+preserve only per-output coherence properties; cross-component
+logical constraints are invisible to all three. We identify the
+\emph{compositional residual} $\eps^\star$, the $L_2$ distance
+from the composed quote to the joint coherent polytope, as a
+runtime, distribution-free certificate of system-level coherence
+under owner-selected aggregation; it is computable from the
+composed quote and the cross-component constraints alone. As a
+constructive repair preserving specialist routing, we use a
+hierarchical Boyle--Dykstra projection. We pair these with closed-form bounds, an
+anytime-valid sequential test, and a decomposable benchmark whose
+hardness is predicted by the theory.
+
+A product-structure dichotomy (\Cref{thm:commute}) characterises
+when local coherence suffices: under owner-selected aggregation
+(each component owns a subset of joint coordinates; the aggregator
+just selects what each owner already wrote), component coherence
+guarantees system coherence for \emph{all} inputs if and only if
+the joint polytope factorises as a Cartesian product of local
+polytopes. Under any tighter coupling, locally coherent component
+forecasts exist whose composition is globally incoherent, and
+$\eps^\star$ certifies this failure mode (Cor.~\ref{cor:zero}).
+Cor.~\ref{cor:magnitude} converts the existential dichotomy into a
+closed-form magnitude prediction (Rayleigh-quotient form) computable
+from the specialist panel covariance alone.
+
+Operationally, $\eps^\star$ yields a bound
+$\mathrm{Exposure}^\star\!\le\!\sqrt{m^\star}\,\eps^\star$
+(Cor.~\ref{cor:syslmsr}) on system-level Dutch-book exposure under
+the Fundamental Theorem of Asset Pricing (FTAP); the hierarchical
+Boyle--Dykstra repair (\Cref{thm:dykstra}) drives this bound to the
+numerical floor, and the corresponding e-process (a sequential test
+controlling false positives at any stopping time) gives an
+anytime-valid coherence test (\S\ref{sec:sequential}, \Cref{thm:audit}).
+The convex-analytic machinery is classical; the contribution is
+the operational reframing of $\eps^\star$ as a runtime certificate,
+the dichotomy of \Cref{thm:commute}, the falsifiable magnitude
+prediction of Cor.~\ref{cor:magnitude}, and the decomposable
+benchmark whose hardness ordering the theory predicts.
+
+Empirically, we evaluate $1{,}876$ ensemble cliques drawn from Paleka
+\citep{paleka2024consistency} and Polymarket across four contemporary
+foundation models, stratified by four logical-relation classes. The
+empirical hardness ordering (partition $>$ negation $>$ disjunction
+$>$ conjunction) tracks how tightly each polytope constrains the
+joint quote, as predicted by \Cref{thm:commute}, and Cor.~\ref{cor:magnitude}'s
+magnitude prediction matches the observed expected residual
+within $3$--$7\%$ on three of the four relation classes (the
+conjunction under-shoot at $0.83\!\times$ is itself predicted by
+the Cor.~\ref{cor:magnitude} interior-$\bar\Pi$ regime). The
+exposure bound
+$\sqrt{m^\star}\eps^\star$ averages $0.137$ under naive composition
+(\Cref{fig:compositional}b) and is reduced to the QP solver floor by
+hierarchical projection. We report per-cell Brier with
+Diebold--Mariano significance (the standard paired test for forecast
+comparison), and validate with a same-model decoupling control,
+leakage filtering, and a tool-augmented A/B; full protocols and a
+reproducibility manifest are in the appendices.
+
+%==============================================================================
+\section{Preliminaries}
+\label{sec:setup}
+
+Throughout, starred objects denote the composed system, while
+subscripts denote individual components.
+
+\paragraph{Cliques and the coherent polytope.}
+A clique $C$ is a tuple $(Q_1,\dots,Q_m, R)$ of $m$ Bernoulli
+questions and logical relations $R$. By
+\citet{definetti1937foresight}, the set
+\(
+\MC = \{r\in[0,1]^m : \exists\,\mu\in\Delta(\{0,1\}^m)\
+\text{consistent with } R\}
+\)
+is a closed convex polytope. We denote the $L_2$ projection
+$\Pi_C: [0,1]^m \to \MC$ and the residual
+$\eps_C(\hpK) := \|\hpK - \Pi_C(\hpK)\|_2$.
+
+\paragraph{$K$-sample empirical marginal.}
+A forecaster supplies $K$ i.i.d.\ samples per question, yielding
+$\hpK \in [0,1]^m$ with $\hpK_j = K^{-1}\sum_k Y_{j,k}$ and population
+limit $\pF := \lim_{K\to\infty}\hpK$. Generically $\hpK \notin \MC$
+even when $\pF\in\MC$ (due to finite-sample fluctuation).
+
+\paragraph{Within-component JCD.}
+\label{sec:percall}
+Joint-Coherent Decoding is the $L_2$ projection of $K$-sample LLM
+marginals onto the local coherent polytope $\MC$. The compositional
+layer treats JCD as the local repair operator; it inherits a
+Pythagorean Brier improvement (Theorem~\ref{thm:pyth},
+App.~\ref{app:within}) and a finite-state no-Dutch-book bound
+via the Fundamental Theorem of Asset Pricing (FTAP;
+Cor.~\ref{cor:noarb}) bounded by
+$m\cdot\eps^{\mathrm{KKT}}\!\le\!1.4\!\times\!10^{-5}$ at the
+default tolerance of \textsc{OSQP}, the quadratic-program solver
+we use throughout.
+
+\paragraph{Multi-component agent.}
+The agent has $k$ sub-models indexed by $a \in [k]$. Sub-model $a$
+emits an empirical marginal $\hpK^{(a)} \in [0,1]^{m_a}$ on its local
+question set $\mathcal{Q}_a$ with local polytope $\Mloc \subseteq
+[0,1]^{m_a}$; component-level JCD produces
+$\Pi_a(\hpK^{(a)}) \in \Mloc$. The agent's joint question set is
+$\mathcal{Q}^\star = \bigcup_a \mathcal{Q}_a$ with size
+$m^\star = |\mathcal{Q}^\star|$ and joint polytope
+$\Mjoint \subseteq [0,1]^{m^\star}$, which respects (i)~each local
+relation lifted to $\mathcal{Q}^\star$ and (ii)~all cross-component
+\emph{coupling constraints} $\Cset$: identifications of shared
+questions, cross-component logical relations like
+$Q^\star = Q_a \wedge Q_b$, and partitions spanning components.
+
+\paragraph{Aggregator.}
+An aggregator
+$\Aagg: \prod_a [0,1]^{m_a} \to [0,1]^{m^\star}$ assembles the
+agent's quoted marginal vector. The aggregator $\Aagg$ is the
+owner-selected coordinate selector of Definition~\ref{def:owner}; this
+covers the specialist-routing and tool-call composition patterns
+used in our experiments. We focus on owner-selection because it is the
+practical pattern under compute budgets: each component owns a
+subset of joint coordinates and there is no redundant elicitation
+across specialists. A coord-wise averaging aggregator
+$\Aagg^\mathrm{avg}(\Pi_1,\dots,\Pi_k) = k^{-1}\sum_a \Pi_a$ on the same
+inputs would already lie in $\Mjoint$ by convexity, so the failure
+mode of \Cref{thm:commute} is structurally absent under averaging; we
+verify this empirically (\Cref{sec:exp}). The cost of averaging is
+$k\times$ elicitation per coordinate, which is the regime
+specialist-routing is designed to avoid.
+
+\paragraph{The two candidate workflows.}
+With $\hpK = (\hpK^{(1)},\dots,\hpK^{(k)})$ and the aggregator $\Aagg$
+fixed, two natural projections into $\Mjoint$ arise:
+\begin{align}
+\text{Local-then-global:}\quad
+& \Pijoint(\Aagg(\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)})), \label{eq:LtG}\\
+\text{Direct global:}\quad
+& \Pijoint(\Aagg(\hpK^{(1)},\dots,\hpK^{(k)})). \label{eq:DG}
+\end{align}
+The substantive question is when, and by how much, these differ.
+
+%==============================================================================
+\section{Method}
+\label{sec:compose}
+
+Throughout this section we assume the coupling set $\Cset$ is
+explicitly specified; the regime of implicit $\Cset$ recovered
+from agent transcripts is discussed in \S\ref{sec:conclusion}.
+
+\subsection{When local coherence composes}
+\label{subsec:dichotomy}
+
+\begin{definition}[Compositional residual]
+\label{def:compres}
+For inputs $\hpK = (\hpK^{(1)},\dots,\hpK^{(k)})$ and aggregator
+$\Aagg$, the \emph{compositional residual} is
+\[
+\begin{aligned}
+\eps^\star(\hpK) \;:=\;
+\bigl\|&
+\Aagg(\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)})\\
+&- \Pijoint\!\bigl(
+\Aagg(\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)})
+\bigr)\bigr\|_2.
+\end{aligned}
+\]
+It is the $L_2$ distance from the locally-repaired composed quote
+to the joint coherent polytope $\Mjoint$.
+\end{definition}
+
+\paragraph{Lifted local feasible sets.}
+For each component $a$, lift $\Mloc \subseteq [0,1]^{m_a}$ to
+$\Mloc^{\uparrow} \subseteq [0,1]^{m^\star}$ by leaving the
+non-component coordinates free. Write
+$\Mprod := \bigcap_a \Mloc^{\uparrow}$ for the joint feasibility
+implied by the local constraints alone (no cross-component
+coupling). $\Mjoint \subseteq \Mprod$ always; equality holds iff
+the coupling set $\Cset$ is trivial.
+
+\begin{definition}[Owner-selected aggregation]
+\label{def:owner}
+Fix the joint question set $\mathcal{Q}^\star$. An ownership map
+$\mathrm{owner}:\mathcal{Q}^\star\!\to\![k]$ assigns each joint
+coordinate to a single component. If multiple components originally
+quote the same question $j$, we keep separate local coordinates
+$p_{a,j}$ and $p_{b,j}$ in the product input space before owner
+selection, and record the equality $p_{a,j}=p_{b,j}$ in the
+coupling set $\Cset$. The aggregator $\Aagg$ selects the
+coordinate owned by $\mathrm{owner}(j)$. Aggregation only
+\emph{selects}; coupling \emph{enforces agreement}.
+\end{definition}
+
+\begin{theorem}[Product-structure dichotomy]
+\label{thm:commute}
+Under owner-selected coordinate aggregation $\Aagg$, local
+coherence guarantees global coherence \emph{for all inputs}
+$\hpK$ if and only if $\Mjoint = \Mprod$. When
+$\Mjoint = \Mprod$, projection decomposes blockwise:
+\begin{equation}
+\Pijoint(\Aagg(\hpK^{(1)},\dots,\hpK^{(k)}))
+= \bigl(\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)}\bigr),
+\label{eq:commute}
+\end{equation}
+so $\eps^\star \equiv 0$. When $\Mjoint \subsetneq \Mprod$, there
+exists $r \in \Mprod \setminus \Mjoint$, and locally coherent
+component forecasts realizing $r$ yield a composed quote with
+$\eps^\star > 0$.
+\end{theorem}
+
+\begin{proof}[Proof (forward)]
+If $\Mjoint = \Mprod$, the squared $L_2$ norm decomposes:
+$\|\hpK - r\|^2 = \sum_a \|\hpK^{(a)} - r^{(a)}\|^2$ for any
+$r \in \Mprod$, so the joint minimization separates into $k$
+independent local minimizations. Hence
+$\Pijoint(\hpK) = (\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)})$ which
+equals the aggregator's output on this product space, and
+$\eps^\star \equiv 0$. This is the block-product structure of
+$L_2$ projection in Hilbert space
+\citep[Prop.~29.3]{bauschke2017convex}.
+\end{proof}
+
+\begin{proof}[Proof (reverse, existential)]
+Take any $r\in\Mprod\setminus\Mjoint$ and lift it to component
+restrictions; owner-selection then reassembles $r$ from locally
+coherent inputs, and $r\notin\Mjoint$ closed gives
+$\eps^\star\!=\!\|r-\Pijoint(r)\|_2\!>\!0$. Full construction in
+App.~\ref{app:rev_proof}.
+\end{proof}
+
+The forward direction is the block-product factorization of
+$L_2$ projection in Hilbert space
+\citep[Prop.~29.3]{bauschke2017convex}; the contribution is
+operational, identifying when local coherence is sufficient and
+when $\eps^\star$ is an appropriate online certificate. We also
+refer to \Cref{thm:commute} as the \emph{non-commutation theorem},
+since it characterizes exactly when local-then-global $L_2$
+projection commutes with the aggregator (and when it does not).
+The reverse direction is existential: it shows local coherence is
+not sufficient under coupling, but does not characterize the
+typical magnitude of $\eps^\star$. Section~\ref{sec:results}
+estimates this empirically.
+
+\begin{corollary}[Zero-residual characterization]
+\label{cor:zero}
+Even under coupling, $\eps^\star = 0$ if and only if
+$\Aagg(\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)}) \in \Mjoint$. The
+compositional certificate is positive on a given input exactly
+when local repairs do not satisfy the cross-component constraints.
+\end{corollary}
+
+\begin{proof}
+$\Pijoint$ is the identity on $\Mjoint$ by definition;
+$\|x - \Pijoint(x)\|_2 = 0$ iff $x \in \Mjoint$.
+\end{proof}
+
+\subsection{Exposure interpretation}
+\label{subsec:syslmsr}
+
+\begin{corollary}[System-level FTAP exposure bound]
+\label{cor:syslmsr}
+Treat the coordinates of $\Aagg(\Pi_1,\dots,\Pi_k)$ as quoted
+unit-pay prices on the $m^\star$ Bernoulli contracts of the joint
+clique $C^\star$. If $\eps^\star>0$, the finite-state FTAP yields
+a Dutch-book portfolio against the joint quote. Moreover, under the unit-stake
+Logarithmic Market Scoring Rule (LMSR;
+\citealp{hanson2003combinatorial}) exposure statistic used in our
+experiments,
+\(
+\mathrm{Exposure}^\star \le \sqrt{m^\star}\,\eps^\star.
+\)
+Every individual sub-model's component-level Dutch-book exposure
+is zero by construction up to the QP tolerance (since
+$\Pi_a(\hpK^{(a)}) \in \Mloc$); any positive joint exposure
+is therefore attributable to cross-component incoherence, modulo
+the numerical solver floor.
+\end{corollary}
+
+\begin{proof}
+If the quoted vector lies outside $\Mjoint$, the separating
+hyperplane form of de Finetti's finite-state FTAP gives a
+portfolio with nonnegative payoff in every coherent state and
+strictly positive price discrepancy. For the relation classes used
+in our experiments, the unit-stake exposure statistic is the
+positive violation of a defining halfspace (or a sum of mutually
+exclusive positive violations). If
+$h(x)=(\langle a,x\rangle-b)_+$ is any such violation and
+$x^\Pi=\Pijoint(x)$, then
+$h(x)\le |\langle a,x-x^\Pi\rangle|\le \|a\|_2\|x-x^\Pi\|_2$.
+For negation, conjunction, disjunction, and partition constraints
+$\|a\|_2\le \sqrt{m^\star}$ after the relation is embedded in the
+$m^\star$ joint coordinate system, yielding
+$\mathrm{Exposure}^\star \le \sqrt{m^\star}\eps^\star$. Each
+$\Pi_a(\hpK^{(a)}) \in \Mloc$ has zero local residual to $\Mloc$
+by definition, so the per-component exposure diagnostic is zero up
+to numerical solver tolerance.
+\end{proof}
+
+\begin{corollary}[System-level Pythagorean Brier improvement]
+\label{cor:sysbrier}
+Let $p^\star \in \Mjoint$ be the true joint marginal vector and
+let $r$ be any composed quote. Then
+\(
+\|\Pijoint(r) - p^\star\|_2^2 \;\le\; \|r - p^\star\|_2^2
+- \|r - \Pijoint(r)\|_2^2.
+\)
+In particular, taking
+$r = \Aagg(\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)})$ yields a
+deterministic, sample-path Brier-improvement guarantee for
+hierarchical JCD whose slack
+$\|r-\Pijoint(r)\|_2^2 = (\eps^\star)^2$ is largest exactly where
+the compositional residual is largest.
+\end{corollary}
+
+\begin{proof}
+The Hilbert-projection argument of \Cref{thm:pyth} applied to
+$\Pijoint$ on $\Mjoint$.
+\end{proof}
+
+\begin{corollary}[Brier lift under $\{0,1\}$ labels: condition and reversal]
+\label{cor:label_lift}
+Let $y\!\in\!\{0,1\}^{m^\star}$ be a resolved label vector and let
+$p^\star := \E[y]$ denote the true marginal.
+For any composed quote $r$,
+\(
+\E_y[\mathrm{Brier}(r,y) - \mathrm{Brier}(\Pijoint(r),y)] \;=\;
+\|r-p^\star\|_2^2 - \|\Pijoint(r)-p^\star\|_2^2.
+\)
+If $p^\star \in \Mjoint$, this difference is at least
+$\|r-\Pijoint(r)\|_2^2 = (\eps^\star)^2 \ge 0$ by Cor.~\ref{cor:sysbrier};
+hierarchical JCD improves expected Brier deterministically.
+If $p^\star \notin \Mjoint$ (label incoherence: a fraction of resolutions
+violate the assumed logical structure), the difference can be negative;
+projection can amplify the error against $p^\star$.
+\end{corollary}
+
+\noindent The condition $p^\star \in \Mjoint$ is the precise assumption
+under which Cor.~\ref{cor:sysbrier} transfers from the geometric to the
+predictive setting. Empirically (\S\ref{sec:results}), the lift holds with
+$p\!<\!10^{-15}$ on negation, conjunction, and partition; on
+disjunction the gain is borderline ($\Delta\mathrm{Brier}\!=\!{+}0.0027$, $p\!=\!0.07$),
+diagnosing a small fraction of disjunction cliques whose resolved
+labels deviate from the strict $A\!\vee\!B$ relation: this is
+exactly the $p^\star\!\notin\!\Mjoint$ regime in which
+Cor.~\ref{cor:label_lift} predicts the lift can reverse.
+
+\subsection{Disagreement controls the residual}
+\label{subsec:disagree}
+
+\begin{proposition}[Disagreement upper bound on $\eps^\star$]
+\label{prop:disagree}
+Let $r \in \Mjoint$ be any \emph{globally coherent reference
+forecast}, that is, any joint quote that already lies in the
+joint polytope. Under owner-selected coordinate aggregation,
+\[
+\eps^\star(\hpK)
+\;\le\;
+\bigl\|\Aagg(\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)}) - r\bigr\|_2.
+\]
+A natural choice for $r$ is the JCD-projected forecast
+$\Pi_\beta(\hpK^{(\beta)})$ of any component $\beta$ that itself
+lies in $\Mjoint$, for instance a component routed the entire
+joint clique. The right-hand side is then the $L_2$ disagreement
+between the composed quote and the reference. It vanishes when
+all coordinates are assigned to the same component, so
+inter-component disagreement on disputed coordinates is a
+measurable proxy that both explains and upper-bounds the
+residual.
+\end{proposition}
+
+\begin{proof}
+By the variational characterization of $L_2$ projection onto a
+closed convex set, $\eps^\star = \|x-\Pijoint(x)\|_2 \le \|x-r\|_2$
+for any $r \in \Mjoint$, where
+$x = \Aagg(\Pi_1\hpK^{(1)},\dots,\Pi_k\hpK^{(k)})$.
+\end{proof}
+
+Let $\Delta_j$ denote the per-coordinate disagreement between the
+assigned LLM and a globally-coherent reference $\beta$. For each
+relation class the bound takes a closed form keyed to the
+constraint normal: $|\Delta_1{+}\Delta_2|/\sqrt{2}$ on negation,
+$|\sum_j\Delta_j|/\sqrt{m^\star}$ on partition, and $\|\Delta\|_2$
+on the Fr\'echet conjunction/disjunction polytope (full
+derivations in App.~\ref{app:size3}).
+
+Empirically the bound holds on $100\%$ of the $1{,}876$ cliques.
+Mean bound-to-residual ratios are $1.30$ (negation), $2.34$
+(disjunction), $3.00$ (conjunction), and $4.39$ (partition); the
+bound is tightest where the constraint normal aligns with the
+disagreement direction.
+
+\subsection{Quantitative magnitude prediction}
+\label{subsec:magnitude}
+
+Under uniform random owner-selection, the expected residual admits a
+closed form keyed to the empirical specialist covariance restricted to
+the constraint normal that defines the joint polytope. Let
+$\bar\Pi := k^{-1}\sum_a \Pi_a \in \Mjoint$ (by convexity) and
+$D := \mathrm{diag}(\Sigma_\Pi)$ where
+$\Sigma_\Pi := k^{-1}\sum_a (\Pi_a - \bar\Pi)(\Pi_a - \bar\Pi)^\top$.
+Independent assignment across coordinates makes $D$ the effective
+covariance: $\E_\sigma[(x-\bar\Pi)(x-\bar\Pi)^\top] = D$.
+
+\begin{corollary}[Magnitude of $\eps^\star$, Rayleigh-quotient form]
+\label{cor:magnitude}
+Suppose the joint polytope is locally defined by a single binding
+halfspace with normal $a_R$ at the projection. Under uniform i.i.d.\
+owner-selection,
+\begin{equation}
+\E_\sigma\!\bigl[(\eps^\star)^2\bigr] \;=\;
+\kappa_R \cdot \frac{a_R^\top D\, a_R}{\|a_R\|_2^2},
+\label{eq:rayleigh}
+\end{equation}
+where $\kappa_R = 1$ when the binding constraint is an equality
+($a_R^\top \bar\Pi = b_R$). When the binding constraint is an
+inequality with $\bar\Pi$ on the boundary, the law of $a_R^\top(x-\bar\Pi)$
+is the empirical distribution of $\{a_R^\top(\Pi_a-\bar\Pi)\}_{a\in[k]}$;
+if this scalar is symmetric around $0$ then $\kappa_R = \tfrac12$
+exactly, and otherwise $\kappa_R \in [0,1]$ with $\kappa_R \approx \tfrac12$
+when the panel is approximately balanced about the boundary. The
+upper bound $\E_\sigma[(\eps^\star)^2] \le a_R^\top D a_R/\|a_R\|_2^2$
+holds in all inequality cases, and the generic
+$\E_\sigma[(\eps^\star)^2] \le \mathrm{tr}(D)$ holds without further
+assumptions. For the relation classes of \Cref{sec:exp}:
+$a_{\textsc{neg}} = (1,1)$ (equality, $\kappa = 1$);
+$a_{\textsc{partition}} = \mathbf 1_{m^\star}$ (equality, $\kappa = 1$);
+$a_{\textsc{and}}, a_{\textsc{or}}$ are Fr\'echet halfspace normals
+(inequality, $\kappa \approx \tfrac12$ under the symmetric-panel
+approximation; conjunction's empirical $\kappa\!\approx\!0.83\cdot\tfrac12$
+reflects $\bar\Pi$ off the boundary, see~\S\ref{sec:results}).
+\end{corollary}
+
+\noindent\emph{Proof sketch.} Equality: $\eps^\star =
+|a_R^\top(x-\bar\Pi)|/\|a_R\|$, square and use
+$\E_\sigma[a_R^\top(x-\bar\Pi)(x-\bar\Pi)^\top a_R]=a_R^\top D a_R$.
+Inequality with $\bar\Pi$ on the boundary: $\eps^\star =
+(a_R^\top(x-\bar\Pi))_+/\|a_R\|$; for a zero-mean random variable $X$,
+$\E[X_+^2] = \tfrac12 \E[X^2]$ when $X$ is symmetric, otherwise
+$\E[X_+^2]/\E[X^2] \in [0,1]$ depending on the upper-tail mass.
+Full proof and the generic-bound case in App.~\ref{app:magnitude}.
+
+Combined with Cor.~\ref{cor:label_lift}, this yields a closed-form
+\emph{Brier tax}
+$\E[\mathrm{Brier}(r,y) - \mathrm{Brier}(\Pijoint(r),y)]
+\ge \kappa_R\, a_R^\top D a_R/\|a_R\|^2$ when
+$p^\star\!\in\!\Mjoint$, computable from the panel covariance
+alone. The three couplings recurring in our experiments are
+\emph{shared-question disagreement} (two specialists quote the same
+$Q$ at different prices), \emph{negation across components}
+($p_a\!+\!p_b\!=\!1$), and \emph{partition across components}
+($\sum_a p_a\!=\!1$).
+
+\subsection{Hierarchical repair}
+\label{sec:hier}
+
+The repair is constructive. Let
+$\Pi_\Cset: [0,1]^{m^\star}\to \Cset$ denote the $L_2$ projection
+onto the coupling set, an intersection of finitely many
+half-spaces.
+
+\begin{theorem}[Hierarchical projection convergence]
+\label{thm:dykstra}
+Let $\{\Pi_1,\dots,\Pi_k,\Pi_\Cset\}$ be the family of $L_2$
+projections onto the local polytopes $\{\Mloc\}$ (lifted to
+$[0,1]^{m^\star}$) and the coupling set $\Cset$. Their intersection
+is the nonempty joint polytope $\Mjoint$. The Boyle-Dykstra
+cyclic-projection iteration
+\citep{boyle1986dykstra} initialized at any $r_0 \in [0,1]^{m^\star}$
+generates a sequence converging in $L_2$ to $\Pijoint(r_0)$.
+\end{theorem}
+
+\begin{proof}[Sketch]
+$\Mjoint = \bigl(\bigcap_a \Mloc^{\uparrow}\bigr) \cap \Cset$ where
+$\Mloc^{\uparrow}$ is $\Mloc$ lifted to $[0,1]^{m^\star}$ (free on
+non-component coordinates). Each $\Pi_\bullet$ is the
+$L_2$ projection onto a closed convex set, and each $\Mloc^{\uparrow}$
+and $\Cset$ is closed convex. By
+\citet[Thm.~9.31]{bauschke2017convex} (Boyle-Dykstra), cyclic
+$L_2$ projection over a finite family of closed convex sets
+converges to the projection onto their intersection.
+\end{proof}
+
+\paragraph{Per-iteration cost.}
+Each $\Pi_a$ and $\Pi_\Cset$ is a small QP. The Paleka (neg/and/or)
+and Polymarket (partition) relation classes admit closed-form
+projections (App.~\ref{app:size3}); we use direct $\Pijoint$ via
+\textsc{OSQP} \citep{stellato2020osqp} for uniformity across
+relation classes, since the partition simplex projection and the
+negation closed form are mathematically equivalent to OSQP's
+converged solution at the reported tolerance.
+
+\subsection{Runtime use}
+\label{sec:runtime}
+
+The residual supports three deployment modes that share the same
+computation and differ only in how the agent acts on it. In
+\emph{monitor} mode the agent logs $\eps^\star$ and surfaces large
+residuals to an operator. In \emph{repair} mode it replaces the naive composed quote with
+$\Pijoint(\cdot)$ before passing it downstream. By
+\Cref{thm:dykstra} and Cor.~\ref{cor:syslmsr}, the repaired quote
+lies in $\Mjoint$ up to solver tolerance and the exposure
+diagnostic is driven to numerical zero. In
+\emph{abstain-or-escalate} mode it refuses to act when
+$\eps^\star\!>\!\tau$, a risk--coverage knob whose calibration to
+budgeted exposure is outside our scope.
+
+\subsection{Sequential monitoring: anytime-valid coherence test}
+\label{sec:sequential}
+
+In long-horizon agent deployments the agent generates a
+compositional residual stream $(\eps^\star_t)_{t\ge 1}$ across
+successive composition steps. The spatial guarantee of
+\Cref{sec:compose} certifies incoherence at each step; the
+following temporal guarantee lets an operator certify
+\emph{persistent} incoherence across the stream without fixing
+a stopping horizon in advance.
+
+Under the null $H_0$ that all component forecasters are coherent,
+the e-process
+\(
+E_t(\lambda) := \prod_{s=1}^{t}
+\exp\!\bigl(\lambda(\eps_s^{\star 2} - m_s^\star/(4K_s))
+- \lambda^2 m_s^\star/(2K_s)\bigr)
+\)
+is a non-negative $\mathcal{F}_t$-supermartingale
+(Lemma~\ref{lem:hoeff}, App.~\ref{app:audit}). By Ville's
+inequality \citep{ville1939etude,howard2021time}, the stopping
+rule $\tau_\alpha := \inf\{t : E_t(\lambda)\ge 1/\alpha\}$
+controls Type-I error at level~$\alpha$ uniformly over all
+stopping times (\Cref{thm:audit}). An operator monitors $E_t$
+online and escalates the agent pipeline when it crosses
+$1/\alpha$; no fixed-horizon commitment is required. The full
+derivation and empirical demonstration on four LLM residual
+streams appear in \Cref{app:audit}.
+
+%==============================================================================
+\section{Experimental setup}
+\label{sec:exp}
+\label{subsec:exp_setup}
+
+We evaluate on Paleka \citep{paleka2024consistency} (negation,
+conjunction, disjunction, paraphrase; $134$ cliques per checker)
+and Polymarket ($67$ partition cliques after leakage control,
+expanded to $268$ ensemble instances by four seeds). Both
+benchmarks were chosen because they target the regime the theory
+predicts will be tightest: Paleka was constructed by
+\citet{paleka2024consistency} for cross-question consistency
+checking, and Polymarket's partition events are the unit-mass
+constraint regime ($\sum_i p_i = 1$) where the polytope coupling
+is most restrictive.
+
+\paragraph{Models.}
+Anthropic \texttt{claude-haiku-4-5-20251001} (via the Anthropic
+Messages API), OpenAI \texttt{gpt-5.4-mini} and \texttt{gpt-5.4-nano}
+(via Azure OpenAI), and Meta \texttt{llama-3.3-70b-versatile} (via
+Groq). Frontier-panel evaluations additionally use OpenAI
+\texttt{gpt-5.5} (via Azure OpenAI). These are the public API model
+identifiers as returned by each provider on 30 April 2026; raw
+responses, prompts, and per-clique residuals are released with the
+supplementary material. Each specialist produces
+$K{=}8$
+verbalized probability samples per question at temperature $0.7$.
+
+\paragraph{Leakage control.}
+Polymarket events were filtered so that
+every market in every retained event resolved strictly after our
+model snapshot date of 30 April 2026; the inclusion cutoff was
+1 May 2026, and all retained events resolved on or after that
+date. Paleka cliques inherit the resolution-status verification
+of \citet{paleka2024consistency}. Full filtering protocol in
+Appendix~\ref{app:cliques}.
+
+\paragraph{Compositional ensemble.}
+For each clique with $m$ questions, we draw $4$ random
+seeds; each seed assigns each of the $m$ questions to one of the
+$4$ LLMs uniformly i.i.d.; the agent's quoted marginal on coordinate
+$j$ is the JCD-projected marginal of the assigned LLM on that
+coordinate. The source forecast from each LLM is JCD-coherent on
+the full clique before coordinate selection; the ensemble residual
+$\eps^\star$ therefore reflects \emph{exclusively}
+cross-component disagreement.
+
+\paragraph{Benchmark properties.}
+The four relation classes admit closed-form local projections
+(App.~\ref{app:size3}) and span a range of polytope geometries
+from a single equality (negation), to a high-dimensional simplex
+(partition), to the Fr\'echet box (and/or). The coupling set
+$\Cset$ controls the gap between $\Mjoint$ and $\Mprod$, and random
+vs.\ structured routing brackets cross-model mixing.
+\Cref{thm:commute}'s prediction $\eps^\star\!\equiv\!0$ when
+$\Mjoint\!=\!\Mprod$ is verified at the QP solver floor by the
+no-composition reference (\Cref{fig:compositional}b, gray dashed),
+a falsifiable test of the dichotomy.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\linewidth]{figures/compositional_bound.pdf}
+\caption{\textbf{Compositional residuals and the exposure bound.}
+\emph{(a)} ECDF of $\eps^\star$ across $N{=}1{,}876$ ensemble
+cliques, stratified by relation. Each component is per-call
+JCD-projected, so any positive $\eps^\star$ is cross-component
+incoherence introduced by composition.
+\emph{(b)} ECDF of the exposure bound
+$\sqrt{m^\star}\eps^\star$ (Cor.~\ref{cor:syslmsr}) under three
+regimes: naive composition (mean $0.137$), hierarchical JCD (at the
+OSQP floor), and a single-LLM no-composition reference. Shaded
+bands are $95\%$ bootstrap CIs ($B{=}1000$).}
+\label{fig:compositional}
+\end{figure*}
+
+%==============================================================================
+\section{Results}
+\label{sec:results}
+
+The random-assignment experiment ($N\!=\!536$/relation $\times\,4$
+seeds for Paleka, $268\!=\!67\!\times\!4$ for Polymarket; total
+$1{,}876$) and structured-routing variant ($N\!=\!469$, one
+deterministic seed) bracket cross-model mixing.
+
+\subsection{Compositional residual and controls}
+\label{subsec:compres_results}
+
+\paragraph{Compositional residual under random routing.}
+The compositional residual is strictly positive on $94\%$ (partition),
+$66\%$ (negation), $43\%$ (disjunction), $33\%$ (conjunction) of
+cliques (\Cref{fig:compositional}a). Mean $\eps^\star$ ranges $0.058$
+(and) to $0.118$ (partition); \emph{none} is visible per-component,
+where each $\Pi_a\!\in\!\Mloc$ has zero residual. Hierarchical JCD
+reduces exposure to $1.7\!\times\!10^{-14}$ (\textsc{OSQP} solver
+floor), matching the no-composition reference (a single LLM on every
+coordinate; \Cref{fig:compositional}b, gray) while retaining
+specialist routing.
+
+\paragraph{Empirical validation of the magnitude prediction.}
+Cor.~\ref{cor:magnitude}'s Rayleigh-quotient prediction
+$\kappa_R\,a_R^\top D a_R/\|a_R\|^2$ matches the observed
+expected residual $\E_\sigma[(\eps^\star)^2]$ across all four
+relation classes (Table~\ref{tab:theory_obs}; per-clique Pearson
+$0.69$--$0.89$). The conjunction under-shoot reflects $\bar\Pi$
+typically interior to the binding Fr\'echet halfspace; on the
+remaining three relations the prediction is tight to within
+$3$--$7\%$. Both $\eps^\star$ and the $\sqrt{m^\star}\eps^\star$
+exposure bound are therefore predictable from the panel covariance
+alone, before any routing.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Relation & $\kappa_R$ & Pred./Obs. & Match \\
+\midrule
+\textsc{Negation}    & $1$            & $1.054$ & $95\%$ \\
+\textsc{Partition}   & $1$            & $1.069$ & $94\%$ \\
+\textsc{Disjunction} & $\tfrac{1}{2}$ & $1.026$ & $97\%$ \\
+\textsc{Conjunction} & $\tfrac{1}{2}$ & $0.830$ & $83\%$ \\
+\bottomrule
+\end{tabular}
+\caption{Theory vs.\ observed expected squared residual.
+\emph{Pred./Obs.}\ is the ratio of Cor.~\ref{cor:magnitude}'s
+Rayleigh-quotient prediction to measured
+$\E_\sigma[(\eps^\star)^2]$ across the $1{,}876$ ensemble cliques;
+\emph{Match} is $1-|1-\text{Pred./Obs.}|$. The conjunction
+under-shoot is the $\bar\Pi$-interior regime predicted by
+Cor.~\ref{cor:magnitude}.}
+\label{tab:theory_obs}
+\end{table}
+
+\paragraph{Same-model decoupling control.}
+To separate coordinate isolation from cross-model capability
+divergence, we re-ran with four fresh-seed runs of one model
+(Claude-Haiku-4.5, $N{=}80$ cliques per relation, $40$
+partitions). Mean $\eps^\star$ falls to $0.025/0.019/0.040/0.058$
+on neg/and/or/partition: $22$--$60\%$ of the residual persists at
+same-model, with cross-model heterogeneity amplifying by
+$1.7$--$4.5\times$. A greedy-decoding ($T{=}0$) control retains
+$\eps^\star = 0.025$--$0.096$ across relations
+(App.~\ref{app:t0_control}); on negation and disjunction $T{=}0$
+amplifies the residual relative to $T{=}0.7$, ruling out sampling
+noise as the source.
+
+\paragraph{Compositional Brier against resolved labels.}
+We adopt the convention $\Delta\mathrm{Brier} = \mathrm{Brier}_{\mathrm{JCD}} - \mathrm{Brier}_{\mathrm{naive}}$
+throughout, so a negative $\Delta$ indicates JCD improvement.
+Paired over the $1{,}876$ cliques, hierarchical JCD reduces
+compositional Brier on \textsc{Neg}
+($\Delta\mathrm{Brier}{=}-0.0137$, $p{<}10^{-43}$), \textsc{And}
+($\Delta\mathrm{Brier}{=}-0.0076$, $p{<}10^{-16}$), and \textsc{Partition}
+($\Delta\mathrm{Brier}{=}-0.0048$, $p{<}10^{-23}$). \textsc{Or} is
+marginal ($\Delta\mathrm{Brier}{=}{+}0.0027$, $p{=}0.07$): this is
+the predicted reversal regime of Cor.~\ref{cor:label_lift}, where
+label noise on a small fraction of disjunction resolutions pushes
+$p^\star$ outside $\Mjoint$, and Cor.~\ref{cor:label_lift}'s
+condition-and-reversal allows projection to amplify error there
+rather than reduce it.
+
+\paragraph{Disagreement-driven mechanism.}
+Per-clique $\eps^\star$ regressed on the assignment-aware reference
+disagreement $\min_\beta\|x{-}\Pi_\beta\|_2$
+(Prop.~\ref{prop:disagree}) gives $R^2{=}0.93$ on negation (slope
+$0.83$) and $R^2{=}0.58$--$0.64$ on and/or/partition (slope
+$0.59$--$0.63$). The constraint normal aligns most closely with
+the disagreement direction on negation; on higher-dimensional
+polytopes the projection contracts components of disagreement
+orthogonal to the binding halfspace, loosening the bound. The
+Spearman rank correlation between the disagreement bound and
+$\eps^\star$ is $0.70$--$0.97$ across relations
+(Table~\ref{tab:spearman}), confirming the bound is rank-tight
+on positive-residual cliques; pairwise inter-LLM disagreement
+on shared coordinates is a weaker but still useful proxy
+($\rho\!=\!0.28$--$0.51$).
+
+\begin{table}[h]
+\centering
+\small
+\input{figures/disagreement_spearman_table}
+\caption{\textbf{Spearman rank correlation between
+disagreement-based predictors and $\eps^\star$}, restricted to
+cliques with $\eps^\star\!>\!0$. \emph{bound} is the
+Prop.~\ref{prop:disagree} closed-form upper bound;
+\emph{pair} is the mean pairwise inter-LLM disagreement on the
+clique.}
+\label{tab:spearman}
+\end{table}
+
+\paragraph{Robustness to routing topology and retrieval grounding.}
+Under structured routing (one model per relation family;
+App.~\ref{app:structured}), $\eps^\star\!>\!0$ on $98.5\%$ of
+negation, $36\%$ partition, $16\%$ disjunction, $12\%$ conjunction
+cliques; mean $\sqrt{m^\star}\eps^\star\!=\!0.117$ vs.\ $0.137$
+under random routing. Retrieval grounding (top-$5$ DuckDuckGo
+snippets per specialist) on $30$ partitions shifts mean $\eps^\star$
+from $0.260$ to $0.283$; $20/30$ partitions are equal-or-worse with
+retrieval (App.~\ref{app:toolaug}).
+
+\paragraph{Routing-protocol ladder.}
+On $100$ multi-candidate partitions (App.~\ref{app:context}) we
+walk the routing protocol from fixed naive owner-selection to
+autonomous tool-using planners. Prompt-engineering under
+owner-selection drops mean $\eps^\star$ from $0.235$
+(\textsc{isolated}) to $0.090$ (\textsc{listed}) to $0.081$
+(\textsc{full}); \textsc{isolated}\,$\to$\,\textsc{listed} is
+significant ($p\!<\!10^{-11}$), \textsc{listed}\,$\to$\,\textsc{full}
+is not ($p\!=\!0.18$), and $99\%$ of partitions retain
+$\eps^\star\!>\!10^{-3}$ under \textsc{full}. Tool-using planners
+with delegate-and-submit tools further reduce $\eps^\star$: a
+non-reasoning planner reaches $\eps^\star\!=\!0.009/0.004$ at
+$\sim\!4.8\!\times m$ calls; a frontier reasoning planner reaches
+$0/200$ positive residuals at $\sim\!6.7\!\times m$ calls. The
+hierarchical projection reaches $\eps^\star\!\to\!0$ at
+$1\!\times m$ specialist calls (\Cref{thm:dykstra}).
+
+\subsection{Intuitive LLM-side mitigations fail}
+\label{subsec:mitigations}
+
+The retrieval-grounding and routing-ladder results above each
+isolate one obvious LLM-side fix. We collect them with a third
+candidate, delegating coherentisation to an aggregator LLM, and
+compare all three to the geometric repair.
+\Cref{tab:mitigations} reports mean $\eps^\star$, the fraction of
+partitions retaining $\eps^\star\!>\!0.05$, and the fraction
+regressing relative to naive composition. Retrieval grounding
+\emph{regresses} on $20/30$ partitions (mean $\eps^\star$ rises
+from $0.214$ to $0.283$). Partition-aware prompting helps on
+average ($0.066$) but $53\%$ of partitions still exceed the $0.05$
+band and $5/30$ regress. LLM-as-aggregator reduces mean
+$\eps^\star$ to $0.028$ but $15\%$ of partitions still exceed
+$0.05$ and $7/100$ regress against the naive baseline. The
+geometric repair eliminates the residual to the QP solver floor
+($\le 1.5\!\times\!10^{-16}$) at $1$ms per partition with no
+extra LLM call. Prompt-only and aggregator-LLM mitigations can
+\emph{harm} already-coherent quotes: across both prompt-side
+interventions, $9/10$ worsening cases had baseline
+$\eps^\star\!<\!0.05$, so $\eps^\star\!>\!\tau$ also serves as a
+gate for when these prompt-based repairs are safe to apply.
+
+\begin{table}[h]
+\centering
+\small
+\input{figures/llm_mitigations_table}
+\caption{\textbf{Three intuitive LLM-side mitigations vs.\ the
+geometric repair.} Rows use the evaluation subset for the
+corresponding mitigation: retrieval-augmented and partition-aware
+prompt on $30$ matched partitions; naive, LLM-aggregator, and
+hierarchical JCD on $100$ partitions. The geometric repair
+deterministically eliminates $\eps^\star$ without extra LLM
+calls.}
+\label{tab:mitigations}
+\end{table}
+
+\subsection{Planner-discretion harness}
+\label{subsec:planner_disc}
+
+To check that the failure is not an artefact of random assignment,
+we re-run the experiment with a planner LLM (Claude-Haiku-4.5)
+that, for each of $20$ live-style partitions, picks a specialist
+per outcome from the four-LLM roster and emits its own
+per-specialist context block; specialists then sample $K{=}8$
+verbalized probabilities under the planner's prompt and we compute
+$\eps^\star$ as in \S\ref{subsec:exp_setup}. Mean $\eps^\star =
+0.113$ versus $0.231$ under random assignment on the same
+partitions ($15/20$ improve), but $\eps^\star\!>\!0$ on $20/20$.
+The planner's routing histogram (GPT-5.4-mini $50\%$, Claude-Haiku
+$31\%$, Llama-70b $13\%$, GPT-nano $6\%$) shows no self-routing.
+
+\subsection{Mechanism probe: coupling-visible elicitation}
+\label{subsec:coupling}
+
+The mechanism claim of \S\ref{sec:compose} is that $\eps^\star$
+arises because specialists do not see the coupling constraint.
+We test this directly. On the same $20$ partitions of
+\S\ref{subsec:planner_disc}, we re-elicit each specialist's quote
+under two paired conditions. \textsc{Blind} keeps the
+planner-chosen routing of \S\ref{subsec:planner_disc} but strips
+the planner-emitted context, so the specialist sees only its
+assigned outcome as a single Bernoulli question. \textsc{Informed}
+keeps the same routing and additionally shows the specialist the
+partition label, all sibling outcomes, the explicit
+$\sum_i p_i\!=\!1$ constraint, and the peers' \textsc{Blind} quotes
+on the other outcomes. Each (partition, condition) cell is
+replicated across four independent $K\!=\!8$ sampling rounds,
+paired \textsc{Blind}$\to$\textsc{Informed} within each round.
+\textsc{Informed} varies two things at once (coupling visibility
+and peer-quote disclosure), so the comparison identifies
+coupling-visible elicitation with peer context as the intervention,
+not constraint visibility in isolation; full setup in
+App.~\ref{app:coupling}.
+
+\begin{table}[h]
+\centering
+\small
+\input{figures/coupling_visibility_summary}
+\caption{\textbf{Coupling-visibility intervention on the
+20 highest-$\eps^\star$ partitions} of the planner harness
+(\S\ref{subsec:planner_disc}). $\Delta = \eps^\star_{\textsc{Blind}} - \eps^\star_{\textsc{Informed}}$; the
+paired-bootstrap CI excludes zero and the Wilcoxon signed-rank
+test rejects at $p\!=\!2.6\!\times\!10^{-10}$.}
+\label{tab:coupling}
+\end{table}
+
+Disclosing the coupling constraint (and peer quotes) reduces
+$\eps^\star$ as the theory predicts: paired mean $\eps^\star$
+falls from $0.519$ \textsc{Blind} to $0.298$ \textsc{Informed}
+on $16/20$ partitions, with $1$ unchanged and $3$ worsened
+(non-payoff partitions where \textsc{Blind} specialists were
+already roughly normalised; per-partition detail in
+App.~\ref{app:coupling}). The intervention is partial, not a
+fix: $\eps^\star$ remains positive on every \textsc{Informed}
+partition, consistent with the LLM-side mitigations result
+(\S\ref{subsec:mitigations}) that no purely prompt-based
+intervention eliminates the residual. The geometric repair
+remains the only intervention that drives $\eps^\star$ to the
+QP floor on every partition.
+
+\subsection{Frontier-panel rerun}
+\label{subsec:frontier}
+
+To test whether capability scaling closes the gap, we rerun the
+random-assignment ensemble on the $67$ Polymarket partition cliques
+with a frontier-only specialist roster: Claude-Opus-4.7, GPT-5.5
+(reasoning disabled for apples-to-apples), DeepSeek-V3.2, and
+Llama-4-Maverick-17B-128E (FP8). The protocol matches
+\S\ref{subsec:exp_setup} exactly ($K{=}8$, simplex pre-projection,
+$4$ seeds, $268$ ensemble bets). The residual persists:
+$\eps^\star\!>\!0$ on $97.8\%$ of the $268$ clique-seed bets,
+slightly above the mid-tier panel's $94\%$ on the same Polymarket
+slice. Mean $\eps^\star$ drops from $0.118$ to $0.072$ ($-39\%$):
+frontier models reduce residual magnitude on partitions but do not
+eliminate the failure mode. Brier improvement under hierarchical
+JCD remains highly significant ($\Delta\mathrm{Brier} = -0.012$,
+$95\%$ paired-bootstrap CI $[-0.015, -0.009]$); the log-payoff
+gain trends positive ($+0.107$ nats per bet) but is noisier on
+this narrower slice. Table~\ref{tab:frontier} reports the full
+frontier-vs-mid-tier comparison.
+
+\begin{table}[h]
+\centering
+\resizebox{\linewidth}{!}{\input{figures/frontier_midtier_table}}
+\caption{\textbf{Frontier vs.\ mid-tier panel} ($n\!=\!268$
+partition bets each). $95\%$ paired-bootstrap CIs over
+(clique, seed) pairs; the mid-tier numbers are the partition-only
+projection of \S\ref{subsec:compres_results} and
+\S\ref{subsec:regret}.}
+\label{tab:frontier}
+\end{table}
+
+\subsection{Downstream-decision regret}
+\label{subsec:regret}
+
+For each of $1{,}770$ resolved ensemble bets from \S\ref{sec:exp}
+(we drop $106/1{,}876$ where the assigned specialist lacks a
+forecast for the assigned coordinate, a pipeline artefact on
+partition events) we convert the composed quote $\hat p^\star$ into
+a proportional allocation
+$w_i = \max(\hat p^\star_i,0)/\sum_j\max(\hat p^\star_j,0)$ and
+measure (i)~Brier loss against the binary resolution vector and
+(ii)~the realised log-payoff $\log w_{\text{winner}}$ on the
+$1{,}250$ bets with a unique YES. The proportional rule rescales
+away partition-mass excess and is favourable to naive composition,
+so the JCD advantage reported below lower-bounds what stricter
+rules (e.g.\ truncated Kelly) would show.
+
+Hierarchical JCD lowers mean Brier ($\Delta\mathrm{Brier}=-0.018$,
+paired-bootstrap $95\%$ CI over (clique, seed): $[-0.021,-0.015]$)
+and improves mean log-payoff by $+0.115$ nats per bet
+($[+0.056,+0.187]$). JCD matches the single-LLM oracle's gain
+($\Delta\mathrm{Brier}= -0.017$, CI $[-0.035,-0.000]$) with a
+confidence interval $\sim\!8\times$ narrower. The effect
+concentrates on partitions (naive loses $0.60$ nats/bet vs.\ JCD,
+CI $[+0.15, +1.15]$, $n{=}162$). The Pythagorean Brier improvement
+of Cor.~\ref{cor:sysbrier} is thus realised on resolved labels,
+not only on the synthetic $\eps^{\star 2}$ slack.
+
+\paragraph{Regret stratifies by certificate.}
+The realised regret rises monotonically with $\eps^\star$
+(Table~\ref{tab:quartile}): the bottom two quartiles (where
+$\eps^\star\!\le\!0.004$) carry no measurable Brier or log-payoff
+gain, while the top quartile (where $\eps^\star\!>\!0.154$)
+accounts for $0.054$ Brier and $0.221$ nats of regret per bet.
+This justifies the runtime-gating recipe of
+\S\ref{subsec:gate}: applying the projection only when
+$\eps^\star\!>\!\tau$ targets precisely the high-regret bets.
+
+\begin{table}[h]
+\centering
+\small
+\input{figures/quartile_regret_table}
+\caption{\textbf{Mean realised regret stratifies by
+$\eps^\star$ quartile.} $n_{Q_1}\!=\!0$ for the bottom-quartile
+log-payoff column because all such bets have JCD$\equiv$naive.}
+\label{tab:quartile}
+\end{table}
+
+\paragraph{Allocation-rule sensitivity.}
+The log-payoff gain depends on how a downstream bettor allocates
+on top of the agent's quote. Brier is allocation-rule independent
+($-0.018$ across all rules). Under the proportional rule (the
+agent's incoherence is passed through as allocation slack),
+JCD beats naive by $+0.168$ nats/bet
+($95\%$ CI $[+0.083, +0.263]$). Under stricter rules that
+themselves coherentise the quote (truncated Kelly, max-entropy),
+the gain shrinks to $+0.006$ nats: the bettor has already
+absorbed the agent's incoherence into its own strategy
+(Table~\ref{tab:alloc}).
+
+\begin{table}[h]
+\centering
+\small
+\input{figures/allocation_rules_table}
+\caption{\textbf{JCD vs.\ naive log-payoff under three
+allocation rules} ($n\!=\!1{,}252$ bets; paired bootstrap).
+Proportional is the clearest behavioural-harm measure; Kelly
+and max-entropy themselves coherentise.}
+\label{tab:alloc}
+\end{table}
+
+\subsection{Runtime gating thresholds}
+\label{subsec:gate}
+
+The deployment recommendation is to apply repair (or escalate)
+only when $\eps^\star\!>\!\tau$. We calibrate $\tau$ on the
+1,770-bet ensemble of \S\ref{subsec:regret}, treating top-quartile
+log-payoff regret as the harm signal. Brier-regret is
+mechanically tied to $\eps^{\star 2}$ by Cor.~\ref{cor:sysbrier};
+log-payoff regret depends on which coordinate resolved YES and
+is therefore not geometrically tied to $\eps^\star$, making it
+the genuinely informative discrimination test.
+
+\paragraph{Discrimination.}
+$\eps^\star$ predicts top-quartile log-payoff regret with $5$-fold
+cross-validated AUC $0.775\!\pm\!0.044$; the geometric Brier-regret
+check gives CV-AUC $0.974\!\pm\!0.012$. Mean realised log-payoff
+regret stratifies cleanly by $\eps^\star$ quartile
+($0.000, 0.000, 0.123, 0.221$ nats, bottom to top;
+Table~\ref{tab:quartile}).
+
+\paragraph{Operating thresholds.}
+A high-recall threshold $\tau\!=\!0.15$ catches $91\%$ of harmful
+bets at a $25\%$ alert rate and $3\%$ false-alarm rate; a
+high-precision threshold $\tau\!=\!0.22$ catches $51\%$ at
+$14\%$ alert rate and $1.5\%$ FPR (Table~\ref{tab:gating}). Both
+thresholds are stable under $5$-fold CV (at $\tau\!=\!0.15$:
+mean alert rate $25\%$, mean recall $90\%$). For deployment we
+recommend $\tau\!\approx\!0.15$ when repair is cheap and
+$\tau\!\approx\!0.22$ when escalation is costly.
+
+\begin{table}[h]
+\centering
+\resizebox{\linewidth}{!}{\input{figures/runtime_gating_table}}
+\caption{\textbf{Operating points for the $\eps^\star$ gate},
+computed in-sample then verified by $5$-fold CV (mean shown
+in parentheses where it differs from the in-sample number).}
+\label{tab:gating}
+\end{table}
+
+\subsection{Per-component layer (summary)}
+\label{subsec:percomp}
+
+The local JCD layer behaves as \Cref{thm:pyth} predicts. Sorting
+Paleka cliques by pre-projection $\eps$, JCD's Brier gain stratifies
+to the most-incoherent quartile ($0.040$ at $m{=}2$, $0.013$ at $m{=}3$;
+$0.12$ on Polymarket at $m{\ge}4$); other quartiles show no detectable
+gain (\Cref{fig:headline_polymarket}). Stacked with per-question
+Platt calibration \citep{platt1999probabilistic} (baseline B6 of
+App.~\ref{app:fulltables}), JCD reduces mean Brier on every
+$(\text{model},\text{checker})$ cell, by $0.037$ on Paleka and $0.046$
+on Polymarket; Diebold--Mariano $p<10^{-4}$ on every model. A Murphy
+decomposition (\Cref{tab:murphy_real}) attributes the gain to
+calibration ($36\%$ reliability reduction) rather than
+over-extremization. Per-relation B6 gains on Paleka ($-21\%$ and,
+$-37\%$ or, $-4\%$ neg, $-1\%$ paraphrase) track local-polytope
+restrictiveness.
+
+\paragraph{Reproducibility.}
+Code, prompts, sample dumps, per-clique JCD residuals, the
+ensemble-assignment seed, and the full hierarchical-projection
+pipeline are documented in \Cref{app:cliques} and released with
+the supplementary material; $K$-sweep and the sequential
+test appear in Appendix~\ref{app:audit}.
+
+%==============================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+The compositional residual $\eps^\star$ supplies the instance-wise,
+distribution-free coherence guarantee that per-component calibration,
+self-consistency, and conformal prediction do not: it is computable
+at deployment from system output and the cross-component constraints
+alone, certifies a Dutch-book exposure no per-component repair can
+remove, and admits a deterministic projection-based fix. The
+product-structure dichotomy (\Cref{thm:commute}) characterises when
+local coherence implies global coherence; Cor.~\ref{cor:magnitude}
+predicts the typical residual from the panel covariance, matching
+observed $\E_\sigma[(\eps^\star)^2]$ within $3$--$7\%$ on three of
+four relation classes; the hierarchical Boyle--Dykstra projection
+eliminates $\eps^\star$ at $1\!\times\!m$ elicitation cost; and on
+$1{,}770$ resolved bets the certificate yields $+0.115$ nats per bet
+over naive composition. The guarantees are orthogonal to
+per-output conformal prediction \citep{angelopoulos2021gentle} and
+complementary to opinion pooling
+\citep{genest1986combining,abbas2009log}, which requires every
+expert to forecast every coordinate.
+
+\paragraph{Limitations.}
+The Rayleigh-quotient prediction of Cor.~\ref{cor:magnitude} is
+exact for negation and partition cliques but conservative when the
+panel mean $\bar\Pi$ lies in the interior of the binding Fr\'echet
+halfspace, which produces the $0.83\!\times$ under-shoot we observe
+on conjunction.
+
+The principal scope condition is that the coupling set $\Cset$ is
+specified explicitly: every theorem in \S\ref{sec:compose} treats
+$\Cset$ as a finite, externally given list of half-spaces and
+equalities over joint coordinates (shared-question identifications,
+cross-component logical relations, partition-mass constraints).
+This covers structured tool-use and function-calling deployments,
+where the planner emits declared output schemas with typed
+sub-question fields and $\Cset$ is recoverable from the schema
+without language understanding. Our planner-discretion harness
+(\S\ref{sec:exp}) and routing-protocol ladder
+(App.~\ref{app:context}) target this regime.
+
+It does not cover deployments in which $\Cset$ is implicit in
+free-form chain-of-thought or in unstructured planner--tool
+transcripts. There, $\eps^\star$ remains well-defined and the
+Boyle--Dykstra repair still applies on any subsequently specified
+polytope, but the certificate cannot be computed without first
+recovering $\Cset$ from the trace. Partial routes to that
+recovery exist as components: an NLI-style classifier over
+sub-question pairs, schema-enforcing planner protocols, and
+symbolic trace logging at the tool-call boundary. A unified
+inference step remains open; we list it as the first future-work
+item below.
+
+Finally, our resolved-label experiment relies on Polymarket
+resolutions, which are noisy on a small fraction of disjunction
+cliques; this pushes $p^\star$ outside $\Mjoint$ on those cliques
+and is the regime where Cor.~\ref{cor:label_lift} does not
+guarantee improvement.
+
+\paragraph{Future work.}
+First, the coupling set $\Cset$
+is currently provided externally; recovering $\Cset$ from
+unstructured planner--tool traces would extend $\eps^\star$ to
+free-form agent transcripts, where the cross-component constraints
+are implicit in the prompt structure rather than typed. Second, the
+$L_2$/Brier pairing is one instance of a broader matched-Bregman
+recipe; substituting log-loss or spherical scoring rules yields
+analogous projections under their respective Bregman geometries
+\citep{banerjee2005clustering}, with the residual generalising to a
+Bregman gap. Third, the spatial certificate of \Cref{thm:commute}
+and the temporal e-process of \S\ref{sec:sequential} compose
+step-by-step but ignore long-horizon dependence between steps;
+a sequential certificate that exploits inter-step structure is
+open.
+
+\section*{Broader Impact}
+
+A runtime certificate for system-level coherence can be wired into
+deployed multi-component pipelines as a guardrail, surfacing
+incoherent compositions before they reach a downstream decision
+policy. This is a reliability and auditability gain for high-stakes
+settings such as forecasting, decision support, and regulated
+probabilistic reasoning. The corresponding risk is over-trust: a
+small $\eps^\star$ certifies coherence of the quoted belief but
+says nothing about whether the underlying specialists are
+calibrated against the true distribution, and a projected quote may
+be confidently wrong on the very inputs where its components
+disagree most. Operators deploying the repair should therefore
+report $\eps^\star$ alongside conventional calibration and coverage
+diagnostics, not as a substitute for them.
+
+\bibliography{refs}
+\bibliographystyle{icml2026}
+
+\newpage
+\appendix
+\onecolumn
+\raggedbottom
+
+\section{Within-component projection facts}
+\label{app:within}
+
+\begin{theorem}[Pythagorean Brier improvement]
+\label{thm:pyth}
+Let $p^*\!\in\!\MC$ be the ground-truth marginal for clique $C$ and
+$\Pi(\hpK)$ the $L_2$ projection of $\hpK$ onto $\MC$. Then for any
+$\hpK\!\in\!\mathbb{R}^m$,
+$\|\Pi(\hpK) - p^*\|_2^2 \le \|\hpK - p^*\|_2^2 - \|\hpK - \Pi(\hpK)\|_2^2$.
+The slack $\|\hpK - \Pi(\hpK)\|_2^2$ is the squared distance from
+coherence; Brier improvement is largest where pre-projection
+incoherence is largest.
+\end{theorem}
+
+\begin{proof}
+Hilbert projection theorem
+\citep[Thm.~3.16]{bauschke2017convex} gives
+$\langle \hpK - \Pi(\hpK),\,p^* - \Pi(\hpK)\rangle \le 0$. Expand
+$\|\hpK - p^*\|^2$ around $\Pi(\hpK)$ and drop the non-negative
+cross term.
+\end{proof}
+
+\begin{corollary}[Per-component finite-state FTAP]
+\label{cor:noarb}
+Treating $\Pi(\hpK)\!\in\!\MC$ as quoted unit-pay prices on the $m$
+Bernoulli contracts of $C$, the finite-state Fundamental Theorem of
+Asset Pricing rules out a state-independent Dutch book against the
+ideal projection. Under a numerical QP solution the unit-stake
+exposure diagnostic is bounded by
+$m\cdot\eps^{\mathrm{KKT}}\!\le\!1.4\!\times\!10^{-5}$ at
+\textsc{OSQP} default tolerance.
+\end{corollary}
+
+\section{Proof of Theorem~\ref{thm:commute} (reverse direction)}
+\label{app:rev_proof}
+
+Suppose $\Mjoint \subsetneq \Mprod$. Pick any
+$r \in \Mprod \setminus \Mjoint$. For each component $a$, set
+$\hpK^{(a)}$ to the restriction of $r$ to component $a$'s
+coordinates: $\hpK^{(a)}_i := r_{j(a,i)}$ where $j(a,i)$ is the
+joint index that component~$a$'s $i$-th local coordinate maps to
+under Definition~\ref{def:owner}; under shared-question coupling,
+set $\hpK^{(a)}_{i_a} = \hpK^{(b)}_{i_b} = r_j$ whenever components
+$a$ and $b$ both own the duplicate of joint coordinate $j$. Then
+each restriction lies in $\Mloc$ since $r \in \Mprod$, so
+$\Pi_a(\hpK^{(a)})$ equals that restriction and the owner-selected
+aggregator reassembles $\Aagg(\Pi_1,\dots,\Pi_k) = r$. Since
+$r \notin \Mjoint$ and $\Mjoint$ is closed, $\Pijoint(r) \neq r$
+and $\eps^\star = \|r - \Pijoint(r)\|_2 > 0$.
+
+\section{Closed-form local projections}
+\label{app:size3}
+
+\paragraph{Negation ($m{=}2$, $r_1 + r_2 = 1$).}
+$\Pi_{\MC}(\hpK) = \bigl(\tfrac{1}{2}(1 + \hat p_1 - \hat p_2),\,
+\tfrac{1}{2}(1 - \hat p_1 + \hat p_2)\bigr)$;
+deterministic Dutch-book on raw $\hpK$ is $|\hat p_1 + \hat p_2 - 1|$.
+
+\paragraph{Conjunction ($m{=}3$, $r_3{=}r_1\!\wedge\!r_2$).}
+$\MC = \{r\in[0,1]^3 : \max(0, r_1{+}r_2{-}1) \le r_3 \le \min(r_1, r_2)\}$
+is the Fr\'echet polytope; $\Pi_{\MC}$ is the unique fixed point of
+joint clipping on $r_3$ and feasibility-preserving adjustments on
+$(r_1, r_2)$, computed by Dykstra's cyclic projection algorithm
+\citep{boyle1986dykstra} on the six halfspaces (four box, two
+Fr\'echet) and converging to machine precision in $<\!200$
+iterations. Deterministic Dutch-book on raw $\hpK$ is
+$\max(0, \hat p_3 - \min(\hat p_1, \hat p_2)) +
+\max(0, \max(0,\hat p_1{+}\hat p_2{-}1) - \hat p_3)$.
+
+\paragraph{Disjunction ($m{=}3$, $r_3{=}r_1\!\vee\!r_2$).}
+Bounds $\max(\hat p_1, \hat p_2) \le r_3 \le \min(1, \hat p_1{+}\hat p_2)$
+via $P(A{\vee}B) = P(A){+}P(B){-}P(A{\wedge}B)$; same Dykstra
+recipe.
+
+\paragraph{Partition ($\sum_i r_i = 1$, $r_i\ge 0$).}
+$\Pi_{\MC}$ is the simplex projection of \citet{wang2013simplex}
+in $O(n\log n)$. Deterministic Dutch-book on raw $\hpK$ is
+$|\sum_i \hat p_i - 1|$.
+
+\section{Sequential test on the residual stream}
+\label{app:audit}
+
+In long-horizon agent deployments, the compositional residual
+stream $(\eps^\star_t)_{t \ge 1}$ can be monitored over time;
+the per-component test below extends to the system level once a
+bounded-difference envelope for the chosen aggregation rule is
+specified. Under coordinate-selection aggregation with disjoint
+owners, $\eps_t^{\star 2}$ inherits the envelope below with
+$m_t$ replaced by $m^\star_t$ and $K_t$ replaced by
+$\min_a K_{a,t}$. The compositional theory of \Cref{sec:compose} is
+spatial: it controls coherence at a single time step across $k$
+components. The residual stream $(\eps_t)_{t\ge 1}$ that an agent
+generates over time admits a complementary \emph{temporal}
+guarantee.
+
+\paragraph{Setup.}
+A clique stream $(C_t)_{t\ge 1}$ with sizes $m_t$ and $K_t$ samples
+per question yields residuals $\eps_t = \|\hpK_t - \Pi(\hpK_t)\|_2$.
+Assume the $K_t m_t$ Bernoulli samples at time $t$ are conditionally
+independent given $\F_{t-1}$, with conditional mean vector
+$\pF^{(t)}$. Define the null
+\(
+H_0:\,\pF^{(t)} \in \MC^{(t)}\ \text{for all $t$}.
+\)
+
+\begin{lemma}[Bounded-difference MGF bound]
+\label{lem:hoeff}
+Under $H_0$, $\eps_t^2 \in [0, m_t]$ with conditional mean
+$\E[\eps_t^2 \mid \F_{t-1}] \le m_t/(4K_t)$, and for every
+$\lambda > 0$,
+\(
+\E\!\left[\exp\!\bigl(\lambda(\eps_t^2 - m_t/(4K_t))\bigr) \mid
+\F_{t-1}\right]
+\le \exp\!\bigl(\lambda^2 m_t / (2K_t)\bigr).
+\)
+\end{lemma}
+
+\begin{proof}
+$\eps_t \le \|\hpK_t - \pF^{(t)}\|_2$ under $H_0$ by projection
+optimality on $\MC$. The squared norm
+$Z_t = \|\hpK_t - \pF^{(t)}\|_2^2$ is a function of $K_t m_t$
+i.i.d.\ Bernoulli samples with bounded differences $2/K_t$ per
+sample; McDiarmid's bounded-difference inequality
+\citep{mcdiarmid1989method} yields the sub-Gaussian MGF bound
+$\E[\exp(\lambda(Z_t-\E Z_t))]\le \exp(\lambda^2 m_t/(2K_t))$, and
+$\E Z_t \le m_t/(4K_t)$ from the per-component variance bound.
+\end{proof}
+
+\begin{theorem}[Anytime-valid coherence test]
+\label{thm:audit}
+For any $\lambda > 0$,
+\(
+E_t(\lambda) := \prod_{s=1}^{t} \exp(\lambda(\eps_s^2 - m_s/(4K_s))
+- \lambda^2 m_s/(2K_s)),\ E_0=1,
+\)
+is a non-negative $\F_t$-supermartingale under $H_0$. Hence by
+Ville's inequality \citep{ville1939etude,howard2021time}, for every
+$\alpha \in (0,1)$ and every stopping time $\tau$,
+\(
+\PP\bigl(\sup_{t\le\tau} E_t(\lambda) \ge 1/\alpha \mid H_0\bigr)
+\le \alpha.
+\)
+The decision rule
+$\tau_\alpha := \inf\{t : E_t \ge 1/\alpha\}$ controls Type-I error
+at level $\alpha$ uniformly over stopping rules.
+\end{theorem}
+
+\begin{proof}
+Each factor of $E_t(\lambda)$ is non-negative. By
+Lemma~\ref{lem:hoeff},
+$\E[E_t/E_{t-1}\mid\F_{t-1}] \le \exp(\lambda^2 m_t/(2K_t))
+\exp(-\lambda^2 m_t/(2K_t)) = 1$, the supermartingale property.
+Ville's inequality yields the maximal bound, uniform over stopping
+times by optional stopping.
+\end{proof}
+
+\paragraph{Tuning $\lambda$.}
+For the alternative
+$\E[\eps_t^2] \to m_t/(4K_t) + \delta$, the
+bounded-difference-optimal bet is
+$\lambda^* = \delta K_t / m_t$; we mix over a log grid
+$\lambda \in \{0.05,0.1,0.2,0.5,1,2,5,10\}$ in our experiments
+(\Cref{fig:eprocess}), retaining anytime-valid coverage by
+linearity \citep{ramdas2023game}.
+
+\paragraph{Empirical demonstration.}
+\Cref{fig:eprocess} runs the test on each model's per-clique
+residual stream ($N{=}603$ cliques per model, fixed-seed shuffle).
+Three of four models reject $H_0$ at $\alpha\le 10^{-4}$ within
+$\le\!422$ cliques (Llama-3.3-70b at $t=16$, GPT-5.4-nano at
+$t=177$, GPT-5.4-mini at $t=422$); Claude-Haiku-4.5 has mean
+residual below the $H_0$-envelope at $K{=}8$ and is not rejected
+within $603$ cliques, demonstrating that the test calibrates
+power against the bounded-difference envelope. The same
+construction applies to the compositional residual stream
+$(\eps^\star_t)$ from \Cref{sec:compose} after replacing the
+per-component envelope by the corresponding envelope for the
+agent's aggregation rule.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{figures/eprocess_trajectory.pdf}
+\caption{\textbf{Bounded-difference e-process $E_t$ on
+per-component residual streams (\Cref{thm:audit}).} Crossing
+$1/\alpha=10^4$ at $t{=}16$ (Llama), $t{=}177$ (GPT-nano),
+$t{=}422$ (GPT-5.4-mini); Claude-Haiku stays below~$1$.}
+\label{fig:eprocess}
+\end{figure}
+
+\section{Clique-mining pipeline and reproducibility}
+\label{app:cliques}
+
+\paragraph{Paleka.} Tuples are pre-mined by the original authors:
+each JSONL record is a single $(\mathrm{checker}, \{Q_i\},
+\mathrm{relation})$ entry, parsed directly.
+
+\paragraph{Polymarket.} We query gamma-api at the \emph{event}
+level, retain events with $\ge\!2$ resolved markets, and emit one
+of two relation types: (i)~a \emph{partition} relation
+$\sum_i p_i = 1$ when an event has multi-candidate markets that
+resolve with exactly one YES (e.g.\ election winners, sports
+brackets); (ii)~an \emph{implication ladder} when an event has
+multiple threshold markets ``X above $k$'' at ascending $k$.
+Events are capped at $m{\le}8$ markets.
+
+\paragraph{Compositional ensemble.}
+For each clique with $m$ questions and $4$ LLMs, we draw $4$ random
+seeds (independent across cliques and seeds, fixed master seed) and
+for each seed assign each question $j$ to one of the $4$ LLMs
+uniformly; the agent's quoted marginal on coordinate $j$ is the
+$j$-th coordinate of the assigned LLM's JCD-projected forecast.
+Hierarchical JCD applies $\Pijoint$ to the resulting concatenated
+vector (in our experiments equal to direct JCD on the joint clique,
+which by \Cref{thm:dykstra} is the converged Dykstra projection
+through the local-then-coupling cycle).
+
+\paragraph{Leakage control.} Every Polymarket event in the
+evaluation slice resolved \emph{after} the latest model snapshot
+(30 April 2026). Paleka cliques inherit
+\citet{paleka2024consistency}'s own resolution-status verification.
+
+\paragraph{Reproducibility manifest.}
+\Cref{tab:repro} records the exact configuration used to produce
+every number in the paper. The released artifact contains the
+sample dumps, per-clique JCD residuals, ensemble-assignment seeds,
+and the hierarchical-projection pipeline.
+
+\begin{table}[H]
+\centering
+\caption{Reproducibility manifest. $N$ values include
+ensemble-assignment seeds where applicable.}
+\label{tab:repro}
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Item} & \textbf{Value} \\
+\midrule
+Anthropic model ID & \texttt{claude-haiku-4-5-20251001} \\
+OpenAI model IDs   & \texttt{gpt-5.4-mini}, \texttt{gpt-5.4-nano} \\
+Meta model ID      & \texttt{llama-3.3-70b-versatile} (Groq) \\
+Snapshot date      & 30 April 2026 \\
+$K$ samples / question & $8$ \\
+Temperature        & $0.7$ \\
+Sampling prompts   & released JSONL artifact \\
+Paleka subset      & \texttt{scraped}, $134$ cliques per checker \\
+Paleka post-filter & $134\!\times\!4$ checkers $=536$ cliques per model \\
+Polymarket cliques & $268$ post-leakage-filter ($67\!\times\!4$ seeds) \\
+Per-call Platt fit / eval split & $30\%$ / $70\%$ per (model, checker) \\
+QP solver          & \textsc{OSQP} default tolerance ($1.4\!\times\!10^{-5}$) \\
+Compositional master seed & \texttt{0} (numpy default RNG) \\
+Random ensemble seeds & $4$ ($N{=}1{,}876$ bets) \\
+Structured ensemble seeds & $1$ deterministic ($N{=}469$ bets) \\
+\bottomrule
+\end{tabular}
+\end{table}
+\vspace*{-0.3em}
+
+\section{Polymarket cross-platform replication (per-call layer)}
+\label{app:polymarket}
+We replicate the headline per-call finding on Polymarket
+($N{=}268$ held-out (model, clique) evaluations, summed across the
+four-model panel). \Cref{fig:headline_polymarket} shows the same
+incoherence-conditional gain shape as the Paleka result, with the
+$m{\ge}4$ stratum (large multi-candidate partitions) contributing
+the largest gains. \Cref{tab:main_polymarket} gives the per-model
+breakdown.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\linewidth]{figures/headline_polymarket.pdf}
+\caption{Polymarket cross-platform replication of the per-call
+result (\Cref{thm:pyth}): the incoherence-conditional gain
+pattern of \Cref{thm:pyth} replicates on resolved Polymarket
+events, with the largest mean gain in the highest-$\eps$
+quartile at $m{\ge}4$ (note the smaller per-call absolute
+magnitudes; the lower panel's cumulative Hanson--LMSR exposure
+reduction to the QP floor matches Corollary~\ref{cor:noarb}).}
+\label{fig:headline_polymarket}
+\end{figure}
+
+\input{figures/main_table_polymarket.tex}
+
+\section{Full per-cell tables}
+\label{app:fulltables}
+Per-model Brier under each baseline (\Cref{tab:main_real}), the
+six-method ablation including B3/B4 (\Cref{tab:ablation_methods}),
+the significance tests (\Cref{tab:sig_real}), and the Murphy
+reliability/resolution decomposition (\Cref{tab:murphy_real}).
+
+\input{figures/main_table.tex}
+\input{figures/ablation_table.tex}
+\input{figures/significance_table.tex}
+\input{figures/murphy_table.tex}
+
+\section{Proof of Cor.~\ref{cor:magnitude} (Rayleigh-quotient magnitude bound)}
+\label{app:magnitude}
+
+We give the proof under uniform i.i.d.\ owner-selection
+$\sigma:[m^\star]\!\to\![k]$, with $\bar\Pi := k^{-1}\sum_a \Pi_a$ and
+$D := \mathrm{diag}(\Sigma_\Pi)$. Define $u := x - \bar\Pi$ where
+$x_j := \Pi_{\sigma(j),j}$. Note $\bar\Pi \in \Mjoint$ by convexity
+of $\Mjoint$, and pointwise $\E_\sigma[u_j] = 0$,
+$\E_\sigma[u_j^2] = D_{jj}$, and cross-coordinate covariances vanish:
+$\E_\sigma[u_j u_{j'}] = 0$ for $j\!\ne\!j'$ by independence of
+$\sigma(j),\sigma(j')$.
+
+\paragraph{Generic upper bound.}
+By Prop.~\ref{prop:disagree} with reference $r=\bar\Pi$,
+$\eps^\star \le \|u\|_2$, so
+$\E_\sigma[(\eps^\star)^2] \le \E_\sigma[\|u\|_2^2]
+= \sum_j D_{jj} = \mathrm{tr}(D)$.
+
+\paragraph{Equality case ($\kappa_R = 1$).}
+If $\Mjoint$ contains a single equality $a_R^\top r = b_R$ binding at
+the projection (and no other constraint is active locally), the
+projection has the closed form
+$\Pijoint(x) = x - \frac{a_R^\top x - b_R}{\|a_R\|^2} a_R$, giving
+$\eps^\star = |a_R^\top x - b_R|/\|a_R\|$. Since $\bar\Pi \in \Mjoint$
+satisfies $a_R^\top \bar\Pi = b_R$, we have $a_R^\top x - b_R =
+a_R^\top u$, so $\eps^{\star 2} = (a_R^\top u)^2/\|a_R\|^2$. Taking
+expectation,
+$\E_\sigma[(a_R^\top u)^2] = a_R^\top D a_R$ (cross-terms vanish), so
+$\E_\sigma[(\eps^\star)^2] = a_R^\top D a_R / \|a_R\|^2$.
+
+\paragraph{Inequality case with boundary $\bar\Pi$ ($\kappa_R = \tfrac12$).}
+If the binding constraint at the projection is an inequality
+$a_R^\top r \le b_R$ with $a_R^\top \bar\Pi = b_R$ (boundary), the
+single-halfspace projection gives
+$\eps^\star = (a_R^\top u)_+/\|a_R\|$. The variable $a_R^\top u$ is
+zero-mean and symmetrically distributed about $0$ when the panel
+$\{\Pi_a\}$ is symmetric in $a_R^\top \Pi_a$ around its mean $b_R$
+(which holds asymptotically and approximately holds for our $k\!=\!4$
+panel). Then $\E[(\cdot)_+^2] = \tfrac12 \E[(\cdot)^2]$, giving
+$\E_\sigma[(\eps^\star)^2] = \tfrac12 \cdot a_R^\top D a_R/\|a_R\|^2$.
+
+\paragraph{Inequality case with interior $\bar\Pi$.}
+When $\bar\Pi$ is strictly interior to constraint $i$ (slack
+$s_i := b_i - a_i^\top \bar\Pi > 0$), the violation
+$v_i = (a_i^\top u - s_i)_+$ has reduced second moment under the
+truncation, so $\E_\sigma[(\eps^\star)^2] < \tfrac12 a_R^\top D
+a_R/\|a_R\|^2$ in this regime; the bound becomes a strict upper
+bound. This matches the empirical conjunction under-shoot
+($0.83\times$ predicted): $\bar\Pi_3 < \min(\bar\Pi_1, \bar\Pi_2)$ by
+Jensen, leaving the upper Fr\'echet constraint slack at $\bar\Pi$.
+
+\paragraph{Closed-form residuals.}
+The negation case (equality, $a\!=\!(1,1)$, $b\!=\!1$, $\|a\|^2\!=\!2$)
+recovers $\E[(\eps^\star)^2] = \mathrm{tr}(D)/2$. The partition case
+(equality, $a\!=\!\mathbf 1_{m^\star}$, $b\!=\!1$, $\|a\|^2\!=\!m^\star$)
+recovers $\mathrm{tr}(D)/m^\star$ in the no-clipping regime; with
+clipping, the actual residual is strictly larger, leaving this as a
+lower bound. The conjunction/disjunction cases use Fr\'echet
+halfspace normals as $a_R$ (with $\|a_R\|^2 \in \{2,3\}$ depending on
+the binding constraint per clique), with $\kappa_R = \tfrac12$.
+$\hfill\square$
+
+\paragraph{Empirical validation.}
+\Cref{tab:magnitude_validation} reports observed
+$\langle(\eps^\star)^2\rangle$ versus the Rayleigh-quotient prediction
+$\kappa_R\, a_R^\top D a_R/\|a_R\|^2$ across $1{,}876$ ensemble
+cliques. The dominant active constraint $a_R$ per clique is the
+defining halfspace with smallest slack at $\bar\Pi$ (typically the
+upper Fr\'echet for and, the upper Fr\'echet $r_3\!\le\!r_1\!+\!r_2$ for or).
+
+\begin{center}
+\refstepcounter{table}
+\label{tab:magnitude_validation}
+{\small Table~\thetable. Predicted vs.\ observed $\langle(\eps^\star)^2\rangle$ under uniform random owner-selection. ``Generic'' is $\mathrm{tr}(D)$ (the upper bound without single-active-constraint geometry); ``Rayleigh'' is $\kappa_R\,a_R^\top D a_R/\|a_R\|^2$.\par}
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Relation & $\kappa_R$ & $\|a_R\|^2$ & $\langle$obs$\rangle$ & $\langle$Rayleigh$\rangle$ & ratio & per-clique $r$ \\
+\midrule
+\textsc{Neg}       & $1$           & $2$ & $0.0286$ & $0.0271$ & $1.054$ & $0.890$ \\
+\textsc{Partition} & $1$           & $m^\star$ & $0.0146$ & $0.0137$ & $1.069$ & $0.850$ \\
+\textsc{And}       & $\tfrac12$    & $\{2,3\}$ & $0.0153$ & $0.0184$ & $0.830$ & $0.710$ \\
+\textsc{Or}        & $\tfrac12$    & $\{2,3\}$ & $0.0170$ & $0.0166$ & $1.026$ & $0.690$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The Rayleigh form is uniformly tight: ratios are $0.83$--$1.07$
+across all four relations. The generic $\mathrm{tr}(D)$ bound is
+loose by $1.9\times$ on \textsc{Neg}, $4.0\times$ on \textsc{Partition}
+(at the average $m^\star\!=\!4$), and $5.3$--$6.1\times$ on
+conjunction/disjunction; the Rayleigh form recovers the typical
+magnitude from the specialist panel covariance alone.
+
+\section{Compositional ablation: projection-step decomposition}
+\label{app:projection_ablation}
+
+We decompose hierarchical JCD into two layers (per-component JCD
+then joint projection) and four operators evaluated against
+resolved labels:
+(A) raw composed (no per-component JCD, no joint projection),
+(B) JCD composed (per-component JCD only),
+(C) raw $+$ joint projection,
+(D) JCD $+$ joint projection (hierarchical).
+\Cref{tab:proj_ablation} reports mean $\eps^\star$ before projection
+(A, B) and mean compositional Brier under each operator.
+
+\begin{center}
+\refstepcounter{table}
+\label{tab:proj_ablation}
+{\small Table~\thetable. Compositional projection-step ablation. $\eps^\star$ is post-aggregation; Brier is against resolved labels. Hier $\equiv$ D.\par}
+\small
+\begin{tabular}{llrrrr}
+\toprule
+Relation & Op & $\langle\eps^\star\rangle$ & exposure & Brier & $\Delta$Brier vs.\ A \\
+\midrule
+\textsc{Neg} & A: raw            & $0.144$ & $0.203$ & $0.2367$ & \\
+             & B: JCD            & $0.114$ & $0.161$ & $0.2301$ & $-0.0066$ \\
+             & C: raw $+\Pi^\star$ & $0$     & $0$     & $0.2174$ & $-0.0193$ \\
+             & D: hier            & $0$     & $0$     & $0.2165$ & $-0.0202$ \\
+\midrule
+\textsc{And} & A & $0.076$ & $0.110$ & $0.2270$ & \\
+             & B & $0.054$ & $0.079$ & $0.2186$ & $-0.0084$ \\
+             & C & $0$     & $0$     & $0.2144$ & $-0.0126$ \\
+             & D & $0$     & $0$     & $0.2110$ & $-0.0160$ \\
+\midrule
+\textsc{Or}  & A & $0.110$ & $0.153$ & $0.2538$ & \\
+             & B & $0.072$ & $0.102$ & $0.2557$ & $+0.0019$ \\
+             & C & $0$     & $0$     & $0.2571$ & $+0.0033$ \\
+             & D & $0$     & $0$     & $0.2584$ & $+0.0046$ \\
+\midrule
+\textsc{Partition} & A & $0.312$ & $0.620$ & $0.2165$ & \\
+                   & B & $0.098$ & $0.193$ & $0.1864$ & $-0.0301$ \\
+                   & C & $0$     & $0$     & $0.1832$ & $-0.0333$ \\
+                   & D & $0$     & $0$     & $0.1817$ & $-0.0348$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Per-component JCD dominates the partition gain (the local repair already brings
+the assembled mass close to $1$). The joint projection dominates negation, and,
+and disjunction, where local repair leaves cross-coordinate violations untouched.
+The disjunction inversion under (B)--(D) is the artefact discussed in
+\S\ref{sec:exp}.
+
+\section{Greedy-decoding ($T\!=\!0$) same-model control}
+\label{app:t0_control}
+
+To isolate within-model decoding stochasticity from
+coordinate-isolation disagreement, we re-ran the $4$-fresh-seed
+Claude-Haiku-4.5 same-model protocol of \S\ref{sec:exp} at
+temperature $T\!=\!0$ on $60$ cliques per Paleka relation and $30$
+Polymarket partitions. Numbers in \Cref{tab:t0} are mean $\eps^\star$
+under $16$ uniform random owner-selection draws per clique; the
+$T\!=\!0.7$ row is the sampling-temperature baseline of \S\ref{sec:exp}.
+
+\begin{center}
+\refstepcounter{table}
+\label{tab:t0}
+{\small Table~\thetable. Same-model $\eps^\star$ at $T\!=\!0.7$ vs.\ $T\!=\!0$ (greedy decoding). Cross-model column reproduced from \S\ref{sec:exp} for reference.\par}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Relation & cross-model & same-model $T\!=\!0.7$ & same-model $T\!=\!0$ & $T_0/T_{0.7}$ & $T_0/$cross \\
+\midrule
+\textsc{Neg}       & $0.114$ & $0.025$ & $0.096$ & $3.83$ & $0.84$ \\
+\textsc{And}       & $0.054$ & $0.019$ & $0.023$ & $1.20$ & $0.42$ \\
+\textsc{Or}        & $0.072$ & $0.040$ & $0.074$ & $1.87$ & $1.04$ \\
+\textsc{Partition} & $0.098$ & $0.058$ & $0.025$ & $0.44$ & $0.26$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The greedy-decoding control rules out the alternative ``$\eps^\star$
+is just sampling noise'' hypothesis. On negation and disjunction,
+$T\!=\!0$ \emph{increases} the residual ($T_0/T_{0.7}\!>\!1$); on
+partition it decreases it by $56\%$, indicating that some partition
+residual is decoding-stochastic. On all four relations the residual
+remains positive at $T\!=\!0$ and is comparable in magnitude to
+(or, for negation/disjunction, larger than) the $T\!=\!0.7$
+same-model figure. The result implicates genuine
+coordinate-isolation disagreement: the same model, prompted with
+isolated single-question contexts at greedy decoding, produces
+different ``deterministic'' outputs across coordinates that fail to
+satisfy the cross-component coupling. (Anthropic does not accept a
+\texttt{seed} parameter, so $4$ ``specialists'' at $T\!=\!0$ vary only
+through residual non-determinism in batch processing; $\eps^\star$
+remains detectable nonetheless.)
+
+\section{$K$-sweep on real LLM forecasts}
+\label{app:ablations}
+
+\paragraph{Per-component layer.}
+\Cref{fig:ksweep} sweeps $K \in \{4, 8, 16, 24\}$ on Anthropic
+Claude-Haiku-4.5 NegChecker forecasts. The non-zero
+$\Delta\mathrm{Brier}$ floor ($0.008$--$0.010$) is the empirical
+signature of $\pF \notin \MC$ rather than finite-sample fluctuation.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.38\linewidth]{figures/ablation_k.pdf}
+\caption{$K$-sweep on Anthropic Claude-Haiku-4.5 NegChecker
+forecasts. Non-vanishing $\Delta\mathrm{Brier}$ asymptote: the
+empirical signature of structural incoherence in $\pF$.}
+\label{fig:ksweep}
+\end{figure}
+
+\paragraph{Compositional layer.}
+We also sweep $K \in \{8, 16, 32\}$ at the compositional layer (the
+residual $\eps^\star$ in \S\ref{sec:exp}). $K\!=\!8$ uses the
+existing $4$-LLM panel and $K\!=\!16, 32$ extends Anthropic
+Claude-Haiku-4.5, GPT-5.4-mini, and GPT-5.4-nano to additional
+samples on a $40$-clique-per-relation, $20$-partition subset (Groq
+Llama-$3.3$-70b excluded after exhausting its tokens-per-day
+quota mid-sweep). The 3-model panel ensemble is computed identically
+to the 4-LLM panel under uniform random owner-selection, $16$
+ensemble draws per clique.
+
+\begin{center}
+\refstepcounter{table}
+\label{tab:k_sweep_comp}
+{\small Table~\thetable. Compositional $\eps^\star$ vs.\ $K$, 3-model panel.\par}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Relation & $K\!=\!8$ & $K\!=\!16$ & $K\!=\!32$ & $N$ \\
+\midrule
+\textsc{Neg}       & $0.143$ & $0.145$ & $0.143$ & $432$ \\
+\textsc{And}       & $0.067$ & $0.067$ & $0.067$ & $432$ \\
+\textsc{Or}        & $0.078$ & $0.080$ & $0.079$ & $432$ \\
+\textsc{Partition} & $0.076$ & $0.082$ & $0.082$ & $224$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The compositional residual is flat across $K\!\in\!\{8, 16, 32\}$ (within
+$\pm 0.003$ per relation), confirming that $\eps^\star$ is a
+\emph{structural} property of cross-component coupling under
+specialist routing rather than finite-sample fluctuation. Combined
+with the per-component flatness above, the K-sweep robustness covers
+both layers.
+
+\section{Structured-routing replication}
+\label{app:structured}
+
+\Cref{fig:structured} repeats the compositional experiment under
+the structured-routing topology of \Cref{sec:exp}.
+
+The residual is positive on $98.5\%$ of negations (vs.\ $66\%$ under
+random), $36\%$ of partitions (vs.\ $94\%$), $12\%$ of
+conjunctions (vs.\ $33\%$), and $16\%$ of disjunctions
+(vs.\ $43\%$). Per-bet exposure is $\$0.11/$bet ($\$51.88$ over
+$469$ bets), comparable to the random regime's $\$0.13$/bet.
+Negation has a higher residual rate because two specialists disagree more strongly
+than four random ones; conjunction/disjunction improve because
+structured routing reduces cross-model mixing, while partitions
+improve because one specialist owns all candidates.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.58\linewidth]{figures/compositional_structured.pdf}
+\caption{\textbf{Structured-routing replication of
+\Cref{fig:compositional}.} The same certificate is positive with a
+different relation breakdown but comparable per-bet exposure
+($\$0.11$/bet vs.\ $\$0.13$/bet under random assignment). The lower
+cumulative endpoint reflects fewer bets under structured routing,
+$N{=}469$ vs.\ $N{=}1{,}876$, not lower per-bet exposure.}
+\label{fig:structured}
+\end{figure}
+
+\section{Worst-case failure modes}
+\label{app:failure_modes}
+
+\Cref{tab:failure_modes} lists the top-$5$ ensemble cliques by
+compositional residual $\eps^\star$ under random assignment. The
+largest cases are realized resolved-Paleka quotes where specialists
+make opposite sides of a negation jointly too likely, or make a
+disjunction inconsistent with its antecedents.
+
+\begin{minipage}{\linewidth}
+\centering
+\refstepcounter{table}
+\label{tab:failure_modes}
+{\small Table~\thetable. Top-5 ensemble cliques by compositional
+residual $\eps^\star$ under random assignment ($N{=}1{,}876$).\par}
+\tiny
+\input{figures/failure_mode_table.tex}
+\end{minipage}
+
+\section{Planner-style routing simulation: per-question detail}
+\label{app:realagent}
+
+We report all $100$ live-style partition forecasting questions
+used in the planner-style routing simulation (\Cref{sec:exp}).
+Each row gives the partition label, the number of outcomes $m$,
+the per-outcome marginal returned by the randomly-assigned
+specialist LLM (LLM key: \texttt{C}=Claude-Haiku-4.5,
+\texttt{M}=GPT-5.4-mini, \texttt{N}=GPT-5.4-nano,
+\texttt{L}=Llama-3.3-70b), the resulting partition mass
+$\sum_i p_i$, and the compositional residual $\eps^\star$. All
+four specialist clients ran with $K{=}8$ verbalized-probability
+samples at temperature $0.7$; each received its assigned outcome
+as an isolated single-question prompt with no context about the
+partition or the other outcomes. Master seed $0$, sampling
+without replacement when $m\!\le\!4$. Total cost:
+$\approx\!2{,}400$ LLM calls, $\approx\!\$5$,
+$\approx\!35$ minutes wall-clock. Rows are sorted by descending
+$\eps^\star$ so the worst cases appear first.
+
+\input{figures/real_agent_table_full.tex}
+
+\paragraph{Worst-case anatomy.}
+The largest residual ($\eps^\star=0.749$) is the ``Largest US AI
+startup IPO 2026'' partition (four sectoral outcomes:
+infrastructure, model, applications, other). Three of the four
+assigned specialists privately quote $P(\text{their sector}) > 0.5$
+(the fourth is at $0.39$); collectively the specialists
+over-allocate, with assigned masses summing to $2.50$. Each
+marginal is locally well-calibrated for the single Bernoulli the
+specialist was asked, but no specialist saw that the four sectors
+tile the field; as a result, the assembled system quotes $250\%$
+probability mass. Simplex projection reduces the quote to a
+proper distribution in closed form, eliminating the exposure to
+QP-tolerance. ML-benchmark partitions (Top MMLU,
+$\eps^\star{=}0.65$; SWE-Bench Verified, $0.54$; HumanEval+,
+$0.47$; GPQA, $0.46$) form a coherent high-residual cluster: in
+each, four specialists are assigned to one candidate model
+organization, and the specialists collectively over-allocate;
+masses sum to $\sim\!2.0$ even when only one or two specialists
+are above $0.5$ individually.
+
+\paragraph{Why some partitions yield near-zero residual.}
+The five smallest residuals (Pulitzer Prize Fiction setting
+$0.001$, Booker Prize nationality $0.002$, FDA Alzheimer's drug
+action $0.007$, GLP-1 label expansion $0.009$, leading mobile OS
+$0.009$) share a common structure: the partition either has only
+two real candidate outcomes, or has a strongly bimodal
+training-set prior. The single-question marginals then
+approximately satisfy the partition constraint without any
+explicit cross-component coordination. The certificate is
+therefore discriminating rather than uniformly positive: it is
+positive on novel multi-way partitions and near zero on
+well-rehearsed ones.
+
+\section{Routing-protocol ladder: per-partition detail}
+\label{app:context}
+
+We compare seven routing protocols on the same $100$ live-style
+multi-candidate partition benchmark (App.~\ref{app:realagent}). Three
+protocols use fixed owner-selected routing under different prompt
+templates (\textsc{isolated}, \textsc{listed}, \textsc{full}); four
+use a tool-using planner (Claude-Haiku-4.5 or GPT-5.5 as planner,
+each $\times$ unguided/coherence-guided framings). Specialist panel
+across all protocols: Claude-Haiku-4.5, GPT-5.4-mini,
+GPT-5.4-nano, DeepSeek-V3.2, Llama-4-Maverick-17B-128E
+($5$ specialists; Llama-3.3-70b dropped after TPD-quota issues).
+$K\!=\!8$ verbalized samples per specialist at temperature $0.7$.
+Total cost: $\approx\!\$80$ across all protocols.
+
+\paragraph{Prompt templates.}
+\textsc{isolated} reuses the per-question
+\texttt{DEFAULT\_PROMPT}
+of \citet{paleka2024consistency}-style routing.
+\textsc{listed} prepends a numbered list of all $m$ partition outcomes
+followed by ``Specific outcome to estimate: $\{\textit{outcome}\}$'';
+no normalization instruction.
+\textsc{full} adds the explicit clause: ``these outcomes are mutually
+exclusive and collectively exhaustive, so the probabilities you would
+assign to all $m$ outcomes must sum to $1$. Bear this in mind.''
+
+\begin{center}
+\refstepcounter{table}
+\label{tab:context_full}
+{\small Table~\thetable. Routing-protocol ladder ($N\!=\!100$
+partitions). Cost is mean delegate calls per partition divided by
+mean partition size $\bar m \!\approx\! 3.3$. CI bracketed.\par}
+\small
+\begin{tabular}{lcccc}
+\toprule
+protocol & $\langle\eps^\star\rangle$ & median & frac.\ $\eps^\star\!>\!10^{-3}$ & cost \\
+\midrule
+\multicolumn{5}{l}{\emph{Owner-selected routing, prompt-engineering only:}}\\
+\textsc{isolated}             & $0.235$ {\footnotesize $[0.20,0.27]$} & $0.186$ & $1.00$ & $1\!\times\!m$ \\
+\textsc{listed}               & $0.090$ {\footnotesize $[0.08,0.11]$} & $0.077$ & $0.98$ & $1\!\times\!m$ \\
+\textsc{full+sum-to-1}        & $0.081$ {\footnotesize $[0.07,0.09]$} & $0.070$ & $0.99$ & $1\!\times\!m$ \\
+\midrule
+\multicolumn{5}{l}{\emph{Tool-using planner with delegate $+$ submit-final tools:}}\\
+Claude-Haiku, unguided        & $0.0090$ {\footnotesize $[0.001,0.024]$} & $0.000$ & $0.05$ & $4.69\!\times\!m$ \\
+Claude-Haiku, guided          & $0.0044$ {\footnotesize $[0.000,0.011]$} & $0.000$ & $0.03$ & $4.87\!\times\!m$ \\
+GPT-5.5,    unguided        & $0.0000$ {\footnotesize $[0,\,0]$}        & $0.000$ & $0.00$ & $6.98\!\times\!m$ \\
+GPT-5.5,    guided          & $0.0000$ {\footnotesize $[0,\,0]$}        & $0.000$ & $0.00$ & $6.51\!\times\!m$ \\
+\midrule
+\multicolumn{5}{l}{\emph{Geometric repair (any prompt, owner-selected):}}\\
+hierarchical JCD              & $\le 10^{-7}$ (QP floor) & $0$ & $0$ & $1\!\times\!m + \Pi^\star$ \\
+\bottomrule
+\end{tabular}\\[2pt]
+{\small Pairwise Wilcoxon: prompt \textsc{iso}\,$\to$\,\textsc{listed}
+$p\!=\!2.2\!\times\!10^{-12}$, but \textsc{listed}\,$\to$\,\textsc{full}
+$p\!=\!0.18$ (showing alternatives matters; sum-to-$1$ instruction
+does not). Planner Claude-Haiku $>$ GPT-5.5:
+$p\!<\!10^{-3}$ (unguided), $p\!<\!10^{-4}$ (guided): reasoning depth
+strictly closes the residual that tool-use alone leaves.\par}
+\end{center}
+
+\paragraph{Where context helps most.}
+The largest drops (\textsc{iso}\,$\to$\,\textsc{full}) are on
+partitions where isolated specialists strongly anchor to their
+assigned outcome with no cross-context knowledge of alternatives:
+``Largest US AI startup IPO 2026'' ($0.74\!\to\!0.12$), ``Top MMLU
+score, year-end 2026'' ($0.60\!\to\!0.05$), ``2026 ACM Turing Award area''
+($0.63\!\to\!0.13$). These are partitions over emerging or
+specialist-knowledge candidates where the specialist needs to know
+the alternatives to allocate probability mass appropriately.
+
+\paragraph{Where context hurts.}
+Eighteen partitions show $\eps^\star_{\text{full}}\!>\!\eps^\star_{\text{iso}}$,
+predominantly political/economic ones where isolated specialists were
+already roughly normalised (e.g., 2028 US Presidential winner
+$0.003\!\to\!0.022$, 2026 California gubernatorial party
+$0.10\!\to\!0.26$). When isolated estimates already average to $\sim 1$,
+forcing specialists to reason about all alternatives can introduce
+mass that wasn't there.
+
+\paragraph{Implication for deployment.}
+Three regimes emerge: (i)~\emph{prompt-engineering at fixed
+owner-selection} attenuates the failure mode but bottoms out at
+$\eps^\star\!\approx\!0.08$ (essentially the
+\textsc{isolated}\,$\to$\,\textsc{listed} step); (ii)~\emph{tool-using
+planners} reach near-zero residual but pay $5$--$7\!\times$ the naive
+elicitation budget, with frontier reasoning depth required to close
+the last $\sim\!0.005$ that tool-use alone leaves; (iii)~\emph{hierarchical
+projection} reaches the same near-zero residual at the naive
+$1\!\times\!m$ elicitation cost, modulo a small QP solve. The
+geometric repair is therefore the cost-efficient route to coherence
+when the coupling set $\Cset$ is specifiable; smart-planner
+integration is the alternative when $\Cset$ is implicit and the
+planner can infer it through extra delegate calls.
+
+\section{Tool-augmented specialist A/B: per-partition detail}
+\label{app:toolaug}
+
+We re-run the first $30$ partitions of the case study under a
+tool-augmented protocol (\S\ref{sec:exp}). Each specialist
+issues exactly one DuckDuckGo \texttt{web\_search} call against
+its assigned outcome text, and the top-five title+snippet results
+are inserted as context before the specialist emits its $K{=}8$
+verbalized-probability samples. Master seed and assignment are
+identical to the no-tool first-$30$ baseline, so the per-partition
+$\Delta\eps^\star = \eps^\star_t - \eps^\star_b$ is a direct A/B.
+Total cost: $\approx\!720$ LLM calls + $90$ search calls,
+$\approx\!\$2$, $\approx\!25$ minutes wall-clock.
+
+Aggregate: mean $\eps^\star_b = 0.260 \to \eps^\star_t = 0.283$;
+$20/30$ partitions are equal or worse with retrieval, $10/30$ are
+better; mean $\Delta\eps^\star = +0.023$. The single largest
+\emph{worsening} is ``World population, mid-2027'' ($+0.563$):
+every specialist's search returns recent UN bracket estimates
+around $8.1$--$8.2$\,bn and each anchors near
+$P(\text{their bucket}){\approx}0.7$, summing to $2.22$. The
+single largest \emph{improvement} is ``2026 Grammy Album of the
+Year genre'' ($-0.267$): retrieval surfaces 2026 Grammy nominee
+distributions that pull every specialist toward a similar
+partition shape.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\linewidth]{figures/tool_vs_notool.pdf}
+\caption{\textbf{Tool augmentation does not eliminate the
+compositional residual.} Each point is one of the $30$ matched
+partitions; $x$-axis is $\eps^\star$ in the no-tool baseline,
+$y$-axis is $\eps^\star$ when each specialist receives top-five
+DuckDuckGo snippets for its assigned outcome before quoting.
+Most points lie on or above $y\!=\!x$: tool augmentation tightens
+within-specialist variance but cross-specialist disagreement
+persists, so the assembled partition quote is no more coherent
+with retrieval than without.}
+\label{fig:toolaug}
+\end{figure}
+
+\input{figures/tool_aug_table.tex}
+
+%==============================================================================
+\section{Per-specialist residual attribution}
+\label{app:attribution}
+
+For each ensemble bet with $\eps^\star\!>\!10^{-9}$
+($n_{\text{pos}}\!=\!894$ across the 1,876-bet ensemble of
+\S\ref{sec:exp}), we attribute residual mass to each specialist
+by computing the $L_2$ norm of the residual vector
+$(x{-}\Pi^\star(x))$ restricted to the coordinates that specialist
+owned. The decomposition gives a per-clique credit assignment for
+which sub-model drives the joint incoherence.
+
+\begin{table}[h]
+\centering
+\small
+\input{figures/specialist_attribution_table}
+\caption{Per-specialist mean attributed $L_2$ mass on coordinates
+each specialist owned, across the $894$ positive-residual bets.}
+\label{tab:attribution}
+\end{table}
+
+GPT-5.4-mini carries the largest attributed mass per clique among
+the four mid-tier specialists, consistent with the frontier-panel
+finding (\S\ref{subsec:frontier}) that the GPT-5.5 upgrade
+reduces magnitude but not prevalence: even with a frontier roster,
+$\eps^\star\!>\!0$ on $97.8\%$ of the matched partition bets.
+
+%==============================================================================
+\section{Trivial vs.\ hierarchical projection: per-relation gaps}
+\label{app:projgap}
+
+We verify that the closed-form local projections of
+App.~\ref{app:size3} agree with the iterative Boyle--Dykstra cycle
+of \Cref{thm:dykstra} to numerical precision on the equality-couple
+relations (negation, partition) and require the cyclic iteration
+to recover the exact $L_2$ projection on the inequality-couple
+relations (conjunction, disjunction), where the Fr\'echet polytope
+is not a Cartesian product of half-spaces.
+
+\begin{table}[h]
+\centering
+\small
+\input{figures/projection_gaps_table}
+\caption{Per-relation maximum
+$\|\Pi^{\text{closed}}{-}\Pi^{\text{JCD}}\|_\infty$ over the
+1,876 ensemble bets. Negation and partition match to numerical
+precision; conjunction/disjunction require the cyclic projection
+because the Fr\'echet polytope is not a Cartesian product of
+half-spaces.}
+\label{tab:projgap}
+\end{table}
+
+The conjunction/disjunction mean gaps ($\sim\!10^{-3}$) are
+well below the per-clique $\eps^\star$ magnitudes
+($0.058$--$0.118$ on these relations,
+\S\ref{subsec:compres_results}), so the empirical residuals
+reported throughout are not artefacts of any approximate
+projection step; the Dykstra cycle converges to the exact
+$L_2$ projection on every clique reported.
+
+%==============================================================================
+\section{Causal-mechanism (coupling-visibility) experiment}
+\label{app:coupling}
+
+This appendix supports the coupling-visibility intervention of
+\S\ref{subsec:coupling}.
+
+\paragraph{Sample of partitions.}
+The 20 partitions are the full planner-harness slate of
+\S\ref{subsec:planner_disc}; the spec ``20 highest-$\eps^\star$''
+selects every partition because the harness has
+$\eps^\star\!>\!0$ on $20/20$.
+
+\paragraph{Routing.}
+Held fixed across \textsc{Blind} and \textsc{Informed} at the
+planner-harness's chosen specialist-to-outcome assignment per
+partition. The original planner harness has no random-assignment
+seeds; the four ``seeds'' here are independent $K\!=\!8$ sampling
+rounds per (partition, condition), giving four paired $\eps^\star$
+values per partition.
+
+\paragraph{Prompts.}
+\textsc{Blind} is a single-Bernoulli question on the assigned
+outcome with no partition context.
+\textsc{Informed} additionally shows the partition label, all
+sibling outcomes, the explicit $\sum_i p_i\!=\!1$ constraint,
+and the peers' \textsc{Blind} quotes on the other outcomes.
+\textsc{Informed} uses \textsc{Blind} quotes from the same seed
+as context, so the two conditions are tightly paired within a
+(partition, seed) cell.
+
+\paragraph{Aggregate result.}
+Mean paired
+$\Delta\eps^\star = \eps^\star_{\textsc{Blind}}{-}\eps^\star_{\textsc{Informed}} = +0.221$
+($95\%$ paired-bootstrap CI $[+0.173, +0.270]$; Wilcoxon
+$W{=}257$, $p\!=\!2.6\!\times\!10^{-10}$; $n_{\text{pairs}}\!=\!77/80$
+cells surviving parsing). $16/20$ partitions improve under
+\textsc{Informed}, $1/20$ unchanged, $3/20$ worsened. The three
+worsening partitions ($\Delta\!<\!0$) are non-payoff multi-way
+forecasts where \textsc{Blind} specialists were already roughly
+normalised; \textsc{Informed} can introduce mass that the
+isolated quotes did not have. This matches the LLM-side
+mitigations result (\S\ref{subsec:mitigations}): prompt-based
+fixes can harm already-coherent quotes, and the geometric
+certificate gates them.
+
+\end{document}

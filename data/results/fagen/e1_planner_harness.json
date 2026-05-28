@@ -1,0 +1,1456 @@
+{
+  "summary": {
+    "n_partitions": 20,
+    "total_calls": 564,
+    "baseline_mean_eps": 0.23124304914785254,
+    "planner_mean_eps": 0.11271155588745033,
+    "delta_mean": -0.11853149326040224,
+    "delta_median": -0.10256061679936176,
+    "n_better": 15,
+    "n_worse": 5,
+    "n_unchanged": 0,
+    "n_eps_star_pos": 20
+  },
+  "results": [
+    {
+      "label": "2028 US Presidential winner",
+      "outcomes": [
+        "the Republican Party nominee wins the 2028 US Presidential election",
+        "the Democratic Party nominee wins the 2028 US Presidential election",
+        "an independent or third-party candidate wins the 2028 US Presidential election"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the probability that the Republican Party nominee wins the 2028 US Presidential election. This is one outcome in a three-way partition: (0) Republican wins, (1) Democrat wins, (2) Independent/third-party wins. Your estimate should reflect historical Republican performance, current political dynamics, and structural factors. The three outcome probabilities will be aggregated, so ensure internal coherence with typical US two-party dominance patterns.",
+        "You are forecasting the probability that the Democratic Party nominee wins the 2028 US Presidential election. This is one outcome in a three-way partition: (0) Republican wins, (1) Democrat wins, (2) Independent/third-party wins. Your estimate should reflect historical Democratic performance, current political dynamics, and structural factors. The three outcome probabilities will be aggregated, so ensure internal coherence with typical US two-party dominance patterns.",
+        "You are forecasting the probability that an independent or third-party candidate wins the 2028 US Presidential election. This is one outcome in a three-way partition: (0) Republican wins, (1) Democrat wins, (2) Independent/third-party wins. Consider historical precedent (no independent has won since 1828), structural barriers to third-party success, and any exceptional circumstances that might enable a non-major-party victory in 2028."
+      ],
+      "per_outcome_means": [
+        0.45,
+        0.46749999999999997,
+        0.019375000000000003
+      ],
+      "per_outcome_samples": [
+        [
+          0.46,
+          0.44,
+          0.45,
+          0.46,
+          0.44,
+          0.44,
+          0.47,
+          0.44
+        ],
+        [
+          0.47,
+          0.44,
+          0.48,
+          0.47,
+          0.47,
+          0.47,
+          0.49,
+          0.45
+        ],
+        [
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.015,
+          0.02,
+          0.02,
+          0.02
+        ]
+      ],
+      "sum": 0.936875,
+      "sum_violation": 0.06312499999999999,
+      "eps_star": 0.036445235742595145,
+      "projected": [
+        0.4710416666666667,
+        0.48854166666666665,
+        0.04041666666666667
+      ],
+      "baseline_eps_star": 0.009381941874331346,
+      "baseline_sum": 1.0162499999999999,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that the Republican Party nominee wins the 2028 US Presidential election. This is one outcome in a three-way partition: (0) Republican wins, (1) Democrat wins, (2) Independent/third-party wins. Your estimate should reflect historical Republican performance, current political dynamics, and structural factors. The three outcome probabilities will be aggregated, so ensure internal coherence with typical US two-party dominance patterns.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that the Democratic Party nominee wins the 2028 US Presidential election. This is one outcome in a three-way partition: (0) Republican wins, (1) Democrat wins, (2) Independent/third-party wins. Your estimate should reflect historical Democratic performance, current political dynamics, and structural factors. The three outcome probabilities will be aggregated, so ensure internal coherence with typical US two-party dominance patterns.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the probability that an independent or third-party candidate wins the 2028 US Presidential election. This is one outcome in a three-way partition: (0) Republican wins, (1) Democrat wins, (2) Independent/third-party wins. Consider historical precedent (no independent has won since 1828), structural barriers to third-party success, and any exceptional circumstances that might enable a non-major-party victory in 2028.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 US House majority",
+      "outcomes": [
+        "the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+        "the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+        "no party holds an outright majority in the US House of Representatives following the 2026 midterm elections"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the probability that Republicans hold an outright House majority after the 2026 midterm elections. This is one of three mutually exclusive outcomes: (0) Republican majority, (1) Democratic majority, (2) no party majority. Consider current House composition, historical midterm patterns, redistricting effects, and demographic trends. Your forecast will be combined with peer forecasts for the other outcomes to form a coherent probability distribution.",
+        "You are forecasting the probability that Democrats hold an outright House majority after the 2026 midterm elections. This is one of three mutually exclusive outcomes: (0) Republican majority, (1) Democratic majority, (2) no party majority. Consider current House composition, historical midterm patterns, redistricting effects, and demographic trends. Your forecast will be combined with peer forecasts for the other outcomes to form a coherent probability distribution.",
+        "You are forecasting the probability that no party holds an outright House majority after the 2026 midterm elections (a divided or tied House). This is one of three mutually exclusive outcomes: (0) Republican majority, (1) Democratic majority, (2) no party majority. Consider historical frequency of divided Houses, current polarization, and seat distribution dynamics. Your forecast will be combined with peer forecasts for the other outcomes to form a coherent probability distribution."
+      ],
+      "per_outcome_means": [
+        0.3825,
+        0.19125,
+        0.0525
+      ],
+      "per_outcome_samples": [
+        [
+          0.44,
+          0.34,
+          0.41,
+          0.38,
+          0.41,
+          0.28,
+          0.38,
+          0.42
+        ],
+        [
+          0.28,
+          0.18,
+          0.18,
+          0.18,
+          0.17,
+          0.22,
+          0.18,
+          0.14
+        ],
+        [
+          0.04,
+          0.04,
+          0.08,
+          0.03,
+          0.04,
+          0.08,
+          0.03,
+          0.08
+        ]
+      ],
+      "sum": 0.62625,
+      "sum_violation": 0.37375,
+      "eps_star": 0.21578466310962263,
+      "projected": [
+        0.5070833333333333,
+        0.31583333333333335,
+        0.17708333333333334
+      ],
+      "baseline_eps_star": 0.38105117766515295,
+      "baseline_sum": 1.66,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that Republicans hold an outright House majority after the 2026 midterm elections. This is one of three mutually exclusive outcomes: (0) Republican majority, (1) Democratic majority, (2) no party majority. Consider current House composition, historical midterm patterns, redistricting effects, and demographic trends. Your forecast will be combined with peer forecasts for the other outcomes to form a coherent probability distribution.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that Democrats hold an outright House majority after the 2026 midterm elections. This is one of three mutually exclusive outcomes: (0) Republican majority, (1) Democratic majority, (2) no party majority. Consider current House composition, historical midterm patterns, redistricting effects, and demographic trends. Your forecast will be combined with peer forecasts for the other outcomes to form a coherent probability distribution.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the probability that no party holds an outright House majority after the 2026 midterm elections (a divided or tied House). This is one of three mutually exclusive outcomes: (0) Republican majority, (1) Democratic majority, (2) no party majority. Consider historical frequency of divided Houses, current polarization, and seat distribution dynamics. Your forecast will be combined with peer forecasts for the other outcomes to form a coherent probability distribution.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 US Senate majority",
+      "outcomes": [
+        "the Republican Party holds an outright majority in the US Senate following the 2026 midterm elections",
+        "the Democratic Party holds an outright majority in the US Senate following the 2026 midterm elections",
+        "no party holds an outright majority in the US Senate following the 2026 midterm elections"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the probability that Republicans hold an outright majority (\u226551 seats) in the US Senate after the 2026 midterm elections. Consider current seat distribution, historical midterm patterns, demographic trends, and the specific competitive landscape of 2026 Senate races. This is one of three mutually exclusive outcomes; your forecast will be combined with Democratic majority and no-majority forecasts to form a coherent probability distribution.",
+        "You are forecasting the probability that Democrats hold an outright majority (\u226551 seats) in the US Senate after the 2026 midterm elections. Consider current seat distribution, historical midterm patterns, demographic trends, and the specific competitive landscape of 2026 Senate races. This is one of three mutually exclusive outcomes; your forecast will be combined with Republican majority and no-majority forecasts to form a coherent probability distribution.",
+        "You are forecasting the probability of a divided Senate (no party with \u226551 seats) after the 2026 midterm elections. This outcome requires either a 50-50 split or an unusual configuration where neither major party achieves outright control. Consider historical frequency of Senate ties, current polarization, and structural factors affecting seat distribution. This is one of three mutually exclusive outcomes in a partition."
+      ],
+      "per_outcome_means": [
+        0.3825,
+        0.1875,
+        0.08
+      ],
+      "per_outcome_samples": [
+        [
+          0.38,
+          0.42,
+          0.44,
+          0.37,
+          0.34,
+          0.42,
+          0.28,
+          0.41
+        ],
+        [
+          0.23,
+          0.18,
+          0.18,
+          0.14,
+          0.22,
+          0.14,
+          0.23,
+          0.18
+        ],
+        [
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08
+        ]
+      ],
+      "sum": 0.65,
+      "sum_violation": 0.35,
+      "eps_star": 0.20207259421636897,
+      "projected": [
+        0.49916666666666665,
+        0.30416666666666664,
+        0.19666666666666666
+      ],
+      "baseline_eps_star": 0.05990009042842358,
+      "baseline_sum": 1.1037499999999998,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that Republicans hold an outright majority (\u226551 seats) in the US Senate after the 2026 midterm elections. Consider current seat distribution, historical midterm patterns, demographic trends, and the specific competitive landscape of 2026 Senate races. This is one of three mutually exclusive outcomes; your forecast will be combined with Democratic majority and no-majority forecasts to form a coherent probability distribution.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that Democrats hold an outright majority (\u226551 seats) in the US Senate after the 2026 midterm elections. Consider current seat distribution, historical midterm patterns, demographic trends, and the specific competitive landscape of 2026 Senate races. This is one of three mutually exclusive outcomes; your forecast will be combined with Republican majority and no-majority forecasts to form a coherent probability distribution.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the probability of a divided Senate (no party with \u226551 seats) after the 2026 midterm elections. This outcome requires either a 50-50 split or an unusual configuration where neither major party achieves outright control. Consider historical frequency of Senate ties, current polarization, and structural factors affecting seat distribution. This is one of three mutually exclusive outcomes in a partition.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "Next UK general election year",
+      "outcomes": [
+        "the next UK general election occurs in calendar year 2026",
+        "the next UK general election occurs in calendar year 2027",
+        "the next UK general election occurs in calendar year 2028",
+        "the next UK general election occurs in 2029 or later"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the timing of the next UK general election. The UK Fixed-term Parliaments Act 2011 was repealed in 2022, returning to the previous system where the Prime Minister can call an election. As of early 2025, the current Parliament was elected in July 2024. Estimate the probability that the next general election occurs in calendar year 2026, considering typical parliamentary terms (typically 4-5 years) and current political dynamics.",
+        "You are forecasting the timing of the next UK general election. The UK Fixed-term Parliaments Act 2011 was repealed in 2022, returning to the previous system where the Prime Minister can call an election. As of early 2025, the current Parliament was elected in July 2024. Estimate the probability that the next general election occurs in calendar year 2027, considering typical parliamentary terms and current political circumstances.",
+        "You are forecasting the timing of the next UK general election. The UK Fixed-term Parliaments Act 2011 was repealed in 2022, returning to the previous system where the Prime Minister can call an election. As of early 2025, the current Parliament was elected in July 2024. Estimate the probability that the next general election occurs in calendar year 2028, considering typical parliamentary terms and political stability factors.",
+        "You are forecasting the timing of the next UK general election. The UK Fixed-term Parliaments Act 2011 was repealed in 2022, returning to the previous system where the Prime Minister can call an election. As of early 2025, the current Parliament was elected in July 2024. Estimate the probability that the next general election occurs in 2029 or later, considering scenarios where the government serves a full or extended term."
+      ],
+      "per_outcome_means": [
+        0.07875000000000001,
+        0.17625000000000002,
+        0.15625,
+        0.72
+      ],
+      "per_outcome_samples": [
+        [
+          0.06,
+          0.07,
+          0.12,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.06
+        ],
+        [
+          0.18,
+          0.18,
+          0.08,
+          0.12,
+          0.22,
+          0.28,
+          0.18,
+          0.17
+        ],
+        [
+          0.12,
+          0.28,
+          0.03,
+          0.18,
+          0.12,
+          0.12,
+          0.12,
+          0.28
+        ],
+        [
+          0.72,
+          0.72,
+          0.72,
+          0.72,
+          0.72,
+          0.72,
+          0.72,
+          0.72
+        ]
+      ],
+      "sum": 1.13125,
+      "sum_violation": 0.1312500000000001,
+      "eps_star": 0.06562500000000004,
+      "projected": [
+        0.04593749999999999,
+        0.1434375,
+        0.12343749999999998,
+        0.6871875
+      ],
+      "baseline_eps_star": 0.5043828737510159,
+      "baseline_sum": 2.0075000000000003,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the timing of the next UK general election. The UK Fixed-term Parliaments Act 2011 was repealed in 2022, returning to the previous system where the Prime Minister can call an election. As of early 2025, the current Parliament was elected in July 2024. Estimate the probability that the next general election occurs in calendar year 2026, considering typical parliamentary terms (typically 4-5 years) and current political dynamics.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the timing of the next UK general election. The UK Fixed-term Parliaments Act 2011 was repealed in 2022, returning to the previous system where the Prime Minister can call an election. As of early 2025, the current Parliament was elected in July 2024. Estimate the probability that the next general election occurs in calendar year 2027, considering typical parliamentary terms and current political circumstances.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the timing of the next UK general election. The UK Fixed-term Parliaments Act 2011 was repealed in 2022, returning to the previous system where the Prime Minister can call an election. As of early 2025, the current Parliament was elected in July 2024. Estimate the probability that the next general election occurs in calendar year 2028, considering typical parliamentary terms and political stability factors.\"\n    },\n    {\n      \"outcome_index\": 3,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the timing of the next UK general election. The UK Fixed-term Parliaments Act 2011 was repealed in 2022, returning to the previous system where the Prime Minister can call an election. As of early 2025, the current Parliament was elected in July 2024. Estimate the probability that the next general election occurs in 2029 or later, considering scenarios where the government serves a full or extended term.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "Next FOMC decision (June 2026 meeting)",
+      "outcomes": [
+        "the US Federal Reserve cuts the federal funds rate by 25bps or more at the June 2026 FOMC meeting",
+        "the US Federal Reserve holds the federal funds rate unchanged at the June 2026 FOMC meeting",
+        "the US Federal Reserve raises the federal funds rate by 25bps or more at the June 2026 FOMC meeting"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the probability that the US Federal Reserve cuts the federal funds rate by 25bps or more at the June 2026 FOMC meeting. Consider macroeconomic conditions, inflation trends, employment data, and Fed communication patterns. This is one of three mutually exclusive outcomes: a rate cut of 25bps+, no change, or a rate increase of 25bps+. Your forecast should reflect the likelihood of easing monetary policy by mid-2026.",
+        "You are forecasting the probability that the US Federal Reserve holds the federal funds rate unchanged at the June 2026 FOMC meeting. This outcome represents monetary policy stability with no change to the current rate. Consider the baseline scenario where economic conditions do not warrant either tightening or easing. This is one of three mutually exclusive outcomes: a rate cut of 25bps+, no change, or a rate increase of 25bps+.",
+        "You are forecasting the probability that the US Federal Reserve raises the federal funds rate by 25bps or more at the June 2026 FOMC meeting. Consider scenarios where inflation remains elevated, labor markets stay tight, or other factors necessitate continued monetary tightening. This is one of three mutually exclusive outcomes: a rate cut of 25bps+, no change, or a rate increase of 25bps+. Your forecast should reflect the likelihood of further policy tightening by mid-2026."
+      ],
+      "per_outcome_means": [
+        0.47375,
+        0.595,
+        0.085
+      ],
+      "per_outcome_samples": [
+        [
+          0.34,
+          0.63,
+          0.41,
+          0.41,
+          0.41,
+          0.41,
+          0.57,
+          0.61
+        ],
+        [
+          0.72,
+          0.72,
+          0.42,
+          0.72,
+          0.62,
+          0.42,
+          0.42,
+          0.72
+        ],
+        [
+          0.18,
+          0.06,
+          0.06,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.06
+        ]
+      ],
+      "sum": 1.15375,
+      "sum_violation": 0.15375000000000005,
+      "eps_star": 0.08876760388790499,
+      "projected": [
+        0.4225,
+        0.54375,
+        0.03374999999999999
+      ],
+      "baseline_eps_star": 0.24465217656910387,
+      "baseline_sum": 1.42375,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that the US Federal Reserve cuts the federal funds rate by 25bps or more at the June 2026 FOMC meeting. Consider macroeconomic conditions, inflation trends, employment data, and Fed communication patterns. This is one of three mutually exclusive outcomes: a rate cut of 25bps+, no change, or a rate increase of 25bps+. Your forecast should reflect the likelihood of easing monetary policy by mid-2026.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the probability that the US Federal Reserve holds the federal funds rate unchanged at the June 2026 FOMC meeting. This outcome represents monetary policy stability with no change to the current rate. Consider the baseline scenario where economic conditions do not warrant either tightening or easing. This is one of three mutually exclusive outcomes: a rate cut of 25bps+, no change, or a rate increase of 25bps+.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that the US Federal Reserve raises the federal funds rate by 25bps or more at the June 2026 FOMC meeting. Consider scenarios where inflation remains elevated, labor markets stay tight, or other factors necessitate continued monetary tightening. This is one of three mutually exclusive outcomes: a rate cut of 25bps+, no change, or a rate increase of 25bps+. Your forecast should reflect the likelihood of further policy tightening by mid-2026.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 H1 SP500 return bucket",
+      "outcomes": [
+        "the SP500 index closes 2026-H1 down more than 5% year-to-date",
+        "the SP500 index closes 2026-H1 between -5% and +5% year-to-date",
+        "the SP500 index closes 2026-H1 up between 5% and 15% year-to-date",
+        "the SP500 index closes 2026-H1 up more than 15% year-to-date"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the probability that the S&P 500 index closes 2026 H1 (end of June 2026) down more than 5% year-to-date. This is a tail-risk outcome in a four-way partition covering return buckets: >-5%, -5% to +5%, +5% to +15%, and >+15%. Consider macroeconomic headwinds, recession risks, and historical volatility patterns.",
+        "You are forecasting the probability that the S&P 500 index closes 2026 H1 (end of June 2026) between -5% and +5% year-to-date. This is the middle 'sideways market' outcome in a four-way partition. Consider baseline economic growth, policy uncertainty, and mean-reversion tendencies.",
+        "You are forecasting the probability that the S&P 500 index closes 2026 H1 (end of June 2026) up between 5% and 15% year-to-date. This is a moderate-growth outcome in a four-way partition. Consider typical bull market dynamics, earnings growth, and valuation expansion scenarios.",
+        "You are forecasting the probability that the S&P 500 index closes 2026 H1 (end of June 2026) up more than 15% year-to-date. This is a strong bull-market outcome in a four-way partition covering return buckets: >-5%, -5% to +5%, +5% to +15%, and >+15%. Consider strong earnings growth, AI momentum, and optimistic economic scenarios."
+      ],
+      "per_outcome_means": [
+        0.25625,
+        0.29000000000000004,
+        0.34,
+        0.345
+      ],
+      "per_outcome_samples": [
+        [
+          0.27,
+          0.24,
+          0.28,
+          0.22,
+          0.28,
+          0.28,
+          0.24,
+          0.24
+        ],
+        [
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.32,
+          0.32,
+          0.28,
+          0.28
+        ],
+        [
+          0.34,
+          0.34,
+          0.34,
+          0.34,
+          0.34,
+          0.34,
+          0.34,
+          0.34
+        ],
+        [
+          0.32,
+          0.32,
+          0.32,
+          0.32,
+          0.42,
+          0.42,
+          0.32,
+          0.32
+        ]
+      ],
+      "sum": 1.23125,
+      "sum_violation": 0.23124999999999996,
+      "eps_star": 0.11562500000000009,
+      "projected": [
+        0.19843749999999993,
+        0.2321875,
+        0.2821875,
+        0.28718749999999993
+      ],
+      "baseline_eps_star": 0.15125,
+      "baseline_sum": 1.3025,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that the S&P 500 index closes 2026 H1 (end of June 2026) down more than 5% year-to-date. This is a tail-risk outcome in a four-way partition covering return buckets: >-5%, -5% to +5%, +5% to +15%, and >+15%. Consider macroeconomic headwinds, recession risks, and historical volatility patterns.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the probability that the S&P 500 index closes 2026 H1 (end of June 2026) between -5% and +5% year-to-date. This is the middle 'sideways market' outcome in a four-way partition. Consider baseline economic growth, policy uncertainty, and mean-reversion tendencies.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that the S&P 500 index closes 2026 H1 (end of June 2026) up between 5% and 15% year-to-date. This is a moderate-growth outcome in a four-way partition. Consider typical bull market dynamics, earnings growth, and valuation expansion scenarios.\"\n    },\n    {\n      \"outcome_index\": 3,\n      \"specialist\": \"Llama-3.3-70b\",\n      \"context\": \"You are forecasting the probability that the S&P 500 index closes 2026 H1 (end of June 2026) up more than 15% year-to-date. This is a strong bull-market outcome in a four-way partition covering return buckets: >-5%, -5% to +5%, +5% to +15%, and >+15%. Consider strong earnings growth, AI momentum, and optimistic economic scenarios.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "US unemployment rate, June 2026",
+      "outcomes": [
+        "the US unemployment rate (BLS U-3) for June 2026 is below 4.0%",
+        "the US unemployment rate (BLS U-3) for June 2026 is between 4.0% and 4.5%",
+        "the US unemployment rate (BLS U-3) for June 2026 is between 4.5% and 5.0%",
+        "the US unemployment rate (BLS U-3) for June 2026 is above 5.0%"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "Claude-Haiku",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the US unemployment rate (BLS U-3) for June 2026, approximately 18 months from now. This outcome asks for the probability that the rate falls below 4.0%. Consider current economic conditions, Fed policy trajectory, historical unemployment dynamics, and recession risk when estimating this tail outcome.",
+        "You are forecasting the US unemployment rate (BLS U-3) for June 2026. This outcome covers the 4.0%-4.5% range, which represents a relatively tight labor market near historical lows. Assess the likelihood of the economy maintaining this moderate employment level given current trends and policy outlook.",
+        "You are forecasting the US unemployment rate (BLS U-3) for June 2026. This outcome covers the 4.5%-5.0% range, representing a moderately loose labor market. Consider the probability of gradual labor market cooling or mild economic slowdown over the next 18 months.",
+        "You are forecasting the US unemployment rate (BLS U-3) for June 2026. This outcome asks for the probability that the rate exceeds 5.0%, indicating material labor market weakness. Assess recession risk, policy tightening effects, and downside economic scenarios when estimating this higher-unemployment tail."
+      ],
+      "per_outcome_means": [
+        0.25625,
+        0.325,
+        0.30500000000000005,
+        0.36624999999999996
+      ],
+      "per_outcome_samples": [
+        [
+          0.22,
+          0.27,
+          0.28,
+          0.27,
+          0.18,
+          0.27,
+          0.28,
+          0.28
+        ],
+        [
+          0.32,
+          0.28,
+          0.42,
+          0.28,
+          0.28,
+          0.42,
+          0.28,
+          0.32
+        ],
+        [
+          0.28,
+          0.28,
+          0.32,
+          0.32,
+          0.28,
+          0.32,
+          0.32,
+          0.32
+        ],
+        [
+          0.31,
+          0.42,
+          0.34,
+          0.38,
+          0.37,
+          0.43,
+          0.34,
+          0.34
+        ]
+      ],
+      "sum": 1.2525,
+      "sum_violation": 0.25249999999999995,
+      "eps_star": 0.12624999999999997,
+      "projected": [
+        0.193125,
+        0.261875,
+        0.24187500000000006,
+        0.303125
+      ],
+      "baseline_eps_star": 0.2699999999999999,
+      "baseline_sum": 1.54,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the US unemployment rate (BLS U-3) for June 2026, approximately 18 months from now. This outcome asks for the probability that the rate falls below 4.0%. Consider current economic conditions, Fed policy trajectory, historical unemployment dynamics, and recession risk when estimating this tail outcome.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the US unemployment rate (BLS U-3) for June 2026. This outcome covers the 4.0%-4.5% range, which represents a relatively tight labor market near historical lows. Assess the likelihood of the economy maintaining this moderate employment level given current trends and policy outlook.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the US unemployment rate (BLS U-3) for June 2026. This outcome covers the 4.5%-5.0% range, representing a moderately loose labor market. Consider the probability of gradual labor market cooling or mild economic slowdown over the next 18 months.\"\n    },\n    {\n      \"outcome_index\": 3,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the US unemployment rate (BLS U-3) for June 2026. This outcome asks for the probability that the rate exceeds 5.0%, indicating material labor market weakness. Assess recession risk, policy tightening effects, and downside economic scenarios when estimating this higher-unemployment tail.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 H1 BTC return bucket",
+      "outcomes": [
+        "Bitcoin closes 2026-H1 down more than 10% year-to-date",
+        "Bitcoin closes 2026-H1 within +/-10% year-to-date",
+        "Bitcoin closes 2026-H1 up more than 10% year-to-date"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_context": [
+        "You are forecasting Bitcoin's 2026 H1 performance. This partition covers three mutually exclusive outcomes: down >10% YTD, within \u00b110% YTD, or up >10% YTD. You are assessing the probability that BTC closes 2026-H1 down more than 10% year-to-date. Consider macroeconomic conditions, regulatory environment, adoption trends, and historical volatility patterns.",
+        "You are forecasting Bitcoin's 2026 H1 performance. This partition covers three mutually exclusive outcomes: down >10% YTD, within \u00b110% YTD, or up >10% YTD. You are assessing the probability that BTC closes 2026-H1 within \u00b110% year-to-date (the middle, most stable outcome). Consider mean reversion, consolidation patterns, and balanced risk factors.",
+        "You are forecasting Bitcoin's 2026 H1 performance. This partition covers three mutually exclusive outcomes: down >10% YTD, within \u00b110% YTD, or up >10% YTD. You are assessing the probability that BTC closes 2026-H1 up more than 10% year-to-date. Consider bullish catalysts, institutional adoption, halving cycle dynamics, and positive sentiment drivers."
+      ],
+      "per_outcome_means": [
+        0.2725,
+        0.37375,
+        0.4525
+      ],
+      "per_outcome_samples": [
+        [
+          0.28,
+          0.27,
+          0.27,
+          0.27,
+          0.28,
+          0.29,
+          0.28,
+          0.24
+        ],
+        [
+          0.38,
+          0.38,
+          0.32,
+          0.38,
+          0.38,
+          0.42,
+          0.35,
+          0.38
+        ],
+        [
+          0.46,
+          0.46,
+          0.42,
+          0.54,
+          0.44,
+          0.46,
+          0.46,
+          0.38
+        ]
+      ],
+      "sum": 1.09875,
+      "sum_violation": 0.0987499999999999,
+      "eps_star": 0.05701333908247561,
+      "projected": [
+        0.23958333333333331,
+        0.3408333333333333,
+        0.4195833333333333
+      ],
+      "baseline_eps_star": 0.2973353886326572,
+      "baseline_sum": 1.5150000000000001,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting Bitcoin's 2026 H1 performance. This partition covers three mutually exclusive outcomes: down >10% YTD, within \u00b110% YTD, or up >10% YTD. You are assessing the probability that BTC closes 2026-H1 down more than 10% year-to-date. Consider macroeconomic conditions, regulatory environment, adoption trends, and historical volatility patterns.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting Bitcoin's 2026 H1 performance. This partition covers three mutually exclusive outcomes: down >10% YTD, within \u00b110% YTD, or up >10% YTD. You are assessing the probability that BTC closes 2026-H1 within \u00b110% year-to-date (the middle, most stable outcome). Consider mean reversion, consolidation patterns, and balanced risk factors.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting Bitcoin's 2026 H1 performance. This partition covers three mutually exclusive outcomes: down >10% YTD, within \u00b110% YTD, or up >10% YTD. You are assessing the probability that BTC closes 2026-H1 up more than 10% year-to-date. Consider bullish catalysts, institutional adoption, halving cycle dynamics, and positive sentiment drivers.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 US CPI year-over-year, December print",
+      "outcomes": [
+        "US CPI year-over-year for December 2026 is below 2.0%",
+        "US CPI year-over-year for December 2026 is between 2.0% and 3.0%",
+        "US CPI year-over-year for December 2026 is between 3.0% and 4.0%",
+        "US CPI year-over-year for December 2026 is above 4.0%"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "Claude-Haiku"
+      ],
+      "per_outcome_context": [
+        "You are forecasting US CPI year-over-year inflation for December 2026. This outcome resolves YES if the December 2026 print is below 2.0%. Consider the Federal Reserve's 2% target, current monetary policy trajectory, and historical mean-reversion patterns. The partition covers four mutually exclusive ranges: <2.0%, 2.0-3.0%, 3.0-4.0%, and >4.0%. Your estimate should reflect the probability of sub-target inflation.",
+        "You are forecasting US CPI year-over-year inflation for December 2026. This outcome resolves YES if the December 2026 print falls between 2.0% and 3.0% (inclusive of 2.0%, exclusive of 3.0%). This range includes the Federal Reserve's 2% target and represents near-target inflation. The partition covers four mutually exclusive ranges: <2.0%, 2.0-3.0%, 3.0-4.0%, and >4.0%. Your estimate should reflect the probability of inflation near the Fed's target.",
+        "You are forecasting US CPI year-over-year inflation for December 2026. This outcome resolves YES if the December 2026 print falls between 3.0% and 4.0% (inclusive of 3.0%, exclusive of 4.0%). This range represents moderately elevated inflation above the Fed's target. The partition covers four mutually exclusive ranges: <2.0%, 2.0-3.0%, 3.0-4.0%, and >4.0%. Consider scenarios of sticky inflation or policy shifts that could sustain above-target readings.",
+        "You are forecasting US CPI year-over-year inflation for December 2026. This outcome resolves YES if the December 2026 print exceeds 4.0%. This range represents significantly elevated inflation. The partition covers four mutually exclusive ranges: <2.0%, 2.0-3.0%, 3.0-4.0%, and >4.0%. Consider tail-risk scenarios including supply shocks, policy errors, or persistent demand-side pressures that could drive inflation well above target."
+      ],
+      "per_outcome_means": [
+        0.37875000000000003,
+        0.4175,
+        0.30000000000000004,
+        0.26125
+      ],
+      "per_outcome_samples": [
+        [
+          0.41,
+          0.34,
+          0.37,
+          0.41,
+          0.34,
+          0.41,
+          0.34,
+          0.41
+        ],
+        [
+          0.46,
+          0.44,
+          0.46,
+          0.46,
+          0.34,
+          0.34,
+          0.46,
+          0.38
+        ],
+        [
+          0.28,
+          0.28,
+          0.32,
+          0.32,
+          0.28,
+          0.32,
+          0.32,
+          0.28
+        ],
+        [
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.22,
+          0.25,
+          0.22,
+          0.28
+        ]
+      ],
+      "sum": 1.3575,
+      "sum_violation": 0.35749999999999993,
+      "eps_star": 0.17874999999999996,
+      "projected": [
+        0.28937500000000005,
+        0.328125,
+        0.21062500000000006,
+        0.171875
+      ],
+      "baseline_eps_star": 0.2537499999999999,
+      "baseline_sum": 1.5074999999999998,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting US CPI year-over-year inflation for December 2026. This outcome resolves YES if the December 2026 print is below 2.0%. Consider the Federal Reserve's 2% target, current monetary policy trajectory, and historical mean-reversion patterns. The partition covers four mutually exclusive ranges: <2.0%, 2.0-3.0%, 3.0-4.0%, and >4.0%. Your estimate should reflect the probability of sub-target inflation.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting US CPI year-over-year inflation for December 2026. This outcome resolves YES if the December 2026 print falls between 2.0% and 3.0% (inclusive of 2.0%, exclusive of 3.0%). This range includes the Federal Reserve's 2% target and represents near-target inflation. The partition covers four mutually exclusive ranges: <2.0%, 2.0-3.0%, 3.0-4.0%, and >4.0%. Your estimate should reflect the probability of inflation near the Fed's target.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting US CPI year-over-year inflation for December 2026. This outcome resolves YES if the December 2026 print falls between 3.0% and 4.0% (inclusive of 3.0%, exclusive of 4.0%). This range represents moderately elevated inflation above the Fed's target. The partition covers four mutually exclusive ranges: <2.0%, 2.0-3.0%, 3.0-4.0%, and >4.0%. Consider scenarios of sticky inflation or policy shifts that could sustain above-target readings.\"\n    },\n    {\n      \"outcome_index\": 3,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting US CPI year-over-year inflation for December 2026. This outcome resolves YES if the December 2026 print exceeds 4.0%. This range represents significantly elevated inflation. The partition covers four mutually exclusive ranges: <2.0%, 2.0-3.0%, 3.0-4.0%, and >4.0%. Consider tail-risk scenarios including supply shocks, policy errors, or persistent demand-side pressures that could drive inflation well above target.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "Top gold-medal nation, 2028 Summer Olympics",
+      "outcomes": [
+        "the United States wins the most gold medals at the 2028 Summer Olympics in Los Angeles",
+        "China wins the most gold medals at the 2028 Summer Olympics in Los Angeles",
+        "a country other than the United States or China wins the most gold medals at the 2028 Summer Olympics"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "per_outcome_context": [
+        "You are forecasting whether the United States will win the most gold medals at the 2028 Summer Olympics in Los Angeles. Consider US historical Olympic performance, home-field advantage, current athletic development pipelines, and competitive dynamics with China. This is one of three mutually exclusive outcomes: US most golds, China most golds, or another country most golds.",
+        "You are forecasting whether China will win the most gold medals at the 2028 Summer Olympics in Los Angeles. Consider China's recent Olympic trajectory, investment in athletic programs, strengths in specific sports, and competitive position relative to the US. This is one of three mutually exclusive outcomes: US most golds, China most golds, or another country most golds.",
+        "You are forecasting whether a country other than the United States or China will win the most gold medals at the 2028 Summer Olympics in Los Angeles. This is a lower-probability outcome but consider historical precedent, emerging athletic powers, and whether any other nation could realistically surpass both the US and China. This is one of three mutually exclusive outcomes."
+      ],
+      "per_outcome_means": [
+        0.6287499999999999,
+        0.11,
+        0.025
+      ],
+      "per_outcome_samples": [
+        [
+          0.62,
+          0.62,
+          0.62,
+          0.64,
+          0.58,
+          0.72,
+          0.61,
+          0.62
+        ],
+        [
+          0.14,
+          0.18,
+          0.08,
+          0.09,
+          0.08,
+          0.12,
+          0.12,
+          0.07
+        ],
+        [
+          0.04,
+          0.02,
+          0.02,
+          0.02,
+          0.04,
+          0.02,
+          0.02,
+          0.02
+        ]
+      ],
+      "sum": 0.7637499999999999,
+      "sum_violation": 0.23625000000000007,
+      "eps_star": 0.1363990010960491,
+      "projected": [
+        0.7074999999999999,
+        0.18875000000000003,
+        0.10375000000000004
+      ],
+      "baseline_eps_star": 0.018042195912175773,
+      "baseline_sum": 1.03125,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting whether the United States will win the most gold medals at the 2028 Summer Olympics in Los Angeles. Consider US historical Olympic performance, home-field advantage, current athletic development pipelines, and competitive dynamics with China. This is one of three mutually exclusive outcomes: US most golds, China most golds, or another country most golds.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting whether China will win the most gold medals at the 2028 Summer Olympics in Los Angeles. Consider China's recent Olympic trajectory, investment in athletic programs, strengths in specific sports, and competitive position relative to the US. This is one of three mutually exclusive outcomes: US most golds, China most golds, or another country most golds.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting whether a country other than the United States or China will win the most gold medals at the 2028 Summer Olympics in Los Angeles. This is a lower-probability outcome but consider historical precedent, emerging athletic powers, and whether any other nation could realistically surpass both the US and China. This is one of three mutually exclusive outcomes.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 FIFA World Cup winner confederation",
+      "outcomes": [
+        "the 2026 FIFA World Cup is won by a UEFA (European) national team",
+        "the 2026 FIFA World Cup is won by a CONMEBOL (South American) national team",
+        "the 2026 FIFA World Cup is won by a national team from any other confederation"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the probability that a UEFA (European) confederation team wins the 2026 FIFA World Cup. Consider historical dominance: Europe has won 12 of 22 World Cups. Key contenders include France, England, Spain, Germany, and Belgium. The 2026 tournament will be held in North America (USA, Canada, Mexico). Your forecast should be calibrated against the strength of CONMEBOL teams (Argentina, Brazil, Uruguay) and other confederations, and should account for home-field advantages for CONCACAF teams.",
+        "You are forecasting the probability that a CONMEBOL (South American) confederation team wins the 2026 FIFA World Cup. Consider that Argentina won in 2022 and Brazil is historically strong. CONMEBOL has won 9 of 22 World Cups. The tournament is in North America, which may disadvantage South American teams. Your forecast should be calibrated against UEFA dominance and should reflect the current strength of Argentina and Brazil relative to European competitors.",
+        "You are forecasting the probability that a team from a confederation OTHER than UEFA or CONMEBOL wins the 2026 FIFA World Cup. This includes CONCACAF (North America/Central America), AFC (Asia), and CAF (Africa). The tournament is hosted in North America, giving CONCACAF teams (Mexico, USA, Canada) a potential home advantage. Historically, non-UEFA/CONMEBOL teams have won 1 of 22 World Cups. Your forecast should reflect both the structural disadvantage and the home-field boost for CONCACAF."
+      ],
+      "per_outcome_means": [
+        0.44875,
+        0.27625,
+        0.12
+      ],
+      "per_outcome_samples": [
+        [
+          0.44,
+          0.46,
+          0.42,
+          0.46,
+          0.44,
+          0.44,
+          0.46,
+          0.47
+        ],
+        [
+          0.28,
+          0.28,
+          0.24,
+          0.34,
+          0.22,
+          0.34,
+          0.23,
+          0.28
+        ],
+        [
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12,
+          0.12
+        ]
+      ],
+      "sum": 0.845,
+      "sum_violation": 0.15500000000000003,
+      "eps_star": 0.089489291724392,
+      "projected": [
+        0.5004166666666666,
+        0.3279166666666667,
+        0.17166666666666666
+      ],
+      "baseline_eps_star": 0.2872317589218389,
+      "baseline_sum": 1.4975,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that a UEFA (European) confederation team wins the 2026 FIFA World Cup. Consider historical dominance: Europe has won 12 of 22 World Cups. Key contenders include France, England, Spain, Germany, and Belgium. The 2026 tournament will be held in North America (USA, Canada, Mexico). Your forecast should be calibrated against the strength of CONMEBOL teams (Argentina, Brazil, Uruguay) and other confederations, and should account for home-field advantages for CONCACAF teams.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that a CONMEBOL (South American) confederation team wins the 2026 FIFA World Cup. Consider that Argentina won in 2022 and Brazil is historically strong. CONMEBOL has won 9 of 22 World Cups. The tournament is in North America, which may disadvantage South American teams. Your forecast should be calibrated against UEFA dominance and should reflect the current strength of Argentina and Brazil relative to European competitors.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the probability that a team from a confederation OTHER than UEFA or CONMEBOL wins the 2026 FIFA World Cup. This includes CONCACAF (North America/Central America), AFC (Asia), and CAF (Africa). The tournament is hosted in North America, giving CONCACAF teams (Mexico, USA, Canada) a potential home advantage. Historically, non-UEFA/CONMEBOL teams have won 1 of 22 World Cups. Your forecast should reflect both the structural disadvantage and the home-field boost for CONCACAF.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 Wimbledon men's singles winner",
+      "outcomes": [
+        "Carlos Alcaraz wins the 2026 Wimbledon men's singles championship",
+        "Jannik Sinner wins the 2026 Wimbledon men's singles championship",
+        "Novak Djokovic wins the 2026 Wimbledon men's singles championship",
+        "the 2026 Wimbledon men's singles championship is won by some other player"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the probability that Carlos Alcaraz wins the 2026 Wimbledon men's singles championship. Consider his current trajectory, grass-court performance history, age and peak years, injury risk, and competition from other top players. This is one of four mutually exclusive outcomes that partition the 2026 Wimbledon winner; your forecast should reflect Alcaraz's relative likelihood compared to Sinner, Djokovic, and other players.",
+        "You are forecasting the probability that Jannik Sinner wins the 2026 Wimbledon men's singles championship. Consider his current trajectory, grass-court performance history, age and peak years, injury risk, and competition from other top players. This is one of four mutually exclusive outcomes that partition the 2026 Wimbledon winner; your forecast should reflect Sinner's relative likelihood compared to Alcaraz, Djokovic, and other players.",
+        "You are forecasting the probability that Novak Djokovic wins the 2026 Wimbledon men's singles championship. Consider his age (likely 39 in 2026), historical dominance at Wimbledon, recent form and injury patterns, and whether he is likely to still be competing at elite levels. This is one of four mutually exclusive outcomes; your forecast should reflect Djokovic's relative likelihood compared to Alcaraz, Sinner, and other players.",
+        "You are forecasting the probability that some player other than Carlos Alcaraz, Jannik Sinner, or Novak Djokovic wins the 2026 Wimbledon men's singles championship. Consider emerging players, historical upset rates at Wimbledon, depth of the field, and the likelihood that none of the three favorites claim the title. This residual outcome captures all other possible winners."
+      ],
+      "per_outcome_means": [
+        0.3275,
+        0.235,
+        0.04,
+        0.24175
+      ],
+      "per_outcome_samples": [
+        [
+          0.34,
+          0.34,
+          0.32,
+          0.34,
+          0.34,
+          0.27,
+          0.34,
+          0.33
+        ],
+        [
+          0.24,
+          0.24,
+          0.22,
+          0.22,
+          0.24,
+          0.24,
+          0.24,
+          0.24
+        ],
+        [
+          0.04,
+          0.04,
+          0.04,
+          0.04,
+          0.04,
+          0.04,
+          0.04,
+          0.04
+        ],
+        [
+          0.24,
+          0.247,
+          0.24,
+          0.24,
+          0.24,
+          0.24,
+          0.247,
+          0.24
+        ]
+      ],
+      "sum": 0.8442500000000001,
+      "sum_violation": 0.15574999999999994,
+      "eps_star": 0.07787499999999994,
+      "projected": [
+        0.36643749999999997,
+        0.27393749999999994,
+        0.0789375,
+        0.2806875
+      ],
+      "baseline_eps_star": 0.0859375,
+      "baseline_sum": 1.171875,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that Carlos Alcaraz wins the 2026 Wimbledon men's singles championship. Consider his current trajectory, grass-court performance history, age and peak years, injury risk, and competition from other top players. This is one of four mutually exclusive outcomes that partition the 2026 Wimbledon winner; your forecast should reflect Alcaraz's relative likelihood compared to Sinner, Djokovic, and other players.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that Jannik Sinner wins the 2026 Wimbledon men's singles championship. Consider his current trajectory, grass-court performance history, age and peak years, injury risk, and competition from other top players. This is one of four mutually exclusive outcomes that partition the 2026 Wimbledon winner; your forecast should reflect Sinner's relative likelihood compared to Alcaraz, Djokovic, and other players.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the probability that Novak Djokovic wins the 2026 Wimbledon men's singles championship. Consider his age (likely 39 in 2026), historical dominance at Wimbledon, recent form and injury patterns, and whether he is likely to still be competing at elite levels. This is one of four mutually exclusive outcomes; your forecast should reflect Djokovic's relative likelihood compared to Alcaraz, Sinner, and other players.\"\n    },\n    {\n      \"outcome_index\": 3,\n      \"specialist\": \"Llama-3.3-70b\",\n      \"context\": \"You are forecasting the probability that some player other than Carlos Alcaraz, Jannik Sinner, or Novak Djokovic wins the 2026 Wimbledon men's singles championship. Consider emerging players, historical upset rates at Wimbledon, depth of the field, and the likelihood that none of the three favorites claim the title. This residual outcome captures all other possible winners.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 NBA Finals winner conference",
+      "outcomes": [
+        "the 2026 NBA Finals is won by an Eastern Conference team",
+        "the 2026 NBA Finals is won by a Western Conference team"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_context": [
+        "You are forecasting whether the 2026 NBA Finals will be won by an Eastern Conference team. Consider current team strength, roster trajectories, injury patterns, and historical conference balance. This outcome and its complement (Western Conference winner) form an exhaustive partition that must sum to 100%.",
+        "You are forecasting whether the 2026 NBA Finals will be won by a Western Conference team. Consider current team strength, roster trajectories, injury patterns, and historical conference balance. This outcome and its complement (Eastern Conference winner) form an exhaustive partition that must sum to 100%."
+      ],
+      "per_outcome_means": [
+        0.45875,
+        0.5625
+      ],
+      "per_outcome_samples": [
+        [
+          0.46,
+          0.47,
+          0.46,
+          0.48,
+          0.46,
+          0.44,
+          0.46,
+          0.44
+        ],
+        [
+          0.56,
+          0.57,
+          0.57,
+          0.58,
+          0.54,
+          0.56,
+          0.56,
+          0.56
+        ]
+      ],
+      "sum": 1.02125,
+      "sum_violation": 0.02124999999999999,
+      "eps_star": 0.015026019100214128,
+      "projected": [
+        0.448125,
+        0.551875
+      ],
+      "baseline_eps_star": 0.04419417382415922,
+      "baseline_sum": 1.0625,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting whether the 2026 NBA Finals will be won by an Eastern Conference team. Consider current team strength, roster trajectories, injury patterns, and historical conference balance. This outcome and its complement (Western Conference winner) form an exhaustive partition that must sum to 100%.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting whether the 2026 NBA Finals will be won by a Western Conference team. Consider current team strength, roster trajectories, injury patterns, and historical conference balance. This outcome and its complement (Eastern Conference winner) form an exhaustive partition that must sum to 100%.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 Booker Prize winner nationality",
+      "outcomes": [
+        "the 2026 Booker Prize for Fiction is won by an author from the United Kingdom",
+        "the 2026 Booker Prize for Fiction is won by an author from the United States",
+        "the 2026 Booker Prize for Fiction is won by an author from a country other than the United Kingdom or the United States"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the nationality of the 2026 Booker Prize for Fiction winner. This partition has three mutually exclusive outcomes: UK author, US author, or other country author. The Booker Prize historically has strong UK representation but has increasingly recognized international authors. Consider historical win rates, eligibility rules, and recent trends in the prize's geographic distribution.",
+        "You are forecasting the nationality of the 2026 Booker Prize for Fiction winner. This partition has three mutually exclusive outcomes: UK author, US author, or other country author. US authors have won the Booker Prize in recent years (e.g., 2022, 2023). Consider the frequency of US wins, the strength of American literary fiction, and how US representation compares to the UK baseline.",
+        "You are forecasting the nationality of the 2026 Booker Prize for Fiction winner. This partition has three mutually exclusive outcomes: UK author, US author, or other country author. The 'other' category includes all non-UK, non-US authors. Consider the Booker Prize's international expansion, representation from Commonwealth and non-Commonwealth countries, and the growing diversity of the prize's shortlists and winners."
+      ],
+      "per_outcome_means": [
+        0.42,
+        0.29125,
+        0.55
+      ],
+      "per_outcome_samples": [
+        [
+          0.42,
+          0.42,
+          0.42,
+          0.42,
+          0.42,
+          0.42,
+          0.42,
+          0.42
+        ],
+        [
+          0.34,
+          0.28,
+          0.27,
+          0.27,
+          0.27,
+          0.28,
+          0.28,
+          0.34
+        ],
+        [
+          0.55,
+          0.55,
+          0.55,
+          0.55,
+          0.55,
+          0.55,
+          0.55,
+          0.55
+        ]
+      ],
+      "sum": 1.26125,
+      "sum_violation": 0.26125,
+      "eps_star": 0.15083275782578975,
+      "projected": [
+        0.33291666666666664,
+        0.20416666666666666,
+        0.4629166666666667
+      ],
+      "baseline_eps_star": 0.0021650635094611305,
+      "baseline_sum": 0.99625,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the nationality of the 2026 Booker Prize for Fiction winner. This partition has three mutually exclusive outcomes: UK author, US author, or other country author. The Booker Prize historically has strong UK representation but has increasingly recognized international authors. Consider historical win rates, eligibility rules, and recent trends in the prize's geographic distribution.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the nationality of the 2026 Booker Prize for Fiction winner. This partition has three mutually exclusive outcomes: UK author, US author, or other country author. US authors have won the Booker Prize in recent years (e.g., 2022, 2023). Consider the frequency of US wins, the strength of American literary fiction, and how US representation compares to the UK baseline.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Llama-3.3-70b\",\n      \"context\": \"You are forecasting the nationality of the 2026 Booker Prize for Fiction winner. This partition has three mutually exclusive outcomes: UK author, US author, or other country author. The 'other' category includes all non-UK, non-US authors. Consider the Booker Prize's international expansion, representation from Commonwealth and non-Commonwealth countries, and the growing diversity of the prize's shortlists and winners.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 Academy Award Best Picture winner type",
+      "outcomes": [
+        "the 2026 Academy Award for Best Picture (presented in March 2027) goes to a major-studio production",
+        "the 2026 Academy Award for Best Picture (presented in March 2027) goes to a streaming-platform production (e.g. Netflix, Apple TV, Amazon)",
+        "the 2026 Academy Award for Best Picture (presented in March 2027) goes to an independent / arthouse production"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the 2026 Academy Award for Best Picture (presented in March 2027). This outcome resolves YES if the winner is a major-studio production (e.g., Disney, Warner Bros., Paramount, Universal, Sony). Consider historical trends: major studios have won Best Picture in most recent years, though streaming and independent films have gained ground. The partition is exhaustive and mutually exclusive: major-studio, streaming-platform, or independent/arthouse.",
+        "You are forecasting the 2026 Academy Award for Best Picture (presented in March 2027). This outcome resolves YES if the winner is a streaming-platform production (Netflix, Apple TV, Amazon, etc.). Consider that streaming platforms have increased their Best Picture wins in recent years (e.g., CODA in 2022), but major studios still dominate. The partition is exhaustive: major-studio, streaming-platform, or independent/arthouse.",
+        "You are forecasting the 2026 Academy Award for Best Picture (presented in March 2027). This outcome resolves YES if the winner is an independent or arthouse production (not backed by major studios or streaming platforms). Consider that independent films occasionally win but face structural disadvantages in marketing and distribution compared to studio and streaming competitors. The partition is exhaustive: major-studio, streaming-platform, or independent/arthouse."
+      ],
+      "per_outcome_means": [
+        0.71,
+        0.24125,
+        0.23
+      ],
+      "per_outcome_samples": [
+        [
+          0.68,
+          0.72,
+          0.72,
+          0.72,
+          0.72,
+          0.72,
+          0.72,
+          0.68
+        ],
+        [
+          0.24,
+          0.27,
+          0.24,
+          0.23,
+          0.22,
+          0.27,
+          0.22,
+          0.24
+        ],
+        [
+          0.23,
+          0.23,
+          0.23,
+          0.23,
+          0.23,
+          0.23,
+          0.23,
+          0.23
+        ]
+      ],
+      "sum": 1.18125,
+      "sum_violation": 0.1812499999999999,
+      "eps_star": 0.10464473629061966,
+      "projected": [
+        0.6495833333333333,
+        0.18083333333333335,
+        0.16958333333333336
+      ],
+      "baseline_eps_star": 0.20351596988934312,
+      "baseline_sum": 1.3525,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the 2026 Academy Award for Best Picture (presented in March 2027). This outcome resolves YES if the winner is a major-studio production (e.g., Disney, Warner Bros., Paramount, Universal, Sony). Consider historical trends: major studios have won Best Picture in most recent years, though streaming and independent films have gained ground. The partition is exhaustive and mutually exclusive: major-studio, streaming-platform, or independent/arthouse.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the 2026 Academy Award for Best Picture (presented in March 2027). This outcome resolves YES if the winner is a streaming-platform production (Netflix, Apple TV, Amazon, etc.). Consider that streaming platforms have increased their Best Picture wins in recent years (e.g., CODA in 2022), but major studios still dominate. The partition is exhaustive: major-studio, streaming-platform, or independent/arthouse.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Llama-3.3-70b\",\n      \"context\": \"You are forecasting the 2026 Academy Award for Best Picture (presented in March 2027). This outcome resolves YES if the winner is an independent or arthouse production (not backed by major studios or streaming platforms). Consider that independent films occasionally win but face structural disadvantages in marketing and distribution compared to studio and streaming competitors. The partition is exhaustive: major-studio, streaming-platform, or independent/arthouse.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 Grammy Album of the Year genre",
+      "outcomes": [
+        "the 2026 Grammy Award for Album of the Year is won by a primarily pop record",
+        "the 2026 Grammy Award for Album of the Year is won by a primarily hip-hop or R&B record",
+        "the 2026 Grammy Award for Album of the Year is won by a primarily rock or alternative record",
+        "the 2026 Grammy Award for Album of the Year is won by a record in some other genre"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the genre of the 2026 Grammy Award for Album of the Year. This outcome covers primarily pop records. Consider recent Grammy trends (pop has won ~30% of Album of the Year awards in recent years), major pop artists likely to release albums by 2026, and the Recording Academy's voting patterns. The four outcomes partition all possibilities: pop, hip-hop/R&B, rock/alternative, and other genres.",
+        "You are forecasting the genre of the 2026 Grammy Award for Album of the Year. This outcome covers primarily hip-hop or R&B records. Consider recent Grammy trends (hip-hop/R&B has won ~25-30% of Album of the Year awards in recent years), major hip-hop and R&B artists likely to release albums by 2026, and the Recording Academy's voting patterns. The four outcomes partition all possibilities: pop, hip-hop/R&B, rock/alternative, and other genres.",
+        "You are forecasting the genre of the 2026 Grammy Award for Album of the Year. This outcome covers primarily rock or alternative records. Consider recent Grammy trends (rock/alternative has won ~20-25% of Album of the Year awards in recent years), major rock and alternative artists likely to release albums by 2026, and the Recording Academy's voting patterns. The four outcomes partition all possibilities: pop, hip-hop/R&B, rock/alternative, and other genres.",
+        "You are forecasting the genre of the 2026 Grammy Award for Album of the Year. This outcome covers records in other genres (country, jazz, classical, Latin, electronic, etc.). Consider recent Grammy trends (other genres have won ~15-20% of Album of the Year awards in recent years), major artists in non-mainstream genres likely to release albums by 2026, and the Recording Academy's voting patterns. The four outcomes partition all possibilities: pop, hip-hop/R&B, rock/alternative, and other genres."
+      ],
+      "per_outcome_means": [
+        0.32,
+        0.28375000000000006,
+        0.23125,
+        0.17562499999999998
+      ],
+      "per_outcome_samples": [
+        [
+          0.32,
+          0.32,
+          0.32,
+          0.32,
+          0.32,
+          0.32,
+          0.32,
+          0.32
+        ],
+        [
+          0.28,
+          0.28,
+          0.29,
+          0.28,
+          0.29,
+          0.28,
+          0.29,
+          0.28
+        ],
+        [
+          0.23,
+          0.23,
+          0.23,
+          0.23,
+          0.23,
+          0.23,
+          0.24,
+          0.23
+        ],
+        [
+          0.175,
+          0.18,
+          0.175,
+          0.175,
+          0.175,
+          0.175,
+          0.175,
+          0.175
+        ]
+      ],
+      "sum": 1.0106249999999999,
+      "sum_violation": 0.010624999999999885,
+      "eps_star": 0.005312499999999942,
+      "projected": [
+        0.31734375000000004,
+        0.2810937500000001,
+        0.22859375000000004,
+        0.17296875
+      ],
+      "baseline_eps_star": 0.28875000000000006,
+      "baseline_sum": 1.5774999999999997,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the genre of the 2026 Grammy Award for Album of the Year. This outcome covers primarily pop records. Consider recent Grammy trends (pop has won ~30% of Album of the Year awards in recent years), major pop artists likely to release albums by 2026, and the Recording Academy's voting patterns. The four outcomes partition all possibilities: pop, hip-hop/R&B, rock/alternative, and other genres.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the genre of the 2026 Grammy Award for Album of the Year. This outcome covers primarily hip-hop or R&B records. Consider recent Grammy trends (hip-hop/R&B has won ~25-30% of Album of the Year awards in recent years), major hip-hop and R&B artists likely to release albums by 2026, and the Recording Academy's voting patterns. The four outcomes partition all possibilities: pop, hip-hop/R&B, rock/alternative, and other genres.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"GPT-5.4-nano\",\n      \"context\": \"You are forecasting the genre of the 2026 Grammy Award for Album of the Year. This outcome covers primarily rock or alternative records. Consider recent Grammy trends (rock/alternative has won ~20-25% of Album of the Year awards in recent years), major rock and alternative artists likely to release albums by 2026, and the Recording Academy's voting patterns. The four outcomes partition all possibilities: pop, hip-hop/R&B, rock/alternative, and other genres.\"\n    },\n    {\n      \"outcome_index\": 3,\n      \"specialist\": \"Llama-3.3-70b\",\n      \"context\": \"You are forecasting the genre of the 2026 Grammy Award for Album of the Year. This outcome covers records in other genres (country, jazz, classical, Latin, electronic, etc.). Consider recent Grammy trends (other genres have won ~15-20% of Album of the Year awards in recent years), major artists in non-mainstream genres likely to release albums by 2026, and the Recording Academy's voting patterns. The four outcomes partition all possibilities: pop, hip-hop/R&B, rock/alternative, and other genres.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "2026 Pulitzer Prize Fiction winner setting",
+      "outcomes": [
+        "the 2026 Pulitzer Prize for Fiction is awarded to a novel set primarily in the United States",
+        "the 2026 Pulitzer Prize for Fiction is awarded to a novel set primarily outside the United States",
+        "the 2026 Pulitzer Prize for Fiction is not awarded in 2026"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_context": [
+        "You are forecasting whether the 2026 Pulitzer Prize for Fiction will be awarded to a novel set primarily in the United States. Consider historical Pulitzer Fiction winners' geographic settings, recent trends in the prize's selection, and the current literary landscape. This is one of three mutually exclusive outcomes: US-set novel, non-US-set novel, or no award in 2026.",
+        "You are forecasting whether the 2026 Pulitzer Prize for Fiction will be awarded to a novel set primarily outside the United States. Consider the historical frequency of international settings among Pulitzer winners, recent diversification trends, and the global reach of contemporary literary fiction. This is one of three mutually exclusive outcomes: US-set novel, non-US-set novel, or no award in 2026.",
+        "You are forecasting whether the 2026 Pulitzer Prize for Fiction will not be awarded in 2026. Consider historical instances when the prize was withheld, the institutional stability of the Pulitzer organization, and any factors that might lead to non-award. This is one of three mutually exclusive outcomes: US-set novel, non-US-set novel, or no award in 2026."
+      ],
+      "per_outcome_means": [
+        0.655,
+        0.30000000000000004,
+        0.0425
+      ],
+      "per_outcome_samples": [
+        [
+          0.62,
+          0.62,
+          0.68,
+          0.62,
+          0.72,
+          0.68,
+          0.68,
+          0.62
+        ],
+        [
+          0.27,
+          0.34,
+          0.27,
+          0.28,
+          0.34,
+          0.34,
+          0.28,
+          0.28
+        ],
+        [
+          0.05,
+          0.02,
+          0.05,
+          0.02,
+          0.05,
+          0.05,
+          0.05,
+          0.05
+        ]
+      ],
+      "sum": 0.9975,
+      "sum_violation": 0.0024999999999999467,
+      "eps_star": 0.0014433756729740456,
+      "projected": [
+        0.6558333333333334,
+        0.30083333333333334,
+        0.04333333333333332
+      ],
+      "baseline_eps_star": 0.0007216878364869888,
+      "baseline_sum": 0.99875,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting whether the 2026 Pulitzer Prize for Fiction will be awarded to a novel set primarily in the United States. Consider historical Pulitzer Fiction winners' geographic settings, recent trends in the prize's selection, and the current literary landscape. This is one of three mutually exclusive outcomes: US-set novel, non-US-set novel, or no award in 2026.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting whether the 2026 Pulitzer Prize for Fiction will be awarded to a novel set primarily outside the United States. Consider the historical frequency of international settings among Pulitzer winners, recent diversification trends, and the global reach of contemporary literary fiction. This is one of three mutually exclusive outcomes: US-set novel, non-US-set novel, or no award in 2026.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"Llama-3.3-70b\",\n      \"context\": \"You are forecasting whether the 2026 Pulitzer Prize for Fiction will not be awarded in 2026. Consider historical instances when the prize was withheld, the institutional stability of the Pulitzer organization, and any factors that might lead to non-award. This is one of three mutually exclusive outcomes: US-set novel, non-US-set novel, or no award in 2026.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "Top MMLU score, year-end 2026",
+      "outcomes": [
+        "by 31 December 2026, the highest publicly reported MMLU score is held by an Anthropic Claude model",
+        "by 31 December 2026, the highest publicly reported MMLU score is held by an OpenAI GPT model",
+        "by 31 December 2026, the highest publicly reported MMLU score is held by a Google or DeepMind Gemini model",
+        "by 31 December 2026, the highest publicly reported MMLU score is held by a Meta Llama model or any other organisation"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_context": [
+        "You are forecasting whether an Anthropic Claude model will hold the highest publicly reported MMLU score by end of 2026. Consider Claude's current MMLU performance, Anthropic's research trajectory, and competitive dynamics with other labs. This is one of four mutually exclusive outcomes covering all major AI organizations.",
+        "You are forecasting whether an OpenAI GPT model will hold the highest publicly reported MMLU score by end of 2026. Consider GPT's current MMLU performance, OpenAI's development roadmap, and competitive positioning. This is one of four mutually exclusive outcomes covering all major AI organizations.",
+        "You are forecasting whether a Google or DeepMind Gemini model will hold the highest publicly reported MMLU score by end of 2026. Consider Gemini's current MMLU performance, Google/DeepMind's research capabilities, and competitive dynamics. This is one of four mutually exclusive outcomes covering all major AI organizations.",
+        "You are forecasting whether a Meta Llama model or any other organization (not Anthropic, OpenAI, or Google/DeepMind) will hold the highest publicly reported MMLU score by end of 2026. Consider Llama's current MMLU performance, Meta's trajectory, and emerging competitors. This is one of four mutually exclusive outcomes covering all major AI organizations."
+      ],
+      "per_outcome_means": [
+        0.25375000000000003,
+        0.38749999999999996,
+        0.5587500000000001,
+        0.35875
+      ],
+      "per_outcome_samples": [
+        [
+          0.28,
+          0.28,
+          0.25,
+          0.25,
+          0.25,
+          0.22,
+          0.25,
+          0.25
+        ],
+        [
+          0.28,
+          0.42,
+          0.34,
+          0.34,
+          0.42,
+          0.42,
+          0.46,
+          0.42
+        ],
+        [
+          0.55,
+          0.55,
+          0.55,
+          0.55,
+          0.62,
+          0.45,
+          0.62,
+          0.58
+        ],
+        [
+          0.35,
+          0.35,
+          0.42,
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35
+        ]
+      ],
+      "sum": 1.5587500000000003,
+      "sum_violation": 0.5587500000000003,
+      "eps_star": 0.27937500000000015,
+      "projected": [
+        0.11406249999999996,
+        0.24781249999999988,
+        0.4190625,
+        0.21906249999999994
+      ],
+      "baseline_eps_star": 0.6504101270224298,
+      "baseline_sum": 2.29,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting whether an Anthropic Claude model will hold the highest publicly reported MMLU score by end of 2026. Consider Claude's current MMLU performance, Anthropic's research trajectory, and competitive dynamics with other labs. This is one of four mutually exclusive outcomes covering all major AI organizations.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting whether an OpenAI GPT model will hold the highest publicly reported MMLU score by end of 2026. Consider GPT's current MMLU performance, OpenAI's development roadmap, and competitive positioning. This is one of four mutually exclusive outcomes covering all major AI organizations.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"GPT-5.4-nano\",\n      \"context\": \"You are forecasting whether a Google or DeepMind Gemini model will hold the highest publicly reported MMLU score by end of 2026. Consider Gemini's current MMLU performance, Google/DeepMind's research capabilities, and competitive dynamics. This is one of four mutually exclusive outcomes covering all major AI organizations.\"\n    },\n    {\n      \"outcome_index\": 3,\n      \"specialist\": \"Llama-3.3-70b\",\n      \"context\": \"You are forecasting whether a Meta Llama model or any other organization (not Anthropic, OpenAI, or Google/DeepMind) will hold the highest publicly reported MMLU score by end of 2026. Consider Llama's current MMLU performance, Meta's trajectory, and emerging competitors. This is one of four mutually exclusive outcomes covering all major AI organizations.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "Top SWE-Bench Verified score, year-end 2026",
+      "outcomes": [
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by an Anthropic Claude model",
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by an OpenAI GPT model",
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by a Google Gemini model",
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by some other model"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_context": [
+        "You are forecasting whether Anthropic Claude will hold the highest SWE-Bench Verified score by year-end 2026. Consider Anthropic's recent trajectory in code generation, their investment in reasoning capabilities, and competitive positioning against OpenAI and Google. This is one of four mutually exclusive outcomes covering all major AI labs.",
+        "You are forecasting whether OpenAI GPT will hold the highest SWE-Bench Verified score by year-end 2026. Consider OpenAI's historical dominance in benchmarks, their model scaling strategy, and recent releases. This is one of four mutually exclusive outcomes; your forecast should be coherent with sibling forecasts for Anthropic Claude, Google Gemini, and other models.",
+        "You are forecasting whether Google Gemini will hold the highest SWE-Bench Verified score by year-end 2026. Consider Google's capabilities in code understanding, their recent Gemini releases, and competitive positioning. This is one of four mutually exclusive outcomes; ensure your forecast is calibrated relative to OpenAI, Anthropic, and other competitors.",
+        "You are forecasting whether a model from a non-major-lab (neither Anthropic, OpenAI, nor Google) will hold the highest SWE-Bench Verified score by year-end 2026. Consider emerging competitors like Meta, Mistral, xAI, or other organizations. This is one of four mutually exclusive outcomes; calibrate against the likelihood of major labs dominating this benchmark."
+      ],
+      "per_outcome_means": [
+        0.25,
+        0.36125,
+        0.2575,
+        0.29374999999999996
+      ],
+      "per_outcome_samples": [
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.41,
+          0.42,
+          0.29,
+          0.34,
+          0.34,
+          0.34,
+          0.34,
+          0.41
+        ],
+        [
+          0.28,
+          0.25,
+          0.25,
+          0.27,
+          0.22,
+          0.28,
+          0.28,
+          0.23
+        ],
+        [
+          0.35,
+          0.24,
+          0.23,
+          0.35,
+          0.24,
+          0.35,
+          0.24,
+          0.35
+        ]
+      ],
+      "sum": 1.1625,
+      "sum_violation": 0.1625000000000001,
+      "eps_star": 0.08125000000000004,
+      "projected": [
+        0.20937499999999998,
+        0.320625,
+        0.21687499999999998,
+        0.25312499999999993
+      ],
+      "baseline_eps_star": 0.539688857120471,
+      "baseline_sum": 2.0787500000000003,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting whether Anthropic Claude will hold the highest SWE-Bench Verified score by year-end 2026. Consider Anthropic's recent trajectory in code generation, their investment in reasoning capabilities, and competitive positioning against OpenAI and Google. This is one of four mutually exclusive outcomes covering all major AI labs.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting whether OpenAI GPT will hold the highest SWE-Bench Verified score by year-end 2026. Consider OpenAI's historical dominance in benchmarks, their model scaling strategy, and recent releases. This is one of four mutually exclusive outcomes; your forecast should be coherent with sibling forecasts for Anthropic Claude, Google Gemini, and other models.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"GPT-5.4-nano\",\n      \"context\": \"You are forecasting whether Google Gemini will hold the highest SWE-Bench Verified score by year-end 2026. Consider Google's capabilities in code understanding, their recent Gemini releases, and competitive positioning. This is one of four mutually exclusive outcomes; ensure your forecast is calibrated relative to OpenAI, Anthropic, and other competitors.\"\n    },\n    {\n      \"outcome_index\": 3,\n      \"specialist\": \"Llama-3.3-70b\",\n      \"context\": \"You are forecasting whether a model from a non-major-lab (neither Anthropic, OpenAI, nor Google) will hold the highest SWE-Bench Verified score by year-end 2026. Consider emerging competitors like Meta, Mistral, xAI, or other organizations. This is one of four mutually exclusive outcomes; calibrate against the likelihood of major labs dominating this benchmark.\"\n    }\n  ]\n}\n```"
+    },
+    {
+      "label": "Largest US tech IPO of 2026 by company type",
+      "outcomes": [
+        "the largest US tech IPO of 2026 (by initial market capitalisation) is an AI infrastructure or AI model company",
+        "the largest US tech IPO of 2026 is a SaaS / enterprise software company",
+        "the largest US tech IPO of 2026 is a consumer-internet or fintech company",
+        "the largest US tech IPO of 2026 is in some other technology subsector"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_context": [
+        "You are forecasting the probability that the largest US tech IPO of 2026 (by initial market cap) will be an AI infrastructure or AI model company. Consider the current momentum in AI funding, the maturity of leading private AI companies, and typical IPO timing cycles. This partition has four mutually exclusive outcomes covering all tech IPOs; your estimate should reflect the relative likelihood of AI infrastructure/model companies dominating the 2026 IPO landscape by valuation.",
+        "You are forecasting the probability that the largest US tech IPO of 2026 (by initial market cap) will be a SaaS or enterprise software company. Consider the maturity and funding landscape of private SaaS companies, historical patterns of enterprise software IPOs, and competitive positioning relative to other tech subsectors. This is one of four mutually exclusive outcomes in a tech IPO partition.",
+        "You are forecasting the probability that the largest US tech IPO of 2026 (by initial market cap) will be a consumer-internet or fintech company. Consider the regulatory environment for fintech, consumer internet valuations, and the pipeline of well-funded private companies in these sectors. This outcome competes with AI infrastructure, SaaS, and other tech subsectors for the largest 2026 IPO.",
+        "You are forecasting the probability that the largest US tech IPO of 2026 (by initial market cap) will be in some other technology subsector (e.g., cybersecurity, semiconductors, biotech, cleantech, or other emerging tech). Consider emerging subsectors gaining momentum, the diversity of tech innovation, and any major private companies outside AI, SaaS, and consumer/fintech. This is the residual outcome in a four-way partition."
+      ],
+      "per_outcome_means": [
+        0.455,
+        0.28,
+        0.3675,
+        0.35
+      ],
+      "per_outcome_samples": [
+        [
+          0.38,
+          0.42,
+          0.42,
+          0.42,
+          0.46,
+          0.43,
+          0.43,
+          0.68
+        ],
+        [
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28
+        ],
+        [
+          0.38,
+          0.28,
+          0.34,
+          0.38,
+          0.42,
+          0.38,
+          0.38,
+          0.38
+        ],
+        [
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35
+        ]
+      ],
+      "sum": 1.4525000000000001,
+      "sum_violation": 0.4525000000000001,
+      "eps_star": 0.22624999999999995,
+      "projected": [
+        0.34187500000000004,
+        0.16687500000000005,
+        0.254375,
+        0.236875
+      ],
+      "baseline_eps_star": 0.3325,
+      "baseline_sum": 1.665,
+      "planner_raw": "```json\n{\n  \"assignments\": [\n    {\n      \"outcome_index\": 0,\n      \"specialist\": \"GPT-5.4-mini\",\n      \"context\": \"You are forecasting the probability that the largest US tech IPO of 2026 (by initial market cap) will be an AI infrastructure or AI model company. Consider the current momentum in AI funding, the maturity of leading private AI companies, and typical IPO timing cycles. This partition has four mutually exclusive outcomes covering all tech IPOs; your estimate should reflect the relative likelihood of AI infrastructure/model companies dominating the 2026 IPO landscape by valuation.\"\n    },\n    {\n      \"outcome_index\": 1,\n      \"specialist\": \"Claude-Haiku\",\n      \"context\": \"You are forecasting the probability that the largest US tech IPO of 2026 (by initial market cap) will be a SaaS or enterprise software company. Consider the maturity and funding landscape of private SaaS companies, historical patterns of enterprise software IPOs, and competitive positioning relative to other tech subsectors. This is one of four mutually exclusive outcomes in a tech IPO partition.\"\n    },\n    {\n      \"outcome_index\": 2,\n      \"specialist\": \"GPT-5.4-nano\",\n      \"context\": \"You are forecasting the probability that the largest US tech IPO of 2026 (by initial market cap) will be a consumer-internet or fintech company. Consider the regulatory environment for fintech, consumer internet valuations, and the pipeline of well-funded private companies in these sectors. This outcome competes with AI infrastructure, SaaS, and other tech subsectors for the largest 2026 IPO.\"\n    },\n    {\n      \"outcome_index\": 3,\n      \"specialist\": \"Llama-3.3-70b\",\n      \"context\": \"You are forecasting the probability that the largest US tech IPO of 2026 (by initial market cap) will be in some other technology subsector (e.g., cybersecurity, semiconductors, biotech, cleantech, or other emerging tech). Consider emerging subsectors gaining momentum, the diversity of tech innovation, and any major private companies outside AI, SaaS, and consumer/fintech. This is the residual outcome in a four-way partition.\"\n    }\n  ]\n}\n```"
+    }
+  ]
+}

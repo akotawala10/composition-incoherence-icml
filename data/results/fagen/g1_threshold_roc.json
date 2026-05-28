@@ -1,0 +1,1709 @@
+{
+  "summary": {
+    "n_total": 1767,
+    "n_with_winner": 1247,
+    "spearman_eps_brier_regret": 0.8287301079552241,
+    "spearman_eps_logp_regret": -0.017974277913863253,
+    "auc_eps_brier_top_quartile": 0.9734073251942287,
+    "auc_eps_logp_top_quartile": 0.7793683537885576,
+    "brier_top_quartile_threshold": 0.023703703703703838,
+    "logp_top_quartile_threshold": 1.6653345369377348e-16,
+    "high_recall_op": {
+      "tau": 0.15323398370666805,
+      "alert_rate": 0.2507074136955291,
+      "harm_capture_rate": 0.9095022624434389,
+      "false_alarm_rate": 0.030943396226415093,
+      "regret_saved_per_alert": 0.05389720250831032,
+      "n_alerts": 443
+    },
+    "high_precision_op": {
+      "tau": 0.22164201214714485,
+      "alert_rate": 0.1380871533672892,
+      "harm_capture_rate": 0.5067873303167421,
+      "false_alarm_rate": 0.01509433962264151,
+      "regret_saved_per_alert": 0.07872770642943057,
+      "n_alerts": 244
+    },
+    "cross_validation": {
+      "cv_auc_brier_mean": 0.9739957070583636,
+      "cv_auc_brier_std": 0.011711875463163962,
+      "cv_auc_logp_mean": 0.7747879751770176,
+      "cv_auc_logp_std": 0.0442219383089723,
+      "cv_recall_at_target_tau_mean": 0.9043870895186684,
+      "cv_alert_at_target_tau_mean": 0.2507210191898337,
+      "target_tau": 0.15323398370666805,
+      "cv_aucs_brier": [
+        0.9831660583941606,
+        0.9647727272727273,
+        0.9883379672536299,
+        0.956631198935968,
+        0.9770705834353324
+      ],
+      "cv_aucs_logp": [
+        0.8161360062893082,
+        0.7763945578231293,
+        0.7030951138932359,
+        0.7537110232762406,
+        0.8246031746031746
+      ]
+    }
+  },
+  "op_table": [
+    {
+      "tau": 0.0,
+      "alert_rate": 0.5291454442558008,
+      "harm_capture_rate": 1.0,
+      "false_alarm_rate": 0.3720754716981132,
+      "regret_saved_per_alert": 0.03106584400362048,
+      "n_alerts": 935
+    },
+    {
+      "tau": 0.0027363211376190723,
+      "alert_rate": 0.5036785512167515,
+      "harm_capture_rate": 1.0,
+      "false_alarm_rate": 0.33811320754716984,
+      "regret_saved_per_alert": 0.032636571581271805,
+      "n_alerts": 890
+    },
+    {
+      "tau": 0.0054726422752381446,
+      "alert_rate": 0.4951895868704018,
+      "harm_capture_rate": 1.0,
+      "false_alarm_rate": 0.3267924528301887,
+      "regret_saved_per_alert": 0.033198959150998505,
+      "n_alerts": 875
+    },
+    {
+      "tau": 0.008208963412857217,
+      "alert_rate": 0.49122807017543857,
+      "harm_capture_rate": 1.0,
+      "false_alarm_rate": 0.32150943396226417,
+      "regret_saved_per_alert": 0.03345308178219055,
+      "n_alerts": 868
+    },
+    {
+      "tau": 0.01,
+      "alert_rate": 0.4872665534804754,
+      "harm_capture_rate": 1.0,
+      "false_alarm_rate": 0.31622641509433963,
+      "regret_saved_per_alert": 0.03372436518258302,
+      "n_alerts": 861
+    },
+    {
+      "tau": 0.010945284550476289,
+      "alert_rate": 0.4833050367855122,
+      "harm_capture_rate": 1.0,
+      "false_alarm_rate": 0.3109433962264151,
+      "regret_saved_per_alert": 0.03399986980515742,
+      "n_alerts": 854
+    },
+    {
+      "tau": 0.013681605688095361,
+      "alert_rate": 0.477645727221279,
+      "harm_capture_rate": 1.0,
+      "false_alarm_rate": 0.30339622641509434,
+      "regret_saved_per_alert": 0.0344008555058093,
+      "n_alerts": 844
+    },
+    {
+      "tau": 0.016417926825714434,
+      "alert_rate": 0.47368421052631576,
+      "harm_capture_rate": 0.995475113122172,
+      "false_alarm_rate": 0.29962264150943396,
+      "regret_saved_per_alert": 0.03456127078585368,
+      "n_alerts": 837
+    },
+    {
+      "tau": 0.019154247963333506,
+      "alert_rate": 0.4708545557441992,
+      "harm_capture_rate": 0.995475113122172,
+      "false_alarm_rate": 0.2958490566037736,
+      "regret_saved_per_alert": 0.034767107945527745,
+      "n_alerts": 832
+    },
+    {
+      "tau": 0.021890569100952578,
+      "alert_rate": 0.4663271080928127,
+      "harm_capture_rate": 0.995475113122172,
+      "false_alarm_rate": 0.289811320754717,
+      "regret_saved_per_alert": 0.03510038014252227,
+      "n_alerts": 824
+    },
+    {
+      "tau": 0.02462689023857165,
+      "alert_rate": 0.4646293152235427,
+      "harm_capture_rate": 0.995475113122172,
+      "false_alarm_rate": 0.2875471698113208,
+      "regret_saved_per_alert": 0.03522654953893561,
+      "n_alerts": 821
+    },
+    {
+      "tau": 0.025,
+      "alert_rate": 0.4640633842671194,
+      "harm_capture_rate": 0.995475113122172,
+      "false_alarm_rate": 0.28679245283018867,
+      "regret_saved_per_alert": 0.035268761794470894,
+      "n_alerts": 820
+    },
+    {
+      "tau": 0.027363211376190723,
+      "alert_rate": 0.46123372948500285,
+      "harm_capture_rate": 0.9932126696832579,
+      "false_alarm_rate": 0.2837735849056604,
+      "regret_saved_per_alert": 0.035532361812154335,
+      "n_alerts": 815
+    },
+    {
+      "tau": 0.030099532513809795,
+      "alert_rate": 0.45500848896434637,
+      "harm_capture_rate": 0.9909502262443439,
+      "false_alarm_rate": 0.27622641509433965,
+      "regret_saved_per_alert": 0.035965592645707506,
+      "n_alerts": 804
+    },
+    {
+      "tau": 0.03283585365142887,
+      "alert_rate": 0.4470854555744199,
+      "harm_capture_rate": 0.9841628959276018,
+      "false_alarm_rate": 0.2679245283018868,
+      "regret_saved_per_alert": 0.03643845444194883,
+      "n_alerts": 790
+    },
+    {
+      "tau": 0.035572174789047936,
+      "alert_rate": 0.44086021505376344,
+      "harm_capture_rate": 0.9841628959276018,
+      "false_alarm_rate": 0.259622641509434,
+      "regret_saved_per_alert": 0.036936964361140225,
+      "n_alerts": 779
+    },
+    {
+      "tau": 0.03830849592666701,
+      "alert_rate": 0.43859649122807015,
+      "harm_capture_rate": 0.9819004524886877,
+      "false_alarm_rate": 0.2573584905660377,
+      "regret_saved_per_alert": 0.037135434229467766,
+      "n_alerts": 775
+    },
+    {
+      "tau": 0.04104481706428609,
+      "alert_rate": 0.43463497453310695,
+      "harm_capture_rate": 0.9819004524886877,
+      "false_alarm_rate": 0.25207547169811323,
+      "regret_saved_per_alert": 0.03745962466339256,
+      "n_alerts": 768
+    },
+    {
+      "tau": 0.043781138201905156,
+      "alert_rate": 0.4335031126202603,
+      "harm_capture_rate": 0.9819004524886877,
+      "false_alarm_rate": 0.25056603773584907,
+      "regret_saved_per_alert": 0.037552784866555854,
+      "n_alerts": 766
+    },
+    {
+      "tau": 0.046517459339524225,
+      "alert_rate": 0.42784380305602715,
+      "harm_capture_rate": 0.9819004524886877,
+      "false_alarm_rate": 0.24301886792452831,
+      "regret_saved_per_alert": 0.03810598645982359,
+      "n_alerts": 756
+    },
+    {
+      "tau": 0.0492537804771433,
+      "alert_rate": 0.42105263157894735,
+      "harm_capture_rate": 0.9819004524886877,
+      "false_alarm_rate": 0.2339622641509434,
+      "regret_saved_per_alert": 0.038776731591798765,
+      "n_alerts": 744
+    },
+    {
+      "tau": 0.05,
+      "alert_rate": 0.41709111488398415,
+      "harm_capture_rate": 0.9773755656108597,
+      "false_alarm_rate": 0.23018867924528302,
+      "regret_saved_per_alert": 0.03893180231248071,
+      "n_alerts": 737
+    },
+    {
+      "tau": 0.05199010161476238,
+      "alert_rate": 0.41482739105829086,
+      "harm_capture_rate": 0.9773755656108597,
+      "false_alarm_rate": 0.22716981132075473,
+      "regret_saved_per_alert": 0.03913003499051608,
+      "n_alerts": 733
+    },
+    {
+      "tau": 0.054726422752381446,
+      "alert_rate": 0.4091680814940577,
+      "harm_capture_rate": 0.9773755656108597,
+      "false_alarm_rate": 0.21962264150943397,
+      "regret_saved_per_alert": 0.039631873614645124,
+      "n_alerts": 723
+    },
+    {
+      "tau": 0.057462743890000514,
+      "alert_rate": 0.4074702886247878,
+      "harm_capture_rate": 0.9773755656108597,
+      "false_alarm_rate": 0.21735849056603773,
+      "regret_saved_per_alert": 0.039783678794701,
+      "n_alerts": 720
+    },
+    {
+      "tau": 0.06019906502761959,
+      "alert_rate": 0.4029428409734012,
+      "harm_capture_rate": 0.9705882352941176,
+      "false_alarm_rate": 0.21358490566037736,
+      "regret_saved_per_alert": 0.039909305116013184,
+      "n_alerts": 712
+    },
+    {
+      "tau": 0.06293538616523867,
+      "alert_rate": 0.4012450481041313,
+      "harm_capture_rate": 0.9683257918552036,
+      "false_alarm_rate": 0.2120754716981132,
+      "regret_saved_per_alert": 0.03993865440305791,
+      "n_alerts": 709
+    },
+    {
+      "tau": 0.06567170730285773,
+      "alert_rate": 0.3967176004527448,
+      "harm_capture_rate": 0.9660633484162896,
+      "false_alarm_rate": 0.20679245283018868,
+      "regret_saved_per_alert": 0.04013318736697085,
+      "n_alerts": 701
+    },
+    {
+      "tau": 0.0684080284404768,
+      "alert_rate": 0.39105829088851163,
+      "harm_capture_rate": 0.9638009049773756,
+      "false_alarm_rate": 0.2,
+      "regret_saved_per_alert": 0.040534390691879855,
+      "n_alerts": 691
+    },
+    {
+      "tau": 0.07114434957809587,
+      "alert_rate": 0.3876627051499717,
+      "harm_capture_rate": 0.9638009049773756,
+      "false_alarm_rate": 0.19547169811320755,
+      "regret_saved_per_alert": 0.04084611170776355,
+      "n_alerts": 685
+    },
+    {
+      "tau": 0.07388067071571496,
+      "alert_rate": 0.38256932654216186,
+      "harm_capture_rate": 0.9592760180995475,
+      "false_alarm_rate": 0.19018867924528302,
+      "regret_saved_per_alert": 0.041042765216316696,
+      "n_alerts": 676
+    },
+    {
+      "tau": 0.075,
+      "alert_rate": 0.3814374646293152,
+      "harm_capture_rate": 0.9592760180995475,
+      "false_alarm_rate": 0.18867924528301888,
+      "regret_saved_per_alert": 0.041303851492613876,
+      "n_alerts": 674
+    },
+    {
+      "tau": 0.07661699185333402,
+      "alert_rate": 0.37521222410865873,
+      "harm_capture_rate": 0.9524886877828054,
+      "false_alarm_rate": 0.18264150943396226,
+      "regret_saved_per_alert": 0.041435702414952334,
+      "n_alerts": 663
+    },
+    {
+      "tau": 0.07935331299095309,
+      "alert_rate": 0.3684210526315789,
+      "harm_capture_rate": 0.9479638009049773,
+      "false_alarm_rate": 0.1750943396226415,
+      "regret_saved_per_alert": 0.0422585643133818,
+      "n_alerts": 651
+    },
+    {
+      "tau": 0.08208963412857218,
+      "alert_rate": 0.36219581211092244,
+      "harm_capture_rate": 0.9457013574660633,
+      "false_alarm_rate": 0.16754716981132076,
+      "regret_saved_per_alert": 0.042726178346466234,
+      "n_alerts": 640
+    },
+    {
+      "tau": 0.08482595526619124,
+      "alert_rate": 0.35880022637238257,
+      "harm_capture_rate": 0.9457013574660633,
+      "false_alarm_rate": 0.1630188679245283,
+      "regret_saved_per_alert": 0.04306436950190305,
+      "n_alerts": 634
+    },
+    {
+      "tau": 0.08756227640381031,
+      "alert_rate": 0.3548387096774194,
+      "harm_capture_rate": 0.9457013574660633,
+      "false_alarm_rate": 0.15773584905660376,
+      "regret_saved_per_alert": 0.043463654475284545,
+      "n_alerts": 627
+    },
+    {
+      "tau": 0.09029859754142938,
+      "alert_rate": 0.3525749858517261,
+      "harm_capture_rate": 0.9457013574660633,
+      "false_alarm_rate": 0.15471698113207547,
+      "regret_saved_per_alert": 0.04389293965056119,
+      "n_alerts": 623
+    },
+    {
+      "tau": 0.09303491867904845,
+      "alert_rate": 0.34974533106960953,
+      "harm_capture_rate": 0.9457013574660633,
+      "false_alarm_rate": 0.1509433962264151,
+      "regret_saved_per_alert": 0.044302239900003294,
+      "n_alerts": 618
+    },
+    {
+      "tau": 0.09577123981666753,
+      "alert_rate": 0.34125636672325976,
+      "harm_capture_rate": 0.9434389140271493,
+      "false_alarm_rate": 0.14037735849056604,
+      "regret_saved_per_alert": 0.04578740369446425,
+      "n_alerts": 603
+    },
+    {
+      "tau": 0.0985075609542866,
+      "alert_rate": 0.3378607809847199,
+      "harm_capture_rate": 0.9434389140271493,
+      "false_alarm_rate": 0.13584905660377358,
+      "regret_saved_per_alert": 0.04615344502695057,
+      "n_alerts": 597
+    },
+    {
+      "tau": 0.1,
+      "alert_rate": 0.3355970571590266,
+      "harm_capture_rate": 0.9434389140271493,
+      "false_alarm_rate": 0.1328301886792453,
+      "regret_saved_per_alert": 0.04639886170925715,
+      "n_alerts": 593
+    },
+    {
+      "tau": 0.10124388209190567,
+      "alert_rate": 0.33446519524617996,
+      "harm_capture_rate": 0.9434389140271493,
+      "false_alarm_rate": 0.13132075471698113,
+      "regret_saved_per_alert": 0.04652168950629293,
+      "n_alerts": 591
+    },
+    {
+      "tau": 0.10398020322952475,
+      "alert_rate": 0.32993774759479344,
+      "harm_capture_rate": 0.9366515837104072,
+      "false_alarm_rate": 0.12754716981132075,
+      "regret_saved_per_alert": 0.046562018142234686,
+      "n_alerts": 583
+    },
+    {
+      "tau": 0.10671652436714382,
+      "alert_rate": 0.32597623089983024,
+      "harm_capture_rate": 0.9366515837104072,
+      "false_alarm_rate": 0.12226415094339622,
+      "regret_saved_per_alert": 0.04714373443749633,
+      "n_alerts": 576
+    },
+    {
+      "tau": 0.10945284550476289,
+      "alert_rate": 0.3254102999434069,
+      "harm_capture_rate": 0.9366515837104072,
+      "false_alarm_rate": 0.12150943396226416,
+      "regret_saved_per_alert": 0.0472055821421642,
+      "n_alerts": 575
+    },
+    {
+      "tau": 0.11218916664238196,
+      "alert_rate": 0.31692133559705715,
+      "harm_capture_rate": 0.9321266968325792,
+      "false_alarm_rate": 0.11169811320754718,
+      "regret_saved_per_alert": 0.04824365294152477,
+      "n_alerts": 560
+    },
+    {
+      "tau": 0.11492548778000103,
+      "alert_rate": 0.3050367855121675,
+      "harm_capture_rate": 0.9321266968325792,
+      "false_alarm_rate": 0.09584905660377359,
+      "regret_saved_per_alert": 0.049621782446547455,
+      "n_alerts": 539
+    },
+    {
+      "tau": 0.11766180891762011,
+      "alert_rate": 0.3010752688172043,
+      "harm_capture_rate": 0.9321266968325792,
+      "false_alarm_rate": 0.09056603773584905,
+      "regret_saved_per_alert": 0.05009583909475818,
+      "n_alerts": 532
+    },
+    {
+      "tau": 0.12039813005523918,
+      "alert_rate": 0.29994340690435767,
+      "harm_capture_rate": 0.9321266968325792,
+      "false_alarm_rate": 0.0890566037735849,
+      "regret_saved_per_alert": 0.05023187072148504,
+      "n_alerts": 530
+    },
+    {
+      "tau": 0.12313445119285825,
+      "alert_rate": 0.2976796830786644,
+      "harm_capture_rate": 0.9321266968325792,
+      "false_alarm_rate": 0.0860377358490566,
+      "regret_saved_per_alert": 0.05050139825536523,
+      "n_alerts": 526
+    },
+    {
+      "tau": 0.12587077233047733,
+      "alert_rate": 0.2920203735144312,
+      "harm_capture_rate": 0.9276018099547512,
+      "false_alarm_rate": 0.08,
+      "regret_saved_per_alert": 0.05062582961551264,
+      "n_alerts": 516
+    },
+    {
+      "tau": 0.1286070934680964,
+      "alert_rate": 0.2874929258630447,
+      "harm_capture_rate": 0.9253393665158371,
+      "false_alarm_rate": 0.07471698113207548,
+      "regret_saved_per_alert": 0.05128941559889701,
+      "n_alerts": 508
+    },
+    {
+      "tau": 0.13134341460571547,
+      "alert_rate": 0.2829654782116582,
+      "harm_capture_rate": 0.9230769230769231,
+      "false_alarm_rate": 0.06943396226415094,
+      "regret_saved_per_alert": 0.05154115312463678,
+      "n_alerts": 500
+    },
+    {
+      "tau": 0.13407973574333454,
+      "alert_rate": 0.27843803056027167,
+      "harm_capture_rate": 0.9230769230769231,
+      "false_alarm_rate": 0.06339622641509433,
+      "regret_saved_per_alert": 0.052478549161804416,
+      "n_alerts": 492
+    },
+    {
+      "tau": 0.1368160568809536,
+      "alert_rate": 0.27504244482173174,
+      "harm_capture_rate": 0.9230769230769231,
+      "false_alarm_rate": 0.05886792452830188,
+      "regret_saved_per_alert": 0.05290208422588405,
+      "n_alerts": 486
+    },
+    {
+      "tau": 0.13955237801857268,
+      "alert_rate": 0.2727787209960385,
+      "harm_capture_rate": 0.9230769230769231,
+      "false_alarm_rate": 0.05584905660377359,
+      "regret_saved_per_alert": 0.05318189889502559,
+      "n_alerts": 482
+    },
+    {
+      "tau": 0.14228869915619174,
+      "alert_rate": 0.2705149971703452,
+      "harm_capture_rate": 0.9230769230769231,
+      "false_alarm_rate": 0.052830188679245285,
+      "regret_saved_per_alert": 0.05346128706852824,
+      "n_alerts": 478
+    },
+    {
+      "tau": 0.14502502029381084,
+      "alert_rate": 0.2659875495189587,
+      "harm_capture_rate": 0.916289592760181,
+      "false_alarm_rate": 0.04905660377358491,
+      "regret_saved_per_alert": 0.052162620651117056,
+      "n_alerts": 470
+    },
+    {
+      "tau": 0.1477613414314299,
+      "alert_rate": 0.2637238256932654,
+      "harm_capture_rate": 0.9140271493212669,
+      "false_alarm_rate": 0.04679245283018868,
+      "regret_saved_per_alert": 0.05206465329688646,
+      "n_alerts": 466
+    },
+    {
+      "tau": 0.15,
+      "alert_rate": 0.2586304470854556,
+      "harm_capture_rate": 0.9095022624434389,
+      "false_alarm_rate": 0.04150943396226415,
+      "regret_saved_per_alert": 0.05200988017404366,
+      "n_alerts": 457
+    },
+    {
+      "tau": 0.15049766256904898,
+      "alert_rate": 0.25749858517260893,
+      "harm_capture_rate": 0.9095022624434389,
+      "false_alarm_rate": 0.04,
+      "regret_saved_per_alert": 0.052139348969680484,
+      "n_alerts": 455
+    },
+    {
+      "tau": 0.15323398370666805,
+      "alert_rate": 0.2507074136955291,
+      "harm_capture_rate": 0.9095022624434389,
+      "false_alarm_rate": 0.030943396226415093,
+      "regret_saved_per_alert": 0.05389720250831032,
+      "n_alerts": 443
+    },
+    {
+      "tau": 0.15597030484428712,
+      "alert_rate": 0.23825693265421619,
+      "harm_capture_rate": 0.8823529411764706,
+      "false_alarm_rate": 0.02339622641509434,
+      "regret_saved_per_alert": 0.05771027466146704,
+      "n_alerts": 421
+    },
+    {
+      "tau": 0.15870662598190619,
+      "alert_rate": 0.23429541595925296,
+      "harm_capture_rate": 0.8687782805429864,
+      "false_alarm_rate": 0.022641509433962263,
+      "regret_saved_per_alert": 0.0588050631267406,
+      "n_alerts": 414
+    },
+    {
+      "tau": 0.16144294711952525,
+      "alert_rate": 0.23033389926428977,
+      "harm_capture_rate": 0.8529411764705882,
+      "false_alarm_rate": 0.022641509433962263,
+      "regret_saved_per_alert": 0.05937881325269191,
+      "n_alerts": 407
+    },
+    {
+      "tau": 0.16417926825714435,
+      "alert_rate": 0.22297679683078664,
+      "harm_capture_rate": 0.8235294117647058,
+      "false_alarm_rate": 0.022641509433962263,
+      "regret_saved_per_alert": 0.060456834389585844,
+      "n_alerts": 394
+    },
+    {
+      "tau": 0.16691558939476342,
+      "alert_rate": 0.21505376344086022,
+      "harm_capture_rate": 0.7941176470588235,
+      "false_alarm_rate": 0.02188679245283019,
+      "regret_saved_per_alert": 0.062287953844009675,
+      "n_alerts": 380
+    },
+    {
+      "tau": 0.1696519105323825,
+      "alert_rate": 0.21222410865874364,
+      "harm_capture_rate": 0.7828054298642534,
+      "false_alarm_rate": 0.02188679245283019,
+      "regret_saved_per_alert": 0.06169340578415203,
+      "n_alerts": 375
+    },
+    {
+      "tau": 0.17238823167000156,
+      "alert_rate": 0.2037351443123939,
+      "harm_capture_rate": 0.748868778280543,
+      "false_alarm_rate": 0.02188679245283019,
+      "regret_saved_per_alert": 0.06305682160032547,
+      "n_alerts": 360
+    },
+    {
+      "tau": 0.17512455280762063,
+      "alert_rate": 0.1941143180531975,
+      "harm_capture_rate": 0.7149321266968326,
+      "false_alarm_rate": 0.020377358490566037,
+      "regret_saved_per_alert": 0.06540785747977161,
+      "n_alerts": 343
+    },
+    {
+      "tau": 0.1778608739452397,
+      "alert_rate": 0.18902093944538767,
+      "harm_capture_rate": 0.6945701357466063,
+      "false_alarm_rate": 0.020377358490566037,
+      "regret_saved_per_alert": 0.06633004635553642,
+      "n_alerts": 334
+    },
+    {
+      "tau": 0.18059719508285876,
+      "alert_rate": 0.18562535370684777,
+      "harm_capture_rate": 0.6832579185520362,
+      "false_alarm_rate": 0.019622641509433963,
+      "regret_saved_per_alert": 0.06663674726913661,
+      "n_alerts": 328
+    },
+    {
+      "tau": 0.18333351622047783,
+      "alert_rate": 0.1839275608375778,
+      "harm_capture_rate": 0.6764705882352942,
+      "false_alarm_rate": 0.019622641509433963,
+      "regret_saved_per_alert": 0.06694691365863673,
+      "n_alerts": 325
+    },
+    {
+      "tau": 0.1860698373580969,
+      "alert_rate": 0.18053197509903793,
+      "harm_capture_rate": 0.6628959276018099,
+      "false_alarm_rate": 0.019622641509433963,
+      "regret_saved_per_alert": 0.06756441173325649,
+      "n_alerts": 319
+    },
+    {
+      "tau": 0.188806158495716,
+      "alert_rate": 0.17713638936049803,
+      "harm_capture_rate": 0.6515837104072398,
+      "false_alarm_rate": 0.018867924528301886,
+      "regret_saved_per_alert": 0.06867268256254098,
+      "n_alerts": 313
+    },
+    {
+      "tau": 0.19154247963333507,
+      "alert_rate": 0.17487266553480477,
+      "harm_capture_rate": 0.6425339366515838,
+      "false_alarm_rate": 0.018867924528301886,
+      "regret_saved_per_alert": 0.06908950407809343,
+      "n_alerts": 309
+    },
+    {
+      "tau": 0.19427880077095414,
+      "alert_rate": 0.17147707979626486,
+      "harm_capture_rate": 0.6289592760180995,
+      "false_alarm_rate": 0.018867924528301886,
+      "regret_saved_per_alert": 0.0697176913475319,
+      "n_alerts": 303
+    },
+    {
+      "tau": 0.1970151219085732,
+      "alert_rate": 0.1697792869269949,
+      "harm_capture_rate": 0.6244343891402715,
+      "false_alarm_rate": 0.018113207547169812,
+      "regret_saved_per_alert": 0.07095166455730352,
+      "n_alerts": 300
+    },
+    {
+      "tau": 0.19975144304619227,
+      "alert_rate": 0.166383701188455,
+      "harm_capture_rate": 0.6108597285067874,
+      "false_alarm_rate": 0.018113207547169812,
+      "regret_saved_per_alert": 0.07064685865975205,
+      "n_alerts": 294
+    },
+    {
+      "tau": 0.2,
+      "alert_rate": 0.166383701188455,
+      "harm_capture_rate": 0.6108597285067874,
+      "false_alarm_rate": 0.018113207547169812,
+      "regret_saved_per_alert": 0.07064685865975205,
+      "n_alerts": 294
+    },
+    {
+      "tau": 0.20248776418381134,
+      "alert_rate": 0.16298811544991512,
+      "harm_capture_rate": 0.6018099547511312,
+      "false_alarm_rate": 0.01660377358490566,
+      "regret_saved_per_alert": 0.07324989106331013,
+      "n_alerts": 288
+    },
+    {
+      "tau": 0.2052240853214304,
+      "alert_rate": 0.15959252971137522,
+      "harm_capture_rate": 0.5882352941176471,
+      "false_alarm_rate": 0.01660377358490566,
+      "regret_saved_per_alert": 0.07391803415917877,
+      "n_alerts": 282
+    },
+    {
+      "tau": 0.2079604064590495,
+      "alert_rate": 0.155631013016412,
+      "harm_capture_rate": 0.5746606334841629,
+      "false_alarm_rate": 0.015849056603773583,
+      "regret_saved_per_alert": 0.07578086247553888,
+      "n_alerts": 275
+    },
+    {
+      "tau": 0.21069672759666858,
+      "alert_rate": 0.14997170345217883,
+      "harm_capture_rate": 0.5520361990950227,
+      "false_alarm_rate": 0.015849056603773583,
+      "regret_saved_per_alert": 0.07699184005585272,
+      "n_alerts": 265
+    },
+    {
+      "tau": 0.21343304873428764,
+      "alert_rate": 0.1482739105829089,
+      "harm_capture_rate": 0.5452488687782805,
+      "false_alarm_rate": 0.015849056603773583,
+      "regret_saved_per_alert": 0.07632156432971107,
+      "n_alerts": 262
+    },
+    {
+      "tau": 0.2161693698719067,
+      "alert_rate": 0.14318053197509903,
+      "harm_capture_rate": 0.5271493212669683,
+      "false_alarm_rate": 0.01509433962264151,
+      "regret_saved_per_alert": 0.07762666442705159,
+      "n_alerts": 253
+    },
+    {
+      "tau": 0.21890569100952578,
+      "alert_rate": 0.14091680814940577,
+      "harm_capture_rate": 0.5180995475113123,
+      "false_alarm_rate": 0.01509433962264151,
+      "regret_saved_per_alert": 0.0781164007993866,
+      "n_alerts": 249
+    },
+    {
+      "tau": 0.22164201214714485,
+      "alert_rate": 0.1380871533672892,
+      "harm_capture_rate": 0.5067873303167421,
+      "false_alarm_rate": 0.01509433962264151,
+      "regret_saved_per_alert": 0.07872770642943057,
+      "n_alerts": 244
+    },
+    {
+      "tau": 0.22437833328476392,
+      "alert_rate": 0.13412563667232597,
+      "harm_capture_rate": 0.49321266968325794,
+      "false_alarm_rate": 0.014339622641509434,
+      "regret_saved_per_alert": 0.08110302212688031,
+      "n_alerts": 237
+    },
+    {
+      "tau": 0.227114654422383,
+      "alert_rate": 0.13016411997736277,
+      "harm_capture_rate": 0.47737556561085975,
+      "false_alarm_rate": 0.014339622641509434,
+      "regret_saved_per_alert": 0.08201496847260985,
+      "n_alerts": 230
+    },
+    {
+      "tau": 0.22985097556000206,
+      "alert_rate": 0.1284663271080928,
+      "harm_capture_rate": 0.47285067873303166,
+      "false_alarm_rate": 0.013584905660377358,
+      "regret_saved_per_alert": 0.0838298951086892,
+      "n_alerts": 227
+    },
+    {
+      "tau": 0.23258729669762115,
+      "alert_rate": 0.1273344651952462,
+      "harm_capture_rate": 0.4683257918552036,
+      "false_alarm_rate": 0.013584905660377358,
+      "regret_saved_per_alert": 0.08409744469715533,
+      "n_alerts": 225
+    },
+    {
+      "tau": 0.23532361783524022,
+      "alert_rate": 0.12620260328239954,
+      "harm_capture_rate": 0.4638009049773756,
+      "false_alarm_rate": 0.013584905660377358,
+      "regret_saved_per_alert": 0.08436238141840512,
+      "n_alerts": 223
+    },
+    {
+      "tau": 0.2380599389728593,
+      "alert_rate": 0.12393887945670629,
+      "harm_capture_rate": 0.45475113122171945,
+      "false_alarm_rate": 0.013584905660377358,
+      "regret_saved_per_alert": 0.0836357113174729,
+      "n_alerts": 219
+    },
+    {
+      "tau": 0.24079626011047836,
+      "alert_rate": 0.12280701754385964,
+      "harm_capture_rate": 0.4502262443438914,
+      "false_alarm_rate": 0.013584905660377358,
+      "regret_saved_per_alert": 0.08259831662904799,
+      "n_alerts": 217
+    },
+    {
+      "tau": 0.24353258124809743,
+      "alert_rate": 0.11997736276174306,
+      "harm_capture_rate": 0.4411764705882353,
+      "false_alarm_rate": 0.012830188679245283,
+      "regret_saved_per_alert": 0.08477814882046511,
+      "n_alerts": 212
+    },
+    {
+      "tau": 0.2462689023857165,
+      "alert_rate": 0.11658177702320317,
+      "harm_capture_rate": 0.4321266968325792,
+      "false_alarm_rate": 0.011320754716981131,
+      "regret_saved_per_alert": 0.08761556496734085,
+      "n_alerts": 206
+    },
+    {
+      "tau": 0.24900522352333557,
+      "alert_rate": 0.11092246745897001,
+      "harm_capture_rate": 0.4117647058823529,
+      "false_alarm_rate": 0.010566037735849057,
+      "regret_saved_per_alert": 0.0889629770033021,
+      "n_alerts": 196
+    },
+    {
+      "tau": 0.25174154466095466,
+      "alert_rate": 0.10696095076400679,
+      "harm_capture_rate": 0.39592760180995473,
+      "false_alarm_rate": 0.010566037735849057,
+      "regret_saved_per_alert": 0.08993224596100478,
+      "n_alerts": 189
+    },
+    {
+      "tau": 0.25447786579857373,
+      "alert_rate": 0.10299943406904358,
+      "harm_capture_rate": 0.38235294117647056,
+      "false_alarm_rate": 0.009811320754716982,
+      "regret_saved_per_alert": 0.09288465917775221,
+      "n_alerts": 182
+    },
+    {
+      "tau": 0.2572141869361928,
+      "alert_rate": 0.10130164119977363,
+      "harm_capture_rate": 0.3755656108597285,
+      "false_alarm_rate": 0.009811320754716982,
+      "regret_saved_per_alert": 0.09334810400258106,
+      "n_alerts": 179
+    },
+    {
+      "tau": 0.25995050807381187,
+      "alert_rate": 0.09903791737408037,
+      "harm_capture_rate": 0.3665158371040724,
+      "false_alarm_rate": 0.009811320754716982,
+      "regret_saved_per_alert": 0.09394613879049718,
+      "n_alerts": 175
+    },
+    {
+      "tau": 0.26268682921143094,
+      "alert_rate": 0.09790605546123372,
+      "harm_capture_rate": 0.36425339366515835,
+      "false_alarm_rate": 0.009056603773584906,
+      "regret_saved_per_alert": 0.09617394502062916,
+      "n_alerts": 173
+    },
+    {
+      "tau": 0.26542315034905,
+      "alert_rate": 0.09451046972269384,
+      "harm_capture_rate": 0.3506787330316742,
+      "false_alarm_rate": 0.009056603773584906,
+      "regret_saved_per_alert": 0.09529432946692366,
+      "n_alerts": 167
+    },
+    {
+      "tau": 0.2681594714866691,
+      "alert_rate": 0.0933786078098472,
+      "harm_capture_rate": 0.34615384615384615,
+      "false_alarm_rate": 0.009056603773584906,
+      "regret_saved_per_alert": 0.09558980997561364,
+      "n_alerts": 165
+    },
+    {
+      "tau": 0.27089579262428815,
+      "alert_rate": 0.09224674589700056,
+      "harm_capture_rate": 0.3416289592760181,
+      "false_alarm_rate": 0.009056603773584906,
+      "regret_saved_per_alert": 0.09587053690413601,
+      "n_alerts": 163
+    },
+    {
+      "tau": 0.2736321137619072,
+      "alert_rate": 0.08941709111488398,
+      "harm_capture_rate": 0.332579185520362,
+      "false_alarm_rate": 0.00830188679245283,
+      "regret_saved_per_alert": 0.09598599510378726,
+      "n_alerts": 158
+    },
+    {
+      "tau": 0.2763684348995263,
+      "alert_rate": 0.0865874363327674,
+      "harm_capture_rate": 0.3212669683257919,
+      "false_alarm_rate": 0.00830188679245283,
+      "regret_saved_per_alert": 0.09665991975382895,
+      "n_alerts": 153
+    },
+    {
+      "tau": 0.27910475603714535,
+      "alert_rate": 0.08432371250707414,
+      "harm_capture_rate": 0.31221719457013575,
+      "false_alarm_rate": 0.00830188679245283,
+      "regret_saved_per_alert": 0.09718123023356448,
+      "n_alerts": 149
+    },
+    {
+      "tau": 0.2818410771747644,
+      "alert_rate": 0.0831918505942275,
+      "harm_capture_rate": 0.3076923076923077,
+      "false_alarm_rate": 0.00830188679245283,
+      "regret_saved_per_alert": 0.09743582126006359,
+      "n_alerts": 147
+    },
+    {
+      "tau": 0.2845773983123835,
+      "alert_rate": 0.07979626485568761,
+      "harm_capture_rate": 0.29638009049773756,
+      "false_alarm_rate": 0.007547169811320755,
+      "regret_saved_per_alert": 0.09982784171689092,
+      "n_alerts": 141
+    },
+    {
+      "tau": 0.2873137194500026,
+      "alert_rate": 0.07809847198641766,
+      "harm_capture_rate": 0.2918552036199095,
+      "false_alarm_rate": 0.006792452830188679,
+      "regret_saved_per_alert": 0.10315214240991108,
+      "n_alerts": 138
+    },
+    {
+      "tau": 0.2900500405876217,
+      "alert_rate": 0.07809847198641766,
+      "harm_capture_rate": 0.2918552036199095,
+      "false_alarm_rate": 0.006792452830188679,
+      "regret_saved_per_alert": 0.10315214240991108,
+      "n_alerts": 138
+    },
+    {
+      "tau": 0.29278636172524075,
+      "alert_rate": 0.07696661007357103,
+      "harm_capture_rate": 0.2873303167420814,
+      "false_alarm_rate": 0.006792452830188679,
+      "regret_saved_per_alert": 0.1034143403634645,
+      "n_alerts": 136
+    },
+    {
+      "tau": 0.2955226828628598,
+      "alert_rate": 0.07470288624787776,
+      "harm_capture_rate": 0.27828054298642535,
+      "false_alarm_rate": 0.006792452830188679,
+      "regret_saved_per_alert": 0.10393863263773614,
+      "n_alerts": 132
+    },
+    {
+      "tau": 0.2982590040004789,
+      "alert_rate": 0.07187323146576118,
+      "harm_capture_rate": 0.2669683257918552,
+      "false_alarm_rate": 0.006792452830188679,
+      "regret_saved_per_alert": 0.10455826384394623,
+      "n_alerts": 127
+    },
+    {
+      "tau": 0.3,
+      "alert_rate": 0.0690435766836446,
+      "harm_capture_rate": 0.25565610859728505,
+      "false_alarm_rate": 0.006792452830188679,
+      "regret_saved_per_alert": 0.1051855204307883,
+      "n_alerts": 122
+    },
+    {
+      "tau": 0.30099532513809796,
+      "alert_rate": 0.06621392190152801,
+      "harm_capture_rate": 0.24434389140271492,
+      "false_alarm_rate": 0.006792452830188679,
+      "regret_saved_per_alert": 0.10581203172056558,
+      "n_alerts": 117
+    },
+    {
+      "tau": 0.303731646275717,
+      "alert_rate": 0.06395019807583475,
+      "harm_capture_rate": 0.2398190045248869,
+      "false_alarm_rate": 0.005283018867924529,
+      "regret_saved_per_alert": 0.11388460225713427,
+      "n_alerts": 113
+    },
+    {
+      "tau": 0.3064679674133361,
+      "alert_rate": 0.06281833616298811,
+      "harm_capture_rate": 0.23529411764705882,
+      "false_alarm_rate": 0.005283018867924529,
+      "regret_saved_per_alert": 0.1142683883760691,
+      "n_alerts": 111
+    },
+    {
+      "tau": 0.30920428855095516,
+      "alert_rate": 0.06112054329371817,
+      "harm_capture_rate": 0.22850678733031674,
+      "false_alarm_rate": 0.005283018867924529,
+      "regret_saved_per_alert": 0.11481941638072844,
+      "n_alerts": 108
+    },
+    {
+      "tau": 0.31194060968857423,
+      "alert_rate": 0.057724957555178265,
+      "harm_capture_rate": 0.2171945701357466,
+      "false_alarm_rate": 0.004528301886792453,
+      "regret_saved_per_alert": 0.12020478310036081,
+      "n_alerts": 102
+    },
+    {
+      "tau": 0.3146769308261933,
+      "alert_rate": 0.054895302773061684,
+      "harm_capture_rate": 0.2081447963800905,
+      "false_alarm_rate": 0.0037735849056603774,
+      "regret_saved_per_alert": 0.12592555222137006,
+      "n_alerts": 97
+    },
+    {
+      "tau": 0.31741325196381237,
+      "alert_rate": 0.054895302773061684,
+      "harm_capture_rate": 0.2081447963800905,
+      "false_alarm_rate": 0.0037735849056603774,
+      "regret_saved_per_alert": 0.12592555222137006,
+      "n_alerts": 97
+    },
+    {
+      "tau": 0.32014957310143144,
+      "alert_rate": 0.05263157894736842,
+      "harm_capture_rate": 0.19909502262443438,
+      "false_alarm_rate": 0.0037735849056603774,
+      "regret_saved_per_alert": 0.12698686629540748,
+      "n_alerts": 93
+    },
+    {
+      "tau": 0.3228858942390505,
+      "alert_rate": 0.04980192416525184,
+      "harm_capture_rate": 0.19004524886877827,
+      "false_alarm_rate": 0.0030188679245283017,
+      "regret_saved_per_alert": 0.13349637405064424,
+      "n_alerts": 88
+    },
+    {
+      "tau": 0.3256222153766696,
+      "alert_rate": 0.04753820033955857,
+      "harm_capture_rate": 0.18552036199095023,
+      "false_alarm_rate": 0.0015094339622641509,
+      "regret_saved_per_alert": 0.14577905177329395,
+      "n_alerts": 84
+    },
+    {
+      "tau": 0.3283585365142887,
+      "alert_rate": 0.04753820033955857,
+      "harm_capture_rate": 0.18552036199095023,
+      "false_alarm_rate": 0.0015094339622641509,
+      "regret_saved_per_alert": 0.14577905177329395,
+      "n_alerts": 84
+    },
+    {
+      "tau": 0.33109485765190777,
+      "alert_rate": 0.04584040747028863,
+      "harm_capture_rate": 0.17873303167420815,
+      "false_alarm_rate": 0.0015094339622641509,
+      "regret_saved_per_alert": 0.14716837273634278,
+      "n_alerts": 81
+    },
+    {
+      "tau": 0.33383117878952684,
+      "alert_rate": 0.04470854555744199,
+      "harm_capture_rate": 0.17420814479638008,
+      "false_alarm_rate": 0.0015094339622641509,
+      "regret_saved_per_alert": 0.14808305859675652,
+      "n_alerts": 79
+    },
+    {
+      "tau": 0.3365674999271459,
+      "alert_rate": 0.04357668364459536,
+      "harm_capture_rate": 0.17194570135746606,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.15515974247805758,
+      "n_alerts": 77
+    },
+    {
+      "tau": 0.339303821064765,
+      "alert_rate": 0.043010752688172046,
+      "harm_capture_rate": 0.16968325791855204,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.155695774348657,
+      "n_alerts": 76
+    },
+    {
+      "tau": 0.34204014220238405,
+      "alert_rate": 0.03735144312393888,
+      "harm_capture_rate": 0.14705882352941177,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.1617653088406673,
+      "n_alerts": 66
+    },
+    {
+      "tau": 0.3447764633400031,
+      "alert_rate": 0.032823995472552346,
+      "harm_capture_rate": 0.12895927601809956,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.1677776437745493,
+      "n_alerts": 58
+    },
+    {
+      "tau": 0.3475127844776222,
+      "alert_rate": 0.028862478777589132,
+      "harm_capture_rate": 0.11312217194570136,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.17435843322814856,
+      "n_alerts": 51
+    },
+    {
+      "tau": 0.35024910561524125,
+      "alert_rate": 0.027730616864742503,
+      "harm_capture_rate": 0.1085972850678733,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.17648039843006277,
+      "n_alerts": 49
+    },
+    {
+      "tau": 0.3529854267528603,
+      "alert_rate": 0.02603282399547255,
+      "harm_capture_rate": 0.10180995475113122,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.17992247736130332,
+      "n_alerts": 46
+    },
+    {
+      "tau": 0.3557217478904794,
+      "alert_rate": 0.023769100169779286,
+      "harm_capture_rate": 0.09276018099547512,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.18517171945210284,
+      "n_alerts": 42
+    },
+    {
+      "tau": 0.35845806902809846,
+      "alert_rate": 0.022071307300509338,
+      "harm_capture_rate": 0.08597285067873303,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.18963008195002098,
+      "n_alerts": 39
+    },
+    {
+      "tau": 0.3611943901657175,
+      "alert_rate": 0.022071307300509338,
+      "harm_capture_rate": 0.08597285067873303,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.18963008195002098,
+      "n_alerts": 39
+    },
+    {
+      "tau": 0.3639307113033366,
+      "alert_rate": 0.020939445387662705,
+      "harm_capture_rate": 0.08144796380090498,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.19278896419506722,
+      "n_alerts": 37
+    },
+    {
+      "tau": 0.36666703244095566,
+      "alert_rate": 0.020939445387662705,
+      "harm_capture_rate": 0.08144796380090498,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.19278896419506722,
+      "n_alerts": 37
+    },
+    {
+      "tau": 0.36940335357857473,
+      "alert_rate": 0.02037351443123939,
+      "harm_capture_rate": 0.07918552036199095,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.19438865764493019,
+      "n_alerts": 36
+    },
+    {
+      "tau": 0.3721396747161938,
+      "alert_rate": 0.019241652518392757,
+      "harm_capture_rate": 0.0746606334841629,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.1977533592687127,
+      "n_alerts": 34
+    },
+    {
+      "tau": 0.3748759958538129,
+      "alert_rate": 0.016411997736276173,
+      "harm_capture_rate": 0.06334841628959276,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.20773601909603298,
+      "n_alerts": 29
+    },
+    {
+      "tau": 0.377612316991432,
+      "alert_rate": 0.016411997736276173,
+      "harm_capture_rate": 0.06334841628959276,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.20773601909603298,
+      "n_alerts": 29
+    },
+    {
+      "tau": 0.38034863812905106,
+      "alert_rate": 0.01584606677985286,
+      "harm_capture_rate": 0.06108597285067873,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.21005593690973065,
+      "n_alerts": 28
+    },
+    {
+      "tau": 0.38308495926667013,
+      "alert_rate": 0.013582342954159592,
+      "harm_capture_rate": 0.05203619909502263,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.22075626427325443,
+      "n_alerts": 24
+    },
+    {
+      "tau": 0.3858212804042892,
+      "alert_rate": 0.013016411997736276,
+      "harm_capture_rate": 0.049773755656108594,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.22388562781653598,
+      "n_alerts": 23
+    },
+    {
+      "tau": 0.38855760154190827,
+      "alert_rate": 0.01245048104131296,
+      "harm_capture_rate": 0.04751131221719457,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.22723404236217395,
+      "n_alerts": 22
+    },
+    {
+      "tau": 0.39129392267952734,
+      "alert_rate": 0.01245048104131296,
+      "harm_capture_rate": 0.04751131221719457,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.22723404236217395,
+      "n_alerts": 22
+    },
+    {
+      "tau": 0.3940302438171464,
+      "alert_rate": 0.010186757215619695,
+      "harm_capture_rate": 0.038461538461538464,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.24359716288710156,
+      "n_alerts": 18
+    },
+    {
+      "tau": 0.3967665649547655,
+      "alert_rate": 0.009054895302773062,
+      "harm_capture_rate": 0.033936651583710405,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2544186995240309,
+      "n_alerts": 16
+    },
+    {
+      "tau": 0.39950288609238455,
+      "alert_rate": 0.009054895302773062,
+      "harm_capture_rate": 0.033936651583710405,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2544186995240309,
+      "n_alerts": 16
+    },
+    {
+      "tau": 0.4022392072300036,
+      "alert_rate": 0.008488964346349746,
+      "harm_capture_rate": 0.03167420814479638,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2605973940756329,
+      "n_alerts": 15
+    },
+    {
+      "tau": 0.4049755283676227,
+      "alert_rate": 0.008488964346349746,
+      "harm_capture_rate": 0.03167420814479638,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2605973940756329,
+      "n_alerts": 15
+    },
+    {
+      "tau": 0.40771184950524175,
+      "alert_rate": 0.008488964346349746,
+      "harm_capture_rate": 0.03167420814479638,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2605973940756329,
+      "n_alerts": 15
+    },
+    {
+      "tau": 0.4104481706428608,
+      "alert_rate": 0.008488964346349746,
+      "harm_capture_rate": 0.03167420814479638,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2605973940756329,
+      "n_alerts": 15
+    },
+    {
+      "tau": 0.4131844917804799,
+      "alert_rate": 0.008488964346349746,
+      "harm_capture_rate": 0.03167420814479638,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2605973940756329,
+      "n_alerts": 15
+    },
+    {
+      "tau": 0.415920812918099,
+      "alert_rate": 0.008488964346349746,
+      "harm_capture_rate": 0.03167420814479638,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2605973940756329,
+      "n_alerts": 15
+    },
+    {
+      "tau": 0.4186571340557181,
+      "alert_rate": 0.008488964346349746,
+      "harm_capture_rate": 0.03167420814479638,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2605973940756329,
+      "n_alerts": 15
+    },
+    {
+      "tau": 0.42139345519333715,
+      "alert_rate": 0.007357102433503113,
+      "harm_capture_rate": 0.027149321266968326,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2736032078410146,
+      "n_alerts": 13
+    },
+    {
+      "tau": 0.4241297763309562,
+      "alert_rate": 0.00622524052065648,
+      "harm_capture_rate": 0.02262443438914027,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.2909619942098355,
+      "n_alerts": 11
+    },
+    {
+      "tau": 0.4268660974685753,
+      "alert_rate": 0.0050933786078098476,
+      "harm_capture_rate": 0.01809954751131222,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.31546592257848205,
+      "n_alerts": 9
+    },
+    {
+      "tau": 0.42960241860619436,
+      "alert_rate": 0.0050933786078098476,
+      "harm_capture_rate": 0.01809954751131222,
+      "false_alarm_rate": 0.0007547169811320754,
+      "regret_saved_per_alert": 0.31546592257848205,
+      "n_alerts": 9
+    },
+    {
+      "tau": 0.4323387397438134,
+      "alert_rate": 0.004527447651386531,
+      "harm_capture_rate": 0.01809954751131222,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.3756638354687499,
+      "n_alerts": 8
+    },
+    {
+      "tau": 0.4350750608814325,
+      "alert_rate": 0.004527447651386531,
+      "harm_capture_rate": 0.01809954751131222,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.3756638354687499,
+      "n_alerts": 8
+    },
+    {
+      "tau": 0.43781138201905156,
+      "alert_rate": 0.004527447651386531,
+      "harm_capture_rate": 0.01809954751131222,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.3756638354687499,
+      "n_alerts": 8
+    },
+    {
+      "tau": 0.44054770315667063,
+      "alert_rate": 0.003961516694963215,
+      "harm_capture_rate": 0.01583710407239819,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.4018175697767856,
+      "n_alerts": 7
+    },
+    {
+      "tau": 0.4432840242942897,
+      "alert_rate": 0.003961516694963215,
+      "harm_capture_rate": 0.01583710407239819,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.4018175697767856,
+      "n_alerts": 7
+    },
+    {
+      "tau": 0.44602034543190877,
+      "alert_rate": 0.003395585738539898,
+      "harm_capture_rate": 0.013574660633484163,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.43571216473958324,
+      "n_alerts": 6
+    },
+    {
+      "tau": 0.44875666656952784,
+      "alert_rate": 0.003395585738539898,
+      "harm_capture_rate": 0.013574660633484163,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.43571216473958324,
+      "n_alerts": 6
+    },
+    {
+      "tau": 0.4514929877071469,
+      "alert_rate": 0.003395585738539898,
+      "harm_capture_rate": 0.013574660633484163,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.43571216473958324,
+      "n_alerts": 6
+    },
+    {
+      "tau": 0.454229308844766,
+      "alert_rate": 0.003395585738539898,
+      "harm_capture_rate": 0.013574660633484163,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.43571216473958324,
+      "n_alerts": 6
+    },
+    {
+      "tau": 0.45696562998238505,
+      "alert_rate": 0.003395585738539898,
+      "harm_capture_rate": 0.013574660633484163,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.43571216473958324,
+      "n_alerts": 6
+    },
+    {
+      "tau": 0.4597019511200041,
+      "alert_rate": 0.0028296547821165816,
+      "harm_capture_rate": 0.011312217194570135,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.48100987112499993,
+      "n_alerts": 5
+    },
+    {
+      "tau": 0.46243827225762324,
+      "alert_rate": 0.0028296547821165816,
+      "harm_capture_rate": 0.011312217194570135,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.48100987112499993,
+      "n_alerts": 5
+    },
+    {
+      "tau": 0.4651745933952423,
+      "alert_rate": 0.0028296547821165816,
+      "harm_capture_rate": 0.011312217194570135,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.48100987112499993,
+      "n_alerts": 5
+    },
+    {
+      "tau": 0.4679109145328614,
+      "alert_rate": 0.0028296547821165816,
+      "harm_capture_rate": 0.011312217194570135,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.48100987112499993,
+      "n_alerts": 5
+    },
+    {
+      "tau": 0.47064723567048045,
+      "alert_rate": 0.0028296547821165816,
+      "harm_capture_rate": 0.011312217194570135,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.48100987112499993,
+      "n_alerts": 5
+    },
+    {
+      "tau": 0.4733835568080995,
+      "alert_rate": 0.0022637238256932655,
+      "harm_capture_rate": 0.00904977375565611,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.5456720557031249,
+      "n_alerts": 4
+    },
+    {
+      "tau": 0.4761198779457186,
+      "alert_rate": 0.0022637238256932655,
+      "harm_capture_rate": 0.00904977375565611,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.5456720557031249,
+      "n_alerts": 4
+    },
+    {
+      "tau": 0.47885619908333765,
+      "alert_rate": 0.0022637238256932655,
+      "harm_capture_rate": 0.00904977375565611,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.5456720557031249,
+      "n_alerts": 4
+    },
+    {
+      "tau": 0.4815925202209567,
+      "alert_rate": 0.001697792869269949,
+      "harm_capture_rate": 0.006787330316742082,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.6506376758333331,
+      "n_alerts": 3
+    },
+    {
+      "tau": 0.4843288413585758,
+      "alert_rate": 0.0011318619128466328,
+      "harm_capture_rate": 0.004524886877828055,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.5816636537499998,
+      "n_alerts": 2
+    },
+    {
+      "tau": 0.48706516249619486,
+      "alert_rate": 0.0011318619128466328,
+      "harm_capture_rate": 0.004524886877828055,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.5816636537499998,
+      "n_alerts": 2
+    },
+    {
+      "tau": 0.4898014836338139,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.492537804771433,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.49527412590905207,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.49801044704667113,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5007467681842902,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5034830893219093,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5062194104595283,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5089557315971475,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5116920527347665,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5144283738723856,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5171646950100046,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5199010161476237,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5226373372852428,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5253736584228619,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.528109979560481,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5308463006981,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5335826218357191,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5363189429733382,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5390552641109573,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    },
+    {
+      "tau": 0.5417915852485763,
+      "alert_rate": 0.0005659309564233164,
+      "harm_capture_rate": 0.0022624434389140274,
+      "false_alarm_rate": 0.0,
+      "regret_saved_per_alert": 0.9252773074999997,
+      "n_alerts": 1
+    }
+  ]
+}

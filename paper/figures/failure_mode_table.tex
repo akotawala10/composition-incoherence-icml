@@ -1,0 +1,11 @@
+\begin{tabular}{rlrlll}
+\toprule
+\# & relation & $m$ & component quotes (assigned LLM) & violated constraint & $\varepsilon^\star$ \\
+\midrule
+1 & neg & 2 & 0.84 (Claude), 0.89 (Llama) & $p_1+p_2=1.731\ne 1$ & 0.517 \\
+2 & or & 3 & 0.00 (Claude), 0.02 (GPT), 0.92 (Claude) & $p_3=0.916<\max(p_1,p_2)=0.020$ & 0.517 \\
+3 & or & 3 & 0.02 (Claude), 0.03 (GPT), 0.92 (Claude) & $p_3=0.924<\max(p_1,p_2)=0.031$ & 0.502 \\
+4 & or & 3 & 0.02 (Claude), 0.74 (GPT), 0.03 (Claude) & $p_3=0.033<\max(p_1,p_2)=0.740$ & 0.500 \\
+5 & neg & 2 & 0.71 (GPT), 0.99 (Claude) & $p_1+p_2=1.696\ne 1$ & 0.492 \\
+\bottomrule
+\end{tabular}

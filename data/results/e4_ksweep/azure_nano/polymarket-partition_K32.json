@@ -1,0 +1,30 @@
+{
+  "relations": [
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition",
+    "partition"
+  ],
+  "meta": {
+    "spec": "azure/nano",
+    "source": "polymarket",
+    "checker": "NegChecker",
+    "K": 32,
+    "temperature": 0.7,
+    "seed": 20260425,
+    "n_eval": 14,
+    "platt_a": 0.9245091381147217,
+    "platt_b": -0.3002085963485574,
+    "estimated_cost_usd": 0.1088412
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "summary": {
+    "n_partitions": 10,
+    "total_calls": 282,
+    "roster": [
+      "Claude-Opus-4.7",
+      "Claude-Haiku-4.5",
+      "GPT-5.4-mini",
+      "GPT-5.4-nano"
+    ],
+    "mean_baseline_eps": 0.218974584483286,
+    "mean_e1_planner_eps": 0.12227324371350165,
+    "mean_frontier_eps": 0.03603063057318979,
+    "n_eps_star_pos": 10,
+    "n_better_than_e1": 10,
+    "n_worse_than_e1": 0
+  },
+  "results": [
+    {
+      "label": "2028 US Presidential winner",
+      "outcomes": [
+        "the Republican Party nominee wins the 2028 US Presidential election",
+        "the Democratic Party nominee wins the 2028 US Presidential election",
+        "an independent or third-party candidate wins the 2028 US Presidential election"
+      ],
+      "assigned_specialists": [
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_means": [
+        0.4525,
+        0.45749999999999996,
+        0.036250000000000004
+      ],
+      "sum": 0.9462499999999999,
+      "eps_star": 0.031032576968942426,
+      "projected": [
+        0.4704166666666667,
+        0.47541666666666665,
+        0.054166666666666696
+      ],
+      "baseline_eps_star": 0.009381941874331346,
+      "e1_planner_eps_star": 0.036445235742595145
+    },
+    {
+      "label": "2026 US House majority",
+      "outcomes": [
+        "the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+        "the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+        "no party holds an outright majority in the US House of Representatives following the 2026 midterm elections"
+      ],
+      "assigned_specialists": [
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_means": [
+        0.33125,
+        0.6074999999999999,
+        0.079375
+      ],
+      "sum": 1.018125,
+      "eps_star": 0.010464473629061928,
+      "projected": [
+        0.3252083333333333,
+        0.6014583333333333,
+        0.07333333333333335
+      ],
+      "baseline_eps_star": 0.38105117766515295,
+      "e1_planner_eps_star": 0.21578466310962263
+    },
+    {
+      "label": "2026 US Senate majority",
+      "outcomes": [
+        "the Republican Party holds an outright majority in the US Senate following the 2026 midterm elections",
+        "the Democratic Party holds an outright majority in the US Senate following the 2026 midterm elections",
+        "no party holds an outright majority in the US Senate following the 2026 midterm elections"
+      ],
+      "assigned_specialists": [
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7"
+      ],
+      "per_outcome_means": [
+        0.82,
+        0.12,
+        0.05
+      ],
+      "sum": 0.99,
+      "eps_star": 0.005773502691896242,
+      "projected": [
+        0.8233333333333333,
+        0.12333333333333334,
+        0.05333333333333334
+      ],
+      "baseline_eps_star": 0.05990009042842358,
+      "e1_planner_eps_star": 0.20207259421636897
+    },
+    {
+      "label": "Next UK general election year",
+      "outcomes": [
+        "the next UK general election occurs in calendar year 2026",
+        "the next UK general election occurs in calendar year 2027",
+        "the next UK general election occurs in calendar year 2028",
+        "the next UK general election occurs in 2029 or later"
+      ],
+      "assigned_specialists": [
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7"
+      ],
+      "per_outcome_means": [
+        0.05,
+        0.07375000000000001,
+        0.1875,
+        0.7725
+      ],
+      "sum": 1.08375,
+      "eps_star": 0.04187500000000002,
+      "projected": [
+        0.029062500000000005,
+        0.05281250000000001,
+        0.1665625,
+        0.7515624999999999
+      ],
+      "baseline_eps_star": 0.5043828737510159,
+      "e1_planner_eps_star": 0.06562500000000004
+    },
+    {
+      "label": "Next FOMC decision (June 2026 meeting)",
+      "outcomes": [
+        "the US Federal Reserve cuts the federal funds rate by 25bps or more at the June 2026 FOMC meeting",
+        "the US Federal Reserve holds the federal funds rate unchanged at the June 2026 FOMC meeting",
+        "the US Federal Reserve raises the federal funds rate by 25bps or more at the June 2026 FOMC meeting"
+      ],
+      "assigned_specialists": [
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7"
+      ],
+      "per_outcome_means": [
+        0.4,
+        0.4,
+        0.05
+      ],
+      "sum": 0.8500000000000001,
+      "eps_star": 0.08660254037844384,
+      "projected": [
+        0.45,
+        0.45,
+        0.09999999999999998
+      ],
+      "baseline_eps_star": 0.24465217656910387,
+      "e1_planner_eps_star": 0.08876760388790499
+    },
+    {
+      "label": "2026 H1 SP500 return bucket",
+      "outcomes": [
+        "the SP500 index closes 2026-H1 down more than 5% year-to-date",
+        "the SP500 index closes 2026-H1 between -5% and +5% year-to-date",
+        "the SP500 index closes 2026-H1 up between 5% and 15% year-to-date",
+        "the SP500 index closes 2026-H1 up more than 15% year-to-date"
+      ],
+      "assigned_specialists": [
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7"
+      ],
+      "per_outcome_means": [
+        0.18,
+        0.28500000000000003,
+        0.3025,
+        0.08
+      ],
+      "sum": 0.8475,
+      "eps_star": 0.07624999999999996,
+      "projected": [
+        0.21812499999999999,
+        0.323125,
+        0.34062499999999996,
+        0.118125
+      ],
+      "baseline_eps_star": 0.15125,
+      "e1_planner_eps_star": 0.11562500000000009
+    },
+    {
+      "label": "US unemployment rate, June 2026",
+      "outcomes": [
+        "the US unemployment rate (BLS U-3) for June 2026 is below 4.0%",
+        "the US unemployment rate (BLS U-3) for June 2026 is between 4.0% and 4.5%",
+        "the US unemployment rate (BLS U-3) for June 2026 is between 4.5% and 5.0%",
+        "the US unemployment rate (BLS U-3) for June 2026 is above 5.0%"
+      ],
+      "assigned_specialists": [
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7"
+      ],
+      "per_outcome_means": [
+        0.10250000000000001,
+        0.40750000000000003,
+        0.32,
+        0.22
+      ],
+      "sum": 1.05,
+      "eps_star": 0.025000000000000022,
+      "projected": [
+        0.09,
+        0.395,
+        0.3075,
+        0.2075
+      ],
+      "baseline_eps_star": 0.2699999999999999,
+      "e1_planner_eps_star": 0.12624999999999997
+    },
+    {
+      "label": "2026 H1 BTC return bucket",
+      "outcomes": [
+        "Bitcoin closes 2026-H1 down more than 10% year-to-date",
+        "Bitcoin closes 2026-H1 within +/-10% year-to-date",
+        "Bitcoin closes 2026-H1 up more than 10% year-to-date"
+      ],
+      "assigned_specialists": [
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7"
+      ],
+      "per_outcome_means": [
+        0.28125,
+        0.27,
+        0.4175
+      ],
+      "sum": 0.96875,
+      "eps_star": 0.01804219591217584,
+      "projected": [
+        0.2916666666666667,
+        0.2804166666666667,
+        0.42791666666666667
+      ],
+      "baseline_eps_star": 0.2973353886326572,
+      "e1_planner_eps_star": 0.05701333908247561
+    },
+    {
+      "label": "2026 US CPI year-over-year, December print",
+      "outcomes": [
+        "US CPI year-over-year for December 2026 is below 2.0%",
+        "US CPI year-over-year for December 2026 is between 2.0% and 3.0%",
+        "US CPI year-over-year for December 2026 is between 3.0% and 4.0%",
+        "US CPI year-over-year for December 2026 is above 4.0%"
+      ],
+      "assigned_specialists": [
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7"
+      ],
+      "per_outcome_means": [
+        0.1725,
+        0.55,
+        0.23875,
+        0.1
+      ],
+      "sum": 1.06125,
+      "eps_star": 0.03062500000000004,
+      "projected": [
+        0.15718749999999998,
+        0.5346875,
+        0.22343749999999998,
+        0.0846875
+      ],
+      "baseline_eps_star": 0.2537499999999999,
+      "e1_planner_eps_star": 0.17874999999999996
+    },
+    {
+      "label": "Top gold-medal nation, 2028 Summer Olympics",
+      "outcomes": [
+        "the United States wins the most gold medals at the 2028 Summer Olympics in Los Angeles",
+        "China wins the most gold medals at the 2028 Summer Olympics in Los Angeles",
+        "a country other than the United States or China wins the most gold medals at the 2028 Summer Olympics"
+      ],
+      "assigned_specialists": [
+        "Claude-Opus-4.7",
+        "Claude-Opus-4.7",
+        "Claude-Haiku-4.5"
+      ],
+      "per_outcome_means": [
+        0.75,
+        0.29000000000000004,
+        0.02
+      ],
+      "sum": 1.06,
+      "eps_star": 0.03464101615137757,
+      "projected": [
+        0.73,
+        0.27,
+        0.0
+      ],
+      "baseline_eps_star": 0.018042195912175773,
+      "e1_planner_eps_star": 0.1363990010960491
+    }
+  ]
+}

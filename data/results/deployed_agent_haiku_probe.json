@@ -1,0 +1,878 @@
+[
+  {
+    "label": "2028 US Presidential winner",
+    "outcomes": [
+      "the Republican Party nominee wins the 2028 US Presidential election",
+      "the Democratic Party nominee wins the 2028 US Presidential election",
+      "an independent or third-party candidate wins the 2028 US Presidential election"
+    ],
+    "condition": "unguided",
+    "planner": "claude-haiku",
+    "final_probs": [
+      0.458,
+      0.468,
+      0.074
+    ],
+    "sum": 1.0,
+    "sum_violation": 0.0,
+    "eps_star": 0.0,
+    "projected": [
+      0.458,
+      0.468,
+      0.074
+    ],
+    "n_turns": 16,
+    "n_delegate_calls": 15,
+    "elapsed_s": 135.00183582305908,
+    "trace": [
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that the Republican Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.52,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that the Republican Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.5075000000000001,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that the Republican Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.4925,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that the Republican Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.485,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that the Republican Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.48,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that the Democratic Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.4575,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that the Democratic Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.54,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that the Democratic Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.48624999999999996,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that the Democratic Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.5750000000000001,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that the Democratic Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.48,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that an independent or third-party candidate wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.043750000000000004,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that an independent or third-party candidate wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.07750000000000001,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that an independent or third-party candidate wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.10250000000000001,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that an independent or third-party candidate wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.06625,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that an independent or third-party candidate wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.12,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 3,
+        "tool": "submit_final_partition_quote",
+        "args": {
+          "probabilities": [
+            0.458,
+            0.468,
+            0.074
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "label": "2028 US Presidential winner",
+    "outcomes": [
+      "the Republican Party nominee wins the 2028 US Presidential election",
+      "the Democratic Party nominee wins the 2028 US Presidential election",
+      "an independent or third-party candidate wins the 2028 US Presidential election"
+    ],
+    "condition": "coherence-guided",
+    "planner": "claude-haiku",
+    "final_probs": [
+      0.4554,
+      0.4639,
+      0.0804
+    ],
+    "sum": 0.9997,
+    "sum_violation": 0.00029999999999996696,
+    "eps_star": 0.00017320508075686865,
+    "projected": [
+      0.4555,
+      0.46399999999999997,
+      0.08049999999999999
+    ],
+    "n_turns": 16,
+    "n_delegate_calls": 15,
+    "elapsed_s": 129.07664823532104,
+    "trace": [
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that the Republican Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.52,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that the Republican Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.5,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that the Republican Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.49624999999999997,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that the Republican Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.475,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that the Republican Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.48,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that the Democratic Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.4575,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that the Democratic Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.545,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that the Democratic Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.48875,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that the Democratic Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.54625,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that the Democratic Party nominee wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.48,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that an independent or third-party candidate wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.045,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that an independent or third-party candidate wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.09125,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that an independent or third-party candidate wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.11125,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that an independent or third-party candidate wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.06875,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that an independent or third-party candidate wins the 2028 US Presidential election?"
+        },
+        "result": {
+          "probability": 0.12,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 3,
+        "tool": "submit_final_partition_quote",
+        "args": {
+          "probabilities": [
+            0.4554,
+            0.4639,
+            0.0804
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "label": "2026 US House majority",
+    "outcomes": [
+      "the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+      "the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+      "no party holds an outright majority in the US House of Representatives following the 2026 midterm elections"
+    ],
+    "condition": "unguided",
+    "planner": "claude-haiku",
+    "final_probs": [
+      0.42,
+      0.35,
+      0.23
+    ],
+    "sum": 1.0,
+    "sum_violation": 0.0,
+    "eps_star": 0.0,
+    "projected": [
+      0.42,
+      0.35,
+      0.23
+    ],
+    "n_turns": 16,
+    "n_delegate_calls": 15,
+    "elapsed_s": 117.80661392211914,
+    "trace": [
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.3625,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.39875,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.37875,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.52375,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.4575,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.32125,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.31500000000000006,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.28625,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.375,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.45,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that no party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.08,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that no party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.75625,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that no party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.35,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that no party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.6725,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that no party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.37625,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 3,
+        "tool": "submit_final_partition_quote",
+        "args": {
+          "probabilities": [
+            0.42,
+            0.35,
+            0.23
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "label": "2026 US House majority",
+    "outcomes": [
+      "the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+      "the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+      "no party holds an outright majority in the US House of Representatives following the 2026 midterm elections"
+    ],
+    "condition": "coherence-guided",
+    "planner": "claude-haiku",
+    "final_probs": [
+      0.365,
+      0.325,
+      0.31
+    ],
+    "sum": 1.0,
+    "sum_violation": 0.0,
+    "eps_star": 0.0,
+    "projected": [
+      0.365,
+      0.325,
+      0.31
+    ],
+    "n_turns": 16,
+    "n_delegate_calls": 15,
+    "elapsed_s": 120.13622379302979,
+    "trace": [
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.3725,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.40249999999999997,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.39,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.5125,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 0,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.45375,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.32625000000000004,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.32375000000000004,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.36124999999999996,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.39375000000000004,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 1,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.45,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "claude-haiku",
+          "question_text": "What is the probability that no party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.08,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-mini",
+          "question_text": "What is the probability that no party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.7575000000000001,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "gpt-nano",
+          "question_text": "What is the probability that no party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.39,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "deepseek-v32",
+          "question_text": "What is the probability that no party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.6000000000000001,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 2,
+        "tool": "delegate_to_specialist",
+        "args": {
+          "specialist_id": "llama-4",
+          "question_text": "What is the probability that no party holds an outright majority in the US House of Representatives following the 2026 midterm elections?"
+        },
+        "result": {
+          "probability": 0.37625,
+          "n_samples": 8
+        }
+      },
+      {
+        "turn": 3,
+        "tool": "submit_final_partition_quote",
+        "args": {
+          "probabilities": [
+            0.365,
+            0.325,
+            0.31
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,1954 @@
+{
+  "summary": {
+    "n_partitions": 30,
+    "total_calls": 800,
+    "baseline_mean_eps": 0.26020491346922603,
+    "new_mean_eps": 0.06633855698881266,
+    "delta_mean": -0.1938663564804133,
+    "n_better": 25,
+    "n_worse": 5,
+    "n_unchanged": 0
+  },
+  "results": [
+    {
+      "label": "2028 US Presidential winner",
+      "outcomes": [
+        "the Republican Party nominee wins the 2028 US Presidential election",
+        "the Democratic Party nominee wins the 2028 US Presidential election",
+        "an independent or third-party candidate wins the 2028 US Presidential election"
+      ],
+      "assigned_specialists": [
+        "Llama-3.3-70b",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "per_outcome_means": [
+        0.43,
+        0.46749999999999997,
+        0.021249999999999998
+      ],
+      "per_outcome_samples": [
+        [
+          0.43,
+          0.43,
+          0.43,
+          0.43,
+          0.43,
+          0.43,
+          0.43,
+          0.43
+        ],
+        [
+          0.49,
+          0.44,
+          0.48,
+          0.44,
+          0.48,
+          0.47,
+          0.48,
+          0.46
+        ],
+        [
+          0.03,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02
+        ]
+      ],
+      "sum": 0.91875,
+      "sum_violation": 0.08125000000000004,
+      "eps_star": 0.046909709371657116,
+      "projected": [
+        0.45708333333333334,
+        0.4945833333333333,
+        0.048333333333333346
+      ],
+      "baseline_eps_star": 0.009381941874331346,
+      "baseline_sum": 1.0162499999999999
+    },
+    {
+      "label": "2026 US House majority",
+      "outcomes": [
+        "the Republican Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+        "the Democratic Party holds an outright majority in the US House of Representatives following the 2026 midterm elections",
+        "no party holds an outright majority in the US House of Representatives following the 2026 midterm elections"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-nano",
+        "Llama-3.3-70b",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_means": [
+        0.42625,
+        0.52,
+        0.16249999999999998
+      ],
+      "per_outcome_samples": [
+        [
+          0.45,
+          0.45,
+          0.42,
+          0.45,
+          0.42,
+          0.47,
+          0.42,
+          0.33
+        ],
+        [
+          0.53,
+          0.51,
+          0.52,
+          0.52,
+          0.52,
+          0.52,
+          0.52,
+          0.52
+        ],
+        [
+          0.12,
+          0.22,
+          0.12,
+          0.18,
+          0.18,
+          0.18,
+          0.18,
+          0.12
+        ]
+      ],
+      "sum": 1.1087500000000001,
+      "sum_violation": 0.10875000000000012,
+      "eps_star": 0.06278684177437188,
+      "projected": [
+        0.38999999999999996,
+        0.48374999999999996,
+        0.12624999999999995
+      ],
+      "baseline_eps_star": 0.38105117766515295,
+      "baseline_sum": 1.66
+    },
+    {
+      "label": "2026 US Senate majority",
+      "outcomes": [
+        "the Republican Party holds an outright majority in the US Senate following the 2026 midterm elections",
+        "the Democratic Party holds an outright majority in the US Senate following the 2026 midterm elections",
+        "no party holds an outright majority in the US Senate following the 2026 midterm elections"
+      ],
+      "assigned_specialists": [
+        "Llama-3.3-70b",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano"
+      ],
+      "per_outcome_means": [
+        0.43,
+        0.23875000000000002,
+        0.25375000000000003
+      ],
+      "per_outcome_samples": [
+        [
+          0.43,
+          0.43,
+          0.43,
+          0.43,
+          0.43,
+          0.43,
+          0.43,
+          0.43
+        ],
+        [
+          0.19,
+          0.23,
+          0.23,
+          0.24,
+          0.24,
+          0.27,
+          0.22,
+          0.29
+        ],
+        [
+          0.18,
+          0.34,
+          0.22,
+          0.23,
+          0.27,
+          0.22,
+          0.22,
+          0.35
+        ]
+      ],
+      "sum": 0.9225,
+      "sum_violation": 0.07750000000000001,
+      "eps_star": 0.044744645862195974,
+      "projected": [
+        0.4558333333333333,
+        0.26458333333333334,
+        0.27958333333333335
+      ],
+      "baseline_eps_star": 0.05990009042842358,
+      "baseline_sum": 1.1037499999999998
+    },
+    {
+      "label": "Next UK general election year",
+      "outcomes": [
+        "the next UK general election occurs in calendar year 2026",
+        "the next UK general election occurs in calendar year 2027",
+        "the next UK general election occurs in calendar year 2028",
+        "the next UK general election occurs in 2029 or later"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-nano",
+        "Llama-3.3-70b",
+        "Claude-Haiku",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_means": [
+        0.15000000000000002,
+        0.4,
+        0.25,
+        0.11125
+      ],
+      "per_outcome_samples": [
+        [
+          0.2,
+          0.22,
+          0.08,
+          0.18,
+          0.12,
+          0.12,
+          0.18,
+          0.1
+        ],
+        [
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.12,
+          0.08,
+          0.08,
+          0.08,
+          0.18,
+          0.18,
+          0.12,
+          0.05
+        ]
+      ],
+      "sum": 0.91125,
+      "sum_violation": 0.08875,
+      "eps_star": 0.04437500000000002,
+      "projected": [
+        0.17218750000000002,
+        0.42218750000000005,
+        0.2721875,
+        0.1334375
+      ],
+      "baseline_eps_star": 0.5043828737510159,
+      "baseline_sum": 2.0075000000000003
+    },
+    {
+      "label": "Next FOMC decision (June 2026 meeting)",
+      "outcomes": [
+        "the US Federal Reserve cuts the federal funds rate by 25bps or more at the June 2026 FOMC meeting",
+        "the US Federal Reserve holds the federal funds rate unchanged at the June 2026 FOMC meeting",
+        "the US Federal Reserve raises the federal funds rate by 25bps or more at the June 2026 FOMC meeting"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-nano",
+        "Claude-Haiku",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_means": [
+        0.27125,
+        0.6312500000000001,
+        0.21875
+      ],
+      "per_outcome_samples": [
+        [
+          0.22,
+          0.25,
+          0.28,
+          0.22,
+          0.28,
+          0.35,
+          0.22,
+          0.35
+        ],
+        [
+          0.68,
+          0.45,
+          0.65,
+          0.65,
+          0.65,
+          0.72,
+          0.6,
+          0.65
+        ],
+        [
+          0.35,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ],
+      "sum": 1.12125,
+      "sum_violation": 0.12125000000000008,
+      "eps_star": 0.07000372013924214,
+      "projected": [
+        0.2308333333333333,
+        0.5908333333333334,
+        0.17833333333333332
+      ],
+      "baseline_eps_star": 0.24465217656910387,
+      "baseline_sum": 1.42375
+    },
+    {
+      "label": "2026 H1 SP500 return bucket",
+      "outcomes": [
+        "the SP500 index closes 2026-H1 down more than 5% year-to-date",
+        "the SP500 index closes 2026-H1 between -5% and +5% year-to-date",
+        "the SP500 index closes 2026-H1 up between 5% and 15% year-to-date",
+        "the SP500 index closes 2026-H1 up more than 15% year-to-date"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-nano",
+        "Llama-3.3-70b",
+        "Claude-Haiku",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_means": [
+        0.18562499999999998,
+        0.4,
+        0.28,
+        0.11000000000000001
+      ],
+      "per_outcome_samples": [
+        [
+          0.12,
+          0.18,
+          0.18,
+          0.19,
+          0.17,
+          0.18,
+          0.18,
+          0.285
+        ],
+        [
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28
+        ],
+        [
+          0.12,
+          0.08,
+          0.16,
+          0.12,
+          0.12,
+          0.12,
+          0.08,
+          0.08
+        ]
+      ],
+      "sum": 0.9756250000000001,
+      "sum_violation": 0.024374999999999925,
+      "eps_star": 0.01218749999999999,
+      "projected": [
+        0.19171874999999997,
+        0.40609375000000003,
+        0.28609375000000004,
+        0.11609375
+      ],
+      "baseline_eps_star": 0.15125,
+      "baseline_sum": 1.3025
+    },
+    {
+      "label": "US unemployment rate, June 2026",
+      "outcomes": [
+        "the US unemployment rate (BLS U-3) for June 2026 is below 4.0%",
+        "the US unemployment rate (BLS U-3) for June 2026 is between 4.0% and 4.5%",
+        "the US unemployment rate (BLS U-3) for June 2026 is between 4.5% and 5.0%",
+        "the US unemployment rate (BLS U-3) for June 2026 is above 5.0%"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_means": [
+        0.25,
+        0.29500000000000004,
+        0.24,
+        0.15375
+      ],
+      "per_outcome_samples": [
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.34,
+          0.28,
+          0.33,
+          0.26,
+          0.33,
+          0.28,
+          0.28,
+          0.26
+        ],
+        [
+          0.23,
+          0.25,
+          0.24,
+          0.24,
+          0.25,
+          0.24,
+          0.23,
+          0.24
+        ],
+        [
+          0.18,
+          0.13,
+          0.17,
+          0.18,
+          0.14,
+          0.18,
+          0.09,
+          0.16
+        ]
+      ],
+      "sum": 0.93875,
+      "sum_violation": 0.06125000000000003,
+      "eps_star": 0.030625000000000013,
+      "projected": [
+        0.2653125,
+        0.31031250000000005,
+        0.2553125,
+        0.1690625
+      ],
+      "baseline_eps_star": 0.2699999999999999,
+      "baseline_sum": 1.54
+    },
+    {
+      "label": "2026 H1 BTC return bucket",
+      "outcomes": [
+        "Bitcoin closes 2026-H1 down more than 10% year-to-date",
+        "Bitcoin closes 2026-H1 within +/-10% year-to-date",
+        "Bitcoin closes 2026-H1 up more than 10% year-to-date"
+      ],
+      "assigned_specialists": [
+        "Llama-3.3-70b",
+        "GPT-5.4-nano",
+        "Claude-Haiku"
+      ],
+      "per_outcome_means": [
+        0.21875,
+        0.6275,
+        0.42
+      ],
+      "per_outcome_samples": [
+        [
+          0.2,
+          0.25,
+          0.25,
+          0.2,
+          0.2,
+          0.25,
+          0.2,
+          0.2
+        ],
+        [
+          0.63,
+          0.64,
+          0.68,
+          0.72,
+          0.55,
+          0.63,
+          0.55,
+          0.62
+        ],
+        [
+          0.42,
+          0.42,
+          0.42,
+          0.42,
+          0.42,
+          0.42,
+          0.42,
+          0.42
+        ]
+      ],
+      "sum": 1.2662499999999999,
+      "sum_violation": 0.2662499999999999,
+      "eps_star": 0.1537195091717378,
+      "projected": [
+        0.13000000000000006,
+        0.53875,
+        0.33125000000000004
+      ],
+      "baseline_eps_star": 0.2973353886326572,
+      "baseline_sum": 1.5150000000000001
+    },
+    {
+      "label": "2026 US CPI year-over-year, December print",
+      "outcomes": [
+        "US CPI year-over-year for December 2026 is below 2.0%",
+        "US CPI year-over-year for December 2026 is between 2.0% and 3.0%",
+        "US CPI year-over-year for December 2026 is between 3.0% and 4.0%",
+        "US CPI year-over-year for December 2026 is above 4.0%"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-nano",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b",
+        "Claude-Haiku"
+      ],
+      "per_outcome_means": [
+        0.11875,
+        0.43500000000000005,
+        0.4,
+        0.15
+      ],
+      "per_outcome_samples": [
+        [
+          0.12,
+          0.18,
+          0.06,
+          0.1,
+          0.08,
+          0.12,
+          0.06,
+          0.23
+        ],
+        [
+          0.46,
+          0.46,
+          0.42,
+          0.46,
+          0.42,
+          0.46,
+          0.38,
+          0.42
+        ],
+        [
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          0.15,
+          0.12,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.18
+        ]
+      ],
+      "sum": 1.10375,
+      "sum_violation": 0.10375000000000001,
+      "eps_star": 0.051875000000000004,
+      "projected": [
+        0.09281249999999999,
+        0.40906250000000005,
+        0.3740625,
+        0.12406249999999999
+      ],
+      "baseline_eps_star": 0.2537499999999999,
+      "baseline_sum": 1.5074999999999998
+    },
+    {
+      "label": "Top gold-medal nation, 2028 Summer Olympics",
+      "outcomes": [
+        "the United States wins the most gold medals at the 2028 Summer Olympics in Los Angeles",
+        "China wins the most gold medals at the 2028 Summer Olympics in Los Angeles",
+        "a country other than the United States or China wins the most gold medals at the 2028 Summer Olympics"
+      ],
+      "assigned_specialists": [
+        "Llama-3.3-70b",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano"
+      ],
+      "per_outcome_means": [
+        0.55,
+        0.24625000000000002,
+        0.23625000000000002
+      ],
+      "per_outcome_samples": [
+        [
+          0.55,
+          0.55,
+          0.55,
+          0.55,
+          0.55,
+          0.55,
+          0.55,
+          0.55
+        ],
+        [
+          0.28,
+          0.28,
+          0.22,
+          0.18,
+          0.28,
+          0.28,
+          0.23,
+          0.22
+        ],
+        [
+          0.25,
+          0.18,
+          0.18,
+          0.25,
+          0.25,
+          0.25,
+          0.28,
+          0.25
+        ]
+      ],
+      "sum": 1.0325000000000002,
+      "sum_violation": 0.032500000000000195,
+      "eps_star": 0.01876388374866292,
+      "projected": [
+        0.5391666666666667,
+        0.23541666666666664,
+        0.22541666666666663
+      ],
+      "baseline_eps_star": 0.018042195912175773,
+      "baseline_sum": 1.03125
+    },
+    {
+      "label": "2026 FIFA World Cup winner confederation",
+      "outcomes": [
+        "the 2026 FIFA World Cup is won by a UEFA (European) national team",
+        "the 2026 FIFA World Cup is won by a CONMEBOL (South American) national team",
+        "the 2026 FIFA World Cup is won by a national team from any other confederation"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_means": [
+        0.52,
+        0.40875,
+        0.058750000000000004
+      ],
+      "per_outcome_samples": [
+        [
+          0.52,
+          0.52,
+          0.52,
+          0.52,
+          0.52,
+          0.52,
+          0.52,
+          0.52
+        ],
+        [
+          0.35,
+          0.42,
+          0.34,
+          0.45,
+          0.42,
+          0.38,
+          0.46,
+          0.45
+        ],
+        [
+          0.05,
+          0.05,
+          0.12,
+          0.05,
+          0.05,
+          0.05,
+          0.05,
+          0.05
+        ]
+      ],
+      "sum": 0.9874999999999999,
+      "sum_violation": 0.012500000000000067,
+      "eps_star": 0.007216878364870349,
+      "projected": [
+        0.5241666666666667,
+        0.4129166666666667,
+        0.06291666666666669
+      ],
+      "baseline_eps_star": 0.2872317589218389,
+      "baseline_sum": 1.4975
+    },
+    {
+      "label": "2026 Wimbledon men's singles winner",
+      "outcomes": [
+        "Carlos Alcaraz wins the 2026 Wimbledon men's singles championship",
+        "Jannik Sinner wins the 2026 Wimbledon men's singles championship",
+        "Novak Djokovic wins the 2026 Wimbledon men's singles championship",
+        "the 2026 Wimbledon men's singles championship is won by some other player"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-nano",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_means": [
+        0.29000000000000004,
+        0.21500000000000002,
+        0.07500000000000001,
+        0.4
+      ],
+      "per_outcome_samples": [
+        [
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.32,
+          0.28,
+          0.28,
+          0.32
+        ],
+        [
+          0.22,
+          0.22,
+          0.18,
+          0.22,
+          0.26,
+          0.22,
+          0.22,
+          0.18
+        ],
+        [
+          0.08,
+          0.07,
+          0.08,
+          0.08,
+          0.08,
+          0.07,
+          0.06,
+          0.08
+        ],
+        [
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ]
+      ],
+      "sum": 0.9800000000000001,
+      "sum_violation": 0.019999999999999907,
+      "eps_star": 0.010000000000000009,
+      "projected": [
+        0.29500000000000004,
+        0.22000000000000003,
+        0.08000000000000002,
+        0.405
+      ],
+      "baseline_eps_star": 0.0859375,
+      "baseline_sum": 1.171875
+    },
+    {
+      "label": "2026 NBA Finals winner conference",
+      "outcomes": [
+        "the 2026 NBA Finals is won by an Eastern Conference team",
+        "the 2026 NBA Finals is won by a Western Conference team"
+      ],
+      "assigned_specialists": [
+        "Llama-3.3-70b",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_means": [
+        0.5,
+        0.52
+      ],
+      "per_outcome_samples": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.52,
+          0.52,
+          0.52,
+          0.52,
+          0.52,
+          0.52,
+          0.52,
+          0.52
+        ]
+      ],
+      "sum": 1.02,
+      "sum_violation": 0.020000000000000018,
+      "eps_star": 0.014142135623730963,
+      "projected": [
+        0.49,
+        0.51
+      ],
+      "baseline_eps_star": 0.04419417382415922,
+      "baseline_sum": 1.0625
+    },
+    {
+      "label": "2026 Booker Prize winner nationality",
+      "outcomes": [
+        "the 2026 Booker Prize for Fiction is won by an author from the United Kingdom",
+        "the 2026 Booker Prize for Fiction is won by an author from the United States",
+        "the 2026 Booker Prize for Fiction is won by an author from a country other than the United Kingdom or the United States"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_means": [
+        0.40875,
+        0.29875,
+        0.4325
+      ],
+      "per_outcome_samples": [
+        [
+          0.42,
+          0.45,
+          0.42,
+          0.38,
+          0.42,
+          0.42,
+          0.42,
+          0.34
+        ],
+        [
+          0.2,
+          0.33,
+          0.33,
+          0.35,
+          0.25,
+          0.35,
+          0.38,
+          0.2
+        ],
+        [
+          0.43,
+          0.45,
+          0.43,
+          0.45,
+          0.45,
+          0.4,
+          0.4,
+          0.45
+        ]
+      ],
+      "sum": 1.1400000000000001,
+      "sum_violation": 0.14000000000000012,
+      "eps_star": 0.08082903768654764,
+      "projected": [
+        0.3620833333333333,
+        0.2520833333333333,
+        0.3858333333333333
+      ],
+      "baseline_eps_star": 0.0021650635094611305,
+      "baseline_sum": 0.99625
+    },
+    {
+      "label": "2026 Academy Award Best Picture winner type",
+      "outcomes": [
+        "the 2026 Academy Award for Best Picture (presented in March 2027) goes to a major-studio production",
+        "the 2026 Academy Award for Best Picture (presented in March 2027) goes to a streaming-platform production (e.g. Netflix, Apple TV, Amazon)",
+        "the 2026 Academy Award for Best Picture (presented in March 2027) goes to an independent / arthouse production"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "Llama-3.3-70b",
+        "GPT-5.4-nano"
+      ],
+      "per_outcome_means": [
+        0.71,
+        0.4,
+        0.17875
+      ],
+      "per_outcome_samples": [
+        [
+          0.72,
+          0.68,
+          0.72,
+          0.68,
+          0.72,
+          0.72,
+          0.72,
+          0.72
+        ],
+        [
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          0.18,
+          0.18,
+          0.18,
+          0.18,
+          0.18,
+          0.18,
+          0.17,
+          0.18
+        ]
+      ],
+      "sum": 1.2887499999999998,
+      "sum_violation": 0.28874999999999984,
+      "eps_star": 0.16670989022850435,
+      "projected": [
+        0.61375,
+        0.3037500000000001,
+        0.08250000000000005
+      ],
+      "baseline_eps_star": 0.20351596988934312,
+      "baseline_sum": 1.3525
+    },
+    {
+      "label": "2026 Grammy Album of the Year genre",
+      "outcomes": [
+        "the 2026 Grammy Award for Album of the Year is won by a primarily pop record",
+        "the 2026 Grammy Award for Album of the Year is won by a primarily hip-hop or R&B record",
+        "the 2026 Grammy Award for Album of the Year is won by a primarily rock or alternative record",
+        "the 2026 Grammy Award for Album of the Year is won by a record in some other genre"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "Llama-3.3-70b",
+        "GPT-5.4-nano"
+      ],
+      "per_outcome_means": [
+        0.48625,
+        0.2575,
+        0.25,
+        0.14125000000000001
+      ],
+      "per_outcome_samples": [
+        [
+          0.48,
+          0.55,
+          0.45,
+          0.45,
+          0.48,
+          0.52,
+          0.44,
+          0.52
+        ],
+        [
+          0.22,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.22,
+          0.28,
+          0.22
+        ],
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.2,
+          0.12,
+          0.12,
+          0.12,
+          0.18,
+          0.12,
+          0.12,
+          0.15
+        ]
+      ],
+      "sum": 1.135,
+      "sum_violation": 0.135,
+      "eps_star": 0.0675,
+      "projected": [
+        0.4525,
+        0.22375,
+        0.21625,
+        0.10750000000000001
+      ],
+      "baseline_eps_star": 0.28875000000000006,
+      "baseline_sum": 1.5774999999999997
+    },
+    {
+      "label": "2026 Pulitzer Prize Fiction winner setting",
+      "outcomes": [
+        "the 2026 Pulitzer Prize for Fiction is awarded to a novel set primarily in the United States",
+        "the 2026 Pulitzer Prize for Fiction is awarded to a novel set primarily outside the United States",
+        "the 2026 Pulitzer Prize for Fiction is not awarded in 2026"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano"
+      ],
+      "per_outcome_means": [
+        0.71,
+        0.16499999999999998,
+        0.07375000000000001
+      ],
+      "per_outcome_samples": [
+        [
+          0.68,
+          0.72,
+          0.72,
+          0.72,
+          0.68,
+          0.72,
+          0.72,
+          0.72
+        ],
+        [
+          0.12,
+          0.18,
+          0.12,
+          0.18,
+          0.18,
+          0.18,
+          0.18,
+          0.18
+        ],
+        [
+          0.08,
+          0.05,
+          0.08,
+          0.08,
+          0.05,
+          0.05,
+          0.12,
+          0.08
+        ]
+      ],
+      "sum": 0.94875,
+      "sum_violation": 0.05125000000000002,
+      "eps_star": 0.02958920129596833,
+      "projected": [
+        0.7270833333333333,
+        0.18208333333333332,
+        0.09083333333333335
+      ],
+      "baseline_eps_star": 0.0007216878364869888,
+      "baseline_sum": 0.99875
+    },
+    {
+      "label": "Top MMLU score, year-end 2026",
+      "outcomes": [
+        "by 31 December 2026, the highest publicly reported MMLU score is held by an Anthropic Claude model",
+        "by 31 December 2026, the highest publicly reported MMLU score is held by an OpenAI GPT model",
+        "by 31 December 2026, the highest publicly reported MMLU score is held by a Google or DeepMind Gemini model",
+        "by 31 December 2026, the highest publicly reported MMLU score is held by a Meta Llama model or any other organisation"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_means": [
+        0.24625,
+        0.33875,
+        0.30250000000000005,
+        0.3125
+      ],
+      "per_outcome_samples": [
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.22,
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.34,
+          0.33,
+          0.34,
+          0.34,
+          0.34,
+          0.34,
+          0.33,
+          0.35
+        ],
+        [
+          0.45,
+          0.22,
+          0.33,
+          0.26,
+          0.26,
+          0.34,
+          0.32,
+          0.24
+        ],
+        [
+          0.25,
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.25,
+          0.35,
+          0.25
+        ]
+      ],
+      "sum": 1.2,
+      "sum_violation": 0.19999999999999996,
+      "eps_star": 0.10000000000000009,
+      "projected": [
+        0.19624999999999995,
+        0.28874999999999995,
+        0.2525,
+        0.26249999999999996
+      ],
+      "baseline_eps_star": 0.6504101270224298,
+      "baseline_sum": 2.29
+    },
+    {
+      "label": "Top SWE-Bench Verified score, year-end 2026",
+      "outcomes": [
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by an Anthropic Claude model",
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by an OpenAI GPT model",
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by a Google Gemini model",
+        "by 31 December 2026, the highest publicly reported SWE-Bench Verified score is held by some other model"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-nano",
+        "Llama-3.3-70b",
+        "Claude-Haiku",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_means": [
+        0.32375,
+        0.4,
+        0.2425,
+        0.15375
+      ],
+      "per_outcome_samples": [
+        [
+          0.42,
+          0.28,
+          0.35,
+          0.42,
+          0.28,
+          0.33,
+          0.18,
+          0.33
+        ],
+        [
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.22,
+          0.22,
+          0.25,
+          0.25
+        ],
+        [
+          0.18,
+          0.18,
+          0.12,
+          0.18,
+          0.15,
+          0.18,
+          0.12,
+          0.12
+        ]
+      ],
+      "sum": 1.12,
+      "sum_violation": 0.1200000000000001,
+      "eps_star": 0.06000000000000005,
+      "projected": [
+        0.29374999999999996,
+        0.37,
+        0.21249999999999997,
+        0.12374999999999997
+      ],
+      "baseline_eps_star": 0.539688857120471,
+      "baseline_sum": 2.0787500000000003
+    },
+    {
+      "label": "Largest US tech IPO of 2026 by company type",
+      "outcomes": [
+        "the largest US tech IPO of 2026 (by initial market capitalisation) is an AI infrastructure or AI model company",
+        "the largest US tech IPO of 2026 is a SaaS / enterprise software company",
+        "the largest US tech IPO of 2026 is a consumer-internet or fintech company",
+        "the largest US tech IPO of 2026 is in some other technology subsector"
+      ],
+      "assigned_specialists": [
+        "Llama-3.3-70b",
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano"
+      ],
+      "per_outcome_means": [
+        0.4,
+        0.28,
+        0.23125,
+        0.21250000000000002
+      ],
+      "per_outcome_samples": [
+        [
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.28
+        ],
+        [
+          0.28,
+          0.22,
+          0.2,
+          0.22,
+          0.22,
+          0.27,
+          0.22,
+          0.22
+        ],
+        [
+          0.28,
+          0.18,
+          0.18,
+          0.23,
+          0.25,
+          0.18,
+          0.18,
+          0.22
+        ]
+      ],
+      "sum": 1.1237500000000002,
+      "sum_violation": 0.12375000000000025,
+      "eps_star": 0.061875000000000124,
+      "projected": [
+        0.36906249999999996,
+        0.24906249999999996,
+        0.20031249999999995,
+        0.18156249999999996
+      ],
+      "baseline_eps_star": 0.3325,
+      "baseline_sum": 1.665
+    },
+    {
+      "label": "Next iPhone announcement quarter",
+      "outcomes": [
+        "the next major iPhone hardware announcement after May 2026 occurs in calendar Q3 2026 (Jul-Sep)",
+        "the next major iPhone hardware announcement after May 2026 occurs in calendar Q4 2026 (Oct-Dec)",
+        "the next major iPhone hardware announcement after May 2026 occurs in 2027 or later"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Llama-3.3-70b",
+        "Claude-Haiku"
+      ],
+      "per_outcome_means": [
+        0.645,
+        0.8,
+        0.08499999999999999
+      ],
+      "per_outcome_samples": [
+        [
+          0.72,
+          0.78,
+          0.12,
+          0.74,
+          0.58,
+          0.78,
+          0.72,
+          0.72
+        ],
+        [
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8,
+          0.8
+        ],
+        [
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.08,
+          0.05,
+          0.08,
+          0.15
+        ]
+      ],
+      "sum": 1.53,
+      "sum_violation": 0.53,
+      "eps_star": 0.32594094557143327,
+      "projected": [
+        0.4225,
+        0.5775,
+        0.0
+      ],
+      "baseline_eps_star": 0.39528569573158107,
+      "baseline_sum": 1.6762500000000002
+    },
+    {
+      "label": "Top semiconductor maker by revenue, 2026",
+      "outcomes": [
+        "TSMC is the world's largest semiconductor company by 2026 annual revenue",
+        "Nvidia is the world's largest semiconductor company by 2026 annual revenue",
+        "a different company is the world's largest semiconductor company by 2026 annual revenue"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "GPT-5.4-nano"
+      ],
+      "per_outcome_means": [
+        0.46499999999999997,
+        0.2575,
+        0.27875
+      ],
+      "per_outcome_samples": [
+        [
+          0.42,
+          0.52,
+          0.34,
+          0.46,
+          0.62,
+          0.46,
+          0.46,
+          0.44
+        ],
+        [
+          0.25,
+          0.25,
+          0.28,
+          0.25,
+          0.25,
+          0.25,
+          0.28,
+          0.25
+        ],
+        [
+          0.84,
+          0.15,
+          0.2,
+          0.25,
+          0.22,
+          0.12,
+          0.25,
+          0.2
+        ]
+      ],
+      "sum": 1.00125,
+      "sum_violation": 0.0012499999999999734,
+      "eps_star": 0.0007216878364870488,
+      "projected": [
+        0.4645833333333333,
+        0.25708333333333333,
+        0.2783333333333333
+      ],
+      "baseline_eps_star": 0.28506669541237767,
+      "baseline_sum": 1.49375
+    },
+    {
+      "label": "2026 Nobel Peace Prize laureate type",
+      "outcomes": [
+        "the 2026 Nobel Peace Prize is awarded to one or more individual persons (and not an organisation)",
+        "the 2026 Nobel Peace Prize is awarded to an organisation (NGO, treaty body, agency, etc.)",
+        "the 2026 Nobel Peace Prize is not awarded in 2026"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-nano",
+        "GPT-5.4-mini",
+        "Claude-Haiku"
+      ],
+      "per_outcome_means": [
+        0.66125,
+        0.28125,
+        0.012
+      ],
+      "per_outcome_samples": [
+        [
+          0.68,
+          0.75,
+          0.7,
+          0.65,
+          0.65,
+          0.65,
+          0.55,
+          0.66
+        ],
+        [
+          0.28,
+          0.34,
+          0.23,
+          0.42,
+          0.18,
+          0.28,
+          0.4,
+          0.12
+        ],
+        [
+          0.008,
+          0.01,
+          0.015,
+          0.008,
+          0.015,
+          0.01,
+          0.015,
+          0.015
+        ]
+      ],
+      "sum": 0.9545,
+      "sum_violation": 0.045499999999999985,
+      "eps_star": 0.026269437248127966,
+      "projected": [
+        0.6764166666666667,
+        0.29641666666666666,
+        0.027166666666666662
+      ],
+      "baseline_eps_star": 0.1481764151273744,
+      "baseline_sum": 1.2525
+    },
+    {
+      "label": "2026 Nobel Chemistry laureate field",
+      "outcomes": [
+        "the 2026 Nobel Prize in Chemistry recognises work primarily in biochemistry or molecular biology",
+        "the 2026 Nobel Prize in Chemistry recognises work primarily in materials, nanotechnology, or polymer chemistry",
+        "the 2026 Nobel Prize in Chemistry recognises work primarily in catalysis or organic synthesis",
+        "the 2026 Nobel Prize in Chemistry recognises work in some other chemistry subfield"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-nano",
+        "Llama-3.3-70b",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_means": [
+        0.41000000000000003,
+        0.2575,
+        0.29374999999999996,
+        0.2225
+      ],
+      "per_outcome_samples": [
+        [
+          0.42,
+          0.38,
+          0.42,
+          0.42,
+          0.42,
+          0.38,
+          0.42,
+          0.42
+        ],
+        [
+          0.22,
+          0.28,
+          0.28,
+          0.28,
+          0.28,
+          0.32,
+          0.18,
+          0.22
+        ],
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.25,
+          0.3
+        ],
+        [
+          0.22,
+          0.22,
+          0.28,
+          0.22,
+          0.18,
+          0.22,
+          0.22,
+          0.22
+        ]
+      ],
+      "sum": 1.1837499999999999,
+      "sum_violation": 0.18374999999999986,
+      "eps_star": 0.09187499999999993,
+      "projected": [
+        0.36406250000000007,
+        0.21156250000000004,
+        0.2478125,
+        0.17656250000000004
+      ],
+      "baseline_eps_star": 0.5818749999999999,
+      "baseline_sum": 2.16375
+    },
+    {
+      "label": "2026 Nobel Physics laureate field",
+      "outcomes": [
+        "the 2026 Nobel Prize in Physics recognises work primarily in particle physics or cosmology",
+        "the 2026 Nobel Prize in Physics recognises work primarily in condensed matter or materials physics",
+        "the 2026 Nobel Prize in Physics recognises work primarily in quantum information or atomic/molecular optics",
+        "the 2026 Nobel Prize in Physics recognises work in some other physics subfield"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "Llama-3.3-70b",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano"
+      ],
+      "per_outcome_means": [
+        0.32375000000000004,
+        0.25,
+        0.2425,
+        0.15749999999999997
+      ],
+      "per_outcome_samples": [
+        [
+          0.28,
+          0.32,
+          0.38,
+          0.35,
+          0.38,
+          0.28,
+          0.28,
+          0.32
+        ],
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.23,
+          0.24,
+          0.24,
+          0.18,
+          0.22,
+          0.28,
+          0.32,
+          0.23
+        ],
+        [
+          0.18,
+          0.2,
+          0.18,
+          0.12,
+          0.22,
+          0.13,
+          0.08,
+          0.15
+        ]
+      ],
+      "sum": 0.9737499999999999,
+      "sum_violation": 0.026250000000000107,
+      "eps_star": 0.013125000000000053,
+      "projected": [
+        0.33031250000000006,
+        0.2565625,
+        0.24906250000000002,
+        0.1640625
+      ],
+      "baseline_eps_star": 0.3181250000000001,
+      "baseline_sum": 1.6362500000000002
+    },
+    {
+      "label": "2026 ACM Turing Award area",
+      "outcomes": [
+        "the 2026 ACM Turing Award (announced in early 2027) recognises work in machine learning or artificial intelligence",
+        "the 2026 ACM Turing Award recognises work in systems, programming languages, or theory",
+        "the 2026 ACM Turing Award recognises work in some other area of computer science"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_means": [
+        0.27749999999999997,
+        0.25,
+        0.21875
+      ],
+      "per_outcome_samples": [
+        [
+          0.18,
+          0.28,
+          0.28,
+          0.28,
+          0.22,
+          0.28,
+          0.38,
+          0.32
+        ],
+        [
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.2,
+          0.25,
+          0.2,
+          0.2,
+          0.25,
+          0.2,
+          0.2,
+          0.25
+        ]
+      ],
+      "sum": 0.74625,
+      "sum_violation": 0.25375000000000003,
+      "eps_star": 0.14650263080686757,
+      "projected": [
+        0.3620833333333333,
+        0.33458333333333334,
+        0.30333333333333334
+      ],
+      "baseline_eps_star": 0.5022947341949744,
+      "baseline_sum": 1.87
+    },
+    {
+      "label": "2026 EU AI Act state of enforcement",
+      "outcomes": [
+        "the EU AI Act's general-purpose-AI obligations are fully in force and actively enforced by year-end 2026",
+        "the EU AI Act's general-purpose-AI obligations are nominally in force but enforcement is delayed or limited at year-end 2026",
+        "the EU AI Act's general-purpose-AI obligations are deferred or significantly modified beyond year-end 2026"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-nano",
+        "GPT-5.4-mini",
+        "Llama-3.3-70b"
+      ],
+      "per_outcome_means": [
+        0.26125,
+        0.47,
+        0.4
+      ],
+      "per_outcome_samples": [
+        [
+          0.28,
+          0.28,
+          0.22,
+          0.28,
+          0.25,
+          0.25,
+          0.25,
+          0.28
+        ],
+        [
+          0.45,
+          0.46,
+          0.52,
+          0.45,
+          0.45,
+          0.45,
+          0.46,
+          0.52
+        ],
+        [
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4,
+          0.4
+        ]
+      ],
+      "sum": 1.13125,
+      "sum_violation": 0.1312500000000001,
+      "eps_star": 0.07577722283113841,
+      "projected": [
+        0.21749999999999994,
+        0.42624999999999996,
+        0.35625
+      ],
+      "baseline_eps_star": 0.4474464586219599,
+      "baseline_sum": 1.775
+    },
+    {
+      "label": "UN climate ambition state, COP31 (2026)",
+      "outcomes": [
+        "the COP31 climate conference (2026) produces an enhanced global ambition / phase-out commitment relative to COP30",
+        "the COP31 climate conference (2026) produces only incremental or text-level adjustments relative to COP30",
+        "the COP31 climate conference (2026) ends without a substantive joint declaration"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-nano",
+        "Claude-Haiku",
+        "GPT-5.4-mini"
+      ],
+      "per_outcome_means": [
+        0.2375,
+        0.605,
+        0.19
+      ],
+      "per_outcome_samples": [
+        [
+          0.18,
+          0.28,
+          0.22,
+          0.22,
+          0.28,
+          0.28,
+          0.22,
+          0.22
+        ],
+        [
+          0.62,
+          0.62,
+          0.58,
+          0.58,
+          0.62,
+          0.62,
+          0.58,
+          0.62
+        ],
+        [
+          0.18,
+          0.22,
+          0.18,
+          0.18,
+          0.18,
+          0.22,
+          0.18,
+          0.18
+        ]
+      ],
+      "sum": 1.0325,
+      "sum_violation": 0.03249999999999997,
+      "eps_star": 0.018763883748662856,
+      "projected": [
+        0.22666666666666666,
+        0.5941666666666666,
+        0.17916666666666667
+      ],
+      "baseline_eps_star": 0.3413583466583663,
+      "baseline_sum": 1.59125
+    },
+    {
+      "label": "2026 net global solar capacity addition",
+      "outcomes": [
+        "global net solar PV capacity additions in calendar 2026 are below 500 GW",
+        "global net solar PV capacity additions in calendar 2026 are between 500 and 700 GW",
+        "global net solar PV capacity additions in calendar 2026 are above 700 GW"
+      ],
+      "assigned_specialists": [
+        "Claude-Haiku",
+        "GPT-5.4-mini",
+        "GPT-5.4-nano"
+      ],
+      "per_outcome_means": [
+        0.15,
+        0.47250000000000003,
+        0.24125000000000002
+      ],
+      "per_outcome_samples": [
+        [
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ],
+        [
+          0.45,
+          0.46,
+          0.52,
+          0.46,
+          0.46,
+          0.46,
+          0.52,
+          0.45
+        ],
+        [
+          0.22,
+          0.23,
+          0.2,
+          0.23,
+          0.28,
+          0.27,
+          0.22,
+          0.28
+        ]
+      ],
+      "sum": 0.86375,
+      "sum_violation": 0.13624999999999998,
+      "eps_star": 0.07866397417708645,
+      "projected": [
+        0.19541666666666663,
+        0.5179166666666667,
+        0.2866666666666666
+      ],
+      "baseline_eps_star": 0.02020725942163687,
+      "baseline_sum": 0.965
+    },
+    {
+      "label": "World population, mid-2027",
+      "outcomes": [
+        "world population on 1 July 2027 (UN World Population Prospects) is below 8.10 billion",
+        "world population on 1 July 2027 is between 8.10 and 8.20 billion",
+        "world population on 1 July 2027 is above 8.20 billion"
+      ],
+      "assigned_specialists": [
+        "GPT-5.4-mini",
+        "Claude-Haiku",
+        "GPT-5.4-nano"
+      ],
+      "per_outcome_means": [
+        0.135,
+        0.6825,
+        0.31875000000000003
+      ],
+      "per_outcome_samples": [
+        [
+          0.14,
+          0.06,
+          0.18,
+          0.18,
+          0.08,
+          0.12,
+          0.18,
+          0.14
+        ],
+        [
+          0.52,
+          0.68,
+          0.68,
+          0.7,
+          0.72,
+          0.72,
+          0.72,
+          0.72
+        ],
+        [
+          0.18,
+          0.33,
+          0.65,
+          0.25,
+          0.32,
+          0.32,
+          0.32,
+          0.18
+        ]
+      ],
+      "sum": 1.13625,
+      "sum_violation": 0.13624999999999998,
+      "eps_star": 0.0786639741770865,
+      "projected": [
+        0.08958333333333335,
+        0.6370833333333333,
+        0.2733333333333334
+      ],
+      "baseline_eps_star": 0.14145081595145836,
+      "baseline_sum": 1.245
+    }
+  ]
+}

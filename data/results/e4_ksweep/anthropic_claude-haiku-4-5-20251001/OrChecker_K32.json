@@ -1,0 +1,43 @@
+{
+  "relations": [
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or"
+  ],
+  "meta": {
+    "spec": "anthropic/claude-haiku-4-5-20251001",
+    "source": "paleka",
+    "checker": "OrChecker",
+    "K": 32,
+    "temperature": 0.7,
+    "seed": 20260425,
+    "n_eval": 27,
+    "platt_a": 0.3446960080946843,
+    "platt_b": -1.6424640737227323,
+    "estimated_cost_usd": 1.111621
+  }
+}

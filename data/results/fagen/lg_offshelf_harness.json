@@ -1,0 +1,1148 @@
+{
+  "summary": {
+    "n_events": 30,
+    "n_parse_failures": 0,
+    "n_calls": 90,
+    "mean_naive_eps_star": 0.022257893905767993,
+    "median_naive_eps_star": 0.0,
+    "max_naive_eps_star": 0.5,
+    "mean_naive_sum": 1.0458666666666667,
+    "n_eps_star_above_0": 3,
+    "n_eps_star_above_005": 2,
+    "n_eps_star_above_01": 2,
+    "mean_brier_naive": 0.7070225333333332,
+    "mean_brier_jcd": 0.6928430285714284,
+    "mean_delta_brier": -0.014179504761904748,
+    "mean_logp_naive": -1.9396524216622835,
+    "mean_logp_jcd": -1.9395961834157944,
+    "mean_delta_logp": 5.62382464888748e-05
+  },
+  "rows": [
+    {
+      "event_id": "45883",
+      "outcomes": [
+        "Fed decreases interest rates by 50+ bps after January 2026 meeting?",
+        "Fed decreases interest rates by 25 bps after January 2026 meeting?",
+        "No change in Fed interest rates after January 2026 meeting?",
+        "Fed increases interest rates by 25+ bps after January 2026 meeting?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.12,
+        0.38,
+        0.35,
+        0.15
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.12,
+        0.38,
+        0.35,
+        0.15
+      ],
+      "naive_brier": 0.6038,
+      "jcd_brier": 0.6038,
+      "naive_log_payoff": -1.0498221244986778,
+      "jcd_log_payoff": -1.0498221244986778,
+      "winner": 2,
+      "n_outcomes": 4
+    },
+    {
+      "event_id": "35090",
+      "outcomes": [
+        "Fed decreases interest rates by 50+ bps after December 2025 meeting?",
+        "Fed decreases interest rates by 25 bps after December 2025 meeting?",
+        "No change in Fed interest rates after December 2025 meeting?",
+        "Fed increases interest rates by 25+ bps after December 2025 meeting?"
+      ],
+      "resolutions": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.05,
+        0.4,
+        0.45,
+        0.1
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.05,
+        0.4,
+        0.45,
+        0.1
+      ],
+      "naive_brier": 0.575,
+      "jcd_brier": 0.575,
+      "naive_log_payoff": -0.916290731874155,
+      "jcd_log_payoff": -0.916290731874155,
+      "winner": 1,
+      "n_outcomes": 4
+    },
+    {
+      "event_id": "67284",
+      "outcomes": [
+        "Will the Fed decrease interest rates by 50+ bps after the March 2026 meeting?",
+        "Will the Fed decrease interest rates by 25 bps after the March 2026 meeting?",
+        "Will there be no change in Fed interest rates after the March 2026 meeting?",
+        "Will the Fed increase interest rates by 25+ bps after the March 2026 meeting?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.08,
+        0.45,
+        0.35,
+        0.12
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.08,
+        0.45,
+        0.35,
+        0.12
+      ],
+      "naive_brier": 0.6458,
+      "jcd_brier": 0.6458,
+      "naive_log_payoff": -1.0498221244986778,
+      "jcd_log_payoff": -1.0498221244986778,
+      "winner": 2,
+      "n_outcomes": 4
+    },
+    {
+      "event_id": "21255",
+      "outcomes": [
+        "Fed decreases interest rates by 50+ bps after July 2025 meeting?",
+        "Fed decreases interest rates by 25 bps after July 2025 meeting?",
+        "No change in Fed interest rates after July 2025 meeting?",
+        "Fed increases interest rates by 25+ bps after July 2025 meeting?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.05,
+        0.3,
+        0.6,
+        0.05
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.05,
+        0.3,
+        0.6,
+        0.05
+      ],
+      "naive_brier": 0.25500000000000006,
+      "jcd_brier": 0.25500000000000006,
+      "naive_log_payoff": -0.5108256237659907,
+      "jcd_log_payoff": -0.5108256237659907,
+      "winner": 2,
+      "n_outcomes": 4
+    },
+    {
+      "event_id": "12299",
+      "outcomes": [
+        "Will Pablo Mar\u00e7al win the 2024 S\u00e3o Paulo mayoral election?",
+        "Will Guilherme Boulos win the 2024 S\u00e3o Paulo mayoral election?",
+        "Will Ricardo Nunes win the 2024 S\u00e3o Paulo mayoral election?",
+        "Will Jos\u00e9 Luiz Datena win the 2024 S\u00e3o Paulo mayoral election?",
+        "Will Tabata Amaral win the 2024 S\u00e3o Paulo mayoral election?",
+        "Will Marina Helena win the 2024 S\u00e3o Paulo mayoral election?",
+        "Will another candidate win the 2024 S\u00e3o Paulo mayoral election?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.0,
+        0.45,
+        0.55,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.0,
+        0.45,
+        0.55,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "naive_brier": 0.40499999999999997,
+      "jcd_brier": 0.40499999999999997,
+      "naive_log_payoff": -0.5978370007556204,
+      "jcd_log_payoff": -0.5978370007556204,
+      "winner": 2,
+      "n_outcomes": 7
+    },
+    {
+      "event_id": "310915",
+      "outcomes": [
+        "Will Paris Saint-Germain FC win on 2026-04-08?",
+        "Will Paris Saint-Germain FC vs. Liverpool FC end in a draw?",
+        "Will Liverpool FC win on 2026-04-08?"
+      ],
+      "resolutions": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.38,
+        0.27,
+        0.35
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.38,
+        0.27,
+        0.35
+      ],
+      "naive_brier": 0.5798,
+      "jcd_brier": 0.5798,
+      "naive_log_payoff": -0.9675840262617056,
+      "jcd_log_payoff": -0.9675840262617056,
+      "winner": 0,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "10022",
+      "outcomes": [
+        "Will a Democrat win Ohio US Senate Election?",
+        "Will a Republican win Ohio US Senate Election?",
+        "Will a candidate from another party win Ohio US Senate Election?"
+      ],
+      "resolutions": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.52,
+        0.47,
+        0.01
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.52,
+        0.47,
+        0.01
+      ],
+      "naive_brier": 0.5514000000000001,
+      "jcd_brier": 0.5514000000000001,
+      "naive_log_payoff": -0.7550225842780328,
+      "jcd_log_payoff": -0.7550225842780328,
+      "winner": 1,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "211264",
+      "outcomes": [
+        "Will Arsenal FC win on 2026-03-01?",
+        "Will Arsenal FC vs. Chelsea FC end in a draw?",
+        "Will Chelsea FC win on 2026-03-01?"
+      ],
+      "resolutions": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.42,
+        0.25,
+        0.33
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.42,
+        0.25,
+        0.33
+      ],
+      "naive_brier": 0.5078000000000001,
+      "jcd_brier": 0.5078000000000001,
+      "naive_log_payoff": -0.8675005677047231,
+      "jcd_log_payoff": -0.8675005677047231,
+      "winner": 0,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "170916",
+      "outcomes": [
+        "Will Liverpool FC win on 2026-01-31?",
+        "Will Newcastle United FC win on 2026-01-31?",
+        "Will Liverpool FC vs. Newcastle United FC end in a draw?"
+      ],
+      "resolutions": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.63,
+        0.17,
+        0.2
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.63,
+        0.17,
+        0.2
+      ],
+      "naive_brier": 0.2058,
+      "jcd_brier": 0.2058,
+      "naive_log_payoff": -0.4620354595965587,
+      "jcd_log_payoff": -0.4620354595965587,
+      "winner": 0,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "65211",
+      "outcomes": [
+        "LoL: G2 Esports vs Top Esports (BO5)",
+        "LoL: G2 Esports vs Top Esports - Game 1 Winner",
+        "LoL: G2 Esports vs Top Esports - Game 2 Winner",
+        "LoL: G2 Esports vs Top Esports - Game 3 Winner"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "naive_sum": 2.0,
+      "naive_eps_star": 0.5,
+      "jcd_quote": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "naive_brier": 1.0,
+      "jcd_brier": 0.75,
+      "naive_log_payoff": -1.3862943611198906,
+      "jcd_log_payoff": -1.3862943611198906,
+      "winner": 2,
+      "n_outcomes": 4
+    },
+    {
+      "event_id": "903214",
+      "outcomes": [
+        "Will someone else win the 2024 Republican Presidential Nomination?",
+        "Will Vivek Ramaswamy win the 2024 Republican Presidential Nomination?",
+        "Will Donald J. Trump win the 2024 Republican presidential nomination?",
+        "Will Nikki Haley win the 2024 Republican Presidential Nomination?",
+        "Will Ron DeSantis win the 2024 Republican Presidential Nomination?",
+        "Will Donald Trump Jr. win the 2024 Republican Presidential Nomination?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.03,
+        0.02,
+        0.8,
+        0.1,
+        0.05,
+        0.0
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.03,
+        0.02,
+        0.8,
+        0.1,
+        0.05,
+        0.0
+      ],
+      "naive_brier": 0.05379999999999999,
+      "jcd_brier": 0.05379999999999999,
+      "naive_log_payoff": -0.2231435513142097,
+      "jcd_log_payoff": -0.2231435513142097,
+      "winner": 2,
+      "n_outcomes": 6
+    },
+    {
+      "event_id": "14258",
+      "outcomes": [
+        "Will Gallego win Arizona Senate election by 0-1%?",
+        "Will Gallego win Arizona Senate election by 3% or more?",
+        "Will Gallego win Arizona Senate election by 2-3%?",
+        "Will Gallego win Arizona Senate election by 1-2%?",
+        "Will Kari Lake win Arizona Senate election by 0-1%?",
+        "Will Kari Lake win Arizona Senate election by 1-2%?",
+        "Will Kari Lake win Arizona Senate election by 2% or more?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.12,
+        0.38,
+        0.28,
+        0.15,
+        0.04,
+        0.02,
+        0.01
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.12,
+        0.38,
+        0.28,
+        0.15,
+        0.04,
+        0.02,
+        0.01
+      ],
+      "naive_brier": 0.7018,
+      "jcd_brier": 0.7018,
+      "naive_log_payoff": -1.2729656758128873,
+      "jcd_log_payoff": -1.2729656758128873,
+      "winner": 2,
+      "n_outcomes": 7
+    },
+    {
+      "event_id": "144338",
+      "outcomes": [
+        "Will Aston Villa FC win on 2026-01-18?",
+        "Will Aston Villa FC vs. Everton FC end in a draw?",
+        "Will Everton FC win on 2026-01-18?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "naive_quote": [
+        0.58,
+        0.24,
+        0.18
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.58,
+        0.24,
+        0.18
+      ],
+      "naive_brier": 1.0664,
+      "jcd_brier": 1.0664,
+      "naive_log_payoff": -1.7147984280919266,
+      "jcd_log_payoff": -1.7147984280919266,
+      "winner": 2,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "142069",
+      "outcomes": [
+        "Will Tottenham Hotspur FC win on 2026-01-17?",
+        "Will Tottenham Hotspur FC vs. West Ham United FC end in a draw?",
+        "Will West Ham United FC win on 2026-01-17?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "naive_quote": [
+        0.58,
+        0.22,
+        0.2
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.58,
+        0.22,
+        0.2
+      ],
+      "naive_brier": 1.0248000000000002,
+      "jcd_brier": 1.0248000000000002,
+      "naive_log_payoff": -1.6094379124341003,
+      "jcd_log_payoff": -1.6094379124341003,
+      "winner": 2,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "201961",
+      "outcomes": [
+        "Will Club Atl\u00e9tico de Madrid win on 2026-02-21?",
+        "Will Club Atl\u00e9tico de Madrid vs. RCD Espanyol de Barcelona end in a draw?",
+        "Will RCD Espanyol de Barcelona win on 2026-02-21?"
+      ],
+      "resolutions": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.62,
+        0.22,
+        0.16
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.62,
+        0.22,
+        0.16
+      ],
+      "naive_brier": 0.2184,
+      "jcd_brier": 0.2184,
+      "naive_log_payoff": -0.4780358009429998,
+      "jcd_log_payoff": -0.4780358009429998,
+      "winner": 0,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "248341",
+      "outcomes": [
+        "Will Liverpool FC win on 2026-03-18?",
+        "Will Liverpool FC vs. Galatasaray SK end in a draw?",
+        "Will Galatasaray SK win on 2026-03-18?"
+      ],
+      "resolutions": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.62,
+        0.22,
+        0.16
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.62,
+        0.22,
+        0.16
+      ],
+      "naive_brier": 0.2184,
+      "jcd_brier": 0.2184,
+      "naive_log_payoff": -0.4780358009429998,
+      "jcd_log_payoff": -0.4780358009429998,
+      "winner": 0,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "144340",
+      "outcomes": [
+        "Will Stade Rennais FC 1901 win on 2026-01-18?",
+        "Will Stade Rennais FC 1901 vs. Le Havre AC end in a draw?",
+        "Will Le Havre AC win on 2026-01-18?"
+      ],
+      "resolutions": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.62,
+        0.28,
+        0.1
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.62,
+        0.28,
+        0.1
+      ],
+      "naive_brier": 0.9128000000000001,
+      "jcd_brier": 0.9128000000000001,
+      "naive_log_payoff": -1.2729656758128873,
+      "jcd_log_payoff": -1.2729656758128873,
+      "winner": 1,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "52169",
+      "outcomes": [
+        "Will the Government shutdown end October 3-5?",
+        "Will the Government shutdown end October 10-14?",
+        "Will there be No Shutdown?",
+        "Will the Government shutdown end October 1-2?",
+        "Will the Government shutdown end October 6-9?",
+        "Will the Government shutdown end October 15+?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "naive_quote": [
+        0.25,
+        0.3,
+        0.05,
+        0.15,
+        0.18,
+        0.07
+      ],
+      "naive_sum": 1.0000000000000002,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.25,
+        0.3,
+        0.05,
+        0.15,
+        0.18,
+        0.07
+      ],
+      "naive_brier": 1.0747999999999998,
+      "jcd_brier": 1.0747999999999998,
+      "naive_log_payoff": -2.6592600369327783,
+      "jcd_log_payoff": -2.6592600369327783,
+      "winner": 5,
+      "n_outcomes": 6
+    },
+    {
+      "event_id": "903643",
+      "outcomes": [
+        "Will a Democrat win New Jersey Presidential Election?",
+        "Will a candidate from another party win New Jersey Presidential Election?",
+        "Will a Republican win New Jersey Presidential Election?"
+      ],
+      "resolutions": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.92,
+        0.01,
+        0.07
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.92,
+        0.01,
+        0.07
+      ],
+      "naive_brier": 0.011399999999999993,
+      "jcd_brier": 0.011399999999999993,
+      "naive_log_payoff": -0.08338160893905101,
+      "jcd_log_payoff": -0.08338160893905101,
+      "winner": 0,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "24465",
+      "outcomes": [
+        "Will Lee Jun-seok win less than 2% of the vote in the South Korea election?",
+        "Will Lee Jun-seok win between 2% and 5% of the vote in the South Korea election?",
+        "Will Lee Jun-seok win between 5% and 8% of the vote in the South Korea election?",
+        "Will Lee Jun-seok win between 8% and 11% of the vote in the South Korea election?",
+        "Will Lee Jun-seok win between 11% and 14% of the vote in the South Korea election?",
+        "Will Lee Jun-seok win more than 14% of the vote in the South Korea election?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.25,
+        0.4,
+        0.2,
+        0.1,
+        0.03,
+        0.02
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.25,
+        0.4,
+        0.2,
+        0.1,
+        0.03,
+        0.02
+      ],
+      "naive_brier": 1.0738,
+      "jcd_brier": 1.0738,
+      "naive_log_payoff": -2.3025850929940455,
+      "jcd_log_payoff": -2.3025850929940455,
+      "winner": 3,
+      "n_outcomes": 6
+    },
+    {
+      "event_id": "84891",
+      "outcomes": [
+        "Will Jake Paul win by decision or technical decision?",
+        "Will Anthony Joshua win by KO/TKO/DQ?",
+        "Will the fight end in a draw?",
+        "Will Jake Paul win by KO/TKO/DQ?",
+        "Will the fight be ruled a No Contest or end in any other result?",
+        "Will Anthony Joshua win by decision or technical decision?"
+      ],
+      "resolutions": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.15,
+        0.38,
+        0.02,
+        0.28,
+        0.01,
+        0.16
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.15,
+        0.38,
+        0.02,
+        0.28,
+        0.01,
+        0.16
+      ],
+      "naive_brier": 0.5114000000000001,
+      "jcd_brier": 0.5114000000000001,
+      "naive_log_payoff": -0.9675840262617056,
+      "jcd_log_payoff": -0.9675840262617056,
+      "winner": 1,
+      "n_outcomes": 6
+    },
+    {
+      "event_id": "12005",
+      "outcomes": [
+        "Will RFK Jr. win 4-5% of the popular vote?",
+        "Will RFK Jr. win 5-6% of the popular vote?",
+        "Will RFK Jr. win 6-7% of the popular vote?",
+        "Will RFK Jr. win >7% of the popular vote?",
+        "Will RFK Jr. win <1% of the popular vote?",
+        "Will RFK Jr. win 1-2% of the popular vote?",
+        "Will RFK Jr. win 2-3% of the popular vote?",
+        "Will RFK Jr. win 3-4% of the popular vote?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.25,
+        0.18,
+        0.08,
+        0.04,
+        0.06,
+        0.12,
+        0.16,
+        0.11
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.25,
+        0.18,
+        0.08,
+        0.04,
+        0.06,
+        0.12,
+        0.16,
+        0.11
+      ],
+      "naive_brier": 1.0385999999999997,
+      "jcd_brier": 1.0385999999999997,
+      "naive_log_payoff": -2.8134107167600364,
+      "jcd_log_payoff": -2.8134107167600364,
+      "winner": 4,
+      "n_outcomes": 8
+    },
+    {
+      "event_id": "43172",
+      "outcomes": [
+        "Will Mikie Sherrill win by less than 3%?",
+        "Will Mikie Sherrill win by 6-9%?",
+        "Will Mikie Sherrill win by 12-15%?",
+        "Will Mikie Sherrill win by 3-6%?",
+        "Will Mikie Sherrill win by 9-12%?",
+        "Will Mikie Sherrill win by 15%+?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.15,
+        0.28,
+        0.18,
+        0.22,
+        0.14,
+        0.03
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.15,
+        0.28,
+        0.18,
+        0.22,
+        0.14,
+        0.03
+      ],
+      "naive_brier": 0.8422000000000001,
+      "jcd_brier": 0.8422000000000001,
+      "naive_log_payoff": -1.7147984280919266,
+      "jcd_log_payoff": -1.7147984280919266,
+      "winner": 2,
+      "n_outcomes": 6
+    },
+    {
+      "event_id": "195149",
+      "outcomes": [
+        "Will Rayo Vallecano de Madrid win on 2026-02-14?",
+        "Will Rayo Vallecano de Madrid vs. Club Atl\u00e9tico de Madrid end in a draw?",
+        "Will Club Atl\u00e9tico de Madrid win on 2026-02-14?"
+      ],
+      "resolutions": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.2,
+        0.25,
+        0.55
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.2,
+        0.25,
+        0.55
+      ],
+      "naive_brier": 1.0050000000000001,
+      "jcd_brier": 1.0050000000000001,
+      "naive_log_payoff": -1.6094379124341003,
+      "jcd_log_payoff": -1.6094379124341003,
+      "winner": 0,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "20203",
+      "outcomes": [
+        "Will the Conservative Party win the popular vote in Canada's next election?",
+        "Will the Liberal Party win the popular vote in Canada's next election?",
+        "Will the Green Party win the popular vote in Canada's next election?",
+        "Will the Bloc Qu\u00e9b\u00e9cois win the popular vote in Canada's next election?",
+        "Will the New Democratic Party win the popular vote in Canada's next election?",
+        "Will the People's Party win the popular vote in Canada's next election?",
+        "Will another party win the popular vote in Canada's next election?"
+      ],
+      "resolutions": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.78,
+        0.2,
+        0.01,
+        0.005,
+        0.005,
+        0.005,
+        0.001
+      ],
+      "naive_sum": 1.0059999999999998,
+      "naive_eps_star": 0.002267786838055266,
+      "jcd_quote": [
+        0.7791428571428572,
+        0.19914285714285718,
+        0.009142857142857175,
+        0.004142857142857174,
+        0.004142857142857174,
+        0.004142857142857174,
+        0.00014285714285717382
+      ],
+      "naive_brier": 1.248576,
+      "jcd_brier": 1.2485708571428573,
+      "naive_log_payoff": -1.6154199841116477,
+      "jcd_log_payoff": -1.6137328367169814,
+      "winner": 1,
+      "n_outcomes": 7
+    },
+    {
+      "event_id": "208549",
+      "outcomes": [
+        "Will Wolverhampton Wanderers FC vs. Aston Villa FC end in a draw?",
+        "Will Wolverhampton Wanderers FC win on 2026-02-27?",
+        "Will Aston Villa FC win on 2026-02-27?"
+      ],
+      "resolutions": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.26,
+        0.32,
+        0.42
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.26,
+        0.32,
+        0.42
+      ],
+      "naive_brier": 0.7063999999999999,
+      "jcd_brier": 0.7063999999999999,
+      "naive_log_payoff": -1.1394342831883648,
+      "jcd_log_payoff": -1.1394342831883648,
+      "winner": 1,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "21348",
+      "outcomes": [
+        "Will the price of Bitcoin be greater than $88000 on Mar 28?",
+        "Will the price of Bitcoin be between $86000 and $88000 on Mar 28?",
+        "Will the price of Bitcoin be between $84000 and $86000 on Mar 28?",
+        "Will the price of Bitcoin be between $82000 and $84000 on Mar 28?",
+        "Will the price of Bitcoin be between $80000 and $82000 on Mar 28?",
+        "Will the price of Bitcoin be between $78000 and $80000 on Mar 28?",
+        "Will the price of Bitcoin be less than $78000 on Mar 28?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.28,
+        0.22,
+        0.2,
+        0.15,
+        0.1,
+        0.04,
+        0.01
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.28,
+        0.22,
+        0.2,
+        0.15,
+        0.1,
+        0.04,
+        0.01
+      ],
+      "naive_brier": 0.8010000000000002,
+      "jcd_brier": 0.8010000000000002,
+      "naive_log_payoff": -1.6094379124341003,
+      "jcd_log_payoff": -1.6094379124341003,
+      "winner": 2,
+      "n_outcomes": 7
+    },
+    {
+      "event_id": "23786",
+      "outcomes": [
+        "Will the price of Bitcoin be less than $93000 on May 9?",
+        "Will the price of Bitcoin be between $93000 and $95000 on May 9?",
+        "Will the price of Bitcoin be between $95000 and $97000 on May 9?",
+        "Will the price of Bitcoin be between $97000 and $99000 on May 9?",
+        "Will the price of Bitcoin be between $99000 and $101000 on May 9?",
+        "Will the price of Bitcoin be between $101000 and $103000 on May 9?",
+        "Will the price of Bitcoin be greater than $103000 on May 9?"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.72,
+        0.15,
+        0.07,
+        0.03,
+        0.02,
+        0.01,
+        0.0
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.72,
+        0.15,
+        0.07,
+        0.03,
+        0.02,
+        0.01,
+        0.0
+      ],
+      "naive_brier": 1.5272,
+      "jcd_brier": 1.5272,
+      "naive_log_payoff": -4.605170185988091,
+      "jcd_log_payoff": -4.605170185988091,
+      "winner": 5,
+      "n_outcomes": 7
+    },
+    {
+      "event_id": "158939",
+      "outcomes": [
+        "Will SSC Napoli win on 2026-01-25?",
+        "Will Juventus FC win on 2026-01-25?",
+        "Will Juventus FC vs. SSC Napoli end in a draw?"
+      ],
+      "resolutions": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "naive_quote": [
+        0.32,
+        0.48,
+        0.2
+      ],
+      "naive_sum": 1.0,
+      "naive_eps_star": 0.0,
+      "jcd_quote": [
+        0.32,
+        0.48,
+        0.2
+      ],
+      "naive_brier": 0.41280000000000006,
+      "jcd_brier": 0.41280000000000006,
+      "naive_log_payoff": -0.7339691750802004,
+      "jcd_log_payoff": -0.7339691750802004,
+      "winner": 1,
+      "n_outcomes": 3
+    },
+    {
+      "event_id": "27405",
+      "outcomes": [
+        "Thunder vs. Pacers",
+        "Thunder vs Pacers: O/U 221.5",
+        "Thunder vs Pacers: O/U 226.5",
+        "Thunder vs Pacers: O/U 216.5",
+        "Spread: Thunder (-6.5)",
+        "Spread: Thunder (-7.5)",
+        "Spread: Pacers (-2.5)"
+      ],
+      "resolutions": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "naive_quote": [
+        0.0,
+        0.32,
+        0.18,
+        0.35,
+        0.4,
+        0.12,
+        0.0
+      ],
+      "naive_sum": 1.37,
+      "naive_eps_star": 0.16546903033498447,
+      "jcd_quote": [
+        0.0,
+        0.246,
+        0.10599999999999997,
+        0.27599999999999997,
+        0.326,
+        0.04599999999999997,
+        0.0
+      ],
+      "naive_brier": 1.4317,
+      "jcd_brier": 1.25632,
+      "naive_log_payoff": -20.72326583694641,
+      "jcd_log_payoff": -20.72326583694641,
+      "winner": 6,
+      "n_outcomes": 7
+    }
+  ]
+}

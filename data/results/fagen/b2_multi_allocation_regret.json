@@ -1,0 +1,50 @@
+{
+  "proportional": {
+    "n": 1252,
+    "mean_lp_naive": -1.099744117139057,
+    "mean_lp_jcd": -0.9320942809523053,
+    "mean_lp_oracle": -0.9915834237906874,
+    "jcd_minus_naive_mean": 0.16764983618675172,
+    "jcd_minus_naive_ci": [
+      0.08301302161089223,
+      0.26321824521668336
+    ],
+    "oracle_minus_naive_mean": 0.10816069334836956,
+    "oracle_minus_naive_ci": [
+      0.00767922421236104,
+      0.21745459551423013
+    ]
+  },
+  "truncated_kelly": {
+    "n": 1252,
+    "mean_lp_naive": -0.9357104730014869,
+    "mean_lp_jcd": -0.9299542541070906,
+    "mean_lp_oracle": -0.9327594890151493,
+    "jcd_minus_naive_mean": 0.005756218894396277,
+    "jcd_minus_naive_ci": [
+      -0.0030501642337575586,
+      0.017030047359459358
+    ],
+    "oracle_minus_naive_mean": 0.0029509839863376447,
+    "oracle_minus_naive_ci": [
+      -0.04025202081343666,
+      0.0521526486946486
+    ]
+  },
+  "max_entropy": {
+    "n": 1252,
+    "mean_lp_naive": -0.9357104730014869,
+    "mean_lp_jcd": -0.9299542541070906,
+    "mean_lp_oracle": -0.9327594890151493,
+    "jcd_minus_naive_mean": 0.005756218894396277,
+    "jcd_minus_naive_ci": [
+      -0.003050164233757559,
+      0.01703004735945936
+    ],
+    "oracle_minus_naive_mean": 0.0029509839863376447,
+    "oracle_minus_naive_ci": [
+      -0.04025202081343666,
+      0.0521526486946486
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "relations": [
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or",
+    "or"
+  ],
+  "meta": {
+    "spec": "azure/nano",
+    "source": "paleka",
+    "checker": "OrChecker",
+    "K": 32,
+    "temperature": 0.7,
+    "seed": 20260425,
+    "n_eval": 27,
+    "platt_a": 1.0932021146744297,
+    "platt_b": -0.9499473813559768,
+    "estimated_cost_usd": 0.09999850000000002
+  }
+}

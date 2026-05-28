@@ -1,0 +1,2481 @@
+{
+  "summary": {
+    "n_partitions": 100,
+    "n_failures": 0,
+    "mean_naive_eps": 0.2141115497953206,
+    "mean_llmagg_eps": 0.02824346125535312,
+    "mean_jcd_eps": 3.6621919262244706e-17,
+    "median_naive_eps": 0.1984641550339338,
+    "median_llmagg_eps": 0.0,
+    "median_jcd_eps": 0.0,
+    "n_llmagg_below_1e3": 81,
+    "n_llmagg_below_1e2": 83,
+    "n_llmagg_below_naive": 88,
+    "n_llmagg_above_naive": 7,
+    "n_llmagg_below_jcd": 0,
+    "delta_llmagg_minus_naive_mean": -0.18586808853996747,
+    "delta_jcd_minus_naive_mean": -0.21411154979532054
+  },
+  "rows": [
+    {
+      "label": "2028 US Presidential winner",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.46375,
+        0.5325,
+        0.02
+      ],
+      "naive_sum": 1.0162499999999999,
+      "naive_eps_star": 0.009381941874331346,
+      "llmagg_quote": [
+        0.464,
+        0.532,
+        0.004
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.45833333333333337,
+        0.5270833333333333,
+        0.014583333333333375
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 US House majority",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.43999999999999995,
+        0.5762499999999999,
+        0.64375
+      ],
+      "naive_sum": 1.66,
+      "naive_eps_star": 0.38105117766515295,
+      "llmagg_quote": [
+        0.33,
+        0.434,
+        0.236
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.21999999999999997,
+        0.35624999999999996,
+        0.42375000000000007
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 US Senate majority",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.5762499999999999,
+        0.27125,
+        0.25625
+      ],
+      "naive_sum": 1.1037499999999998,
+      "naive_eps_star": 0.05990009042842358,
+      "llmagg_quote": [
+        0.576,
+        0.271,
+        0.153
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.5416666666666666,
+        0.23666666666666672,
+        0.2216666666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "Next UK general election year",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.315,
+        0.23,
+        0.72,
+        0.7425
+      ],
+      "naive_sum": 2.0075000000000003,
+      "naive_eps_star": 0.5043828737510159,
+      "llmagg_quote": [
+        0.22,
+        0.16,
+        0.51,
+        0.11
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.0558333333333334,
+        0.0,
+        0.4608333333333334,
+        0.48333333333333345
+      ],
+      "jcd_eps_star": 1.0949389893418967e-16
+    },
+    {
+      "label": "Next FOMC decision (June 2026 meeting)",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.325,
+        0.6775,
+        0.42125
+      ],
+      "naive_sum": 1.42375,
+      "naive_eps_star": 0.24465217656910387,
+      "llmagg_quote": [
+        0.287,
+        0.597,
+        0.116
+      ],
+      "llmagg_sum": 0.9999999999999999,
+      "llmagg_eps_star": 6.938893903907228e-17,
+      "jcd_quote": [
+        0.18375000000000005,
+        0.53625,
+        0.28
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 H1 SP500 return bucket",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.34625,
+        0.5,
+        0.20500000000000002,
+        0.25125
+      ],
+      "naive_sum": 1.3025,
+      "naive_eps_star": 0.15125,
+      "llmagg_quote": [
+        0.346,
+        0.5,
+        0.205,
+        0.251
+      ],
+      "llmagg_sum": 1.302,
+      "llmagg_eps_star": 0.15100000000000002,
+      "jcd_quote": [
+        0.270625,
+        0.424375,
+        0.12937500000000002,
+        0.17562499999999998
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "US unemployment rate, June 2026",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.715,
+        0.175,
+        0.275,
+        0.375
+      ],
+      "naive_sum": 1.54,
+      "naive_eps_star": 0.2699999999999999,
+      "llmagg_quote": [
+        0.545,
+        0.133,
+        0.209,
+        0.113
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.5800000000000001,
+        0.040000000000000036,
+        0.14000000000000007,
+        0.24000000000000005
+      ],
+      "jcd_eps_star": 9.614813431917819e-17
+    },
+    {
+      "label": "2026 H1 BTC return bucket",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.425,
+        0.375,
+        0.715
+      ],
+      "naive_sum": 1.5150000000000001,
+      "naive_eps_star": 0.2973353886326572,
+      "llmagg_quote": [
+        0.38,
+        0.265,
+        0.355
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.25333333333333335,
+        0.20333333333333337,
+        0.5433333333333333
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 US CPI year-over-year, December print",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.29500000000000004,
+        0.45999999999999996,
+        0.4225,
+        0.32999999999999996
+      ],
+      "naive_sum": 1.5074999999999998,
+      "naive_eps_star": 0.2537499999999999,
+      "llmagg_quote": [
+        0.245,
+        0.382,
+        0.251,
+        0.122
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.16812500000000008,
+        0.333125,
+        0.295625,
+        0.203125
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "Top gold-medal nation, 2028 Summer Olympics",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.58,
+        0.19375,
+        0.2575
+      ],
+      "naive_sum": 1.03125,
+      "naive_eps_star": 0.018042195912175773,
+      "llmagg_quote": [
+        0.58,
+        0.194,
+        0.226
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.5695833333333333,
+        0.18333333333333335,
+        0.24708333333333335
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 FIFA World Cup winner confederation",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.5575,
+        0.42,
+        0.52
+      ],
+      "naive_sum": 1.4975,
+      "naive_eps_star": 0.2872317589218389,
+      "llmagg_quote": [
+        0.37,
+        0.278,
+        0.352
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.3916666666666666,
+        0.25416666666666665,
+        0.35416666666666663
+      ],
+      "jcd_eps_star": 9.614813431917819e-17
+    },
+    {
+      "label": "2026 Wimbledon men's singles winner",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.1225,
+        0.075625,
+        0.12375,
+        0.85
+      ],
+      "naive_sum": 1.171875,
+      "naive_eps_star": 0.0859375,
+      "llmagg_quote": [
+        0.122,
+        0.076,
+        0.124,
+        0.678
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.07953125,
+        0.03265625,
+        0.08078125,
+        0.80703125
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 NBA Finals winner conference",
+      "n_outcomes": 2,
+      "naive_quote": [
+        0.53,
+        0.5325
+      ],
+      "naive_sum": 1.0625,
+      "naive_eps_star": 0.04419417382415922,
+      "llmagg_quote": [
+        0.53,
+        0.47
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.49875,
+        0.50125
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Booker Prize winner nationality",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.37124999999999997,
+        0.1825,
+        0.4425
+      ],
+      "naive_sum": 0.99625,
+      "naive_eps_star": 0.0021650635094611305,
+      "llmagg_quote": [
+        0.371,
+        0.182,
+        0.447
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.3725,
+        0.18375,
+        0.44375000000000003
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Academy Award Best Picture winner type",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.72,
+        0.43,
+        0.2025
+      ],
+      "naive_sum": 1.3525,
+      "naive_eps_star": 0.20351596988934312,
+      "llmagg_quote": [
+        0.625,
+        0.29,
+        0.085
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.6024999999999999,
+        0.3125,
+        0.085
+      ],
+      "jcd_eps_star": 6.938893903907228e-17
+    },
+    {
+      "label": "2026 Grammy Album of the Year genre",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.5225,
+        0.27625,
+        0.35624999999999996,
+        0.4225
+      ],
+      "naive_sum": 1.5774999999999997,
+      "naive_eps_star": 0.28875000000000006,
+      "llmagg_quote": [
+        0.37,
+        0.196,
+        0.252,
+        0.182
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.37812499999999993,
+        0.13187499999999996,
+        0.21187499999999992,
+        0.27812499999999996
+      ],
+      "jcd_eps_star": 1.1102230246251565e-16
+    },
+    {
+      "label": "2026 Pulitzer Prize Fiction winner setting",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.72,
+        0.2475,
+        0.03125
+      ],
+      "naive_sum": 0.99875,
+      "naive_eps_star": 0.0007216878364869888,
+      "llmagg_quote": [
+        0.72,
+        0.247,
+        0.031
+      ],
+      "llmagg_sum": 0.998,
+      "llmagg_eps_star": 0.0011547005383792807,
+      "jcd_quote": [
+        0.7204166666666666,
+        0.24791666666666665,
+        0.031666666666666655
+      ],
+      "jcd_eps_star": 4.443059973708341e-17
+    },
+    {
+      "label": "Top MMLU score, year-end 2026",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.25,
+        0.62125,
+        0.56875,
+        0.85
+      ],
+      "naive_sum": 2.29,
+      "naive_eps_star": 0.6504101270224298,
+      "llmagg_quote": [
+        0.15,
+        0.35,
+        0.32,
+        0.18
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 6.798699777552591e-17,
+      "jcd_quote": [
+        0.0,
+        0.2745833333333333,
+        0.2220833333333333,
+        0.5033333333333333
+      ],
+      "jcd_eps_star": 3.925231146709438e-17
+    },
+    {
+      "label": "Top SWE-Bench Verified score, year-end 2026",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.35,
+        0.61,
+        0.25375000000000003,
+        0.865
+      ],
+      "naive_sum": 2.0787500000000003,
+      "naive_eps_star": 0.539688857120471,
+      "llmagg_quote": [
+        0.22,
+        0.38,
+        0.16,
+        0.24
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.0749999999999999,
+        0.3349999999999999,
+        0.0,
+        0.5899999999999999
+      ],
+      "jcd_eps_star": 9.614813431917819e-17
+    },
+    {
+      "label": "Largest US tech IPO of 2026 by company type",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.43,
+        0.35875,
+        0.44375,
+        0.4325
+      ],
+      "naive_sum": 1.665,
+      "naive_eps_star": 0.3325,
+      "llmagg_quote": [
+        0.426,
+        0.355,
+        0.439,
+        0.43
+      ],
+      "llmagg_sum": 1.65,
+      "llmagg_eps_star": 0.32499999999999996,
+      "jcd_quote": [
+        0.26375,
+        0.1925,
+        0.27749999999999997,
+        0.26625
+      ],
+      "jcd_eps_star": 6.206335383118183e-17
+    },
+    {
+      "label": "Next iPhone announcement quarter",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.70125,
+        0.8,
+        0.175
+      ],
+      "naive_sum": 1.6762500000000002,
+      "naive_eps_star": 0.39528569573158107,
+      "llmagg_quote": [
+        0.45,
+        0.52,
+        0.03
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.45062499999999994,
+        0.549375,
+        0.0
+      ],
+      "jcd_eps_star": 6.671610070811202e-17
+    },
+    {
+      "label": "Top semiconductor maker by revenue, 2026",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.57125,
+        0.5725,
+        0.35
+      ],
+      "naive_sum": 1.49375,
+      "naive_eps_star": 0.28506669541237767,
+      "llmagg_quote": [
+        0.385,
+        0.387,
+        0.228
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.40666666666666673,
+        0.4079166666666667,
+        0.18541666666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Nobel Peace Prize laureate type",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.75,
+        0.43999999999999995,
+        0.0625
+      ],
+      "naive_sum": 1.2525,
+      "naive_eps_star": 0.1481764151273744,
+      "llmagg_quote": [
+        0.75,
+        0.188,
+        0.062
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.655,
+        0.345,
+        0.0
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Nobel Chemistry laureate field",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.59375,
+        0.38125,
+        0.575,
+        0.61375
+      ],
+      "naive_sum": 2.16375,
+      "naive_eps_star": 0.5818749999999999,
+      "llmagg_quote": [
+        0.285,
+        0.183,
+        0.276,
+        0.256
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.30281250000000004,
+        0.09031250000000002,
+        0.2840625,
+        0.32281250000000006
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Nobel Physics laureate field",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.42625,
+        0.4425,
+        0.30000000000000004,
+        0.4675
+      ],
+      "naive_sum": 1.6362500000000002,
+      "naive_eps_star": 0.3181250000000001,
+      "llmagg_quote": [
+        0.41,
+        0.427,
+        0.289,
+        0.874
+      ],
+      "llmagg_sum": 2.0,
+      "llmagg_eps_star": 0.49999999999999983,
+      "jcd_quote": [
+        0.26718749999999997,
+        0.28343749999999995,
+        0.1409375,
+        0.3084375
+      ],
+      "jcd_eps_star": 1.1102230246251565e-16
+    },
+    {
+      "label": "2026 ACM Turing Award area",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.58,
+        0.5449999999999999,
+        0.745
+      ],
+      "naive_sum": 1.87,
+      "naive_eps_star": 0.5022947341949744,
+      "llmagg_quote": [
+        0.38,
+        0.28,
+        0.34
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.29,
+        0.25499999999999995,
+        0.455
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 EU AI Act state of enforcement",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.30374999999999996,
+        0.74125,
+        0.73
+      ],
+      "naive_sum": 1.775,
+      "naive_eps_star": 0.4474464586219599,
+      "llmagg_quote": [
+        0.25,
+        0.4,
+        0.35
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.04541666666666666,
+        0.48291666666666666,
+        0.4716666666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "UN climate ambition state, COP31 (2026)",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.5887500000000001,
+        0.715,
+        0.2875
+      ],
+      "naive_sum": 1.59125,
+      "naive_eps_star": 0.3413583466583663,
+      "llmagg_quote": [
+        0.45,
+        0.48,
+        0.07
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.3916666666666667,
+        0.5179166666666666,
+        0.09041666666666662
+      ],
+      "jcd_eps_star": 6.938893903907228e-17
+    },
+    {
+      "label": "2026 net global solar capacity addition",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.2,
+        0.43875,
+        0.32625000000000004
+      ],
+      "naive_sum": 0.965,
+      "naive_eps_star": 0.02020725942163687,
+      "llmagg_quote": [
+        0.2,
+        0.439,
+        0.326
+      ],
+      "llmagg_sum": 0.9650000000000001,
+      "llmagg_eps_star": 0.02020725942163687,
+      "jcd_quote": [
+        0.21166666666666664,
+        0.45041666666666663,
+        0.3379166666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "World population, mid-2027",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.22499999999999998,
+        0.42,
+        0.6
+      ],
+      "naive_sum": 1.245,
+      "naive_eps_star": 0.14145081595145836,
+      "llmagg_quote": [
+        0.225,
+        0.42,
+        0.355
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 8.326672684688674e-17,
+      "jcd_quote": [
+        0.14333333333333326,
+        0.33833333333333326,
+        0.5183333333333333
+      ],
+      "jcd_eps_star": 1.4946834900704541e-16
+    },
+    {
+      "label": "2026 California gubernatorial party",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.5,
+        0.15749999999999997,
+        0.38
+      ],
+      "naive_sum": 1.0375,
+      "naive_eps_star": 0.021650635094611,
+      "llmagg_quote": [
+        0.5,
+        0.157,
+        0.343
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.4875,
+        0.14499999999999993,
+        0.3675
+      ],
+      "jcd_eps_star": 8.326672684688674e-17
+    },
+    {
+      "label": "2026 Texas gubernatorial party",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.5549999999999999,
+        0.15749999999999997,
+        0.1825
+      ],
+      "naive_sum": 0.8949999999999999,
+      "naive_eps_star": 0.06062177826491076,
+      "llmagg_quote": [
+        0.555,
+        0.157,
+        0.182
+      ],
+      "llmagg_sum": 0.8940000000000001,
+      "llmagg_eps_star": 0.06119912853410029,
+      "jcd_quote": [
+        0.59,
+        0.1925,
+        0.21750000000000003
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Florida gubernatorial party",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.5774999999999999,
+        0.25,
+        0.3125
+      ],
+      "naive_sum": 1.14,
+      "naive_eps_star": 0.08082903768654755,
+      "llmagg_quote": [
+        0.577,
+        0.25,
+        0.173
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.5308333333333333,
+        0.20333333333333337,
+        0.26583333333333337
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 New York gubernatorial party",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.835,
+        0.26,
+        0.24125000000000002
+      ],
+      "naive_sum": 1.33625,
+      "naive_eps_star": 0.19413402801501164,
+      "llmagg_quote": [
+        0.835,
+        0.13,
+        0.035
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.7229166666666667,
+        0.1479166666666667,
+        0.1291666666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Ohio gubernatorial party",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.71,
+        0.4,
+        0.55
+      ],
+      "naive_sum": 1.66,
+      "naive_eps_star": 0.3810511776651531,
+      "llmagg_quote": [
+        0.61,
+        0.27,
+        0.12
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.4899999999999999,
+        0.17999999999999997,
+        0.32999999999999996
+      ],
+      "jcd_eps_star": 1.1443916996305594e-16
+    },
+    {
+      "label": "2026 Pennsylvania US Senate election",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.45375,
+        0.485,
+        0.23625000000000002
+      ],
+      "naive_sum": 1.175,
+      "naive_eps_star": 0.10103629710818453,
+      "llmagg_quote": [
+        0.454,
+        0.485,
+        0.061
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.39541666666666664,
+        0.42666666666666664,
+        0.17791666666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2027 French Presidential winner ideology",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.32999999999999996,
+        0.52375,
+        0.5762499999999999
+      ],
+      "naive_sum": 1.43,
+      "naive_eps_star": 0.2482606157515392,
+      "llmagg_quote": [
+        0.33,
+        0.524,
+        0.576
+      ],
+      "llmagg_sum": 1.4300000000000002,
+      "llmagg_eps_star": 0.2482606157515392,
+      "jcd_quote": [
+        0.18666666666666656,
+        0.3804166666666666,
+        0.4329166666666665
+      ],
+      "jcd_eps_star": 1.9229626863835638e-16
+    },
+    {
+      "label": "2026 Brazilian general election composition",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.57125,
+        0.32125,
+        0.41625
+      ],
+      "naive_sum": 1.30875,
+      "naive_eps_star": 0.17825689561229704,
+      "llmagg_quote": [
+        0.489,
+        0.274,
+        0.237
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.4683333333333333,
+        0.21833333333333327,
+        0.3133333333333333
+      ],
+      "jcd_eps_star": 8.326672684688674e-17
+    },
+    {
+      "label": "2026 German Bundestag composition (post-election)",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.72,
+        0.42,
+        0.595
+      ],
+      "naive_sum": 1.7349999999999999,
+      "naive_eps_star": 0.4243524478543749,
+      "llmagg_quote": [
+        0.72,
+        0.18,
+        0.1
+      ],
+      "llmagg_sum": 0.9999999999999999,
+      "llmagg_eps_star": 5.003707553108401e-17,
+      "jcd_quote": [
+        0.475,
+        0.17500000000000002,
+        0.35
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2027 UK Prime Minister tenure",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.5225,
+        0.4125,
+        0.71375
+      ],
+      "naive_sum": 1.64875,
+      "naive_eps_star": 0.3745559871367698,
+      "llmagg_quote": [
+        0.522,
+        0.412,
+        0.066
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.3062499999999999,
+        0.19624999999999992,
+        0.49749999999999994
+      ],
+      "jcd_eps_star": 1.1443916996305594e-16
+    },
+    {
+      "label": "2027 Mexico midterm legislative balance",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.72,
+        0.2825,
+        0.44
+      ],
+      "naive_sum": 1.4425,
+      "naive_eps_star": 0.25547749411640935,
+      "llmagg_quote": [
+        0.62,
+        0.24,
+        0.14
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.5725,
+        0.135,
+        0.29250000000000004
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Japan LDP leadership",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.6725,
+        0.32875,
+        0.08875
+      ],
+      "naive_sum": 1.0899999999999999,
+      "naive_eps_star": 0.05196152422706623,
+      "llmagg_quote": [
+        0.672,
+        0.239,
+        0.089
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.6425000000000001,
+        0.29875,
+        0.05875000000000004
+      ],
+      "jcd_eps_star": 1.457167719820518e-16
+    },
+    {
+      "label": "2026 H2 SP500 return bucket",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.125,
+        0.28875,
+        0.2775,
+        0.16749999999999998
+      ],
+      "naive_sum": 0.85875,
+      "naive_eps_star": 0.07062500000000002,
+      "llmagg_quote": [
+        0.125,
+        0.289,
+        0.278,
+        0.308
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.1603125,
+        0.32406250000000003,
+        0.31281250000000005,
+        0.20281249999999998
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2027 H1 SP500 return bucket",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.085,
+        0.335,
+        0.4275
+      ],
+      "naive_sum": 0.8475,
+      "naive_eps_star": 0.08804591605141794,
+      "llmagg_quote": [
+        0.085,
+        0.335,
+        0.58
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.13583333333333336,
+        0.38583333333333336,
+        0.47833333333333333
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "December 2026 FOMC decision",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.49,
+        0.46125,
+        0.42
+      ],
+      "naive_sum": 1.3712499999999999,
+      "naive_eps_star": 0.21434128743664851,
+      "llmagg_quote": [
+        0.343,
+        0.323,
+        0.334
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.36625,
+        0.3375,
+        0.29625
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "March 2027 FOMC decision",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.35,
+        0.29375,
+        0.41500000000000004
+      ],
+      "naive_sum": 1.05875,
+      "naive_eps_star": 0.03391932831489053,
+      "llmagg_quote": [
+        0.35,
+        0.294,
+        0.415
+      ],
+      "llmagg_sum": 1.059,
+      "llmagg_eps_star": 0.03406366588218792,
+      "jcd_quote": [
+        0.33041666666666664,
+        0.27416666666666667,
+        0.3954166666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "June 2027 FOMC decision",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.42,
+        0.6599999999999999,
+        0.215
+      ],
+      "naive_sum": 1.295,
+      "naive_eps_star": 0.17031832941093955,
+      "llmagg_quote": [
+        0.42,
+        0.365,
+        0.215
+      ],
+      "llmagg_sum": 0.9999999999999999,
+      "llmagg_eps_star": 8.326672684688674e-17,
+      "jcd_quote": [
+        0.32166666666666666,
+        0.5616666666666666,
+        0.11666666666666668
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 US real GDP year-over-year growth",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.33875,
+        0.56,
+        0.255,
+        0.345
+      ],
+      "naive_sum": 1.49875,
+      "naive_eps_star": 0.2493749999999999,
+      "llmagg_quote": [
+        0.31,
+        0.512,
+        0.233,
+        0.315
+      ],
+      "llmagg_sum": 1.37,
+      "llmagg_eps_star": 0.18500000000000005,
+      "jcd_quote": [
+        0.21406250000000004,
+        0.4353125000000001,
+        0.13031250000000005,
+        0.22031250000000002
+      ],
+      "jcd_eps_star": 1.1102230246251565e-16
+    },
+    {
+      "label": "EUR/USD year-end 2026",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.21375000000000002,
+        0.695,
+        0.295
+      ],
+      "naive_sum": 1.2037499999999999,
+      "naive_eps_star": 0.11763511734738633,
+      "llmagg_quote": [
+        0.214,
+        0.695,
+        0.091
+      ],
+      "llmagg_sum": 0.9999999999999999,
+      "llmagg_eps_star": 5.003707553108401e-17,
+      "jcd_quote": [
+        0.14583333333333331,
+        0.6270833333333332,
+        0.2270833333333333
+      ],
+      "jcd_eps_star": 1.6184142622847344e-16
+    },
+    {
+      "label": "WTI crude oil year-end 2026 price bucket",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.45499999999999996,
+        0.43,
+        0.31375000000000003
+      ],
+      "naive_sum": 1.19875,
+      "naive_eps_star": 0.11474836600143808,
+      "llmagg_quote": [
+        0.455,
+        0.43,
+        0.115
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.38875,
+        0.36375,
+        0.24750000000000005
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "Gold price year-end 2026",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.35,
+        0.11625,
+        0.7374999999999999
+      ],
+      "naive_sum": 1.2037499999999999,
+      "naive_eps_star": 0.11763511734738617,
+      "llmagg_quote": [
+        0.35,
+        0.116,
+        0.534
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.28208333333333335,
+        0.04833333333333338,
+        0.6695833333333333
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "US 10-year Treasury yield year-end 2026",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.29750000000000004,
+        0.42,
+        0.42125
+      ],
+      "naive_sum": 1.13875,
+      "naive_eps_star": 0.0801073498500607,
+      "llmagg_quote": [
+        0.298,
+        0.42,
+        0.421
+      ],
+      "llmagg_sum": 1.139,
+      "llmagg_eps_star": 0.08025168741735798,
+      "jcd_quote": [
+        0.25125,
+        0.3737499999999999,
+        0.37499999999999994
+      ],
+      "jcd_eps_star": 9.614813431917819e-17
+    },
+    {
+      "label": "UK CPI YoY November 2026",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.54,
+        0.31,
+        0.42625
+      ],
+      "naive_sum": 1.27625,
+      "naive_eps_star": 0.15949301186363413,
+      "llmagg_quote": [
+        0.475,
+        0.272,
+        0.253
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.4479166666666667,
+        0.21791666666666665,
+        0.33416666666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "ECB main refinancing rate, December 2026",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.48624999999999996,
+        0.5525,
+        0.42125
+      ],
+      "naive_sum": 1.46,
+      "naive_eps_star": 0.2655811238272278,
+      "llmagg_quote": [
+        0.447,
+        0.508,
+        0.045
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.33291666666666664,
+        0.39916666666666667,
+        0.2679166666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 World Series winner league",
+      "n_outcomes": 2,
+      "naive_quote": [
+        0.52875,
+        0.505
+      ],
+      "naive_sum": 1.03375,
+      "naive_eps_star": 0.023864853865045943,
+      "llmagg_quote": [
+        0.517,
+        0.483
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.5118750000000001,
+        0.48812500000000003
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 NHL Stanley Cup winner conference",
+      "n_outcomes": 2,
+      "naive_quote": [
+        0.5,
+        0.535
+      ],
+      "naive_sum": 1.0350000000000001,
+      "naive_eps_star": 0.024748737341529263,
+      "llmagg_quote": [
+        0.482,
+        0.518
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.48249999999999993,
+        0.5175
+      ],
+      "jcd_eps_star": 1.2412670766236366e-16
+    },
+    {
+      "label": "2027 Australian Open men's singles winner",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.1,
+        0.25125,
+        0.35,
+        0.7175
+      ],
+      "naive_sum": 1.41875,
+      "naive_eps_star": 0.20944495100145044,
+      "llmagg_quote": [
+        0.1,
+        0.251,
+        0.35,
+        0.299
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.0,
+        0.14500000000000002,
+        0.24375000000000002,
+        0.6112500000000001
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2027 Six Nations rugby winner",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.38749999999999996,
+        0.64,
+        0.4225
+      ],
+      "naive_sum": 1.4499999999999997,
+      "naive_eps_star": 0.2598076211353316,
+      "llmagg_quote": [
+        0.387,
+        0.64,
+        0.422
+      ],
+      "llmagg_sum": 1.449,
+      "llmagg_eps_star": 0.25923027086614203,
+      "jcd_quote": [
+        0.23749999999999996,
+        0.49,
+        0.27249999999999996
+      ],
+      "jcd_eps_star": 8.326672684688674e-17
+    },
+    {
+      "label": "2026 F1 Constructors' Championship winner",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.27375,
+        0.3775,
+        0.185,
+        0.5
+      ],
+      "naive_sum": 1.33625,
+      "naive_eps_star": 0.16812499999999997,
+      "llmagg_quote": [
+        0.274,
+        0.378,
+        0.185,
+        0.163
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.1896875,
+        0.2934375,
+        0.10093750000000001,
+        0.4159375
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 F1 Drivers' Championship winner",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.28500000000000003,
+        0.26125,
+        0.35375,
+        0.35875
+      ],
+      "naive_sum": 1.25875,
+      "naive_eps_star": 0.12937500000000002,
+      "llmagg_quote": [
+        0.271,
+        0.248,
+        0.337,
+        0.144
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.22031250000000002,
+        0.19656249999999997,
+        0.2890625,
+        0.2940625
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Tour de France winner nationality",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.25625,
+        0.39749999999999996,
+        0.72375
+      ],
+      "naive_sum": 1.3775,
+      "naive_eps_star": 0.21794972661908377,
+      "llmagg_quote": [
+        0.256,
+        0.397,
+        0.347
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.13041666666666665,
+        0.2716666666666666,
+        0.5979166666666667
+      ],
+      "jcd_eps_star": 6.206335383118183e-17
+    },
+    {
+      "label": "2027 ICC T20 Cricket World Cup winner region",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.5525,
+        0.42000000000000004,
+        0.55375
+      ],
+      "naive_sum": 1.52625,
+      "naive_eps_star": 0.30383057916104056,
+      "llmagg_quote": [
+        0.368,
+        0.28,
+        0.352
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.3770833333333333,
+        0.24458333333333335,
+        0.3783333333333333
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 NCAA Division I football national champion conference",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.44,
+        0.28,
+        0.6012500000000001
+      ],
+      "naive_sum": 1.32125,
+      "naive_eps_star": 0.18547377397716733,
+      "llmagg_quote": [
+        0.44,
+        0.28,
+        0.28
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.33291666666666664,
+        0.17291666666666666,
+        0.4941666666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 PGA Tour FedEx Cup winner nationality",
+      "n_outcomes": 2,
+      "naive_quote": [
+        0.6799999999999999,
+        0.225
+      ],
+      "naive_sum": 0.9049999999999999,
+      "naive_eps_star": 0.06717514421272214,
+      "llmagg_quote": [
+        0.68,
+        0.32
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.7275,
+        0.2725000000000001
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Emmy Outstanding Drama Series platform",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.745,
+        0.6675,
+        0.28875
+      ],
+      "naive_sum": 1.7012500000000002,
+      "naive_eps_star": 0.40486687626922513,
+      "llmagg_quote": [
+        0.745,
+        0.167,
+        0.088
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.51125,
+        0.43374999999999997,
+        0.054999999999999966
+      ],
+      "jcd_eps_star": 6.546139416680338e-17
+    },
+    {
+      "label": "2026 Tony Best Musical genre",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.35,
+        0.2725,
+        0.6312499999999999
+      ],
+      "naive_sum": 1.25375,
+      "naive_eps_star": 0.14650263080686748,
+      "llmagg_quote": [
+        0.35,
+        0.273,
+        0.377
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.2654166666666667,
+        0.18791666666666673,
+        0.5466666666666665
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2027 BAFTA Best Film origin",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.35875,
+        0.70625,
+        0.28625
+      ],
+      "naive_sum": 1.3512499999999998,
+      "naive_eps_star": 0.20279428205285596,
+      "llmagg_quote": [
+        0.359,
+        0.706,
+        0.286
+      ],
+      "llmagg_sum": 1.351,
+      "llmagg_eps_star": 0.20264994448555862,
+      "jcd_quote": [
+        0.24166666666666675,
+        0.5891666666666667,
+        0.16916666666666674
+      ],
+      "jcd_eps_star": 1.6184142622847344e-16
+    },
+    {
+      "label": "2026 Cannes Palme d'Or winner nationality",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.5725,
+        0.26625,
+        0.67875
+      ],
+      "naive_sum": 1.5175,
+      "naive_eps_star": 0.29877876430563133,
+      "llmagg_quote": [
+        0.4,
+        0.19,
+        0.41
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.4,
+        0.09374999999999997,
+        0.50625
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2027 Hugo Award Best Novel author origin",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.705,
+        0.1725,
+        0.65125
+      ],
+      "naive_sum": 1.52875,
+      "naive_eps_star": 0.305308501765018,
+      "llmagg_quote": [
+        0.52,
+        0.127,
+        0.353
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.526875,
+        0.0,
+        0.473125
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Mercury Music Prize winner gender",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.47125,
+        0.4,
+        0.39625
+      ],
+      "naive_sum": 1.2675,
+      "naive_eps_star": 0.1544411970082249,
+      "llmagg_quote": [
+        0.471,
+        0.4,
+        0.129
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.38208333333333333,
+        0.31083333333333335,
+        0.3070833333333333
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2027 Berlin Golden Bear winner type",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.68875,
+        0.08875000000000001,
+        0.07
+      ],
+      "naive_sum": 0.8474999999999999,
+      "naive_eps_star": 0.088045916051418,
+      "llmagg_quote": [
+        0.689,
+        0.089,
+        0.07
+      ],
+      "llmagg_sum": 0.8479999999999999,
+      "llmagg_eps_star": 0.08775724091682323,
+      "jcd_quote": [
+        0.7395833333333334,
+        0.13958333333333336,
+        0.12083333333333338
+      ],
+      "jcd_eps_star": 1.5515838457795457e-16
+    },
+    {
+      "label": "2026 Olivier Best New Play origin",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.705,
+        0.38125,
+        0.05
+      ],
+      "naive_sum": 1.13625,
+      "naive_eps_star": 0.0786639741770865,
+      "llmagg_quote": [
+        0.68,
+        0.27,
+        0.05
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.6595833333333333,
+        0.3358333333333333,
+        0.004583333333333342
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Nobel Literature laureate region",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.6225,
+        0.34625,
+        0.43
+      ],
+      "naive_sum": 1.39875,
+      "naive_eps_star": 0.23021841983936325,
+      "llmagg_quote": [
+        0.623,
+        0.346,
+        0.031
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.48958333333333337,
+        0.21333333333333335,
+        0.29708333333333337
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 International Booker Prize winner language",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.6825,
+        0.42500000000000004,
+        0.54375
+      ],
+      "naive_sum": 1.6512499999999999,
+      "naive_eps_star": 0.37599936280974366,
+      "llmagg_quote": [
+        0.545,
+        0.27,
+        0.185
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.4654166666666667,
+        0.20791666666666675,
+        0.32666666666666666
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "Top GPQA score, year-end 2026",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.33749999999999997,
+        0.35875,
+        0.425,
+        0.80375
+      ],
+      "naive_sum": 1.925,
+      "naive_eps_star": 0.4624999999999999,
+      "llmagg_quote": [
+        0.237,
+        0.252,
+        0.298,
+        0.213
+      ],
+      "llmagg_sum": 0.9999999999999999,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.10625000000000001,
+        0.12750000000000006,
+        0.19375000000000003,
+        0.5725
+      ],
+      "jcd_eps_star": 9.614813431917819e-17
+    },
+    {
+      "label": "Top HumanEval+ score, year-end 2026",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.25,
+        0.47500000000000003,
+        0.4275,
+        0.78375
+      ],
+      "naive_sum": 1.93625,
+      "naive_eps_star": 0.46812500000000007,
+      "llmagg_quote": [
+        0.15,
+        0.35,
+        0.32,
+        0.18
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 6.798699777552591e-17,
+      "jcd_quote": [
+        0.015937499999999993,
+        0.24093750000000003,
+        0.19343749999999998,
+        0.5496874999999999
+      ],
+      "jcd_eps_star": 9.614813431917819e-17
+    },
+    {
+      "label": "Largest US AI startup IPO 2026",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.38749999999999996,
+        0.72875,
+        0.6712499999999999,
+        0.71
+      ],
+      "naive_sum": 2.4974999999999996,
+      "naive_eps_star": 0.7487499999999998,
+      "llmagg_quote": [
+        0.195,
+        0.368,
+        0.339,
+        0.098
+      ],
+      "llmagg_sum": 0.9999999999999999,
+      "llmagg_eps_star": 1.1102230246251565e-16,
+      "jcd_quote": [
+        0.013125000000000053,
+        0.3543750000000001,
+        0.296875,
+        0.33562500000000006
+      ],
+      "jcd_eps_star": 1.1102230246251565e-16
+    },
+    {
+      "label": "Top global cloud provider revenue share 2026",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.7175,
+        0.38875000000000004,
+        0.08499999999999999,
+        0.5762499999999999
+      ],
+      "naive_sum": 1.7675,
+      "naive_eps_star": 0.40310513516947416,
+      "llmagg_quote": [
+        0.545,
+        0.295,
+        0.065,
+        0.095
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.49,
+        0.16125,
+        0.0,
+        0.3487499999999999
+      ],
+      "jcd_eps_star": 3.925231146709438e-17
+    },
+    {
+      "label": "Year-end 2026 leading mobile OS",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.85,
+        0.14625000000000002,
+        0.02
+      ],
+      "naive_sum": 1.0162499999999999,
+      "naive_eps_star": 0.009381941874331346,
+      "llmagg_quote": [
+        0.85,
+        0.146,
+        0.004
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.8445833333333334,
+        0.1408333333333334,
+        0.014583333333333375
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "Top open-source LLM family year-end 2026",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.715,
+        0.22875,
+        0.385,
+        0.43
+      ],
+      "naive_sum": 1.7587499999999998,
+      "naive_eps_star": 0.379375,
+      "llmagg_quote": [
+        0.52,
+        0.167,
+        0.28,
+        0.033
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.5253125,
+        0.0390625,
+        0.1953125,
+        0.24031249999999998
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "Apple WWDC 2026 keynote",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.54125,
+        0.785,
+        0.2525
+      ],
+      "naive_sum": 1.5787499999999999,
+      "naive_eps_star": 0.33414146829349584,
+      "llmagg_quote": [
+        0.41,
+        0.53,
+        0.06
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.3483333333333334,
+        0.5920833333333334,
+        0.05958333333333338
+      ],
+      "jcd_eps_star": 1.457167719820518e-16
+    },
+    {
+      "label": "Tesla 2026 Q4 deliveries bucket",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.34624999999999995,
+        0.5,
+        0.32375
+      ],
+      "naive_sum": 1.17,
+      "naive_eps_star": 0.09814954576223633,
+      "llmagg_quote": [
+        0.346,
+        0.5,
+        0.324
+      ],
+      "llmagg_sum": 1.17,
+      "llmagg_eps_star": 0.09814954576223633,
+      "jcd_quote": [
+        0.2895833333333333,
+        0.44333333333333336,
+        0.26708333333333334
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "Top semiconductor revenue 2026: foundry vs IDM",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.25,
+        0.5,
+        0.6299999999999999
+      ],
+      "naive_sum": 1.38,
+      "naive_eps_star": 0.2193931022920577,
+      "llmagg_quote": [
+        0.25,
+        0.5,
+        0.63
+      ],
+      "llmagg_sum": 1.38,
+      "llmagg_eps_star": 0.2193931022920577,
+      "jcd_quote": [
+        0.12333333333333338,
+        0.3733333333333334,
+        0.5033333333333333
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "Largest 2026 US data-center investment site",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.37,
+        0.2275,
+        0.5
+      ],
+      "naive_sum": 1.0975000000000001,
+      "naive_eps_star": 0.056291651245988464,
+      "llmagg_quote": [
+        0.37,
+        0.228,
+        0.402
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.3375,
+        0.19500000000000003,
+        0.4675
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Nobel Medicine laureate field",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.2025,
+        0.35625,
+        0.28,
+        0.75
+      ],
+      "naive_sum": 1.58875,
+      "naive_eps_star": 0.29437500000000005,
+      "llmagg_quote": [
+        0.203,
+        0.356,
+        0.28,
+        0.161
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.05531249999999999,
+        0.20906249999999998,
+        0.1328125,
+        0.6028125
+      ],
+      "jcd_eps_star": 4.8074067159589095e-17
+    },
+    {
+      "label": "2026 Nobel Economics laureate field",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.5,
+        0.43500000000000005,
+        0.34750000000000003,
+        0.53
+      ],
+      "naive_sum": 1.8125000000000002,
+      "naive_eps_star": 0.40625,
+      "llmagg_quote": [
+        0.34,
+        0.296,
+        0.236,
+        0.128
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.296875,
+        0.23187500000000005,
+        0.14437500000000003,
+        0.326875
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Wolf Prize in Mathematics",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.7675000000000001,
+        0.35,
+        0.5
+      ],
+      "naive_sum": 1.6175000000000002,
+      "naive_eps_star": 0.35651379122459403,
+      "llmagg_quote": [
+        0.615,
+        0.235,
+        0.15
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.5616666666666666,
+        0.14416666666666658,
+        0.2941666666666666
+      ],
+      "jcd_eps_star": 1.4946834900704541e-16
+    },
+    {
+      "label": "2027 Breakthrough Prize Life Sciences focus",
+      "n_outcomes": 4,
+      "naive_quote": [
+        0.27,
+        0.35,
+        0.5,
+        0.2975
+      ],
+      "naive_sum": 1.4175,
+      "naive_eps_star": 0.20875,
+      "llmagg_quote": [
+        0.245,
+        0.318,
+        0.353,
+        0.084
+      ],
+      "llmagg_sum": 0.9999999999999999,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.16562500000000002,
+        0.24562499999999998,
+        0.395625,
+        0.193125
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 IMO top country",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.36375,
+        0.27,
+        0.5
+      ],
+      "naive_sum": 1.13375,
+      "naive_eps_star": 0.07722059850411249,
+      "llmagg_quote": [
+        0.364,
+        0.27,
+        0.366
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.31916666666666665,
+        0.22541666666666668,
+        0.45541666666666664
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 IPhO top country",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.2425,
+        0.42,
+        0.73125
+      ],
+      "naive_sum": 1.3937499999999998,
+      "naive_eps_star": 0.22733166849341505,
+      "llmagg_quote": [
+        0.242,
+        0.42,
+        0.338
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.11125000000000004,
+        0.28875000000000006,
+        0.6
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "ITER first plasma timing",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.34125,
+        0.5,
+        0.73125
+      ],
+      "naive_sum": 1.5725,
+      "naive_eps_star": 0.3305330291110607,
+      "llmagg_quote": [
+        0.27,
+        0.395,
+        0.335
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.15041666666666667,
+        0.3091666666666667,
+        0.5404166666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 ACM G\u00f6del Prize area",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.43,
+        0.155,
+        0.5
+      ],
+      "naive_sum": 1.085,
+      "naive_eps_star": 0.04907477288111817,
+      "llmagg_quote": [
+        0.43,
+        0.155,
+        0.415
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.40166666666666667,
+        0.12666666666666668,
+        0.4716666666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "FDA Alzheimer's drug action 2026",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.3325,
+        0.18,
+        0.5
+      ],
+      "naive_sum": 1.0125,
+      "naive_eps_star": 0.007216878364870297,
+      "llmagg_quote": [
+        0.333,
+        0.18,
+        0.487
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.32833333333333337,
+        0.17583333333333334,
+        0.49583333333333335
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "GLP-1 agonist label expansion 2026",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.30375,
+        0.56625,
+        0.11375
+      ],
+      "naive_sum": 0.9837500000000001,
+      "naive_eps_star": 0.009381941874331346,
+      "llmagg_quote": [
+        0.304,
+        0.566,
+        0.114
+      ],
+      "llmagg_sum": 0.9839999999999999,
+      "llmagg_eps_star": 0.009237604307034093,
+      "jcd_quote": [
+        0.30916666666666665,
+        0.5716666666666667,
+        0.11916666666666663
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "WHO PHEIC declarations 2026",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.16,
+        0.43875,
+        0.1075
+      ],
+      "naive_sum": 0.70625,
+      "naive_eps_star": 0.16959664157445253,
+      "llmagg_quote": [
+        0.16,
+        0.439,
+        0.107
+      ],
+      "llmagg_sum": 0.706,
+      "llmagg_eps_star": 0.16974097914175001,
+      "jcd_quote": [
+        0.2579166666666667,
+        0.5366666666666666,
+        0.20541666666666664
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "Cancer screening trial readout 2026",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.22625,
+        0.6575,
+        0.23
+      ],
+      "naive_sum": 1.11375,
+      "naive_eps_star": 0.06567359312031998,
+      "llmagg_quote": [
+        0.226,
+        0.657,
+        0.117
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.18833333333333332,
+        0.6195833333333333,
+        0.19208333333333333
+      ],
+      "jcd_eps_star": 3.925231146709438e-17
+    },
+    {
+      "label": "2026 mpox global status",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.4875,
+        0.13,
+        0.25
+      ],
+      "naive_sum": 0.8674999999999999,
+      "naive_eps_star": 0.07649891066762537,
+      "llmagg_quote": [
+        0.487,
+        0.13,
+        0.25
+      ],
+      "llmagg_sum": 0.867,
+      "llmagg_eps_star": 0.07678758580222023,
+      "jcd_quote": [
+        0.5316666666666666,
+        0.17416666666666666,
+        0.29416666666666663
+      ],
+      "jcd_eps_star": 6.206335383118183e-17
+    },
+    {
+      "label": "2026 global temperature ranking",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.27,
+        0.11249999999999999,
+        0.5
+      ],
+      "naive_sum": 0.8825000000000001,
+      "naive_eps_star": 0.06783865662978102,
+      "llmagg_quote": [
+        0.27,
+        0.112,
+        0.618
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.30916666666666665,
+        0.15166666666666664,
+        0.5391666666666667
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Atlantic hurricane season activity",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.39249999999999996,
+        0.47250000000000003,
+        0.30000000000000004
+      ],
+      "naive_sum": 1.165,
+      "naive_eps_star": 0.09526279441628827,
+      "llmagg_quote": [
+        0.392,
+        0.473,
+        0.3
+      ],
+      "llmagg_sum": 1.165,
+      "llmagg_eps_star": 0.09526279441628827,
+      "jcd_quote": [
+        0.33749999999999997,
+        0.41750000000000004,
+        0.24500000000000002
+      ],
+      "jcd_eps_star": 0.0
+    },
+    {
+      "label": "2026 Arctic sea ice minimum extent",
+      "n_outcomes": 3,
+      "naive_quote": [
+        0.6225,
+        0.13375,
+        0.33875
+      ],
+      "naive_sum": 1.0950000000000002,
+      "naive_eps_star": 0.054848275573014416,
+      "llmagg_quote": [
+        0.623,
+        0.134,
+        0.243
+      ],
+      "llmagg_sum": 1.0,
+      "llmagg_eps_star": 0.0,
+      "jcd_quote": [
+        0.5908333333333334,
+        0.10208333333333336,
+        0.3070833333333333
+      ],
+      "jcd_eps_star": 0.0
+    }
+  ]
+}

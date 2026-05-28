@@ -1,0 +1,43 @@
+{
+  "relations": [
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg",
+    "neg"
+  ],
+  "meta": {
+    "spec": "anthropic/claude-haiku-4-5-20251001",
+    "source": "paleka",
+    "checker": "NegChecker",
+    "K": 32,
+    "temperature": 0.7,
+    "seed": 20260425,
+    "n_eval": 27,
+    "platt_a": 1.1273935716168526,
+    "platt_b": 0.03684092064560557,
+    "estimated_cost_usd": 0.0
+  }
+}

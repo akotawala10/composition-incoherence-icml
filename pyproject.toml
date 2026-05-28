@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compositional-incoherence"
+version = "0.1.0"
+description = "Reference implementation for compositional-incoherence detection in multi-component LLM agents"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Anany Kotawala"}]
+keywords = [
+    "llm-agents",
+    "multi-agent",
+    "uncertainty-quantification",
+    "calibration",
+    "coherence",
+    "no-arbitrage",
+    "boyle-dykstra",
+]
+
+dependencies = [
+    "numpy>=1.25",
+    "scipy>=1.10",
+    "osqp>=0.6.3",
+    "anthropic>=0.34",
+    "openai>=1.40",
+    "groq>=0.9",
+    "python-dotenv>=1.0",
+    "ddgs>=0.9",
+]
+
+[project.optional-dependencies]
+langgraph = [
+    "langgraph>=0.2",
+    "langchain-anthropic>=0.2",
+    "langchain-core>=0.3",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["compositional*", "jcd*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
