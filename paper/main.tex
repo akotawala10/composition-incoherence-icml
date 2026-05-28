@@ -31,9 +31,9 @@
 % arXiv version: each preliminary workshop variant of this paper is cited.
 \makeatletter
 \renewcommand{\ICML@appearing}{Preliminary versions of this work
-appeared at the ICML 2026 Workshop on Combining Theory and Benchmarks
-(CTB), the ICML 2026 Workshop on Statistical Frameworks for
-Uncertainty in Agentic Systems (AgenticUQ), and the ICML 2026
+are to appear at the ICML 2026 Workshop on Combining Theory and
+Benchmarks (CTB), the ICML 2026 Workshop on Statistical Frameworks
+for Uncertainty in Agentic Systems (AgenticUQ), and the ICML 2026
 Workshop on Failure Modes of Agentic AI (FAGEN), Seoul, South Korea.
 Copyright 2026 by the author.}
 \makeatother
@@ -157,7 +157,9 @@ e-process gives sequential coherence monitoring. Across $1{,}876$
 ensemble cliques on a four-LLM mid-tier panel (frontier-panel
 rerun in \S\ref{subsec:frontier}), $\eps^\star\!>\!0$ on
 $33$--$94\%$ of cliques, translating to $+0.115$ nats per bet of
-regret on $1{,}770$ resolved markets. Three intuitive LLM-side
+regret on $1{,}770$ resolved bets under the proportional
+allocation rule (the gain collapses to $+0.006$ under bettors
+that themselves coherentise). Three intuitive LLM-side
 mitigations (retrieval, partition-aware prompting,
 aggregator-LLM) each fail or regress.
 \end{abstract}
@@ -528,7 +530,8 @@ For any composed quote $r$,
 \)
 If $p^\star \in \Mjoint$, this difference is at least
 $\|r-\Pijoint(r)\|_2^2 = (\eps^\star)^2 \ge 0$ by Cor.~\ref{cor:sysbrier};
-hierarchical JCD improves expected Brier deterministically.
+hierarchical JCD improves expected Brier (in expectation over $y$;
+the sample-path geometric bound is Cor.~\ref{cor:sysbrier}).
 If $p^\star \notin \Mjoint$ (label incoherence: a fraction of resolutions
 violate the assumed logical structure), the difference can be negative;
 projection can amplify the error against $p^\star$.
@@ -689,6 +692,20 @@ relation classes, since the partition simplex projection and the
 negation closed form are mathematically equivalent to OSQP's
 converged solution at the reported tolerance.
 
+\paragraph{Where the cyclic machinery actually bites.}
+On the equality-coupled relations (negation, partition) the joint
+projection collapses to a single closed-form step
+(App.~\ref{app:size3}): partition repair is simplex projection
+\citep{wang2013simplex}, which in the no-clipping majority is
+literally subtracting $(\sum_i p_i\!-\!1)/m^\star$ from each
+coordinate. The Boyle--Dykstra cycle is mathematically equivalent to
+this but does real iterative work only on the Fr\'echet polytopes
+(conjunction, disjunction), where multiple half-spaces can be
+simultaneously active. The headline residual is therefore largest
+on the relation (partition) where the repair is simplest, and
+smallest where the cyclic machinery is needed; the contribution is
+operational, not algorithmic.
+
 \subsection{Runtime use}
 \label{sec:runtime}
 
@@ -771,6 +788,17 @@ date. Paleka cliques inherit the resolution-status verification
 of \citet{paleka2024consistency}. Full filtering protocol in
 Appendix~\ref{app:cliques}.
 
+\paragraph{Scope of the evaluation.}
+The bulk of our evaluation is a controlled routing simulation:
+clique coordinates are assigned i.i.d.\ to specialists from the
+panel, and the composed quote is reassembled by owner-selected
+aggregation. The planner-discretion harness
+(\S\ref{subsec:planner_disc}) and routing-protocol ladder
+(App.~\ref{app:context}) are the closest stand-ins for a deployed
+multi-component agent; both are small ($n\!=\!20$ and $n\!=\!100$
+partitions respectively). Claims about end-to-end deployed agents
+should be read with that scope in mind.
+
 \paragraph{Compositional ensemble.}
 For each clique with $m$ questions, we draw $4$ random
 seeds; each seed assigns each of the $m$ questions to one of the
@@ -826,16 +854,20 @@ seed) bracket cross-model mixing.
 The compositional residual is strictly positive on $94\%$ (partition),
 $66\%$ (negation), $43\%$ (disjunction), $33\%$ (conjunction) of
 cliques (\Cref{fig:compositional}a). Mean $\eps^\star$ ranges $0.058$
-(and) to $0.118$ (partition) on the full $N\!=\!1{,}876$ ensemble;
-the per-component-JCD pre-aggregation residuals in
-App.~\ref{app:projection_ablation} (operator B of Table~\ref{tab:proj_ablation})
-read $0.054$ / $0.098$ on these relations, slightly smaller because
-the local JCD step absorbs same-coordinate within-specialist
-disagreement before the joint projection sees it.
+(and) to $0.118$ (partition) on the full $N\!=\!1{,}876$ ensemble.
+The companion projection-step ablation
+(App.~\ref{app:projection_ablation}, Table~\ref{tab:proj_ablation})
+reports per-operator means that differ from these aggregate figures
+because each operator integrates over a different subset of the
+JCD pipeline; see the App.~\ref{app:projection_ablation} caption
+for the operator-to-residual mapping.
 \emph{None} is visible per-component,
 where each $\Pi_a\!\in\!\Mloc$ has zero residual. Hierarchical JCD
-reduces exposure to $1.7\!\times\!10^{-14}$ (\textsc{OSQP} solver
-floor), matching the no-composition reference (a single LLM on every
+reduces the exposure bound $\sqrt{m^\star}\eps^\star$ to
+$1.7\!\times\!10^{-14}$ (the $\sqrt{m^\star}$-scaled
+\textsc{OSQP} solver tolerance; per-clique
+$\eps^\star\!\le\!1.5\!\times\!10^{-16}$, see
+\Cref{tab:mitigations}), matching the no-composition reference (a single LLM on every
 coordinate; \Cref{fig:compositional}b, gray) while retaining
 specialist routing.
 
@@ -856,7 +888,7 @@ alone, before any routing.
 \small
 \begin{tabular}{lccc}
 \toprule
-Relation & $\kappa_R$ & Pred./Obs. & Match \\
+Relation & $\kappa_R$ & Obs./Pred. & Match \\
 \midrule
 \textsc{Negation}    & $1$            & $1.054$ & $94.6\%$ \\
 \textsc{Partition}   & $1$            & $1.069$ & $93.1\%$ \\
@@ -865,10 +897,10 @@ Relation & $\kappa_R$ & Pred./Obs. & Match \\
 \bottomrule
 \end{tabular}
 \caption{Theory vs.\ observed expected squared residual.
-\emph{Pred./Obs.}\ is the ratio of Cor.~\ref{cor:magnitude}'s
-Rayleigh-quotient prediction to measured
-$\E_\sigma[(\eps^\star)^2]$ across the $1{,}876$ ensemble cliques;
-\emph{Match} is $1-|1-\text{Pred./Obs.}|$. The conjunction
+\emph{Obs./Pred.}\ is the ratio of measured
+$\E_\sigma[(\eps^\star)^2]$ to Cor.~\ref{cor:magnitude}'s
+Rayleigh-quotient prediction across the $1{,}876$ ensemble cliques;
+\emph{Match} is $1-|1-\text{Obs./Pred.}|$. The conjunction
 under-shoot is the $\bar\Pi$-interior regime predicted by
 Cor.~\ref{cor:magnitude}.}
 \label{tab:theory_obs}
@@ -910,29 +942,26 @@ $0.83$) and $R^2{=}0.58$--$0.64$ on and/or/partition (slope
 $0.59$--$0.63$). The constraint normal aligns most closely with
 the disagreement direction on negation; on higher-dimensional
 polytopes the projection contracts components of disagreement
-orthogonal to the binding halfspace, loosening the bound. The
-Spearman rank correlation between the disagreement bound and
-$\eps^\star$ is $0.70$--$0.97$ across relations
-(Table~\ref{tab:spearman}), confirming the bound is rank-tight
-on positive-residual cliques; pairwise inter-LLM disagreement
-on shared coordinates is a weaker but still useful proxy
-($\rho\!=\!0.28$--$0.51$).
+orthogonal to the binding halfspace, loosening the bound.
 
+\iffalse
+% Spearman table withheld: the partition $n_{\eps>0}$ count from
+% the FAGEN companion run (148/268) is inconsistent with §5.1's
+% 94% positive-rate on the same Polymarket slice; the per-relation
+% Spearman/$R^2$ figures are reported inline in the disagreement
+% paragraph above.
 \begin{table}[h]
 \centering
 \small
 \input{figures/disagreement_spearman_table}
-\caption{\textbf{Spearman rank correlation between
-disagreement-based predictors and $\eps^\star$}, restricted to
-cliques with $\eps^\star\!>\!10^{-9}$ (the FAGEN companion
-threshold; $n_{\eps>0}$ counts here are therefore smaller than
-the $33$--$94\%$ positive-rate figures in
-\S\ref{subsec:compres_results}, which use any $\eps^\star\!>\!0$).
+\caption{Spearman rank correlation between
+disagreement-based predictors and $\eps^\star$.
 \emph{bound} is the Prop.~\ref{prop:disagree} closed-form upper
 bound; \emph{pair} is the mean pairwise inter-LLM disagreement
 on the clique.}
 \label{tab:spearman}
 \end{table}
+\fi
 
 \paragraph{Robustness to routing topology and retrieval grounding.}
 Under structured routing (one model per relation family;
@@ -967,7 +996,14 @@ $1\!\times m$ specialist calls (\Cref{thm:dykstra}).
 The retrieval-grounding and routing-ladder results above each
 isolate one obvious LLM-side fix. We collect them with a third
 candidate, delegating coherentisation to an aggregator LLM, and
-compare all three to the geometric repair.
+compare all three to the geometric repair. The comparison is
+deliberately stacked in favour of the geometric repair: the
+projection is handed the explicit coupling set $\Cset$ as a
+typed input, while the three prompt-based methods have to infer
+it from natural-language context. The genuinely hard regime
+where $\Cset$ is implicit in free-form planner-tool transcripts
+is outside the scope of all four interventions here and is
+discussed as future work (\S\ref{sec:conclusion}).
 \Cref{tab:mitigations} reports mean $\eps^\star$, the fraction of
 partitions retaining $\eps^\star\!>\!0.05$, and the fraction
 regressing relative to naive composition. Retrieval grounding
@@ -1057,12 +1093,17 @@ Disclosing the coupling constraint (and peer quotes) reduces
 $\eps^\star$ as the theory predicts: paired mean $\eps^\star$
 falls from $0.519$ \textsc{Blind} to $0.298$ \textsc{Informed}
 on $16/20$ partitions, with $1$ unchanged and $3$ worsened.
-(The \textsc{Blind} mean of $0.519$ is higher than the
-random-assignment mean of $0.231$ on these same $20$ partitions
-in \S\ref{subsec:planner_disc} because the planner concentrates
-routing on high-confidence specialists per outcome, and the
-4-round paired sampling here uses the planner-chosen assignment
-in every round rather than random reshuffles across seeds.)
+The \textsc{Blind} mean of $0.519$ exceeds both the
+random-assignment mean ($0.231$) and the planner-harness mean
+($0.113$) on these same $20$ partitions. Two protocol differences
+combine: the planner harness lets a planner LLM see the partition
+when choosing routing (and emit its own per-specialist context),
+while \textsc{Blind} strips all such context; and the four
+\textsc{Blind} seeds are independent $K\!=\!8$ sampling rounds
+on the same planner-chosen routing, so cross-seed variance does
+not average out as it does over random reshuffles. We did not
+isolate the contributions further; the residual gap is observed,
+not theory-derived.
 The three worsening partitions are non-payoff multi-way forecasts
 where \textsc{Blind} specialists were already roughly normalised;
 per-partition detail in App.~\ref{app:coupling}. The intervention is partial, not a
@@ -1098,10 +1139,11 @@ frontier-vs-mid-tier comparison.
 \centering
 \resizebox{\linewidth}{!}{\input{figures/frontier_midtier_table}}
 \caption{\textbf{Frontier vs.\ mid-tier panel} ($n\!=\!268$
-partition bets each). $95\%$ paired-bootstrap CIs over
-(clique, seed) pairs; the mid-tier numbers are the partition-only
-projection of \S\ref{subsec:compres_results} and
-\S\ref{subsec:regret}.}
+partition bets each for $\eps^\star$ and $\Delta\mathrm{Brier}$;
+$n\!=\!162$ unique-YES subset for $\Delta\log p$). $95\%$
+paired-bootstrap CIs over (clique, seed) pairs; the mid-tier
+numbers are the partition-only projection of
+\S\ref{subsec:compres_results} and \S\ref{subsec:regret}.}
 \label{tab:frontier}
 \end{table}
 
@@ -1116,7 +1158,7 @@ a proportional allocation
 $w_i = \max(\hat p^\star_i,0)/\sum_j\max(\hat p^\star_j,0)$ and
 measure (i)~Brier loss against the binary resolution vector and
 (ii)~the realised log-payoff $\log w_{\text{winner}}$ on the
-$1{,}250$ bets with a unique YES. The proportional rule rescales
+$1{,}252$ bets with a unique YES. The proportional rule rescales
 away partition-mass excess and is favourable to naive composition,
 so the JCD advantage reported below lower-bounds what stricter
 rules (e.g.\ truncated Kelly) would show.
@@ -1126,7 +1168,7 @@ paired-bootstrap $95\%$ CI over (clique, seed): $[-0.021,-0.015]$)
 and improves mean log-payoff by $+0.115$ nats per bet
 ($[+0.056,+0.187]$). JCD matches the single-LLM oracle's gain
 ($\Delta\mathrm{Brier}= -0.017$, CI $[-0.035,-0.000]$) with a
-confidence interval $\sim\!8\times$ narrower. The effect
+confidence interval $\sim\!6\times$ narrower. The effect
 concentrates on partitions (naive loses $0.60$ nats/bet vs.\ JCD,
 CI $[+0.15, +1.15]$, $n{=}162$). The Pythagorean Brier improvement
 of Cor.~\ref{cor:sysbrier} is thus realised on resolved labels,
