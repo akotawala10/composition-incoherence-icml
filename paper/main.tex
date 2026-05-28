@@ -868,9 +868,10 @@ reduces the mean exposure bound $\sqrt{m^\star}\eps^\star$ to
 $1.7\!\times\!10^{-14}$ on the $1{,}876$-clique ensemble
 (per-clique post-repair $\eps^\star$ reaches the
 \textsc{OSQP} primal-residual floor of
-$\le\!1.5\!\times\!10^{-16}$, \Cref{tab:mitigations}; the two
-statistics differ in scale because the ensemble mean is dominated
-by the largest-$m^\star$ residuals), matching the no-composition reference (a single LLM on every
+$\le\!1.5\!\times\!10^{-16}$ on partition and negation, where
+closed-form projections terminate at machine precision;
+the ensemble mean is dominated by the and/or relations, which
+bottom out at the iterative-OSQP tolerance instead), matching the no-composition reference (a single LLM on every
 coordinate; \Cref{fig:compositional}b, gray) while retaining
 specialist routing.
 
@@ -1634,7 +1635,7 @@ ensemble-assignment seeds where applicable.}
 \midrule
 Mid-tier panel (\S\ref{sec:results}) & \texttt{claude-haiku-4-5-20251001}, \texttt{gpt-5.4-mini}, \texttt{gpt-5.4-nano}, \texttt{llama-3.3-70b-versatile} (Groq) \\
 Frontier panel (\S\ref{subsec:frontier}) & \texttt{claude-opus-4-7}, \texttt{gpt-5.5} (Azure), \texttt{deepseek-v3.2}, \texttt{llama-4-maverick-17b-128e} (FP8) \\
-Routing-ladder panel (App.~\ref{app:context}) & mid-tier panel $+$ \texttt{deepseek-v3.2} ($5$ specialists) \\
+Routing-ladder panel (App.~\ref{app:context}) & \texttt{claude-haiku-4-5-20251001}, \texttt{gpt-5.4-mini}, \texttt{gpt-5.4-nano}, \texttt{deepseek-v3.2}, \texttt{llama-4-maverick-17b-128e} ($5$ specialists; Llama-3.3-70b dropped on TPD-quota) \\
 Snapshot date      & 30 April 2026 \\
 $K$ samples / question & $8$ \\
 Temperature        & $0.7$ \\
